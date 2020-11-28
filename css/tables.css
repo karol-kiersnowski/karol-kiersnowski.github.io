@@ -1,0 +1,20 @@
+table {
+	padding: 10px;
+	border-collapse: collapse;
+	width: 100%;
+}
+
+th,
+td {
+	padding: 10px;
+}
+
+table.horizontal-line th {
+	border-bottom: 1px solid black;
+	text-align: left;
+}
+
+table.vertical-line td:first-child {
+	width: 80px;
+	border-right: 1px solid #000;
+}

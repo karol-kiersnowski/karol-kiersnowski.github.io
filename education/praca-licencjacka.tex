@@ -1,0 +1,930 @@
+\documentclass[12pt,oneside,a4paper]{report}
+\usepackage{polski}
+\usepackage[cp1250]{inputenc}
+\usepackage{graphicx}
+\usepackage{indentfirst}
+\usepackage{verbatim}
+\usepackage{geometry}
+
+\newtheorem{definicja}{Definicja}
+\renewcommand\bibname{Literatura}
+\renewcommand\listtablename{Spis listingów}
+\renewcommand\tablename{Listing}
+\newgeometry{tmargin=2.5cm, bmargin=2.5cm, lmargin=3.5cm, rmargin=2.5cm}
+\linespread{1.3}
+
+\def\titlepages
+{
+	\thispagestyle{empty}
+	\begin{center}
+	\includegraphics[scale=0.06]{UwBlogo.jpg}\\  
+	\vspace{.5cm}  
+                          
+	{\Large Uniwersytet w Bia³ymstoku} \\
+	\vspace{.2cm}  
+	{\normalsize Wydzia³ Matematyki i Informatyki }\\
+	\vspace{.2cm}  
+	{\normalsize Instytut Informatyki}\\
+	\vspace{0.5cm}  
+	
+	\rule{\linewidth}{0,25mm}\\
+	\vspace{3mm} 
+	\huge{Mened¿er pi³karski -- gra strategiczna z~elementami sztucznej inteligencji}
+	\rule{\linewidth}{0,25mm}
+	
+	{\it\Large{Praca licencjacka}} \\
+	\vspace{0.5cm} 
+	\large{Karol Kiersnowski}
+	\vspace{1.2cm} 
+	\begin{flushright}
+	\large{Promotor:}\\
+	\large{dr in¿. Wojciech Lesiñski}
+	\end{flushright}
+	\vfill Bia³ystok, wrzesieñ 2015
+	\end{center}
+}
+
+
+
+
+
+
+
+
+\begin{document}
+\titlepages
+
+\tableofcontents
+
+\chapter*{Wstêp}
+\addcontentsline{toc}{chapter}{Wstêp}
+
+Od kilku lat interesujê siê programowaniem. Wybra³em studia informatyczne g³ównie z tego powodu. Wybór pracy dyplomowej uzale¿nia³em od tego, aby by³o to napisanie aplikacji komputerowej. Zastanawiaj¹c siê nad wyborem tematu, bra³em pod uwagê to, ¿eby napisanie programu wymaga³o rozleg³ego korzystania z wiedzy, któr¹ naby³em w trakcie studiowania. Chcia³em napisaæ grê komputerow¹. Ciekawym pomys³em wydawa³o mi siê napisanie mened¿era pi³karskiego. Taka gra korzysta³aby miêdzy innymi z bazy danych oraz wymaga³aby wykorzystania elementów sztucznej inteligencji.
+
+Celem pracy by³o stworzenie prostej komputerowej gry strategicznej -- mened¿era pi³karskiego. Od strony technicznej jest to aplikacja okienkowa dzia³aj¹ca pod systemem Windows, korzystaj¹ca z relacyjnej bazy danych i wykorzystuj¹ca elementy sztucznej inteligencji. Oprócz tego, w czêœci teoretycznej praca omawia tematykê gier komputerowych. W pracy zostaj¹ przedstawione podstawy tworzenia gier komputerowych.
+
+W rozdziale 1. omówi³em tematykê gier komputerowych. Szczególn¹ uwagê zwróci³em na gry strategiczne. Dokona³em przegl¹du podgatunku strategii -- mened¿erów pi³karskich. W nastêpnym rozdziale przedstawi³em podstawy tworzenia gier komputerowych. Zosta³y w nim omówione etapy produkcji gier. Nastêpnie przedstawi³em technologie informatyczne wykorzystywane do tworzenia prostych gier komputerowych. Zosta³y omówione najczêœciej stosowane jêzyki programowania, biblioteki, œrodowiska programistyczne oraz inne narzêdzia wykorzystywane przy tworzeniu gier. Rozdzia³ 3. jest opisem implementacji gry napisanej przeze mnie specjalnie na potrzeby pracy. Zosta³y w nim przedstawione: koncepcja gry, wykorzystane technologie informatyczne, struktura aplikacji, bazy danych oraz szczegó³y implementacji wa¿niejszych klas.
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Gry komputerowe}
+\section{Wprowadzenie}
+
+Mianem gier komputerowych okreœla siê aplikacje komputerowe, których przeznaczeniem jest dostarczanie rozrywki u¿ytkownikowi. Nale¿y zaznaczyæ, ¿e nie odnosz¹ siê one jedynie do komputerów osobistych jak mo¿na s¹dziæ po nazwie. W Polsce, a w zasadzie w jêzyku polskim przyjê³o siê, ¿e pojêcie komputer\footnote{Komputer -- urz¹dzenie elektroniczne automatycznie przetwarzaj¹ce informacje (dane) zapisane cyfrowo, s³u¿¹ce do szybkiego wykonywania obliczeñ, przechowywania, porz¹dkowania i wyszukiwania danych oraz sterowania prac¹ innych urz¹dzeñ\cite{SJP}.} jest równoznaczne z komputerem osobistym. Dlatego gra komputerowa zazwyczaj kojarzy siê nam g³ównie z gr¹ uruchamian¹ na komputerze osobistym. Jednak mo¿na nimi nazywaæ wszelkie gry uruchamiane na komputerach, tzn. równie¿ na konsolach do gier, telefonach komórkowych, palmtopach, automatach do gier itp.
+
+Inn¹ nazw¹ trochê rzadziej u¿ywan¹ od gier komputerowych s¹ gry wideo. Pojêcie te jest zazwyczaj u¿ywane w przypadku gier konsolowych, gdy gra komputerowa jednoznacznie kojarzy siê z gr¹ na komputery osobiste. Jednak równie¿ ta nazwa nie odnosi siê jedynie do gier na konsole (gier, które nie s¹ uruchamiane na komputerach osobistych), ale równie¿ okreœla wszelkie gry uruchamiane na komputerach.
+
+Natomiast grami elektronicznymi przyjê³o siê nazywaæ proste, ma³e i przenoœne konsole do gier. Taka ,,gra elektroniczna'' w dzisiejszych czasach jest urz¹dzeniem niezwykle prostym w porównaniu do nowoczesnych przenoœnych konsol do gier (pod wzglêdem architektury komputerowej). Jednak czynnikiem wyró¿niaj¹cym ,,gry elektronicznej'' jest jej bardzo niska cena. W takim urz¹dzeniu zazwyczaj jest wgranych przynajmniej kilka prostych gier.
+
+Podsumowuj¹c wszelkie aplikacje komputerowe umo¿liwiaj¹ce interaktywn¹ rozrywkê na komputerze (komputerze osobistym, konsoli do gier itp.) mog¹ byæ nazywane zarówno grami komputerowymi b¹dŸ grami wideo. Nie nale¿y nazywaæ ich grami elektronicznymi, gdy¿ nimi przyjê³o siê nazywaæ proste przenoœne konsole do gier. W swojej pracy bêdê g³ównie u¿ywa³ nazwy gry komputerowe.
+
+\section{Gry strategiczne}
+Strategia jest gr¹, w której przy ustalaniu wyniku rozgrywki, du¿e znaczenie maj¹ podejmowane przez graczy decyzje. W grach strategicznych po³o¿ony jest nacisk na umiejêtnoœci planowania, dobierania odpowiednich strategii, taktyk, logicznego rozumowania. Gry strategiczne s¹ zarówno grami planszowymi jak i gatunkiem gier komputerowych. Strategie komputerowe nazywa siê po prostu komputerowymi grami strategicznymi.
+
+Gry strategiczne mo¿na podzieliæ ze wzglêdu na sposób rozgrywki oraz podgatunki. Rozgrywka w grach strategicznych mo¿e byæ prowadzona w sposób turowy lub ci¹g³y. Jeœli ruchy graczy s¹ wykonywane na zmianê, to tak¹ grê nazywa siê gr¹ turow¹. Przedstawicielami tego typu rozgrywki s¹ miêdzy innymi \textit{Civilization} i \textit{Heroes of Might \& Magic}. Natomiast gdy rozgrywka jest prowadzona w sposób ci¹g³y, bez podzia³u na tury, wtedy mamy doczynienia z gr¹ strategiczn¹ czasu rzeczywistego. \textit{Age of Empires} i \textit{The Settlers} s¹ przyk³adami serii gier, w których rozgrywka odbywa siê bez podzia³u na tury.
+
+Pierwsze komputerowe strategie du¿o czerpa³y z planszowych odpowiedników. Rozgrywka zazwyczaj odbywa³a siê turami. By³y wydzielone fazy ruchu dla ka¿dego z graczy. Wraz z czasem komputerowe gry strategiczne ewoluowa³y i oddala³y siê od pierwowzorów. Popularnoœæ zaczê³y zdobywaæ gry czasu rzeczywistego, w których nie by³o podzia³u na tury.
+
+Oprócz podzia³u ze wzglêdu na rozgrywkê, gry strategiczne mo¿na podzieliæ na podgatunki, tj. gry ekonomiczne, taktyczne czy 4X. W grach ekonomicznych najwa¿niejszym czynnikiem jest ekonomia. W takich grach zazwyczaj kierujemy miastem b¹dŸ przedsiêbiorstwem. Wa¿nym przedstawicielem tego gatunku jest seria \textit{SimCity}, która oprócz tego jest zaliczana do gatunku symulatorów. Natomiast gry taktyczne s¹ grami, w których kierujemy niewielk¹ liczb¹ postaci. Naszym celem jest dobór odpowiedniej taktyki, aby pokonaæ przeciwników. W takich grach nie istnieje mo¿liwoœæ zbierania surowców. W grach 4X (eXplore, eXpand, eXploit, eXterminate) rozgrywka opiera siê na 4 celach: eksploracji, ekspansji, eksploatacji i eksterminacji. Typowym przedstawicielem tego gatunku jest gra \textit{Civilization}.
+
+\section{Mened¿ery pi³karskie}
+Do jakiego gatunku mo¿na przypisaæ grê typu mened¿er pi³karski? Z pewnoœci¹ jest strategi¹, gdy¿ wymaga strategicznego myœlenia. W takiej grze gracz planuje ka¿dy swój ruch. Ustalanie sk³adu dru¿yny, odpowiedni dobór taktyki, formacji wymaga w³aœnie umiejêtnoœci planowania. Mened¿ery pi³karskie (sportowe) ³¹cz¹ w sobie elementy gier strategicznych, symulacyjnych i sportowych. Rozgrywka w takich grach polega na objêciu stanowiska mened¿era klubu. Naszym celem jest wypracowanie pewnych strategii, które pozwol¹ na wygrywanie meczów, zdobywanie trofeów, utrzymanie równowagi finansowej. W mened¿erze pi³karskim prowadzimy klub pi³karski przez ca³y sezon ligowy, który sk³ada siê z kolejek\footnote{\textit{Kolejka} -- (sport.) jeden z okreœlonej liczby regularnie powtarzanych elementów sk³adowych systemu rozgrywek sportowych\cite{WSJP}. Jeœli w lidze jest 16 dru¿yn, to aby wszystkie dru¿yny rozegra³y mecze, musi byæ ich 8. Kolejk¹ nazywa siê w³aœnie te 8 meczów. W sezonie kolejek bêdzie 30, bo ka¿da dru¿yna zagra z ka¿d¹ dwukrotnie.}. Pomiêdzy nimi mamy nieograniczony czas na odpowiedni dobór strategii. Jako kierownik zespo³u mo¿emy ustalaæ sk³ad, taktykê, treningi, dokonywaæ transferów, prowadziæ finanse klubu.
+
+\subsection{Gry jednoosobowe}
+\subsubsection{\textit{Football Manager}}
+Football Manager jest seri¹ gier komputerowych -- mened¿erów pi³karskich. Pierwsza ods³ona pojawi³a siê w 1982 roku na komputer ZX Spectrum. Jej autorem by³ Kevin Toms. Gra okaza³a siê du¿ym sukcesem. Football Manager by³ pierwsz¹ gr¹ takiego typu i zapocz¹tkowa³ ca³y gatunek gier komputerowych -- mened¿erów pi³karskich\cite{RedBull}. W kolejnych latach gra zosta³a przepisana na wielu ró¿nych platform, tj. Commodore 64, Amiga, PC. Football Manager zosta³ napisany w jêzyku Basic. Gra przez wiêkszoœæ czasu pracuje w trybie tekstowym. Jedynie w czasie meczów pojawiaj¹ siê proste animacje przedstawiaj¹ce sytuacje podbramkowe. Po rozpoczêciu gry pierwszym krokiem jest wybór dru¿yny. Do wyboru mamy kluby z ligi angielskiej. Grê rozpoczynamy w czwartej lidze. Naszym celem jest awans do najwy¿szego szczebla rozgrywek ligowych w Anglii. Oprócz pierwszej czêœci Football Managera w kolejnych latach ukaza³y siê nastêpne ods³ony. Ostatni¹ gr¹ z serii by³ Football Manager 3 -- pojawi³ siê w 1992 roku.
+
+W 2005 r. twórcy serii Championship Manager zrezygnowali ze wspó³pracy z dotychczasowym wydawc¹ i przejeli prawa do nazwy Football Manager. Pierwsz¹ czêœci¹ nowej serii by³ Football Manager 2005. Od tego czasu kolejne wydania pojawiaj¹ siê co roku. W dzisiejszych czasach Football Manager jest jednym z najpopularniejszych przedstawicieli tego gatunku. Obecne wydania gry s¹ bardzo rozbudowane. Pojawi³ siê nawet prostszy tryb gry nie wymagaj¹cy od gracza poœwiêcenia du¿ej iloœci czasu na rozgrywkê. Football Manager posiada ogromn¹ bazê danych klubów, pi³karzy, mened¿erów i cz³onków sztabu szkoleniowego. Gra wp³ywa nawet na decyzje podejmowane przez prawdziwe kluby pi³karskie. Przyk³adowo niektóre dru¿yny korzystaj¹ z bazy danych Football Managera, aby zdobywaæ informacje o przeciwnikach czy m³odych talentach pi³karskich.
+
+\subsubsection{\textit{Championship Manager}}
+Championship Manager jest jedn¹ z najpopularniejszych serii mened¿erów pi³karskich. Pierwsza czêœæ zosta³a wydana w roku 1992. Gra zosta³a napisana przez braci Collyer w ich domu w Shropshire w Anglii. Jêzykiem programowania wykorzystanym do napisania gry by³ Basic. Championship Manager w przeciwieñstwie do Football Managera nie zdoby³ du¿ej popularnoœci ju¿ przy premierze pierwszej czêœci. Dopiero wraz z kolejnymi ods³onami sta³ siê bardzo popularnym przedstawicielem tego gatunku. W grze wydanej w 1992 roku mieliœmy do wyboru wszystkie dru¿yny ligi angielskiej z czterech najwy¿szych szczeblów rozgrywki. Przebieg meczu mogliœmy œledziæ czytaj¹c komentarze pojawiaj¹ce siê na ekranie. Du¿ym mankamentem gry by³o brak prawdziwych nazwisk pi³karzy. O ile nazwy klubów odpowiada³y rzeczywistym dru¿ynom, to ich sk³ady by³y ju¿ generowane losowo. W roku 1993 pojawi³a siê kolejna ods³ona serii -- Championship Manager '93. Gra zosta³a przepisana na jêzyk C, dodano prawdziwe nazwiska pi³karzy oraz wiele mniejszych nowoœci. Te wydanie gry sprzedawa³o siê ju¿ znacznie lepiej od poprzedniej czêœci. W nastêpych latach pojawia³y siê aktualizacje sezonowe (zawieraj¹ce wszystkie transfery dokonane przez ten czas) oraz ca³kiem nowe ods³ony.
+
+\subsubsection{\textit{O'Leary Manager 2000}}
+GameBoy Color jest przenoœn¹ konsol¹ do gier. W³aœnie na t¹ konsolê w roku 2000 pojawi³a siê gra pi³karska O'Leary Manager 2000. Jest to po³¹czenie gry zrêcznoœciowej z pi³karsk¹ strategi¹. Do wyboru w³aœciwie mamy dwa tryby. W jednym z nich mo¿emy byæ mened¿erem klubu -- ustalaæ sk³ad, taktykê, dokonywaæ transferów itp. Mecze w tym trybie s¹ symulowane. Gracz nie ma bezpoœrednio wp³ywu na wynik spotkania. Na rysunku \ref{fig:OLearyManager2000} znajduje siê widok rozgrywanego meczu.
+
+Natomiast w drugim trybie oprócz wymienionych powy¿ej mo¿liwoœci bierzemy czynny udzia³ w meczu -- gramy pi³karzami naszej dru¿yny. Gra pomimo doœæ s³abej oprawy audio-wizualnej jest bardzo grywalna. Posiada intuicyjne menu oraz doœæ mocno rozbudowany tryb mened¿erski. W grze do wyboru mamy kluby pi³karskie z dwóch najwy¿szych szczeblów rozgrywek z ligi angielskiej, w³oskiej, francuskiej, hiszpañskiej, holenderskiej i niemieckiej.
+
+\begin{figure}
+\centering
+\includegraphics{OLearyManager2000.png}
+\caption{Widok z gry \textit{O'Leary Manager 2000}}
+\label{fig:OLearyManager2000}
+\end{figure}
+
+
+\subsubsection{\textit{FIFA}}
+FIFA to nie tylko skrót nazwy œwiatowej federacji pi³karskiej, ale równie¿ seria gier komputerowych wydawana przez Electronic Arts (EA Sports). FIFA nie jest typowym mened¿erem pi³karskim. Najogólniej mówi¹c jest gr¹ pi³karsk¹. Najnowsze ods³ony ³¹cz¹ w sobie elementy symulacji, gier zrêcznoœciowych i strategicznych. Jednak tak nie by³o od pocz¹tku.
+
+Pierwsz¹ czêœci¹ serii by³a FIFA International Soccer i pojawi³a siê w roku 1994. By³a to gra typowo zrêcznoœciowa -- graliœmy pi³karzami na boisku. Do wyboru mieliœmy tylko dru¿yny narodowe. Z elementów pozaboiskowej rozgrywki mogliœmy zmieniaæ sk³ad i taktykê dru¿yny. W kolejnych latach pojawia³y siê nowe ods³ony, a w grze mo¿na by³o znaleŸæ coraz wiêcej elementów mened¿era pi³karskiego.
+
+Prze³omow¹ czêœci¹ serii by³a FIFA Football 2004. Po raz pierwszy umieszczono w niej pe³noprawny tryb kariery. Gracz móg³ wcieliæ siê w mened¿era pi³karskiego i prowadziæ swój klub. Od wydania tej ods³ony mo¿na powiedzieæ, ¿e gra FIFA jest nie tyllko gr¹ zrêcznoœciowo -- symulacyjn¹, ale równie¿ strategiczn¹.
+
+\subsection{Gry MMOG}
+\subsubsection{\textit{Hattrick}}
+
+Pod domen¹ \textit{hattrick.org} znajduje siê strona internetowa. Hattrick jest gr¹ sieciow¹, w któr¹ gramy za pomoc¹ przegl¹darki internetowej. U¿ytkownik nie musi instalowaæ ¿adnego dodatkowego oprogramowania. Aby wzi¹æ udzia³ w grze nale¿y zarejestrowaæ siê na stronie. Hattrick nale¿y do gier typu MMOG (Massively Multiplayer Online Game -- Masowa Wieloosobowa Gra Internetowa). Oznacza to, ¿e rozgrywka odbywa siê za pomoc¹ internetu. Ka¿da osoba, która ma dostêp do sieci, mo¿e wzi¹æ w niej udzia³, tzn. naszymi przeciwnikami s¹ inni gracze z ca³ego œwiata.
+
+Hattrick jest mened¿erem pi³karskim, w którym mo¿emy wcieliæ siê w prezesa klubu pi³karskiego. Wszystkie kluby w œwiecie Hattricka s¹ fikcyjne -- gracze sami wymyœlaj¹ nazwy dla swoich dru¿yn.
+Rysunek \ref{fig:hattrick} przedstawia widok tabeli ligowej w trakcie rozgrywanego sezonu pi³karskiego. Jak mo¿na zauwa¿yæ, dru¿yna znajduje siê m. in. w VIII lidze, z czego jest 2048 lig na tym szczeblu rozgrywek. 
+
+Hattrick jest gr¹, w której aspekty strategiczne maj¹ ogromne znaczenie. W prowadzeniu dru¿yny wa¿na jest równie¿ strategia d³ugoterminowa -- trenowanie pi³karzy czy prowadzenie akademii pi³karskiej. W przeciwieñstwie do wielu innych gier MMOG zajmowanie siê rozgrywk¹ nie zabiera du¿o czasu. W praktyce wystarczy zalogowaæ siê raz w tygodniu. Inn¹ wa¿n¹ czêœci¹ Hattricka jest spo³ecznoœæ. Podczas gry mo¿emy korzystaæ z wielu forów i znajdowaæ znajomych.
+
+\begin{figure}
+\centering
+\includegraphics[width=15cm]{hattrick.png}
+\caption{Strona internetowa \textit{hattrick.org}}
+\label{fig:hattrick}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\chapter{Tworzenie gier}
+
+Tworzenie komercyjnych gier w dzisiejszych czasach jest procesem d³ugotrwa³ym, zajmuj¹cym czêsto kilka lat. W przypadku gier niezale¿nych, zwanych grami \textit{indie}, proces ten zazwyczaj jest znacznie krótszy. Czêsto zdarza siê, ¿e gry indie s¹ darmowe. W przypadku gdy tak nie jest, wtedy niezale¿ne gry s¹ dystrybuowane drog¹ elektroniczn¹ z pominiêciem wydawcy. W ostatnich latach bran¿a gier niezale¿nych widocznie siê rozros³a wraz z rozwojem internetu i rynku gier mobilnych.
+
+Pierwsze gry powsta³y w latach piêædziesi¹tych. Jednak komercyjne produkcje zaczê³y powstawaæ dopiero w latach siedemdziesi¹tych. Wi¹za³o siê to z powstaniem pierwszej generacji konsol do gier oraz ze wzrostem rozpowszechnienia komputerów. Pierwsze komercyjne gry w porównaniu z obecnymi wymaga³y niewielkiego nak³adu finansowego oraz iloœci poœwiêconego czasu. Z tego powodu iloœæ osób zaanga¿owanych w produkcjê gry by³a niewielka -- zazwyczaj by³o to kilka osób. Doœæ czêsto zdarza³o siê, ¿e gry by³y tworzone przez pojedyncze osoby.
+
+Wraz z rozwojem informatyki, gry staj¹ siê coraz bardziej rozbudowane, co powoduje znaczny wzrost nak³adów finansowych i poœwiêconego czasu. Obecnie zdarza siê, ¿e do produkcji wielkich tytu³ów zaanga¿owanych jest ponad 1000 osób.
+
+\begin{quotation}
+\textit{,,Tak wygl¹da teraz nasza praca. Wszyscy pracuj¹ nad GTA czy RDR, a potem zajmujemy siê nowym projektem. Obecnie potrzebujemy ponad 1000 osób, by stworzyæ grê. To jest jedno z wymagañ, jednak nie chcemy tylu osób w jednym miejscu.''}\cite{PPE}
+\begin{flushright}
+Leslie Benzies, prezes Rockstar North
+\end{flushright}
+\end{quotation}
+
+Na drugim biegunie znajduj¹ siê gry indie. S¹ one tworzone przez ma³e zespo³y lub przez pojedyncze osoby bez udzia³u deweloperów i wydawców. Takie gry mog¹ byæ tworzone od kilku dni, tygodni do nawet kilku lat w zale¿noœci od z³o¿onoœci projektu i wielkoœci zespo³u. Niezale¿ne gry zazwyczaj s¹ projektami znacznie mniej rozbudowanymi od gier tworzonych przez profesjonalne studia. Brak wydawcy i dewelopera pozwala autorom na rozwijanie projektów oryginalnych. Autorzy niezale¿nych gier zwykle opieraj¹ siê na dystrybucji cyfrowej przez internet. Dobrym przyk³adem gry niezale¿nej jest \textit{Minecraft}. Pocz¹tkowe wersje zosta³y napisane przez jedn¹ osobê -- Markusa Perssona.
+
+\section{Proces produkcji}
+
+Gry g³ównego nurtu zwykle s¹ opracowywane w fazach. Najpierw jest tzw. \textit{preprodukcja}. Gdy zostanie przygotowana ju¿ wstêpna koncepcja, to nastêpnie s¹ projektowane elementy rozgrywki, pisana jest dokumentacja oraz tworzone s¹ prototypy. Jeœli projekt zostanie zatwierdzony przez kierownictwo, wtedy zaczyna siê etap \textit{produkcji w³aœciwej}.
+
+W fazie produkcji w³aœciwej zostaj¹ zaanga¿owane znaczne œrodki finansowe producenta oraz nastêpuje konsolidacja pracowników studia. W³aœnie w tej fazie produkcji gra jest rozwijana w pe³nej skali -- powstaje kod Ÿród³owy, grafika, dŸwiêk, muzyka. Wielkoœæ zespo³u pracuj¹cego nad dan¹ gr¹ zale¿y od wielkoœci studia, z³o¿onoœci gry oraz tempa produkcji. W popularnych i du¿ych produkcjach nad dan¹ gr¹ pracuje czêsto ponad 100 osób. Ka¿dy z pracowników odpowiada za inn¹ czêœæ projektu. W zespole znajduj¹ siê tacy specjaliœci jak: projektanci, graficy, muzycy, programiœci, testerzy. Tworzenie gry, tak jak tworzenie ka¿dej innej aplikacji, podlega cyklowi ¿ycia oprogramowania. Jest to seria kolejnych zmian w programie. W tym cyklu mo¿emy wyró¿niæ kilka etapów -- wersji gry. Pierwsz¹ z nich jest \textit{wersja robocza (pre-alpha)}, która dostêpna jest tylko dla twórców programu. Tak nazywana jest wersja gry od pocz¹tku pisania programu. Gdy zostan¹ zaimplementowane podstawowe funkcjonalnoœci, gra przechodzi do \textit{wersji alfa}. Jest to pierwsza wersja gry, która wychodzi poza grupê ludzi, przez któr¹ zosta³a napisana. Zwykle w tym etapie gra zawiera wiele b³êdów. W wersji alfa gra jest testowana przez osoby spoza zespo³u projektowego. Gdy wiêkszoœæ gry zosta³a ju¿ ukoñczona, wtedy wydawawana jest \textit{wersja beta}. W niej wszystkie funkcjonalnoœci zosta³y zaimplementowane, a autorzy g³ównie skupiaj¹ siê na usuwaniu b³êdów, które s¹ znajdowane przez profesjonalnych testerów. Czêsto wersje beta s¹ równie¿ ,,uwalniane'' do internetu przez producentów oprogramowania, aby chêtni u¿ytkownicy pomogli znajdowaæ b³êdy. Ostatni¹ wersj¹ przed oficjalnym wydaniem gry jest wersja \textit{RC (ang. Release Candidate -- Kandydat Do Wydania)}. Jest to etap produkcji, w którym gra jest uwa¿ana za skoñczon¹ i jedynie powa¿ne b³êdy mog¹ zatrzymaæ wydanie gry. Jeœli program zostanie uznany za gotowy, wtedy wersja RC staje siê ostateczn¹ i nazywana jest \textit{wersj¹ stabiln¹}. W tym momencie rozpoczyna siê proces wydawania oprogramowania na rynek.
+
+Po wydaniu gry rozpoczyna siê etap \textit{postprodukcji}, w którym nastêpuje konserwacja oprogramowania. W przesz³oœci, g³ównie na konsolach starszych generacji, etap postprodukcji praktycznie nie istnia³. Oprogramowanie by³o wypuszczane na rynek i na tym koñczy³a siê praca producenta. Po prostu po wydaniu jednej gry zaczyna³ siê kolejny proces produkcji nowej gry. Dopiero gdy znajdowano powa¿ne b³êdy w wydanej grze, wtedy tworzono poprawione wersje oprogramowania. Jednak w dzisiejszych czasach, gdy dostêp do internetu jest powszechny, etap postprodukcji znacznie siê przed³u¿y³. Autorzy gier ca³y czas pracuj¹ nad poprawianiem znalezionych b³êdów, wydaj¹c kolejne \textit{patch'e}. Dodatkowo gry s¹ ca³y czas rozbudowywane, dodawane s¹ nowe funkcjonalnoœci. Dziœ trudno jest ca³kowicie rozdzieliæ etap produkcji w³aœciwej i postprodukcji, gdy¿ po wydaniu gry czêsto jest doœæ intensywnie rozwijana przez autorów.
+
+Oczywiœcie proces produkcji trochê inaczej wygl¹da w grach niezale¿nych tworzonych przez niewielk¹ grupê osób b¹dŸ przez pojedynczego autora. Ma³e zespo³y s¹ bardziej elastyczne i mog¹ pozwoliæ sobie na pominiêcie niektórych etapów produkcji. Zazwyczaj nie jest potrzebna rozbudowana dokumentacja, ani prototypy, gdy¿ cz³onkowie zespo³u doskonale zdaj¹ sobie sprawê jak gra ma wygl¹daæ.
+
+
+\section{Jêzyki programowania}
+Gdy zostaje uzgodniona wstêpna koncepcja gry, nadchodzi moment wyboru jêzyka programowania. Wybór ten zale¿y od wielu czynników, tj. powszechna znajomoœæ jêzyka wœród programistów czy platforma docelowa, na któr¹ ma byæ wydana gra. Innym wa¿nym czynnikiem przy wyborze jêzyka programowania jest równie¿ wybór bibliotek, z których zamierzamy korzystaæ. Wiele bibliotek jest przenoœnych, tzn. dostêpne s¹ na ró¿ne systemy operacyjne. Czêsto podejmowanie decyzji o wyborze jêzyka idzie w parze z wyborem bibliotek.
+
+W dzisiejszych czasach w programowaniu popularne s¹ jêzyki zorientowane obiektowo, tj. \textit{C++, Java, C\#}. Jêzyk C++ uznawany jest za najpopularniejszy jêzyk programowania do tworzenia gier wymagaj¹cych du¿ych zasobów. Spowodowane jest to tym, ¿e kod Ÿród³owy napisany w C++ kompilowany jest bezpoœrednio do kodu binarnego. Oprócz tego programista ma wiêksze mo¿liwoœci pisania aplikacji w sposób niskopoziomowy ni¿ w jêzykach tj. Java i C\#.
+
+W jêzyku Java kod jest kompilowany do kodu poœredniego, który jest wykonywany przez wirtualn¹ maszynê. Dziêki temu powsta³a aplikacja jest niezale¿na od architektury komputera i systemu operacyjnego. Jednak jest to obarczone kosztem wydajnoœciowym. Aplikacje, które s¹ kompilowane do kodu poœredniego s¹ mniej wydajne od aplikacji kompilowanych do kodu binarnego. Dlatego jêzyk Java bardziej nadaje siê do pisania prostych gier mobilnych dostêpnych na wiele ró¿nych systemów ni¿ do pisania skomplikowanych gier wymagajaj¹cych du¿ej szybkoœci dzia³ania. Z tego powodu Java jest popularna w prostych grach wydawanych na urz¹dzenia mobilne.
+
+
+
+
+
+\section{Biblioteki}
+Bardzo wa¿n¹ decyzj¹ jest wybór bibliotek, z których zamierzamy korzystaæ przy programowaniu aplikacji. W dzisiejszych czasach istnieje bardzo wiele bibiliotek, które wspomagaj¹ proces programowania. Niektóre biblioteki jedynie obs³uguj¹ wyœwietlanie grafiki czy sterowanie dŸwiêkiem. Natomiast istniej¹ równie¿ biblioteki bardziej rozbudowane, które wspomagaj¹ praktycznie ca³y proces programowania gier. Oczywiœcie biblioteki mo¿na podzieliæ równie¿ pod wzglêdem grupy docelowej -- jedne s¹ bardzo ³atwe w nauce oraz s¹ przeznaczone raczej do prostszych produkcji. Przyk³adami takich bibliotek s¹ np. \textit{Allegro} oraz \textit{SDL}. Natomiast inne dla nowicjuszy mog¹ byæ trudne w programowaniu, ale za to posiadaj¹ ogromne mo¿liwoœci i czêsto s¹ wykorzystywane w produkcjach komercyjnych. \textit{DirectX} oraz \textit{OpenGL} s¹ przyk³adami takich bibliotek.
+
+Wybór danych bibliotek zale¿y od platformy, na któr¹ ma zostaæ wydana gra. Wiele bibliotek jest przenoœnych (Allegro, OpenGL, SDL) na ró¿ne systemy operacyjne. Jednak istniej¹ równie¿ biblioteki, które nie s¹ przenoœne. DirectX jest przyk³adem takiej biblioteki. DirectX jest dostêpny jedynie na ,,produkty'' firmy Microsoft: system operacyjny Windows oraz konsolê Xbox.
+
+Obecnie wiêkszoœæ komercyjnych produkcji na system operacyjny Windows wykorzystuje bibliotekê DirectX. Jeœli wydawca gry chcia³by wydaæ grê np. na system Linux, musia³by przepisaæ grê na inn¹ bibliotekê. Przyk³adowo gra \textit{SimCity} na systemie operacyjnym Windows korzysta z DirectX. Natomiast ta sama gra wydana pod system Linux korzysta ju¿ z biblioteki SDL.
+
+
+
+\section{Œrodowiska programistyczne}
+Gry komputerowe tak jak inne programy s¹ generowane z kodu Ÿród³owego do pliku wykonywalnego przez kompilator. Kod Ÿród³owy mo¿e byæ pisany w wielu edytorach tekstu, np. w Notatniku w systemie Windows. Nastêpnie kod Ÿród³owy nale¿y skompilowaæ za pomoc¹ specjalnego programu -- kompilatora, który t³umaczy kod napisany przez programistê na kod maszynowy zrozumia³y dla komputera.
+
+Jednak aby uproœciæ i przyspieszyæ tworzenie oprogramowania powstaj¹ tzw. \textit{IDE (Integrated Development Environment -- Zintegrowane Œrodowiska Programistyczne)}. IDE s¹ aplikacjami, która dostarczaj¹ programistom kompleksowe narzêdzia do tworzenia oprogramowania. Zintegrowane œrodowiska programistyczne zazwyczaj zawieraj¹ edytor kodu Ÿród³owego, kompilator, debugger oraz inne narzêdzia s³u¿¹ce do automatyzacji tworzenia kodu. Oczywiœcie IDE nie jest konieczne, aby tworzyæ oprogramowanie, ale pozwala ten proces znacznie uproœciæ i przyspieszyæ.
+
+Czêsto zintegrowane œrodowiska programistyczne pozwalaj¹ na tworzenie aplikacji w ró¿nych jêzykach. Jednak zazwyczaj IDE s¹ tworzone pod konkretne jêzyki programowania. Przyk³adowo \textit{Code::Blocks} oraz \textit{Dev-C++} zosta³y napisane z myœl¹ o jêzyku C/C++. Z kolei \textit{Eclipse} oraz \textit{NetBeans} g³ównie s¹ wykorzystywane przy pisaniu aplikacji w jêzyku Java. Microsoft posiada ca³y ,,zestaw'' zintegrowanych œrodowisk programistycznych pod nazw¹ \textit{Visual Studio}. U³atwiaj¹ one równie¿ pisanie aplikacji graficznych, dziêki mo¿liwoœci tworzenia interfejsu graficznego aplikacji za pomoc¹ kontrolek. Na rysunku \ref{fig:VisualCSharp} znajduje siê screen ze œrodowiska programistycznego Visual C\# 2010 Express.
+
+\begin{figure}
+\centering
+\includegraphics[width=15cm]{ideVisual.png}
+\caption{Screen z IDE \textit{Microsoft Visual C\# 2010 Express}}
+\label{fig:VisualCSharp}
+\end{figure}
+
+
+\section{Inne narzêdzia}
+Korzystanie z gotowych rozwi¹zañ znajduj¹cych siê w bibliotekach oraz tworzenie kodu w zintegrowanych œrodowiskach programistycznych znacznie u³atawiaj¹ tworzenie oprogramowania. Oczywiœcie poza tymi narzêdziami s¹ inne, które wspomagaj¹ proces programowania aplikacji. Przy tworzeniu gier, w których przedstawiony œwiat jest trójwymiarowy, wykonywane s¹ ró¿ne modele postaci, przedmiotów i ca³ego otoczenia. W³aœnie przy pracach nad takimi rzeczami wykorzystywane jest specjalne oprogramowanie do tworzenia trójwymiarowych modeli. Przyk³adami programów do grafiki 3d s¹ m. in. \textit{Blender} oraz \textit{3ds Max}.
+
+Blender jest profesjonalnym i darmowym programem, wydawanym na licencji GNU GPL (General Public License). Program jest rozwijany przez Blender Foundation. Dostêpny jest na wiele systemów operacyjnych, tj. Windows, Linux, OS X. Wbrew pozorom, które mo¿na odnieœæ przez to, ¿e Blender jest darmowym oprogramowaniem, jest to profesjonalne œrodowisko u¿ywane przez ludzi pracuj¹cych w ró¿nych bran¿ach. Podstawow¹ funkcjonalnoœci¹ programu jest modelowanie obiektów. Mog¹ one zostaæ wykorzystane np. w grach. Z prostych obiektów mo¿na stworzyæ otoczenie, które przypomina œwiat rzeczywisty. Takie otoczenie mo¿e byæ wykorzystane do renderowania obrazów b¹dŸ animacji. Blender nadaje siê do tworzenia filmów animowanych, co udowodnili m.in. twórcy filmu \textit{Sintel}\cite{Sintel}. Trójwymiarowe modele, które zosta³y stworzone za pomoc¹ Blendera nie musz¹ pozostaæ w œwiecie wirtualnym. Program pozwala na wydrukowanie ich za pomoc¹ drukarek 3d\cite{BlenderDruk3d}.
+
+3ds Max jest to profesjonalny i komercyjny program s³u¿¹cy do tworzenia trójwymiarowych modeli, obrazów, animacji i gier. Wydawany jest na system operacyjny Microsoft Windows przez firmê Autodesk. 3ds Max jest bardzo rozbudowanym programem, pozwalaj¹cym na obs³ugê wielu rozszerzeñ. Posiada równie¿ w³asny jêzyk skryptowy. Najpopularniejszymi zastosowaniami programu s¹ tworzenie gier komputerowych oraz wizualizacje œwiata rzeczywistego. 3ds Max czêsto jest wykorzystywany przy produkcji filmów animowanych jak i efektów specjalnych w zwyk³ych filmach. Przyk³adowo krótkometra¿owy film \textit{Katedra} Tomasza Bagiñskiego powsta³ w 3ds Max\cite{3dsMax}. Oprócz tego oprogramowanie jest równie¿ wykorzystywane do wizualizacji architektonicznych. 
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Aplikacja}
+\section{Koncepcja gry}
+Gra jest przedstawicielem gatunku mened¿erów pi³karskich. Jest to typ gier ³¹cz¹cy w sobie elementy symulacji, gier strategicznych i sportowych. Gra jest aplikacj¹ okienkow¹. Interfejs u¿ytkownika (przyciski, tabele) s¹ typowe dla aplikacji pracuj¹cych w systemie Windows.
+
+W grze wcielamy siê w rolê mened¿era klubu. Stajemy siê zarówno kierownikiem jak i trenerem dru¿yny. Do wyboru mamy dwa tryby gry: mo¿emy rozegraæ mecz towarzyski lub rozpocz¹æ tryb mened¿era. W meczu towarzyskim rozgrywamy pojedyncze spotkanie wybranymi przez nas dru¿ynami. Przed rozpoczêciem meczu mo¿emy przegl¹daæ pi³karzy, ich umiejêtnoœci oraz ustaliæ wyjœciow¹ jedenastkê pi³karzy. W oknie taktyka ustalamy formacjê, ustawienie, pressing, poziom agresji, kapitana dru¿yny czy wykonawcê sta³ych fragmentów gry.
+
+Natomiast w trybie mened¿era wybieramy zespó³, który chcemy poprowadziæ przez sezon ligowy. W lidze gra 16 dru¿yn. Jest 30 kolejek po 8 meczów, co daje 240 spotkañ w ca³ym sezonie. Pomiêdzy kolejkami mo¿emy dokonywaæ zmian w sk³adzie, formacji, ustawienia dru¿yny. Celem gracza jest wygrywanie meczów i zajêcie jak najlepszej pozycji w lidze.
+
+
+\section{Wykorzystane technologie informatyczne}
+Jêzykiem programowania wykorzystanym do napisania aplikacji jest \textit{C\#}. Jest to jêzyk o uniwersalnym przeznaczeniu. Dobrze nadaje siê do pisania aplikacji okienkowych pod system Windows. Narzuca pisanie programów w paradygmacie obiektowym, który jest standardem w obecnych czasach -- zw³aszcza przy pisaniu aplikacji w trybie graficznym oraz gier komputerowych. O takim wyborze zadecydowa³o to, ¿e wywodzi siê z jêzyka \textit{C++}, od którego wed³ug mnie ró¿ni siê tym, ¿e posiada wiele ciekawych rozwi¹zañ i udogodnieñ, które pozwalaj¹ programiœcie bardziej skupiæ siê na czêœci logicznej aplikacji. Jêzyk C\# posiada m. in. mechanizm odzyskiwania pamiêci (Garbage Collector), który uwalnia programistê od problemów z zarz¹dzaniem pamiêci¹, tj. przecieki pamiêci \cite[str.~20]{CSharp}. Wraz z wyborem jêzyka C\# zosta³y dwa interfejsy s³u¿¹ce do programowania aplikacji graficznych w systemie Windows:
+\begin{itemize}
+	\item \textit{Windows Forms}
+	\item \textit{Windows Presentation Foundation}
+\end{itemize}
+
+Do utworzenia interfejsu graficznego zosta³o u¿yte \textit{Windows Presentation Foundation}. Jest to ciekawa technologia firmy Microsoft, która pozwala oddzieliæ czêœæ wizualn¹ aplikacji od czêœci logicznej. Czêœæ wizualn¹ piszemy za pomoc¹ jêzyka \textit{XAML (eXtensible Application Markup Language)}, który jest ,,odmian¹'' \textit{XML} stworzon¹ przez Microsoft. W XAML skupiamy siê jedynie na wygl¹dzie aplikacji. U¿ywamy do tego znaczników, które znamy z jêzyka HTML. Natomiast ca³a czêœæ logiczna aplikacji jest ju¿ pisana za pomoc¹ zwyk³ego kodu w oddzielnym pliku. Oprócz tego \textit{WPF} korzysta z DirectX do renderowania grafiki \cite[str. 19]{WPF}. Pozwala to na wykorzystanie karty graficznej przy dzia³aniu aplikacji napisanej w WPF.
+
+Wybranym œrodowiskiem programistycznym jest \textit{Visual C\# 2010 Express}. Jest to wersja darmowa, zawieraj¹ca wszystkie niezbêdne narzêdzia do tworzenia aplikacji komputerowych. Na taki wybór wp³ynê³o to, ¿e Visual C\# wspiera wymieniony ju¿ wy¿ej interfejs -- Windows Presentation Foundation.
+
+Aplikacja korzysta z relacyjnej bazy danych za pomoc¹ jêzyka \textit{SQL}. O takim wyborze zadecydowa³o to, ¿e dobrze jest przedstawiaæ dane z paradygmatu obiektowego w postaci relacyjnej bazy danych. Do stworzenia bazy zosta³ wykorzystany \textit{Microsoft Access 2010}. Aplikacja ³¹czy siê z baz¹ danych za pomoc¹ interfejsu \textit{OleDB}.
+
+
+
+\section{Struktura aplikacji -- spis klas}
+Gra zosta³a napisana w obiektowym paradygmacie programowania. W aplikacji jest 11 klas odpowiadaj¹cych tylko za czêœæ logiczn¹ gry. Dodatkowo do napisania interfejsu graficznego zosta³o utworzonych 15 \textit{kontrolek}\footnote{Kontrolki (obiekty kontrolne) s¹ to elementy interfejsu tj. przyciski, listy wyboru, pola wyboru czy pola tekstowe wykorzystywane w aplikacjach pracuj¹cych na danym systemie operacyjnym. Wiele obiektów kontrolnych jest wbudowanych w system operacyjny.} u¿ytkownika (\textit{User Control}), z czego ka¿da kontrolka jest równie¿ oddzieln¹ klas¹. 
+
+\subsection{Czêœæ logiczna}
+
+\begin{itemize}
+\item \textit{Akcja} -- Jest przedstawieniem jednej akcji meczowej. Akcji jest 90 -- tyle ile minut trwa mecz pi³karski. Zawiera jedynie trzy zmienne: \textit{minuta, komentarz} oraz \textit{pilkePosiadaGospodarz.}
+\item \textit{BazaDanych} -- S³u¿y do wczytywania danych z bazy. Istnieje jedna instancja tej klasy i dostêp do niej jest globalny. W tej klasie tworzone s¹ tablice obiektów klubów, pi³karzy, mened¿erów.
+\item \textit{Generator} -- Klasa s³u¿¹ca do generowania danych, tj. kluby, mened¿erowie, pi³karze i umieszczania ich w relacyjnej bazie danych.
+\item \textit{Klub} -- Zawiera wszystkie informacje o klubie, w tym listê pi³karzy (tablica obiektów \textit{Pilkarz}), taktykê, statystyki klubu. Oprócz tego, w tej klasie znajduj¹ siê ró¿ne metody, m. in. odpowiadaj¹ce za obliczanie poziomów dru¿yn.
+\item \textit{Kolejka} -- Jest przedstawieniem kolejki ligowej. Zawiera konstruktor przypisuj¹cy mecze danym kolejkom, tak aby wszystkie dru¿yny rozegra³y mecze ka¿dy z ka¿dym dwukrotnie.
+\item \textit{Liga} -- Odpowiada za obs³ugê rozgrywania sezonu ligowego. W tej klasie znajduj¹ siê m.in. tabela, kluby, kolejki oraz metody \textit{rozegrajKolejke}, \textit{sprawdzMiejsce} czy \textit{uaktualnijStatystyki.}
+\item \textit{Mecz} -- Klasa, która odpowiada za symulacjê meczu. Sk³ada siê m. in. z 90 obiektów klasy \textit{Akcja} oraz listy obiektów \textit{Zdarzenie}.
+\item \textit{Mened¿er} -- Zawiera dane osobowe na temat mened¿era. W tej klasie znajduj¹ siê metody odpowiedzialne za ustalanie optymalnych sk³adów dru¿yn.
+\item \textit{Pilkarz} -- Klasa bêd¹ca przedstawieniem pi³karza. Zawiera jego dane osobowe, przynale¿noœæ do klubu, poziomy umiejêtnoœci.
+\item \textit{Tabela} -- Jest wykorzystywana do przedstawienia tabeli ligowej. Zawiera tablicê obiektów \textit{Klub} oraz metody odpowiedzialne m. in. za sortowanie.
+\item \textit{Zdarzenie} -- Klasa przedstawiaj¹ca zdarzenie w meczu pi³karskim. Takim zdarzeniem jest zdobycie gola czy podyktowanie rzutu karnego. Przyk³adowo, gdy jedna z dru¿yn zdobêdzie gola, tworzony jest obiekt tej klasy wraz z podan¹ minut¹ meczu, strzelcem gola oraz informacj¹, ¿e zdarzeniem jest zdobyta bramka.
+\end{itemize}
+
+
+\subsection{Interfejs graficzny i obs³uga zdarzeñ}
+\textit{MainWindow} jest klas¹ dziedzicz¹c¹ po \textit{Windows}, co oznacza, ¿e jest to kontrolka -- okno. Reszta klas, oprócz \textit{App}, dziedziczy po \textit{UserControl}, tzn. s¹ kontrolkami u¿ytkownika. \textit{MainWindow} pe³ni rolê swoistego pojemnika na obiekty \textit{UserControl}. W \textit{MainWindow} s¹ umieszczone kontrolki, których nazwa zaczyna siê od \textit{Okno}. Wszystkie one oprócz \textit{OknoGlowne} maj¹ ustaln¹ widocznoœæ na ukryt¹. W przypadku przechodzenia pomiêdzy podstronami aplikacji, widocznoœci poszczególnych kontrolek zmieniaj¹ siê.
+
+\begin{itemize}
+\item \textit{App}
+\item \textit{Boisko}
+\item \textit{MainWindow}
+\item \textit{OknoDruzynyTrybMenedzera}
+\item \textit{OknoGlowne}
+\item \textit{OknoMecz}
+\item \textit{OknoMeczTowarzyski}  
+\item \textit{OknoOGrze}           
+\item \textit{OknoPoMeczu}         
+\item \textit{OknoPrzedMeczem}     
+\item \textit{OknoSklad}           
+\item \textit{OknoTabela}          
+\item \textit{OknoTaktyka}         
+\item \textit{OknoTerminarz}       
+\item \textit{OknoTerminarzDruzyny}
+\item \textit{OknoTrybMenedzera}   
+\end{itemize}
+
+
+\section{Baza danych}
+Aplikacja korzysta z relacyjnej bazy danych za pomoc¹ jêzyka \textit{SQL}. Baza danych zosta³a stworzona w programie \textit{Microsoft Access 2010}. W aplikacji znajduj¹ siê dwie klasy ³¹cz¹ce siê z baz¹ danych. S¹ to: \textit{Generator} i \textit{BazaDanych}. Obydwie ³¹cz¹ siê z baz¹ za pomoc¹ interfejsu \textit{OleDB}.
+
+\subsection{Struktura relacji}
+Baza danych sk³ada siê z dwóch plików:
+\begin{itemize}
+\item \textit{generator} -- tabele s³u¿¹ce do generowania danych:
+	\begin{itemize}
+	\item \textit{Imie} -- spis imion s³u¿¹cy do generowania danych osobowych pi³karzy i mened¿erów;
+	\item \textit{Nazwisko} -- spis nazwisk s³u¿¹cy do generowania danych osobowych pi³karzy i mened¿erów;
+	\item \textit{NazwaKlubu} -- spis nazw klubów s³u¿¹cy do generowania pe³nych nazw klubów sk³adaj¹cych siê z nazwy klubu i miasta;
+	\item \textit{Miasto} -- spis miast wykorzystywanych do generowania drugiej czêœci nazwy klubów;
+	\end{itemize}
+\item \textit{baza danych} -- tabele przechowuj¹ce ju¿ wygenerowane dane wykorzystywane bezpoœrednio w grze:
+	\begin{itemize}
+	\item \textit{Klub} -- spis wszystkich klubów wystêpuj¹cych w rozgrywkach;
+	\item \textit{Pilkarz} -- spis wszystkich pi³karzy wystêpuj¹cych w rozgrywkach wraz z przypisaniem do klubu;
+	\item \textit{Mened¿er} -- spis wszystkich mened¿erów prowadz¹cych kluby;
+	\item \textit{StanGry} -- w tej tabeli przechowywane s¹ szczegó³y dotyczace zapisu gry;
+	\item \textit{Mecz} -- lista zapisanych meczów.
+	\end{itemize}
+\end{itemize}
+
+\subsection{Generowanie losowych danych -- klasa \textit{Generator}}
+Za obs³ugê generowania danych odpowiada klasa \textit{Generator}. W tabelach \textit{Imie, Nazwisko, NazwaKlubu, Miasto} w bazie \textit{generator} znajduj¹ siê wpisane dane, na podstawie których aplikacja generuje pi³karzy, mened¿erów i kluby. Jest oko³o 80 imion, ponad 900 nazwisk, ponad 60 nazw klubów oraz 30 miast. Proces generowania danych odbywa siê etapami.
+
+Najpierw aplikacja ³¹czy siê z baz¹ \textit{generator}. Zostaj¹ wczytane imiona, nazwiska, nazwy klubów, miasta. Nastêpnie, w czasie dzia³ania aplikacji, rekordy poszczególnych tabel s¹ dobierane losowo. Na podstawie tych danych tworzone s¹ nowe elementy -- kluby b¹dŸ osoby. Zostaj¹ one umieszczone w pliku \textit{baza danych}.
+
+Przyk³adowo spoœród wszystkich imion i nazwisk dla ka¿dego pi³karza zostanie wylosowane imiê i nazwisko. Oprócz tego losowane bêd¹ jego umiejêtnoœci, rok urodzenia. Zgodnie z tym schematem zostanie wylosowanych 320 pi³karzy, 16 klubów i 16 mened¿erów. Aby zapisaæ wygenerowane dane aplikacja po³¹czy siê z plikiem \textit{baza danych} i utworzy rekordy odpowiadaj¹ce pi³karzom, klubom, mened¿erom.
+
+
+\begin{figure}
+\centering
+\includegraphics[width=14cm]{klasaBazaDanychGenerator.png}
+\caption{Diagramy klas \textit{BazaDanych, Generator}}
+\label{fig:klasaBazaDanychGenerator}
+\end{figure}
+
+
+\subsection{Wczytywanie zapisanych danych -- klasa \textit{BazaDanych}}
+Do wczytywania danych wykorzystywana jest klasa \textit{BazaDanych}. W niej znajduj¹ siê funkcje opowiadaj¹ce za pobieranie rekordów z bazy. Na listingu \ref{tab:wczytajPilkarzy} przedstawiona jest metoda \textit{wczytajPilkarzy}. Poni¿ej znajduje siê zwiêz³y opis tego, co siê dzieje w konstruktorze klasy znajduj¹cego siê na listingu \ref{tab:konstruktor}. Najpierw klasa ³¹czy siê z baz¹ znajduj¹c¹ siê w pliku \textit{baza danych}. Kolejno s¹ wczytywane kluby, pi³karze i mened¿erowie. Nastêpnie klubom przypisywani s¹ mened¿erowie i na odwrót -- mened¿erom przypisywane s¹ kluby. Mówi¹c bardziej ,,programistycznie'' -- w obiekcie klasy \textit{Klub} znajduje siê referencja do obiektu klasy \textit{Menedzer}. Podobnie klubom przypisywani s¹ pi³karze. Z t¹ ró¿nic¹, ¿e \textit{Klub} zawiera tablicê 20 obiektów klasy \textit{Pilkarz}. Na sam koniec poszczególnym pi³karze s¹ sortowani wed³ug numerów, obliczane s¹ poziomy klubów i uaktalniane wyjœciowe jedenastki.
+
+\begin{table}[H!b]
+\caption{Metoda \textit{wczytajPilkarzy} klasy \textit{BazaDanych}}
+\label{tab:wczytajPilkarzy}
+\begin{footnotesize}
+\begin{verbatim}
+void wczytajPilkarzy()
+{
+  try
+  {
+    polaczenie.Open();
+    zapytanie = new OleDbCommand("SELECT * FROM Pilkarz ORDER BY Nazwisko",
+      polaczenie);
+    adapter = new OleDbDataAdapter(zapytanie);
+    dane = new DataSet();
+    adapter.Fill(dane, "Dane");
+    for (int i = 0; i < iloscPilkarzy; i++)
+    {
+      pilkarze[i] = new Pilkarz( ... );
+    }
+    polaczenie.Close();
+  }
+  catch (OleDbException e)
+  {
+    polaczenie.Close();
+    wyswietlWiadomosc(e.Message);
+  }
+}
+\end{verbatim}
+\end{footnotesize}
+\end{table}
+
+\begin{table}
+\caption{Konstruktor klasy \textit{BazaDanych}}
+\label{tab:konstruktor}
+\begin{footnotesize}
+\begin{verbatim}
+BazaDanych()
+{
+  try
+  {
+    polaczenie = new OleDbConnection();
+    polaczenie.ConnectionString = @"Provider=Microsoft.ACE.OLEDB.12.0;
+                                    Data Source=..\..\..\baza danych.accdb;";
+    polaczenie.Open();
+    zapytanie = new OleDbCommand("SELECT COUNT(*) FROM Klub", polaczenie);
+    iloscKlubow = (int)zapytanie.ExecuteScalar();
+    zapytanie = new OleDbCommand("SELECT COUNT(*) FROM Pilkarz", polaczenie);
+    iloscPilkarzy = (int)zapytanie.ExecuteScalar();
+    kluby = new Klub[iloscKlubow];
+    menedzerowie = new Menedzer[iloscKlubow];
+    pilkarze = new Pilkarz[iloscPilkarzy];
+    polaczenie.Close();
+  }
+  catch (Exception e)
+  {
+    polaczenie.Close();
+    wyswietlWiadomosc(e.Message);
+    blad = true;
+  }
+  if (blad == false)
+  {
+    wczytajKluby();
+    wczytajPilkarzy();
+    wczytajMenedzerow();
+    przypiszMenedzerowKlubom();
+    przypiszPilkarzyKlubom();
+    for (int i = 0; i < iloscKlubow; i++)
+    {
+        kluby[i].sortujPilkarzWedlugNumerow();
+        kluby[i].obliczPoziomy();
+        kluby[i].uaktualnijWyjsciowa11();
+    }
+  }
+}
+\end{verbatim}
+\end{footnotesize}
+\end{table}
+
+
+
+\section{\textit{Windows Presentation Foundation}}
+
+\subsection{Czêœæ wizualna -- tworzenie interfejsu u¿ytkownika}
+Gra jest aplikacj¹ okienkow¹. Do utworzenia czêœci wizualnej i obs³ugi zdarzeñ zosta³a wykorzystana technologia \textit{Windows Presentation Foundation (WPF)}. Jest to interfejs s³u¿¹cy do pisania aplikacji graficznych pod system Windows. Tym czym siê wyró¿nia WPF od innych interfejsów API jest rozdzielenie czêœci wizualnej od logicznej. Czêœæ wizualn¹ aplikacji piszemy w dokumencie \textit{XAML -- eXtensible Application Markup Language}. Jest to jêzyk opisu interfejsu u¿ytkownika. XAML opiera swoj¹ sk³adniê na XML. Pisanie czêœci wizualnej aplikacji trochê przypomina pisanie dokumentu HTML strony internetowej. Pliki czêœci wizualnej maj¹ rozszerzenie xaml. Natomiast czêœæ logiczn¹ piszemy zwyk³ym kodem w jêzyku C\# w plikach z rozszerzeniem xaml.cs.
+
+W tworzeniu aplikacji szeroko zosta³y wykorzystane \textit{User Control} -- kontrolki tworzone przez u¿ytkownika. User Control pozwala na stworzenie kontrolki sk³adaj¹cej siê z wielu zwyk³ych kontrolek. W aplikacji User Control zosta³o u¿yte do stworzenia sieci podstron. Program sk³ada siê z \textit{MainWindow} -- okna aplikacji. W \textit{MainWindow} znajduj¹ siê wszystkie kontrolki wykorzystywane jako podstrony. Fragment kodu XAML klasy \textit{MainWindow} znajduje siê na listingu \ref{tab:MainWindowXAML}. Wszystkie podstrony oprócz User Control \textit{OknoGlowne} maj¹ ustawion¹ widocznoœæ na ukryt¹.
+
+
+\begin{table}
+\caption{Kod \textit{XAML} klasy \textit{MainWindow}}
+\label{tab:MainWindowXAML}
+\begin{footnotesize}
+\begin{verbatim}
+<Window x:Class="Football_Manager.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ucl="clr-namespace:Football_Manager"
+    Title="Mened¿er pi³karski"
+    Height="600" Width="800"
+    ResizeMode="CanMinimize">
+  <Grid ShowGridLines="False" Margin="5">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="135"/>
+      <RowDefinition/>
+    </Grid.RowDefinitions>
+    <Image Grid.Row="0" Margin="0 10 0 0" VerticalAlignment="Center"
+      Source="logo.png"/>
+    <Grid Grid.Row="1" ShowGridLines="False" Margin="5">
+      <ucl:OknoGlowne x:Name="oknoGlowne" Visibility="Visible"/>
+      <ucl:OknoMeczTowarzyski x:Name="oknoMeczTowarzyski" Visibility="Hidden"/>
+      <ucl:OknoDruzynyTrybMenedzera x:Name="oknoDruzynyTrybMenedzera"
+           Visibility="Hidden"/>
+      <ucl:OknoOGrze x:Name="oknoOGrze" Visibility="Hidden"/>
+      <ucl:OknoTrybMenedzera x:Name="oknoTrybMenedzera" Visibility="Hidden"/>
+      <ucl:OknoSklad x:Name="oknoSklad" Visibility="Hidden"/>
+      <ucl:OknoTaktyka x:Name="oknoTaktyka" Visibility="Hidden"/>
+      ...
+    </Grid>
+  </Grid>
+</Window>
+\end{verbatim}
+\end{footnotesize}
+\end{table}
+
+
+\subsection{Czêœæ logiczna -- obs³uga zdarzeñ}
+W Windows Presentation Foundation czêœæ logiczna aplikacji zosta³a widocznie rozdzielona od czêœci wizualnej. Aby dodaæ obs³ugê zdarzeñ dla kontrolki najpierw podajemy jej nazwê, a potem dopisujemy typ zdarzenia wraz z jego nazw¹.
+
+Na listingu \ref{tab:ButtonXAML}, mamy definicjê przycisku. Posiada nazwê \textit{OGrze} oraz deklaracjê obs³ugi zdarzenia \textit{Click} (wciœniêcie przycisku) o nazwie \textit{OGrze\_Click}. Z kolei na listnigu \ref{tab:ButtonCode} jest fragment kodu z pliku xaml.cs. Szkielet funkcji jest tworzony automatycznie, gdy zadeklarujemy zdarzenie w pliku xaml. W tej funkcji ukrywamy obecne okno oraz zmieniamy stan \textit{OknoOGrze} na widoczne. Obs³uga okienek, tzn. zmiana ich widocznoœci w ca³ej aplikacji zosta³a napisana w podobny sposób.
+
+\begin{table}
+\caption{Opis przycisku za pomoc¹ kodu \textit{XAML}}
+\label{tab:ButtonXAML}
+\begin{footnotesize}
+\begin{verbatim}
+<Button Grid.Row="4" Margin="10" Name="OGrze" Click="OGrze_Click">O grze</Button>
+\end{verbatim}
+\end{footnotesize}
+\end{table}
+
+\begin{table}
+\caption{Metoda obs³uguj¹ca klikniêcie przycisku}
+\label{tab:ButtonCode}
+\begin{small}
+\begin{verbatim}
+private void OGrze_Click(object sender, RoutedEventArgs e)
+{
+     this.Visibility = Visibility.Hidden;
+     OknoOGrze.instancja.Visibility = Visibility.Visible;
+}
+\end{verbatim}
+\end{small}
+\end{table}
+
+
+
+
+
+\newpage
+\section{Drzewa decyzyjne}
+
+\begin{definicja}
+Drzewem \textnormal{nazywamy graf spójny bez cykli, to znaczy taki graf, w którym dla ka¿dej pary wierzcho³ków $u,v \in V(G)$ istnieje œcie¿ka o koñcach w $u$ i $v$, ale ¿adna œcie¿ka d³ugoœci co najmniej dwa nie jest zamkniêta krawêdzi¹ ³¹cz¹c¹ jej koñce. Drzewo na $n$ wierzcho³kach ma oczywiœcie $n - 1$ krawêdzi. Wynika st¹d, ¿e suma stopni wierzcho³ków drzewa wynosi $2(n - 1)$. Ponadto drzewo posiada co najmniej dwa wierzcho³ki stopnia 1 (zwane \textit{wierzcho³kami wisz¹cymi})\cite{WykladyZKombinatoryki}.}
+\end{definicja}
+
+Zatem, graf jest drzewem, je¿eli jest spójny i acykliczny. Graf jest spójny wtedy, gdy pomiêdzy ka¿dymi dwoma wierzcho³kami istnieje œcie¿ka je ³¹cz¹ca. Drzewo musi byæ acykliczne, tzn. nie mo¿na z ¿adnego wierzcho³ka przejœæ grafu i wróciæ do niego samego. Liœæmi drzewa nazywa siê wêz³y (wierzcho³ki), z których nie wywodz¹ siê inne krawêdzie. Natomiast wêz³y wewnêtrzne s¹ to wierzcho³ki, które nie s¹ koñcowe, tzn. wywodz¹ siê z nich inne krawêdzie. Na rysunku \ref{fig:drzewo} znajduje siê przyk³ad drzewa binarnego.
+
+\textit{Drzewami decyzyjnymi} nazywa siê drzewa s³u¿¹ce do graficznego przedstawienia procesu decyzyjnego. S¹ szczególnie przydatne przy podejmowaniu decyzji, gdy do wyboru mamy wiele rozga³êziaj¹cych siê wariantów. Drzewo decyzyjne zawiera etykiety. Wêz³y wewnêtrzne odpowiadaj¹ testom na wartoœciach atrybutów. Drzewo decyzyjne w danym wêŸle posiada tyle rozga³êzieñ, ile jest mo¿liwych wyników testu. Liœcie s¹ wynikami tych testów i zawieraj¹ decyzjê o klasyfikacji przyk³adów. Tworz¹c program na podstawie drzewa decyzyjnego w praktyce programujemy same instrukcje warunkowe.
+
+\begin{figure}[b]
+\centering
+\includegraphics[scale=0.55]{drzewo.png}
+\caption{Drzewo binarne}
+\label{fig:drzewo}
+\end{figure}
+
+
+
+\section{Ustalanie sk³adów}
+
+Gdy rozgrywamy mecz towarzyski, mo¿emy ustalaæ sk³ad naszej dru¿yny (rysunek \ref{fig:aplikacjaSklad}). Natomiast ustawienie pierwszej jedenastki pi³karzy przeciwnika jest ustalane przez komputer. Podobnie jest w trybie mened¿era, w którym kierujemy jednym z 16 zespo³ów. W przypadku pozosta³ych 15 dru¿yn, ich optymalne sk³ady równie¿ s¹ ustalane przez komputer. Za wybór sk³adów dru¿yn przeciwników odpowiada klasa \textit{Menedzer}. Znajduj¹ siê w niej m. in. metody:
+\begin{itemize}
+\item \textit{ustalNajlepszePozycjeDlaPilkarzy  }
+\item \textit{obliczIluJestPilkarzyNaDanePozycje}
+\item \textit{sortuj                            }
+\item \textit{zbilansujPozycjePilkarzy          }
+\item \textit{ustalNajlepszySklad               }
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics[width=15cm]{aplikacjaSklad.png}
+\caption{Screen z aplikacji przedstawiaj¹cy sk³ad dru¿yny}
+\label{fig:aplikacjaSklad}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\includegraphics[width=15cm]{drzewoDecyzyjne.png}
+\caption{Drzewo decyzyjne -- znajdowanie najlepszej pozycji dla pi³karzy}
+\label{fig:drzewoDecyzyjne}
+\end{figure}
+
+W pierwszej kolejnoœci ustalane s¹ najlepsze pozycje (bramkarz, obroñca, pomocnik, napastnik) dla zawodników. Do ustawienia sk³adu zosta³o zastosowane drzewo decyzyjne (rysunek \ref{fig:drzewoDecyzyjne}). Listing \ref{tab:ustalNajlepszePozycjeDlaPilkarzy} przedstawia kod metody odpowiedzialnej za ustalanie pozycji pi³karzy. Nastêpnie obliczane jest, ilu pi³karzy ma ustalon¹  dan¹ pozycjê. W kolejnym kroku odbywa siê sortowanie graczy. Aby gra nie by³a zbyt trudna -- jest to sortowanie ,,odwrócone''. Do wyjœciowego sk³adu nie dostaj¹ sie najlepsi pi³karze. Nastêpnie bilansowane s¹ pozycje pi³karzy. Jeœli na którejœ z pozycji jest za ma³o pi³karzy, przesuwani s¹ zawodnicy z tych, w których s¹ nadmiarowe iloœci. Przyk³adowo, jeœli w dru¿ynie jest 7 obroñców (pi³karzy maj¹cych najlepsze umiejêtnoœci w obronie) oraz 3 pomocników przy formacji 4-4-2, wtedy jeden z obroñców staje siê pomocnikiem. Na sam koniec, w metodzie \textit{ustalNajlepszySklad()} do tablicy obiektów \textit{Pilkarz} przypisywana jest nowa kolejnoœæ pi³karzy w sk³adzie. Pierwszych 11 pi³karzy spoœród 20 bêdzie uczestniczy³o w nastêpnym meczu.
+
+\begin{table}
+\caption{Metoda \textit{ustalNajlepszePozycjeDlaPilkarzy} klasy \textit{Menedzer}}
+\label{tab:ustalNajlepszePozycjeDlaPilkarzy}
+\begin{footnotesize}
+\begin{verbatim}
+void ustalNajlepszePozycjeDlaPilkarzy()
+{
+  for (int i = 0; i < klub.iloscPilkarzy; i++)
+  {
+    if (klub.pilkarze[i].umBramkarskie > klub.pilkarze[i].skutecznosc)
+    {
+      if (klub.pilkarze[i].umBramkarskie > klub.pilkarze[i].defensywa)
+      {
+        if (klub.pilkarze[i].umBramkarskie > klub.pilkarze[i].rozgrywanie)
+          klub.pilkarze[i].najlepszaPozycja = Pozycja.bramkarz;
+        else
+          klub.pilkarze[i].najlepszaPozycja = Pozycja.pomocnik;
+      }
+      else
+      {
+        if (klub.pilkarze[i].defensywa > klub.pilkarze[i].rozgrywanie)
+          klub.pilkarze[i].najlepszaPozycja = Pozycja.obronca;
+        else
+          klub.pilkarze[i].najlepszaPozycja = Pozycja.pomocnik;
+      }
+    }
+    else
+    {
+      if (klub.pilkarze[i].skutecznosc > klub.pilkarze[i].defensywa)
+      {
+        if (klub.pilkarze[i].skutecznosc > klub.pilkarze[i].rozgrywanie)
+          klub.pilkarze[i].najlepszaPozycja = Pozycja.napastnik;
+        else
+          klub.pilkarze[i].najlepszaPozycja = Pozycja.pomocnik;
+      }
+      else
+      {
+        if (klub.pilkarze[i].defensywa > klub.pilkarze[i].rozgrywanie)
+          klub.pilkarze[i].najlepszaPozycja = Pozycja.obronca;
+        else
+          klub.pilkarze[i].najlepszaPozycja = Pozycja.pomocnik;
+      }
+    }
+  }
+}
+\end{verbatim}
+\end{footnotesize}
+\end{table}
+
+
+\section{Za³o¿enia taktyczne}
+
+Oprócz ustalania pozycji dla pi³karzy, gracz mo¿e ustalaæ za³o¿enia taktyczne. Najwa¿niejsz¹ kwesti¹ w taktyce jest \textit{formacja}. Dziêki niej mo¿emy optymalnie wykorzystaæ ustawienie pi³karzy. W³aœnie od pozycji, na której gra pi³karz, zale¿y ile wnosi do dru¿yny. Przyk³adowo, jeœli w linii obrony mamy pi³karza z niskim poziomem defensywy, obni¿a to poziom obrony dru¿yny. Nale¿y zmieniæ go na pi³karza maj¹cego lepsze umiejêtnoœci defensywne albo zmieniæ formacjê, na tak¹ w której jest mniej obroñców. Do wyboru jest 7 formacji: \textit{5-4-1, 5-3-2, 4-5-1, 4-4-2, 4-3-3, 3-5-2, 3-4-3}.
+
+\newpage
+Gdy ustalimy ju¿ podstawow¹ jedenastkê pi³karzy i formacjê, powinniœmy dopasowaæ \textit{ustawienie}. Mo¿emy wybieraæ spoœród 5 wariantów: \textit{bardzo defensywne, defensywne, neutralne, ofensywne, bardzo ofensywne}. W zale¿noœci od poziomów obrony, pomocy i ataku wybieramy odpowiednie ustawienie. Jeœli nasza dru¿yna jest silna w obronie, ale s³aba w ataku, wtedy mo¿emy wybraæ ustawienie bardziej ofensywne, aby zbilansowaæ poziomy dru¿yny. Spowoduje to wzmocnienie ataku i os³abienie obrony.
+
+\begin{quote}
+\textit{Pressing -- sposób gry w pi³ce no¿nej. Polega na naciskaniu przeciwnika posiadaj¹cego pi³kê, nie pozwalaj¹c jemu na rozgrywanie akcji. Pressing jest wymagaj¹cym sposobem gry -- pi³karze graj¹cy nim musz¹ posiadaæ siln¹ kondycjê.}
+\end{quote}
+
+\begin{figure}
+\centering
+\includegraphics[width=15cm]{aplikacjaTaktyka.png}
+\caption{Screen z aplikacji przedstawiaj¹cy taktykê dru¿yny}
+\label{fig:aplikacjaTaktyka}
+\end{figure}
+
+\textit{Pressing} wp³ywa na posiadanie pi³ki. Im wy¿szy ustalimy, tym lepsza powinna byæ pomoc dru¿yny. Jednak nasi pomocnicy powinni mieæ mocn¹ kondycjê. Inaczej zamiast wy¿szego posiadania pi³ki mo¿emy mieæ ni¿sze. \textit{Poziom agresji} dru¿yny wp³ywa na umiejêtnoœci linii obrony. Podobnie tak jak w pressingu, tutaj te¿ jest coœ w zamian. Im mocniejsza agresja, tym wiêksze prawdopodobieñstwo podyktowania rzutu karnego dla przeciwnika. W przypadku pressingu i poziomu agresji gracz ma do wyboru 5 mo¿liwoœci: \textit{bardzo s³aby, s³aby, zwyk³y, mocny, bardzo mocny}.
+
+Kapitan jest najwa¿niejszym pi³karzem zespo³u. Powinien posiadaæ wysokie umiejêtnoœci przywódcze. Ich poziom wp³ywa na si³ê linii pomocy. Natomiast wykonawca sta³ych fragmentów gry wykonuje rzuty karne. Warto, ¿eby by³ dobrym egzekutorem jedenastek. Na szansê wykorzystania rzutu karnego wp³ywa umiejêtnoœæ \textit{Strza³y}. Oczywiœcie im wy¿szy poziom, tym lepiej. Wszystkie wymienione opcje ustalamy w rozwijanych listach w oknie Taktyka (rysunek \ref{fig:aplikacjaTaktyka}).
+
+
+
+
+
+\section{Obliczanie poziomów dru¿yn}
+Za obliczanie poziomów dru¿yn odpowiada klasa \textit{Klub}. Zawiera ona wszelkie informacje o klubie: od statystyki poziomów, statystyk ligowych, taktyki po tablice meczów, pi³karzy, pierwszej jedenastki czy poszczególnych pozycji. Na listingu \ref{tab:obliczPoziomy} znajduje siê fragment metody \textit{obliczPoziomy}.
+
+\begin{figure}
+\centering
+\includegraphics[width=15cm]{aplikacjaPrzedMeczem.png}
+\caption{Screen z aplikacji przedstawiaj¹cy poziomy dru¿yn}
+\label{fig:aplikacjaPrzedMeczem}
+\end{figure}
+
+W pierwszej kolejnoœci zerowane s¹ poszczególny poziomy. Nastêpnie zliczane s¹ iloœci obroñców, pomocników i napastników. Ka¿dy klub posiada ustalon¹ formacjê przetrzymywan¹ w zmiennej string \textit{formacja}. Przyk³adowo dla taktyki 4-4-2, zapisana jest ona jako \textit{4-4-2}. Za pomoc¹ funkcji \textit{GetNumericValue} ,,wydobywane'' s¹ poszczególne znaki napisu. Iloœæ obroñców jest zerowym znakiem, pomocników drugim, a napastników czwartym. Nastêpnie obliczane s¹ poziomy obrony, pomocy, ataku, kondycji. Pod koniec dodatkowo sumowane lub odejmowane s¹ punkty za ustawienie, pressing, poziom agresji i poziom przywództwa kapitana dru¿yny.
+
+\begin{table}
+\caption{Metoda \textit{obliczPoziomy} klasy \textit{Klub}}
+\label{tab:obliczPoziomy}
+\begin{footnotesize}
+\begin{verbatim}
+public void obliczPoziomy()
+{
+    ...
+    int iloscObroncow = (int)char.GetNumericValue(formacja[0]);
+    int iloscPomocnikow = (int)char.GetNumericValue(formacja[2]);
+    int iloscNapastnikow = (int)char.GetNumericValue(formacja[4]);
+    // OBLICZANIE POZIOMU OBRONY
+    int tym = 0;
+    int k = 1;
+    int n = 1 + iloscObroncow;
+    for (int i = k; i < n; i++)
+    {
+        if (i < iloscPilkarzy)
+            tym += pilkarze[i].defensywa;
+    }
+    tym += pilkarze[0].umBramkarskie;
+    obrona = tym / (iloscObroncow + 1);
+    ...
+}
+\end{verbatim}
+\end{footnotesize}
+\end{table}
+
+
+
+
+
+
+\section{Symulacja meczu}
+
+Bardzo wa¿n¹ czêœci¹ gry mened¿era pi³karskiego jest symulacja meczów. W aplikacji odpowiadaj¹ za to klasy \textit{Mecz, Akcja} oraz \textit{Zdarzenie}. W nich znajduj¹ siê wszelkie informacje o danym meczu (rysunek \ref{fig:klasaMeczAkcjaZdarzenie}). Wynik rozegranego meczu zale¿y od trzech poziomów statystyk ka¿dej z dru¿yn: \textit{atak}, \textit{pomoc}, \textit{obrona}. Oprócz tego jest równie¿ \textit{poziom}, który jest uogólnion¹ œredni¹ umiejêtnoœci wszystkich pi³karzy. W przeciwieñstwie do poprzednich trzech statystyk nie wp³ywa bezpoœrednio na wynik rozgrywanego meczu, a jedynie ma orientacyjnie ukazywaæ graczowi œredni poziom wszystkich pi³karzy w dru¿ynie. O sile ataku, pomocy i obrony stanowi pierwsza jedenastka klubu. Na poziom ataku maj¹ wp³yw napastnicy, pomocy -- pomocnicy, a obrony -- obroñcy i bramkarz.
+
+Przed rozpoczêciem meczu porównywane s¹ poziomy umiejêtnoœci obu dru¿yn. Screen z aplikacji przedstawiaj¹cy poziomy dru¿yn znajduje siê na rysunku \ref{fig:aplikacjaPrzedMeczem}. Na podstawie porównañ obliczane s¹ ró¿nice pomiêdzy konkretnymi formacjami (listing \ref{tab:obliczRoznicePoziomow}). Pomoc gospodarza jest porównywana z pomoc¹ goœcia. Z tego wyliczane jest orientacyjne posiadanie pi³ki -- \textit{posiadaniePilkiGospodarzOgolnie} i \textit{posiadaniePilkiGoscOgolnie}. Si³a ataku gospodarza porównywana jest z poziomem obrony goœcia. Na podstawie tego obliczana jest \textit{skutecznoscAtakuGospodarzOgolnie}. Analogicznie wyliczana jest \textit{skutecznoscAtakuGoscOgolnie}.
+
+Wszystkie przedstawione powy¿ej wyliczenia s¹ ogólne. Na podstawie ich odbywa siê w³aœciwa symulacja meczu. Ka¿dy mecz trwa ,,90 minut'' (w aplikacji 90 sekund z mo¿liwoœci¹ przyspieszenia). W tym czasie rozgrywanych jest 90 akcji. W ka¿dej minucie meczu, na podstawie ogólnego posiadania pi³ki, losowane jest kto posiada w danej chwili pi³kê. Przyk³adowo, jeœli dru¿yna ma ogólne posiadanie pi³ki 55\%, to ma tyle samo procent szans na to, ¿e w tej minucie posiada pi³kê. Gdy dany zespó³ jest w posiadaniu pi³ki, to na podstawie skutecznoœci ataku losowane jest zdobycie gola. Na przyk³ad, jeœli ogólna skutecznoœæ ataku dru¿yny posiadaj¹cej pi³kê wynosi 5\%, to w³aœnie tyle jest procent szans na to, ¿e zostanie zdobyty gol przez atakuj¹cy zespó³ w danej akcji.
+
+\begin{table}[t]
+\caption{Metoda \textit{obliczRoznicePoziomow} klasy \textit{Mecz}}
+\label{tab:obliczRoznicePoziomow}
+\begin{footnotesize}
+\begin{verbatim}
+void obliczRoznicePoziomow()
+{
+  roznicaPomoc = (gospodarz.pomoc - gosc.pomoc) / 10;
+  roznicaAtakGospodarzObronaGosc = (gospodarz.atak - gosc.obrona) / 10;
+  roznicaAtakGoscObronaGospodarz = (gosc.atak - gospodarz.obrona) / 10;
+  // OBLICZANIE OGÓLNEGO POSIADANIA PI£KI PRZEZ GOSPODARZA W PROCENTACH
+  if (roznicaPomoc ==  0) { posiadaniePilkiGospodarzOgolnie = 50; }
+  if (roznicaPomoc ==  1) { posiadaniePilkiGospodarzOgolnie = 53; }
+  ...
+  posiadaniePilkiGoscOgolnie = 100 - posiadaniePilkiGospodarzOgolnie;
+  // OBLICZANIE SKUTECZNOSCI ATAKU GOSPODARZA W PROMILACH
+  if (roznicaAtakGospodarzObronaGosc == 0) skutecznoscAtakuGospodarzOgolnie = 23;
+  if (roznicaAtakGospodarzObronaGosc == 1) skutecznoscAtakuGospodarzOgolnie = 27;
+  ...
+  // OBLICZANIE SKUTECZNOSCI ATAKU GOSCI W PROMILACH
+  if (roznicaAtakGoscObronaGospodarz == 0) skutecznoscAtakuGoscOgolnie = 23;
+  if (roznicaAtakGoscObronaGospodarz == 1) skutecznoscAtakuGoscOgolnie = 27;
+  ...
+}
+\end{verbatim}
+\end{footnotesize}
+\end{table}
+
+Oprócz tego, istnieje tzw. zdarzenie specjalne -- rzut karny. Szansa na wyst¹pienie rzutu karnego w danej akcji zale¿y od poziomu agresji dru¿yny nie maj¹cej pi³ki (broni¹cej siê). Rzut karny mo¿e wyst¹piæ w tej samej minucie co gol z akcji. Aby obliczyæ szanse na strzelenia gola, porównywane s¹ umiejêtnoœci strzeleckie wykonawcy rzutu karnego z umiejêtnoœciami bramkarskimi pi³karza ustawionego na pozycji bramkarza. Na podstawie tych porównañ wyliczana jest ró¿nica poziomów, a z niej szanse na wykorzystanie rzutu karnego.
+
+\begin{figure}
+\centering
+\includegraphics[scale=1]{klasaMeczAkcjaZdarzenie.png}
+\caption{Diagramy klas \textit{Mecz, Akcja, Zdarzenie} i typu enum \textit{StanMeczu}}
+\label{fig:klasaMeczAkcjaZdarzenie}
+\end{figure}
+
+\section{Tryb mened¿era -- rozgrywki ligowe}
+
+W przypadku rozegrania meczu towarzyskiego gracz ma do dyspozycji wybór sk³adu, taktyki oraz sam¹ symulacjê meczu. Natomiast w trybie mened¿era gracz mo¿e rozegraæ ca³¹ seriê 30 spotkañ w sezonie. Mierzy siê z dru¿ynami o ró¿nych poziomach umiejêtnoœci. Gracz mo¿e sprawdzaæ terminarze spotkañ, analizowaæ tabelê ligow¹ i przygotowywaæ odpowiedni¹ taktykê na ka¿d¹ dru¿ynê. Jest to znaczne uatrakcyjnienie gry, pozwalaj¹ce na konkurowanie z innymi dru¿ynami o zajêcie jak najlepszego miejsca w lidze.
+
+W trybie mened¿era mo¿emy rozegraæ pe³ny sezon ligowy sk³adaj¹cy siê z 30 kolejek. Za obs³ugê rozgrywek ligowych odpowiadaj¹ dwie klasy \textit{Liga} i \textit{Kolejka}. Pierwsza z nich, tak jak nazwa wskazuje, jest przedstawieniem rozgrywek ligowych. Istnieje tylko jeden egzemplarz klasy \textit{Liga} -- obiekt statyczny dostêpny globalnie. Klasa ta zawiera w sobie m. in. wszystkie kluby oraz obiekty klasy \textit{Kolejka}. Obydwie instancje obiektów s¹ przechowywane w tablicach. Tablica dru¿yn zawiera 16 obiektów klasy \textit{Klub}. Natomiast tablica kolejek zawiera 30 egzemplarzy obiektów klasy \textit{Kolejka}. \textit{Liga} zawiera m. in. nastêpuj¹ce metody:
+
+\begin{itemize}
+\item \textit{rozegrajKolejke}
+\item \textit{uaktualnijStatystyki}
+\item \textit{wyczyscStatystykiLigowe}
+\item \textit{sprawdzMiejsce}
+\item \textit{sprawdzOstatnie5Meczow}
+\item \textit{sprawdzPoprzedniMecz}
+\item \textit{sprawdzNastepnyMecz}
+\end{itemize}
+
+\begin{table}
+\caption{Metoda \textit{rozegrajKolejke} klasy \textit{Liga}}
+\label{tab:rozegrajKolejke}
+\begin{small}
+\begin{verbatim}
+public void rozegrajKolejke()
+{
+  if (nrKolejki < iloscKolejek)
+  {
+    kolejki[nrKolejki].rozegraj();
+    nrKolejki++;
+    sprawdzMiejsce();
+  }
+}
+\end{verbatim}
+\end{small}
+\end{table}
+
+\begin{table}
+\caption{Metoda \textit{rozegraj} klasy \textit{Kolejka}}
+\label{tab:rozegraj}
+\begin{small}
+\begin{verbatim}
+public void rozegraj()
+{ for (int i = 0; i < iloscMeczow; i++) mecze[i].rozegrajBezRelacji(); }
+\end{verbatim}
+\end{small}
+\end{table}
+
+Metody zaczynaj¹ce siê na \textit{sprawdz} wykorzystywane s¹ przede wszystkim w oknie rozgrywek ligowych, gdzie mo¿emy sprawdzaæ poprzedni mecz, nastêpny mecz, formê dru¿yny czy miejsce klubu w tabeli ligowej.
+
+Natomiast ka¿dy obiekt klasy \textit{Kolejka} zawiera w sobie tablicê 8 meczów. W konstruktorze znajduj¹ siê m. in. definicje poszczególnych meczów. Oprócz tego, \textit{Kolejka} zawiera dwie metody: \textit{rozegraj} i \textit{uaktualnijStatystyki}. Jak widaæ maj¹ takie same b¹dŸ zbli¿one nazwy do funkcji klasy \textit{Liga}. Jest tak, poniewa¿ \textit{Liga} pe³ni funkcjê ,,pojemnika'' na kolejki i jest klas¹ poœrednicz¹c¹ miêdzy klas¹ wywo³uj¹c¹ metodê a klas¹ \textit{Kolejka}. Na listingu \ref{tab:rozegraj} jest metoda, która jest wywo³ywana przez funkcjê znajduj¹c¹ siê na listingu \ref{tab:rozegrajKolejke}.
+
+\begin{figure}
+\centering
+\includegraphics[width=15cm]{aplikacjaTrybMenedzera.png}
+\caption{Screen z aplikacji przedstawiaj¹cy menu}
+\label{fig:aplikacjaTrybMenedzera}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+\chapter*{Podsumowanie}
+\addcontentsline{toc}{chapter}{Podsumowanie}
+
+W dzisiejszych czasach tworzenie gier jest procesem pracoch³onnym, zajmuj¹cym czêsto wiele lat. Wielkie produkcje s¹ tworzone przez zespo³y ró¿nych specjalistów. Tworzenie gier przez jedn¹ osobê wi¹¿e siê z zajmowaniem siê wszystkimi zagadnieniami, które w zespo³ach s¹ przeprowadzane przez ró¿ne osoby. Dziœ rzadko siê zdarza, ¿e gry s¹ pisane przez pojedynczych autorów. Jeœli tak jest, zazwyczaj s¹ to tytu³y doœæ proste. Oryginalnoœæ jest czynnikiem, który pozwala im staæ siê popularnymi grami.
+
+Stworzenie tej gry wymaga³o ode mnie zajêciem siê czêœci¹ logiczn¹ aplikacji jak i równie¿ graficznym interfejsem u¿ytkownika. Praktycznie ca³¹ logikê gry napisa³em sam. Natomiast tworz¹c graficzny interfejs u¿ytkownika, korzysta³em z gotowych kontrolek systemu \textit{Windows}. Napisanie tej aplikacji zajê³o mi du¿o czasu. Jest to najwiêkszy projekt spoœród, tych które napisa³em dotychczas. 
+Stworzenie tej gry by³o doœæ ciekawym zagadnieniem. Pozwoli³o mi rozwin¹æ moje umiejêtnoœci oraz nabyæ trochê doœwiadczenia w dziedzinie in¿ynierii oprogramowania. Uwa¿am ¿e tworzenie aplikacji, a zw³aszcza gier jest bardzo interesuj¹cym i wci¹gaj¹cym zajêciem.
+
+W przysz³oœci, pracuj¹c ju¿ hobbistycznie chcia³bym rozwin¹æ grê -- dodaæ kolejne funkcje mened¿era pi³karskiego. Myœla³em o tym, aby opublikowaæ tê grê (bardziej rozwiniêt¹ wersjê) na systemy mobilne, tj. Android. Zapewne wi¹za³oby siê to z przepisaniem aplikacji na jêzyk Java. Oprócz tego, zastanawiam siê nad stworzeniem prostej gry zrêcznoœciowej, równie¿ zwi¹zanej z tematyk¹ pi³ki no¿nej. W przysz³oœci móg³bym po³¹czyæ obie aplikacje, tworz¹c pe³n¹ gr¹ pi³karsk¹ -- po³¹czenie gry strategicznej ze zrêcznoœciow¹: zarówno pozwalaj¹c¹ na bycie mened¿erem oraz sterowanie pi³karzami w czasie meczu.
+
+
+
+
+
+
+\begin{thebibliography}{10}
+\addcontentsline{toc}{chapter}{Literatura}
+\bibitem{SJP}
+	{\itshape S³ownik jêzyka polskiego PWN},
+	Wydawnictwo naukowe PWN, Warszawa 1995
+\bibitem{WPF}
+	Jaros³aw Cisek,
+	{\itshape Tworzenie nowoczesnych aplikacji graficznych w WPF},
+	Helion, 2012
+\bibitem{CSharp}
+	Ian Griffiths, Matthew Adams, Jesse Liberty,
+	{\itshape C\#. Programowanie. Wydanie VI},
+	Helion, 2012
+\bibitem{SQL}
+	Marcin Lis,
+	{\itshape SQL Æwiczenia praktyczne},
+	Helion, Gliwice 2011
+\bibitem{WykladyZKombinatoryki}
+	Zbigniew Palka, Andrzej Ruciñski,
+	{\itshape Wyk³ady z kombinatoryki},
+	Wydawnictwa Naukowo-Techniczne, Warszawa 2004
+\bibitem{BlenderDruk3d}
+	{\itshape https://cloud.blender.org/training/3d-printing/} [dostêp 30.06.2015]
+\bibitem{Sintel}
+	{\itshape https://durian.blender.org/about/} [dostêp 29.06.2015]
+\bibitem{MSDN}
+	{\itshape https://msdn.microsoft.com/pl-pl/library/ms123401.aspx} [dostêp 26.07.2015]
+\bibitem{3dsMax}
+	{\itshape http://max3d.pl/artykuly/40/wywiad-tomasz-baginski-pierwszy-wywiad-dla-max3d} [dostêp 29.06.2015]	
+\bibitem{PPE}
+	{\itshape http://www.ppe.pl/news-24642-nad\_gta\_v\_pracowalo\_ponad\_1000\_osob.html} [dostêp 27.06.2015]
+\bibitem{RedBull}
+	{\itshape http://www.redbull.com/pl/pl/games/stories/1331708755539/historia-football-manager} [dostêp 02.07.2015]
+\bibitem{WSJP}
+	{\itshape http://www.wsjp.pl/} [dostêp 02.07.2015]
+\end{thebibliography}
+
+
+
+
+
+\listoffigures
+\addcontentsline{toc}{chapter}{Spis rysunków}
+
+
+
+
+
+\listoftables
+\addcontentsline{toc}{chapter}{Spis listingów}
+
+
+
+
+
+\chapter*{Za³¹cznik -- p³yta CD}
+\addcontentsline{toc}{chapter}{Za³¹cznik -- p³yta CD}
+
+Na p³ycie CD znajduj¹ siê 4 katalogi:
+\begin{itemize}
+\item Dokumentacja
+\item Kody Ÿród³owe aplikacji
+\item Literatura -- strony WWW
+\item Postaæ wykonywalna aplikacji
+\end{itemize}
+
+W folderze \textit{Dokumentacja} znajduje plik z rozszerzeniem \textit{pdf} oraz katalog \textit{Pliki Ÿród³owe}. Plik pdf jest prac¹ dyplomow¹ w wersji elektronicznej. Natomiast w katalogu znajduje siê plik z rozszerzeniem \textit{tex}, który jest dokumentem Ÿród³owym wersji pdf. Jest to plik, który mo¿na modyfikowaæ. Wraz z nim znajduj¹ siê m. in. obrazy wykorzystywane w dokumencie oraz pliki utworzone przez system sk³adu tekstu \LaTeX.
+
+Aplikacja mo¿e nie ³¹czyæ siê z baz¹ danych, jeœli nie jest zainstalowany \textit{Microsoft Office (Access)} przynajmniej wersja 2007 oraz jeœli Office jest w wersji 64 bitowej. Jest mo¿liwoœæ zainstalowania samego silnika bazy danych bez instalacji pakietu Office. Mo¿na pobraæ go ze strony Microsoftu.
+
+\begin{quote}
+\textit{https://www.microsoft.com/en-us/download/details.aspx?id=13255}
+\begin{flushright}[dostêp 22.07.2015]\end{flushright}
+\end{quote}
+
+W kodach Ÿród³owych aplikacji znajduje siê zapisany projekt stworzony w œrodowisku \textit{Microsoft Visual C\# 2010 Express}. Strony internetowe, które podane s¹ w literaturze, zosta³y zapisane w katalogu \textit{Literatura -- strony WWW}. Natomiast plik wykonywalny programu znajduje siê w folderze \textit{Postaæ wykonywalna aplikacji}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{comment}
+
+%\title{Praca licencjacka\\Mened¿er pi³karski -- gra strategiczna z elementami sztucznej inteligencji}
+%\author{Karol Kiersnowski}
+%\\maketitle
+
+\newpage
+\setcounter{page}{1}
+%\thispagestyle{empty}
+\begin{center}
+    \Large
+    \textbf{Thesis Title}
+    
+    \vspace{0.4cm}
+    \large
+    Thesis Subtitle
+    
+    \vspace{0.4cm}
+    \textbf{Author Name}
+    
+    \vspace{0.9cm}
+    \textbf{Streszczenie}
+\end{center}
+
+Niniejsza praca jest omówieniem tworzenia gry strategicznej - mened¿era pi³karskiego. W rozdziale pierwszym znajduje siê przedstawienie tematyki gier komputerowych. W skrócie zostaje omówiony gatunek gier strategicznych oraz dokonany przegl¹d mened¿erów pi³karskich. W drugim rozdziale przedstawiane s¹ elementy tworzenia gier komputerowych. Omawiany jest proces produkcji, opisywane s¹ jêzyki programowania, biblioteki, œrodowiska programistyczne i inne narzêdzia wykorzystywane do tworzenie gier komputerowych. Natomiast rozdzia³ trzeci jest opisem gry stworzonej przez autora pracy. Zostaje przedstawiona koncepcja gry, wykorzystane technologie informatyczne, struktura aplikacji, bazy danych oraz szczegó³y implementacji wa¿niejszych klas.
+
+\begin{center}
+\vspace{0.4cm}
+    \textbf{S³owa kluczowe}
+\end{center}
+programowanie, sztuczna inteligencja, gry komputerowe, gry strategiczne
+
+\begin{center}
+\vspace{0.4cm}
+    \textbf{Tytu³ pracy w jêzyku angielskim}
+\end{center}
+Football manager - the strategy game with elements of artificial intelligence
+\end{comment}
+
+\end{document}

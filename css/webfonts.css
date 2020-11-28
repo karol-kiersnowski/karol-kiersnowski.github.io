@@ -1,0 +1,33 @@
+@font-face {
+	font-family: Quicksand;
+	font-weight: 400;
+	src: url(../webfonts/Quicksand-Regular.ttf);
+}
+
+@font-face {
+	font-family: Quicksand;
+	font-weight: 200;
+	src: url(../webfonts/Quicksand-Light.ttf);
+}
+
+@font-face {
+	font-family: Quicksand;
+	font-weight: 500;
+	src: url(../webfonts/Quicksand-Medium.ttf);
+}
+
+@font-face {
+	font-family: Quicksand;
+	font-weight: 700;
+	src: url(../webfonts/Quicksand-Bold.ttf);
+}
+
+@font-face {
+	font-family: "Finger Paint";
+	src: url(../webfonts/FingerPaint-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Ubuntu Mono";
+	src: url(../webfonts/UbuntuMono-Regular.ttf);
+}

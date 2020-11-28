@@ -1,0 +1,40 @@
+.col-50-fixed { width: 50%; }
+.col-50 { width: 50%; }
+.col-33 { width: 33.3%; }
+.col-25 { width: 25%; }
+.col-20 { width: 20%; }
+.col-16 { width: 16.66% }
+.col-12 { width: 12.5% }
+
+
+.inline-block { display: inline-block; }
+.left { float: left; }
+.right { float: right; }
+.clear { clear: both; }
+.center { margin-left: auto; margin-right: auto; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+i.big {
+	margin: 20px;
+	font-size: 100px;
+}
+
+i.medium {
+	margin: 5px 10px 5px 0;
+	font-size: 60px;
+}
+
+i.small {
+	font-size: 34px;
+}
+
+@media only screen and (max-width: 1000px) {
+
+	.col-50 { width: 100%; }
+	.col-33 { width: 100%; }
+	.col-25 { width: 50%; }
+	.col-20 { width: 40%; }
+	.col-16 { width: 33.33% }
+
+}

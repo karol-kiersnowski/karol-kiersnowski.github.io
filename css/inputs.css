@@ -1,0 +1,53 @@
+input[type="color"] {
+	padding: 0;
+	border: none;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	padding: 5px;
+	border: 1px solid #bbb;
+	background-color: #fafafa;
+	font-size: 14px;
+}
+
+textarea {
+	resize: vertical;
+	height: 150px;
+}
+
+input:focus,
+textarea:focus {
+	border: 1px solid #777;
+	outline: none;
+}
+
+label,
+output {
+	display: inline-block;
+	padding: 2px 5px;
+	vertical-align: top;
+}
+
+form label {
+	width: 160px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+button#buttonSendEmail {
+	width: calc(100% - 170px);
+}
+
+@media only screen and (max-width: 1000px) {
+
+	input[type="text"],
+	input[type="email"],
+	textarea,
+	button#buttonSendEmail {
+		width: 100%;
+	}
+
+}

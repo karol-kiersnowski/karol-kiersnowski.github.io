@@ -1,0 +1,2255 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/webfonts.css">
+	<link rel="stylesheet" href="css/calendar.css">
+	<link rel="stylesheet" href="css/tables.css">
+	<link rel="stylesheet" href="css/inputs.css">
+	<link rel="stylesheet" href="css/mini-classes.css">
+	<link rel="stylesheet" href="css/all.css"><!--Font Awesome v.5.12.0-->
+	<script defer="" src="js/nav.js"></script>
+	<script defer="" src="js/settings.js"></script>
+	<script defer="" src="js/calendar.js"></script>
+	<script defer="" src="js/lang.js"></script>
+	<script defer="" src="js/sections.js"></script>
+	<script defer="" src="js/init.js"></script>
+
+	<title>Karol Kiersnowski | Portfolio</title>
+	<meta name="description" content="Welcome to my personal website. You can find some info about me, my experience, IT projects, interests...">
+	<meta name="keywords" content="Karol Kiersnowski, Karol, Kiersnowski, portfolio, cv, curriculum vitae, résumé, resume,
+	offer, it projects, projects, contact, photography,
+	websites,, webapps, webdev, web development, webdeveloper,
+	oferta, projekty informatyczne, projekty, kontakt, fotografia,
+	strony internetowe, aplikacje internetowe, tworzenie stron internetowych,
+	front-end, back-end, html5, html, css, javascript, js, php7, php, sql, mysql, mariadb, c, c++, c/c++, c#, java">
+	<meta name="author" content="Karol Kiersnowski">
+</head>
+<body>
+<nav id="wrapper" style="width: 250px;">
+	<nav style="width: 250px;">
+		<a href="javascript:void(0);" onclick="changeMenu()">
+			<i class="fa fa-list-ul fa-fw"></i> Menu
+		</a>
+		<hr>
+		<a href="#offer" onclick="narrowMenuByClickOutsideIt()">
+			<i class="fa fa-pencil-alt fa-fw"></i>
+			<span class="txtOffer">Oferta</span>
+		</a>
+		<a href="#projects" onclick="narrowMenuByClickOutsideIt()">
+			<i class="far fa-save fa-fw"></i>
+			<span class="txtProjects">Projekty</span>
+		</a>
+		<a href="#cv" onclick="narrowMenuByClickOutsideIt()">
+			<i class="far fa-file fa-fw"></i>
+			<span class="txtCv">CV</span>
+		</a>
+		<a href="#contact" onclick="narrowMenuByClickOutsideIt()">
+			<i class="far fa-envelope fa-fw"></i>
+			<span class="txtContact">Kontakt</span>
+		</a>
+		<a href="#photography" onclick="narrowMenuByClickOutsideIt(); playMusic()">
+			<i class="fa fa-camera-retro fa-fw"></i>
+			<span class="txtPhotography">Fotografia</span>
+		</a>
+		<a href="#settings" onclick="narrowMenuByClickOutsideIt()">
+			<i class="fa fa-cog fa-fw"></i>
+			<span class="txtSettings">Ustawienia</span>
+		</a>
+		<hr>
+		<a id="btnPolish" href="index-pl.html" onclick="translateText('pl'); displayCalendar('#555','#000')" style="display: none;">
+			<img src="img/polska.png" alt="Polska"> Wersja polska
+		</a>
+		<a id="btnEnglish" href="index.html" onclick="translateText('en'); displayCalendar('#555','#000')" style="display: block;">
+			<img src="img/uk.png" alt="UK"> English version
+		</a>
+
+
+
+
+
+
+
+
+
+
+	</nav>
+</nav>
+<main onclick="narrowMenuByClickOutsideIt()" style="margin-left: 250px;">
+	<div id="paper-page">
+		<header>
+			<div class="right">
+				<i class="logo fa fa-user-circle"></i>
+			</div>
+			<div class="right" id="h1">
+				<h1>Karol Kiersnowski</h1>
+				<h1 class="email" id="sub"><a href="mailto:karol.kiersnowski@outlook.com">karol.kiersnowski@outlook.com</a></h1>
+			</div>
+			<div class="clear"></div>
+		</header>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="offer">
+			<h2>
+				<i class="fa fa-pencil-alt fa-fw"></i>
+				<span class="txtOffer">Oferta</span>
+			</h2>
+
+			<a href="javascript:void(0)" onclick="switchOfferSubpages('web-apps')">
+				<div class="box-offer col-33 left text-center" id="web-apps-link">
+					<i class="big fa fa-globe"></i>
+					<h3 class="hWebSitesApps">strony / aplikacje internetowe</h3>
+					<p class="pWebSitesApps">wieloplatformowe</p>
+					<i class="small fa fa-chevron-up" id="web-apps-arrow" style="transform: rotate(180deg);"></i>
+				</div>
+			</a>
+			<a href="javascript:void(0)" onclick="switchOfferSubpages('desktop-apps')">
+				<div class="box-offer col-33 left text-center" id="desktop-apps-link">
+					<i class="big fa fa-desktop"></i>
+					<h3 class="hDesktopApps">aplikacje desktopowe</h3>
+					<p class="pDesktopApps">na systemy Windows i GNU Linux</p>
+					<i class="small fa fa-chevron-up" id="desktop-apps-arrow"></i>
+				</div>
+			</a>
+			<div class="box-offer col-33 left text-center" style="opacity: 0.3;">
+				<i class="big fa fa-mobile-alt"></i>
+				<h3 class="hMobileApps">aplikacje mobilne</h3>
+				<p class="pMobileApps">na system Android</p>
+				<i class="small fa fa-chevron-up" id="mobile-apps-arrow"></i>
+			</div>
+			<div class="clear"></div>
+
+
+			<article id="web-apps-content">
+				<div class="">
+						<i class="left medium fa fa-expand-alt fa-fw"></i>
+						<h4 class="hRWD">responsywny układ stron</h4>
+						<p class="pRWD">dobrze się prezentuje na smartfonach i komputerach</p>
+						<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+						<i class="left medium far fa-address-card fa-fw"></i>
+						<h4 class="hOnePage">strony typu one-page</h4>
+						<p class="pOnePage">proste strony internetowe - wizytówki</p>
+						<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+						<i class="left medium far fa-window-maximize fa-fw"></i>
+						<h4 class="hSPA">aplikacje typu single-page (SPA)</h4>
+						<p class="pSPA">natychmiastowe przejścia pomiędzy podstronami bez odświeżania całej strony</p>
+						<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+						<i class="left medium fab fa-js fa-fw"></i>
+						<h4 class="hPWA">progresywne aplikacje internetowe (PWA)</h4>
+						<p class="pPWA">... in progress</p>
+						<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+						<i class="left medium fab fa-php fa-fw"></i>
+						<h4 class="hWebServices">rozbudowane serwisy internetowe</h4>
+						<p class="pWebServices">z wykorzystaniem PHP 7 i MySQL / MariaDB</p>
+						<div class="clear"></div>
+				</div>
+			</article>
+
+
+			<article id="desktop-apps-content" style="height: 0px;">
+				<div class="">
+						<i class="left medium fa fa-terminal fa-fw"></i>
+						<h4 class="hCLI">aplikacje konsolowe (CLI)</h4>
+						<p class="pCLI">uruchamiane w wierszu poleceń</p>
+						<!-- <p><span class="txtExamples">examples</span>: <a href="#football-manager-cli" onclick="showSection('projects')">Football Manager CLI</a></p>
+						<div class="clear"></div> -->
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium far fa-window-maximize fa-fw"></i>
+					<h4 class="hGUI">aplikacje okienkowe (GUI)</h4>
+					<p class="pGUI">wyświetlane jako okna w Graficznym Interfejsie Użytkownika</p>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fab fa-java fa-fw"></i>
+					<h4 class="">Java - AWT, Swing</h4>
+					<p><span class="txtExamples">przykłady</span>: <a href="#warcaby" onclick="showSection('projects')">Warcaby</a></p>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fab fa-windows fa-fw"></i>
+					<h4 class="">C# - Windows Forms</h4>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fab fa-windows fa-fw"></i>
+					<h4 class="">C# - Windows Presentation Foundation</h4>
+					<p><span class="txtExamples">przykłady</span>: <a href="#football-manager-wpf" onclick="showSection('projects')">Menedżer piłkarski</a></p>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fa fa-database fa-fw"></i>
+					<h4 class="hDB">aplikacje bazodanowe</h4>
+					<p class="pDB">korzystają z bazy danych SQL (SQlite, MS Access)</p>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fa fa-database fa-fw"></i>
+					<h4 class="">SQLite</h4>
+					<p><span class="txtExamples">przykłady</span>: <a href="#football-manager-cli" onclick="showSection('projects')">Football Manager CLI</a></p>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fa fa-database fa-fw"></i>
+					<h4 class="">MS Access</h4>
+					<p><span class="txtExamples">przykłady</span>: <a href="#football-manager-wpf" onclick="showSection('projects')">Menedżer piłkarski</a></p>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fa fa-file-csv fa-fw"></i>
+					<h4 class="">CSV</h4>
+					<p class="txtOnePage"></p>
+					<div class="clear"></div>
+				</div>
+			</article>
+
+
+
+
+
+			
+			<!-- <h3 class="iconWebdev"><i class="fa fa-code fa-fw"></i> Web development</h3>
+			<div class="col-50 left box-webdev text-center">
+				<h3 class="iconRWD">
+					<i class="big fa fa-mobile-alt"></i><i class="big fa fa-desktop"></i>
+					<br>responsive web design
+				</h3>
+				<p class="txtRWD">look good on a smartphone and a computer</p>
+			</div>
+			<div class="col-50 left box-webdev text-center">
+				<h3 class="iconOnePage"><i class="big far fa-address-card"></i><br>one-page websites</h3>
+				<p class="txtOnePage">simple websites - bussiness cards</p>
+			</div>
+			<div class="col-50 left box-webdev text-center">
+				<h3 class="iconSPA"><i class="big far fa-window-maximize"></i><br>single-page applications</h3>
+				<p class="txtSPA">immediate transition between subpages without refreshing all page</p>
+			</div>
+			<div class="col-50 left box-webdev text-center">
+				<h3 class="iconWebApps"><i class="big fab fa-js"></i><br>web applications</h3>
+				<p class="txtWebApps">using JavaScript (ECMAScript 6)</p>
+			</div>
+			<div class="col-50 left box-webdev text-center">
+				<h3 class="iconPWA"><i class="big fab fa-js"></i><br>progressive web applications</h3>
+				<p class="txtPWA">in progress...</p>
+			</div>
+			<div class="col-50 left box-webdev text-center">
+				<h3 class="iconWebServices"><i class="big fab fa-php"></i><br>expanded web applications</h3>
+				<p class="txtWebServices">using PHP 7 and MySQL / MariaDB</p>
+			</div>
+			<div class="clear"></div> -->
+
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="projects">
+			<h2>
+				<i class="far fa-save fa-fw"></i>
+				<span class="txtProjects">Projekty</span>
+			</h2>
+
+			<i class="left fa fa-info" style="font-size: 30px; padding: 0 10px;"></i>
+			<p id="txtProjectsInfo">Większość projektów jest nieukończonych. Niektóre z nich mogą działać niepoprawnie. Mimo to, kod źródłowy może być przydatny.</p>
+
+			<table class="horizontal-line">
+				<tbody><tr>
+					<th class="txtName">Nazwa</th>
+					<th class="txtTechnologies">Technologie</th>
+				</tr>
+				<tr>
+					<td><a href="#win95">Windows 95 Simulator</a></td>
+					<td>HTML5, CSS, JavaScript</td>
+				</tr>
+				<tr>
+					<td><a href="#win31">Windows 3.1 Simulator</a></td>
+					<td>HTML5, CSS, JavaScript</td>
+				</tr>
+				<tr>
+					<td><a href="#webdos">WebDOS</a></td>
+					<td>HTML5, CSS, JavaScript</td>
+				</tr>
+				<tr>
+					<td><a href="#football-manager-cli">Football Manager CLI</a></td>
+					<td>C# - CLI</td>
+				</tr>
+				<tr>
+					<td><a href="#portfolio-spa">Portfolio - SPA</a></td>
+					<td>HTML5, CSS, JavaScript</td>
+				</tr>
+				<tr>
+					<td><a href="#portfolio-mpa">Portfolio - MPA</a></td>
+					<td>HTML5, CSS, JavaScript, PHP7</td>
+				</tr>
+				<tr>
+					<td><a href="#cmd">cmd.sh</a></td>
+					<td>HTML5, CSS, JavaScript, PHP7</td>
+				</tr>
+				<tr>
+					<td><a href="#elektromechanika">Elektromechanika</a></td>
+					<td>HTML5, CSS, JavaScript</td>
+				</tr>
+				<tr>
+					<td><a href="#tic-tac-toe" class="txtTicTacToe">Kółko i krzyżyk</a></td>
+					<td>HTML5, CSS, JavaScript</td>
+				</tr>
+				<tr>
+					<td><a href="#football-manager-wpf">Menedżer piłkarski</a></td>
+					<td>C# - WPF; SQL - MS Access</td>
+				</tr>
+				<tr>
+					<td><a href="#praca-licencjacka" class="txtBachelorWork">Menedżer piłkarski - gra strategiczna z elementami sztucznej inteligencji</a>
+					</td><td>LaTeX -&gt; PDF</td>
+				</tr>
+				<tr>
+					<td><a href="#football-database">Football Database</a></td>
+					<td>HTML, CSS, PHP5, MySQL</td>
+				</tr>
+				<tr>
+					<td><a href="#mailbox">Mailbox</a></td>
+					<td>HTML, CSS, PHP, SQL - MySQL</td>
+				</tr>
+				<tr>
+					<td><a href="#warcaby">Warcaby</a></td>
+					<td>Java - AWT, Swing</td>
+				</tr>
+				<tr>
+					<td><a href="#theblackcoder">the_black_coder</a></td>
+					<td>HTML, CSS</td>
+				</tr>
+				<tr>
+					<td><a href="#gta2-clone">GTA2 Clone</a></td>
+					<td>C++ - Allegro Library</td>
+				</tr>
+				<tr>
+					<td><a href="#brutal-homicide-clone">Brutal Homicide Clone</a></td>
+					<td>C++ - Allegro Library</td>
+				</tr>
+			</tbody></table>
+
+
+
+
+
+
+
+
+			<article id="win95">
+				<hr>
+				<h3 class="text-center">Windows 95 Simulator</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/win95.png">
+						<img src="img/projects/win95.png" alt="Windows 95 Simulator">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>HTML5, CSS, JavaScript</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td class="txtWebBrowser">Przeglądarka internetowa</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtEnglish">angielski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2020.10.11</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress max="100" value="10"></progress>
+								<label class="progress">10%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtDeveloped">rozwijany</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button" target="_blank" href="projects/win95/index.html">
+						<i class="fa fa-globe"></i> Online
+					</a>
+					<a class="button" target="_blank" href="https://kargol92.github.io/win95">
+						<i class="fa fa-globe"></i> github.io
+					</a>
+					<a class="button" target="_blank" href="https://github.com/kargol92/win95">
+						<i class="fab fa-github"></i> GitHub
+					</a>
+				</div>
+			</article>
+
+			<article id="win31">
+				<hr>
+				<h3 class="text-center">Windows 3.1 Simulator</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/win31.png">
+						<img src="img/projects/win31.png" alt="Windows 3.1 Simulator">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>HTML5, CSS, JavaScript</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td class="txtWebBrowser">Przeglądarka internetowa</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtEnglish">angielski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2020.09.23</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress max="100" value="10"></progress>
+								<label class="progress">10%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtDeveloped">rozwijany</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button" target="_blank" href="projects/win31/index.html">
+						<i class="fa fa-globe"></i> Online
+					</a>
+					<a class="button" target="_blank" href="https://kargol92.github.io/win31">
+						<i class="fa fa-globe"></i> github.io
+					</a>
+					<a class="button" target="_blank" href="https://github.com/kargol92/win31">
+						<i class="fab fa-github"></i> GitHub
+					</a>
+				</div>
+			</article>
+
+			<article id="webdos">
+				<hr>
+				<h3 class="text-center">WebDOS</h3>
+				<hr>
+				<iframe class="right col-50 box" style="height: 400px" src="projects/webdos/index.html"></iframe>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>HTML5, CSS, JavaScript</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td class="txtWebBrowser">Przeglądarka internetowa</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtEnglish">angielski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2020.09.17</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress max="100" value="10"></progress>
+								<label class="progress">10%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtDeveloped">rozwijany</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button" target="_blank" href="projects/webdos/index.html">
+						<i class="fa fa-globe"></i> Online
+					</a>
+					<a class="button" target="_blank" href="https://kargol92.github.io/webdos">
+						<i class="fa fa-globe"></i> github.io
+					</a>
+					<a class="button" target="_blank" href="https://github.com/kargol92/webdos">
+						<i class="fab fa-github"></i> GitHub
+					</a>
+				</div>
+			</article>
+
+			<article id="football-manager-cli">
+				<hr>
+				<h3 class="text-center">Football Manager CLI</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/football-manager-cli.png">
+						<img src="img/projects/football-manager-cli.png" alt="Football Manager CLI">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>C# - Console Application</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td>Windows / GNU Linux (Wine / Mono)</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtEnglishPolish">angielski / polski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2019 / 05</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress value="40" max="100"></progress>
+								<label class="progress">40%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtDeveloped">rozwijany</td>
+						</tr>
+					</tbody></table>
+					<h4 class="txtFeatures">Cechy</h4>
+					<ul>
+						<li class="txtCSV">dane przechowywane są w plikach CSV</li>
+						<li class="txtMultilingualInterface">wielojęzyczny interfejs</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button iconDownload" href="archives/football-manager-cli-master.zip"><i class="fa fa-download"></i> Pobierz</a>
+					<a class="button" target="_blank" href="https://github.com/kargol92/football-manager-cli">
+						<i class="fab fa-github"></i> GitHub
+					</a>
+				</div>
+			</article>
+
+			<article id="portfolio-spa">
+				<hr>
+				<h3 class="text-center">Portfolio - SPA (Single Page Application)</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/portfolio.png">
+						<img src="img/projects/portfolio.png" alt="portfolio">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>HTML5, CSS, JavaScript</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td class="txtWebBrowser">Przeglądarka internetowa</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtEnglishPolish">angielski / polski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2019.12 - 2020.02</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress max="100" value="90"></progress>
+								<label class="progress">90%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtDeveloped">rozwijany</td>
+						</tr>
+					</tbody></table>
+					<h4 class="txtFeatures">Cechy</h4>
+					<ul>
+						<li>SPA (Single Page Application) - <span class="txtSPA">immediate transition between subpages without refreshing</span></li>
+						<li><span class="txtMultilingualInterface">wielojęzyczny interfejs</span> (JavaScript)</li>
+						<li class="txtCookiesSupport">obsługa ciasteczek (cookies)</li>
+						<li>CSS Webfonts: <a target="_blank" href="https://fontawesome.com">Font Awesome</a>, <a target="_blank" href="https://fonts.google.com/specimen/Quicksand">Quicksand</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button" target="_blank" href="https://karol-kiersnowski.github.io">
+						<i class="fa fa-globe"></i> karol-kiersnowski.github.io
+					</a>
+					<a class="button" target="_blank" href="http://karol-kiersnowski.prv.pl">
+						<i class="fa fa-globe"></i> karol-kiersnowski.prv.pl
+					</a>
+				</div>
+			</article>
+
+			<article id="portfolio-mpa">
+				<hr>
+				<h3 class="text-center">Portfolio (Multi-Page Application)</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/portfolio.png">
+						<img src="img/projects/portfolio.png" alt="portfolio">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>HTML5, CSS, JavaScript, PHP7</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td class="txtWebBrowser">Przeglądarka internetowa</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtEnglishPolish">angielski / polski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2018.05 - 2018.06</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress max="100" value="90"></progress>
+								<label class="progress">90%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtAbandoned">porzucony</td>
+						</tr>
+					</tbody></table>
+					<h4 class="txtFeatures">Cechy</h4>
+					<ul>
+						<li><span class="txtMultilingualInterface">wielojęzyczny interfejs</span> (PHP)</li>
+						<li class="txtCookiesSupport">obsługa ciasteczek (cookies)</li>
+						<li>CSS Webfonts: <a target="_blank" href="https://fontawesome.com">Font Awesome</a>, <a target="_blank" href="https://fonts.google.com/specimen/Quicksand">Quicksand</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button" target="_blank" href="projects/portfolio-old">
+						<i class="fa fa-globe"></i> Online
+					</a>
+				</div>
+			</article>
+
+			<article id="cmd">
+				<hr>
+				<h3 class="text-center">cmd.sh</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/cmd.png">
+						<img src="img/projects/cmd.png" alt="cmd.sh">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>HTML5, CSS, JavaScript, PHP7</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td class="txtWebBrowser">Przeglądarka internetowa</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtEnglishPolish">angielski / polski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2018.05</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress value="50" max="100"></progress>
+								<label class="progress">50%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtDeveloped">rozwijany</td>
+						</tr>
+					</tbody></table>
+					<h4 class="txtFeatures">Cechy</h4>
+					<ul>
+						<li><span class="txtMultilingualInterface">wielojęzyczny interfejs</span> (PHP)</li>
+						<li>CSS Webfonts: <a target="_blank" href="https://fontawesome.com">Font Awesome</a>, <a target="_blank" href="https://fonts.google.com/specimen/Ubuntu+Mono">Ubuntu Mono</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button" target="_blank" href="https://kargol92.github.io/cmd">
+						<i class="fa fa-globe"></i> github.io
+					</a>
+					<a class="button" target="_blank" href="https://github.com/kargol92/cmd">
+						<i class="fab fa-github"></i> GitHub
+					</a>
+					<a class="button" target="_blank" href="projects/cmd/index.php">
+						<i class="fa fa-globe"></i> Online
+					</a>
+				</div>
+			</article>
+
+			<article id="elektromechanika">
+				<hr>
+				<h3 class="text-center">Elektromechanika</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/elektromechanika.png">
+						<img src="img/projects/elektromechanika.png" alt="elektromechanika">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>HTML5, CSS, JavaScript</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td class="txtWebBrowser">Przeglądarka internetowa</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtPolish">polski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2018.04 - 2018.05</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress value="90" max="100"></progress>
+								<label class="progress">90%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtDeveloped">rozwijany</td>
+						</tr>
+					</tbody></table>
+					<h4 class="txtFeatures">Cechy</h4>
+					<ul>
+						<li>one-page website</li>
+						<li>CSS Webfonts: <a target="_blank" href="https://fontawesome.com">Font Awesome</a>, <a target="_blank" href="https://fonts.google.com/specimen/Quicksand">Quicksand</a></li>
+						<li><a target="_blank" href="https://www.google.com/maps">Google Maps</a></li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button" target="_blank" href="http://elektromechanika-bielsk.pl">
+						<i class="fa fa-globe"></i> elektromechanika-bielsk.pl
+					</a>
+					<a class="button" target="_blank" href="projects/elektromechanika">
+						<i class="fa fa-globe"></i> Online
+					</a>
+				</div>
+			</article>
+
+			<article id="tic-tac-toe">
+				<hr>
+				<h3 class="text-center txtTicTacToe">Kółko i krzyżyk</h3>
+				<hr>
+				<iframe class="right col-50 box" style="height: 400px" src="projects/tic-tac-toe/index.html"></iframe>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>HTML5, CSS, JavaScript</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td class="txtWebBrowser">Przeglądarka internetowa</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtEnglishPolish">angielski / polski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2018 / 06</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress value="90" max="100"></progress>
+								<label class="progress">90%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtDeveloped">rozwijany</td>
+						</tr>
+					</tbody></table>
+					<h4 class="txtFeatures">Cechy</h4>
+					<ul>
+						<li>CSS Webfonts: <a target="_blank" href="https://fontawesome.com">Font Awesome</a>, <a target="_blank" href="https://fonts.google.com/specimen/Finger+Paint">Finger Paint</a></li>
+						<li class="txtRWDViewportUnit">responsywna strona: względna długość - jednostka zależna od rozmiarów okna przeglądarki</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button" target="_blank" href="projects/tic-tac-toe/index.html">
+						<i class="fa fa-globe"></i> Online
+					</a>
+					<a class="button" target="_blank" href="https://kargol92.github.io/tic-tac-toe">
+						<i class="fa fa-globe"></i> github.io
+					</a>
+					<a class="button" target="_blank" href="https://github.com/kargol92/tic-tac-toe">
+						<i class="fab fa-github"></i> GitHub
+					</a>
+				</div>
+			</article>
+
+			<article id="mailbox">
+				<hr>
+				<h3 class="text-center">Mailbox</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/mailbox.png">
+						<img src="img/projects/mailbox.png" alt="Mailbox">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>HTML, CSS, PHP, SQL - MySQL</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td>
+								<span class="txtWebBrowser">Przeglądarka internetowa</span><br>
+								HTTP server<br>
+								PHP<br>
+								MySQL (MariaDB)
+							</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtPolish">polski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2017.05</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress value="90" max="100"></progress>
+								<label class="progress">90%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtAbandoned">porzucony</td>
+						</tr>
+					</tbody></table>
+					<h4 class="txtFeatures">Cechy</h4>
+					<ul>
+						<li class="txtConnectionToTheDatabase">łączenie się z bazą danych</li>
+						<li class="txtSessionSupport">obsługa sesji</li>
+					</ul>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button" target="_blank" href="projects/mailbox">
+						<i class="fa fa-globe"></i> Online
+					</a>
+					<a class="button iconDownload" href="archives/mailbox.zip"><i class="fa fa-download"></i> Pobierz</a>
+				</div>
+			</article>
+
+			<article id="football-manager-wpf">
+				<hr>
+				<h3 class="text-center">Menedżer piłkarski</h3>
+				<hr>
+				<div class="col-50 right">
+					<a target="_blank" href="img/projects/menedzer-wpf-przed-meczem.png">
+						<img class="col-50-fixed left box-link" src="img/projects/menedzer-wpf-przed-meczem.png" alt="menedżer piłkarski">
+					</a>
+					<a target="_blank" href="img/projects/menedzer-wpf-sklad.png">
+						<img class="col-50-fixed left box-link" src="img/projects/menedzer-wpf-sklad.png" alt="menedżer piłkarski">
+					</a>
+					<a target="_blank" href="img/projects/menedzer-wpf-taktyka.png">
+						<img class="col-50-fixed left box-link" src="img/projects/menedzer-wpf-taktyka.png" alt="menedżer piłkarski">
+					</a>
+					<a target="_blank" href="img/projects/menedzer-wpf-tryb-menedzera.png">
+						<img class="col-50-fixed left box-link" src="img/projects/menedzer-wpf-tryb-menedzera.png" alt="menedżer piłkarski">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>C# - Windows Presentation Foundation<br>SQL - MS Access</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td>Windows 7, 8, 10<br>MS Access (2007 - 2016)</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtPolish">polski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2014 - 2015</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress value="100" max="100"></progress>
+								<label class="progress">100%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtFinished">ukończony</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button iconDownload" href="archives/football-manager-wpf-master.zip"><i class="fa fa-download"></i> Pobierz</a>
+					<a class="button" target="_blank" href="https://github.com/kargol92/football-manager-wpf">
+						<i class="fab fa-github"></i> GitHub
+					</a>
+				</div>
+			</article>
+
+			<article id="praca-licencjacka">
+				<hr>
+				<h3 class="txtBachelorWork text-center">Menedżer piłkarski - gra strategiczna z elementami sztucznej inteligencji</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/menedzer-pilkarski-pdf.png">
+						<img src="img/projects/menedzer-pilkarski-pdf.png" alt="menedżer piłkarski pdf">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>LaTeX -&gt; PDF</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td class="txtPdfReader">czytnik PDF</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtPolish">polski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2015</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress value="100" max="100"></progress>
+								<label class="progress">100%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtFinished">ukończony</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button" target="_blank" href="education/praca-licencjacka.pdf">
+						<i class="far fa-file-pdf"></i> PDF
+					</a>
+					<a class="button" href="education/praca-licencjacka.tex">
+						<i class="far fa-file-alt"></i> LaTeX
+					</a>
+				</div>
+			</article>
+
+			<article id="football-database">
+				<hr>
+				<h3 class="text-center">Football Database</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/football-database-php5.png">
+						<img src="img/projects/football-database-php5.png" alt="football-database-php5">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>HTML, CSS, PHP5</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td>
+								<span class="txtWebBrowser">Przeglądarka internetowa</span><br>
+								HTTP server<br>
+								PHP5<br>
+								MySQL (MariaDB)
+							</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtEnglishPolish">angielski / polski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2015</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress value="90" max="100"></progress>
+								<label class="progress">90%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtAbandoned">porzucony</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button iconDownload" href="archives/football-database-php5.zip"><i class="fa fa-download"></i> Pobierz</a>
+				</div>
+			</article>
+
+			<article id="warcaby">
+				<hr>
+				<h3 class="text-center">Warcaby</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/warcaby.png">
+						<img src="img/projects/warcaby.png" alt="warcaby">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>Java - AWT, Swing</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td>Java (JRE)</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtPolish">polski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2013.12 - 2014.01</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress value="100" max="100"></progress>
+								<label class="progress">100%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtFinished">ukończony</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button iconDownload" href="archives/warcaby-master.zip"><i class="fa fa-download"></i> Pobierz</a>
+					<a class="button" target="_blank" href="https://github.com/kargol92/warcaby">
+						<i class="fab fa-github"></i> GitHub
+					</a>
+				</div>
+			</article>
+
+			<article id="theblackcoder">
+				<hr>
+				<h3 class="text-center">the_black_coder</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/theblackcoder.png">
+						<img src="img/projects/theblackcoder.png" alt="the_black_coder">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>HTML, CSS</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td class="txtWebBrowser">Przeglądarka internetowa</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtEnglishPolish">angielski / polski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2013.02</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress value="90" max="100"></progress>
+								<label class="progress">90%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtAbandoned">porzucony</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button" target="_blank" href="projects/theblackcoder/index.html">
+						<i class="fa fa-globe"></i> Online
+					</a>
+				</div>
+			</article>
+
+			<article id="gta2-clone">
+				<hr>
+				<h3 class="text-center">GTA2 Clone</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/gta2.png">
+						<img src="img/projects/gta2.png" alt="gta2">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>C++ - Allegro 4 Library</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td>Windows / GNU Linux (Wine)</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtEnglish">angielski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2012 - 2013</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress value="10" max="100"></progress>
+								<label class="progress">10%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtAbandoned">porzucony</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button" href="archives/gta2-v1.zip">
+						<i class="fa fa-download"></i> GTA2 v.1
+					</a>
+					<a class="button" href="archives/gta2-v2.zip">
+						<i class="fa fa-download"></i> GTA2 v.2
+					</a>
+				</div>
+			</article>
+
+			<article id="brutal-homicide-clone">
+				<hr>
+				<h3 class="text-center">Brutal Homicide Clone</h3>
+				<hr>
+				<div class="right col-50 box-link">
+					<a target="_blank" href="img/projects/brutal-homicide.png">
+						<img src="img/projects/brutal-homicide.png" alt="brutal-homicide">
+					</a>
+				</div>
+				<div class="left col-50">
+					<table class="vertical-line">
+						<tbody><tr>
+							<td class="txtTechnologies">Technologie</td>
+							<td>C++ - Allegro 4 Library</td>
+						</tr>
+						<tr>
+							<td class="txtRequirements">Wymagania</td>
+							<td>Windows / GNU Linux (Wine)</td>
+						</tr>
+						<tr>
+							<td class="txtLanguage">Język</td>
+							<td class="txtEnglish">angielski</td>
+						</tr>
+						<tr>
+							<td class="txtCreationPeriod">Okres tworzenia</td>
+							<td>2012 - 2013, 2020</td>
+						</tr>
+						<tr>
+							<td class="txtCompletedLevel">Poziom ukończenia</td>
+							<td>
+								<progress value="10" max="100"></progress>
+								<label class="progress">10%</label>
+							</td>
+						</tr>
+						<tr>
+							<td class="txtState">Stan projektu</td>
+							<td class="txtAbandoned">porzucony</td>
+						</tr>
+					</tbody></table>
+				</div>
+				<div class="clear"></div>
+				<div class="text-center">
+					<a class="button iconDownload" href="archives/brutal-homicide-clone-master.zip"><i class="fa fa-download"></i> Pobierz</a>
+					<a class="button" target="_blank" href="https://github.com/kargol92/brutal-homicide-clone">
+						<i class="fab fa-github"></i> GitHub
+					</a>
+				</div>
+			</article>
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="cv">
+			<h2>
+				<i class="far fa-file fa-fw"></i> Curriculum Vitae
+			</h2>
+			<article>
+				<h3 class="iconEducation"><i class="fa fa-graduation-cap"></i> Edukacja</h3>
+				<table class="vertical-line">
+					<tbody><tr>
+						<td><h4>2017 2015</h4></td>
+						<td>
+							<h4><em>Cosinus</em>, Białystok</h4>
+							<h5 class="txtITTechnician">Technik Informatyk</h5>
+						</td>
+					</tr>
+					<tr>
+						<td><h4>2015 2012</h4></td>
+						<td>
+							<h4 class="txtUniversityOfBialystok">Uniwersytet w Białymstoku</h4>
+							<h5><span class="txtIT">Informatyka</span>, <span class="txtBachelor">Licencjat</span></h5>
+						</td>
+					</tr>
+					<tr>
+						<td><h4>2011 2008</h4></td>
+						<td>
+							<h4 class="txtComprehensiveSchool">Liceum Ogólnokształcące</h4>
+							<h5 class="txtEconomicProfile">Profil ekonomiczny</h5>
+						</td>
+					</tr>
+				</tbody></table>
+			</article>
+
+			<article>
+				<h3 class="iconExams"><i class="far fa-file-alt"></i> Egzaminy, kursy, certyfikaty</h3>
+				<table class="vertical-line">
+					<tbody><tr>
+						<td>2017.06</td>
+						<td colspan="3">Europass <span class="txtITTechnician">Technik Informatyk</span></td>
+					</tr>
+					<tr>
+						<td>2017.06</td>
+						<td>E.14 <small class="txtE14">Tworzenie aplikacji internetowych i baz danych oraz administrowanie bazami</small></td>
+						<td><a target="_blank" href="education/e_14_2016_01_pazdziernik.pdf">93%</a></td>
+						<td><a target="_blank" href="education/e_14_2017_06_01_kolor.pdf">100%</a></td>
+					</tr>
+					<tr>
+						<td>2017.01</td>
+						<td>E.13 <small class="txtE13">Projektowanie lokalnych sieci komputerowych i administrowanie sieciami</small></td>
+						<td><a target="_blank" href="education/e_13_2017_01_X.pdf">90%</a></td>
+						<td><a target="_blank" href="education/e_13_2017_01_01.pdf">97%</a></td>
+					</tr>
+					<tr>
+						<td>2016.05</td>
+						<td>E.12 <small class="txtE12">Montaż i eksploatacja komputerów osobistych oraz urządzeń peryferyjnych</small></td>
+						<td><a target="_blank" href="education/e_12_2016_05_X_kolor.pdf">88%</a></td>
+						<td><a target="_blank" href="education/e_12_2016_05_01.pdf">92%</a></td>
+					</tr>
+					<tr>
+						<th colspan="4"></th>
+					</tr>
+					<tr>
+						<td>2015.09</td>
+						<td colspan="3"><span class="txtBachelor">Licencjat</span>
+							<a target="_blank" href="education/praca-licencjacka.pdf"><small class="txtBachelorWork">Menedżer piłkarski - gra strategiczna z elementami sztucznej inteligencji</small></a>
+						</td>
+					</tr>
+					<tr>
+						<th colspan="4"></th>
+					</tr>
+					<tr>
+						<td>2011.09</td>
+						<td colspan="3"><span class="txtDrivingLicense">Prawo jazdy</span> <small class="txtBCategory">kategoria B</small></td>
+					</tr>
+					<tr>
+						<th colspan="4"></th>
+					</tr>
+					<tr>
+						<td></td>
+						<td><span class="txtPolishLanguage">Język polski</span> <small class="txtBasicLevel">poziom podstawowy</small></td>
+						<td>90%</td>
+						<td>74%</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><span class="txtEnglishLanguage">Język angielski</span> <small class="txtBasicLevel">poziom podstawowy</small></td>
+						<td>95%</td>
+						<td>88%</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td colspan="2"><span class="txtMaths">Matematyka</span> <small class="txtBasicLevel">poziom podstawowy</small></td>
+						<td>88%</td>
+					</tr>
+					<tr>
+						<td>2011.05</td>
+						<td><span class="txtEnglishLanguage">Język angielski</span> <small class="txtAdvancedLevel">poziom rozszerzony</small></td>
+						<td>70%</td>
+						<td>54%</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td colspan="2"><span class="txtMaths">Matematyka</span> <small class="txtAdvancedLevel">poziom rozszerzony</small></td>
+						<td>26%</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td colspan="2"><span class="txtPhysicsAndAstronomy">Fizyka i astronomia</span> <small class="txtBasicLevel">poziom podstawowy</small></td>
+						<td>68%</td>
+					</tr>
+					<tr>
+						<td></td>
+						<td colspan="2"><span class="txtCivics">Wiedza o społeczeństwie</span> <small class="txtBasicLevel">poziom podstawowy</small></td>
+						<td>76%</td>
+					</tr>
+				</tbody></table>
+			</article>
+
+			<article>
+				<h3 class="iconExperience"><i class="fa fa-briefcase"></i> Doświadczenie IT</h3>
+				<table class="vertical-line">
+					<tbody><tr>
+						<td>2016</td>
+						<td>[<span class="txtPractice">Praktyki</span>] Nowa Technologia Szymon Przewłocki, Białystok</td>
+					</tr>
+					<tr>
+						<td>2015</td>
+						<td>[<span class="txtPractice">Praktyki</span>] STS Elektronik Optimus SA Partner, Białystok</td>
+					</tr>
+				</tbody></table>
+			</article>
+
+			<article>
+				<h3 class="iconSkills"><i class="fa fa-chart-bar"></i> Umiejętności</h3>
+				<ul class="fa-ul ul-skills"><li><i class="fa fa-check fa-li"></i>montaż i modernizacja komputerów osobistych</li>			<li><i class="fa fa-check fa-li"></i>obsługa systemów operacyjnych GNU Linux, Windows</li>			<li><i class="fa fa-check fa-li"></i>programowanie w językach C, C++, Java, C#</li>			<li><i class="fa fa-check fa-li"></i>tworzenie stron / aplikacji internetowych z wykorzystaniem HTML5, CSS3, JavaScript i PHP</li>			<li><i class="fa fa-check fa-li"></i>obsługa Microsoft Access, znajomość języka SQL, administrowanie MySQL (MariaDB)</li>			<li><i class="fa fa-check fa-li"></i>obsługa systemu kontroli wersji GIT</li>			<li><i class="fa fa-check fa-li"></i>znajomość systemu składu publikacji LaTeX</li>			<li><i class="fa fa-check fa-li"></i>konfiguracja lokalnych sieci komputerowych</li>			<li><i class="fa fa-check fa-li"></i>język angielski na poziomie B2 (wyższy średnio – zaawansowany)</li>			<li><i class="fa fa-check fa-li"></i>prawo jazdy kategorii B</li>			<li><i class="fa fa-check fa-li"></i>wózki jezdniowe unoszące o napędzie elektrycznym</li></ul>
+			</article>
+
+			<article id="interests">
+				<h3 class="iconInterests"><i class="far fa-star"></i> Zainteresowania</h3>
+				<ul>
+					<li style="font-size: 1.5em;">Sport</li>
+					<li>
+						<ul>
+							<li style="font-size: 2.5em;" class="txtFootball">Piłka nożna</li>
+							<li style="font-size: 0.8em;" class="txtBasketball">Koszykówka</li>
+						</ul>
+					</li>
+					<li style="font-size: 1.8em;">IT</li>
+					<li>
+						<ul>
+							<li style="font-size: 1em;">Hardware</li>
+							<li style="font-size: 1.2em;" class="txtOperatingSystems">Systemy operacyjne</li>
+							<li>
+								<ul>
+									<li style="font-size: 2em;">GNU Linux</li>
+									<li style="font-size: 0.8em;">Windows <small>(Server)</small></li>
+									<li style="font-size: 1.2em;">DOS</li>
+								</ul>
+							</li>
+							<li style="font-size: 1.7em;" class="txtCLI">Wiersz poleceń</li>
+							<li>
+								<ul>
+									<li style="font-size: 2em;">BASH</li>
+									<li style="font-size: 1.2em;">COMMAND.COM</li>
+									<li style="font-size: 1.2em;">cmd.exe</li>
+									<li style="font-size: 0.7em;">PowerShell</li>
+								</ul>
+							</li>
+							<li style="font-size: 1.2em;" class="txtProgramming">Programowanie</li>
+							<li style="font-size: 1.5em;" class="txtWebdev">Tworzenie stron internetowych</li>
+							<li style="font-size: 1.2em;" class="txtComputerGames">Gry komputerowe</li>
+						</ul>
+					</li>
+					<li style="font-size: 0.8em" class="txtPhotography">Fotografia</li>
+					<li style="font-size: 1em;" class="txtUrbanism">Urbanistyka</li>
+					<li style="font-size: 0.6em;" class="txtPsychology">Psychologia</li>
+			</ul>
+			</article>
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="contact">
+			<h2>
+				<i class="far fa-envelope fa-fw"></i>
+				<span class="txtContact">Kontakt</span>
+			</h2>
+			<p id="txtContactMe">Jeśli chcesz się ze mną skontaktować, możesz wysłać e-mail lub wypełnić formularz.</p>
+			<h3 class="email"><a href="mailto:karol.kiersnowski@outlook.com">karol.kiersnowski@outlook.com</a></h3>
+			<form><!--<form action="#" method="post">-->
+				<h3 class="txtForm">Formularz</h3>
+				<p>
+					<label id="labelMessageSubject" for="messageSubject">Temat wiadomości</label>
+					<input type="text" id="messageSubject" required="">
+				</p>
+				<p>
+					<label id="labelMessageContent" for="messageContent">Treść wiadomości</label>
+					<textarea id="messageContent" required=""></textarea>
+				</p>
+				<p>
+					<label id="labelYourEmail" for="yourEmail">Twój e-mail</label>
+					<input type="email" id="yourEmail" required="">
+				</p>
+				<p>
+					<label></label>
+					<button type="submit" class="button" id="buttonSend" onclick="showSendMessage()">Wyślij</button>
+				</p>
+			</form>
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="send-message" style="margin-top: -100px; padding-top: 120px; display: none;">
+			<h2>
+				<i class="far fa-envelope"></i>
+				<span class="txtContact">Kontakt</span>
+			</h2>
+			<div class="text-center">
+				<i class="big fa fa-times"></i>
+				<h3 id="txtMessageError">Błąd - wiadomość nie została wysłana</h3>
+			</div>
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="photography">
+			<h2>
+				<i class="fa fa-camera-retro fa-fw"></i>
+				<span class="txtPhotography">Fotografia</span>
+			</h2>
+			<!-- <audio controls>
+				<source src="Cemeteries - Sodus.mp3" type="audio/mp3"/>
+			</audio>
+			<label class="right">
+				<a target="_blank" href="https://speakinghorrors.bandcamp.com/track/sodus">Cemeteries - Sodus</a>
+			</label> -->
+			<div class="clear"></div>
+			<div class="left col-33">
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/attic.JPG">
+						<img src="img/thumbnails/attic.JPG" alt="attic">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/forest-path.JPG">
+						<img src="img/thumbnails/forest-path.JPG" alt="forest-path">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/garden.JPG">
+						<img src="img/thumbnails/garden.JPG" alt="garden">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/town-hall.JPG">
+						<img src="img/thumbnails/town-hall.JPG" alt="town-hall">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/living-room.JPG">
+						<img src="img/thumbnails/living-room.JPG" alt="living-room">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/sun-behind-clouds-2.JPG">
+						<img src="img/thumbnails/sun-behind-clouds-2.JPG" alt="sun-behind-clouds-2">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/garden-2.JPG">
+						<img src="img/thumbnails/garden-2.JPG" alt="garden-2">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/grassland.JPG">
+						<img src="img/thumbnails/grassland.JPG" alt="grassland">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/night-street.JPG">
+						<img src="img/thumbnails/night-street.JPG" alt="night-street">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/night-street-2.JPG">
+						<img src="img/thumbnails/night-street-2.JPG" alt="night-street-2">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/forest.JPG">
+						<img src="img/thumbnails/forest.JPG" alt="forest">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/plants-sky.JPG">
+						<img src="img/thumbnails/plants-sky.JPG" alt="plants-sky">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/cloudy-sky.JPG">
+						<img src="img/thumbnails/cloudy-sky.JPG" alt="cloudy-sky">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/road-2.JPG">
+						<img src="img/thumbnails/road-2.JPG" alt="road-2">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/cloudy-sky-2.JPG">
+						<img src="img/thumbnails/cloudy-sky-2.JPG" alt="cloudy-sky-2">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/football-pitch.JPG">
+						<img src="img/thumbnails/football-pitch.JPG" alt="football-pitch">
+					</a>
+				</div>
+			</div>
+			<div class="left col-33">
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/dubiazynska.JPG">
+						<img src="img/thumbnails/dubiazynska.JPG" alt="dubiazynska">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/autumn.JPG">
+						<img src="img/thumbnails/autumn.JPG" alt="autumn">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/church.JPG">
+						<img src="img/thumbnails/church.JPG" alt="church">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/grassland-3.JPG">
+						<img src="img/thumbnails/grassland-3.JPG" alt="grassland-3">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/industrial-2.JPG">
+						<img src="img/thumbnails/industrial-2.JPG" alt="industrial-2">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/fireplace.JPG">
+						<img src="img/thumbnails/fireplace.JPG" alt="fireplace">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/football-pitch-at-winter-night.JPG">
+						<img src="img/thumbnails/football-pitch-at-winter-night.JPG" alt="football-pitch-at-winter-night">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/industrial.JPG">
+						<img src="img/thumbnails/industrial.JPG" alt="industrial">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/lights.JPG">
+						<img src="img/thumbnails/lights.JPG" alt="lights">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/railway.JPG">
+						<img src="img/thumbnails/railway.JPG" alt="railway">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/winter-sun.JPG">
+						<img src="img/thumbnails/winter-sun.JPG" alt="winter-sun">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/night-mall.JPG">
+						<img src="img/thumbnails/night-mall.JPG" alt="night-mall">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/night-town.JPG">
+						<img src="img/thumbnails/night-town.JPG" alt="night-town">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/rainy-street.JPG">
+						<img src="img/thumbnails/rainy-street.JPG" alt="rainy-street">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/winter-road.JPG">
+						<img src="img/thumbnails/winter-road.JPG" alt="winter-road">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/grassland-2.JPG">
+						<img src="img/thumbnails/grassland-2.JPG" alt="grassland-2">
+					</a>
+				</div>
+			</div>
+			<div class="left col-33">
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/moon.JPG">
+						<img src="img/thumbnails/moon.JPG" alt="moon">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/sun-behind-clouds.JPG">
+						<img src="img/thumbnails/sun-behind-clouds.JPG" alt="sun-behind-clouds">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/path.JPG">
+						<img src="img/thumbnails/path.JPG" alt="path">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/mr-ball.JPG">
+						<img src="img/thumbnails/mr-ball.JPG" alt="mr-ball">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/road-rain.JPG">
+						<img src="img/thumbnails/road-rain.JPG" alt="road-rain">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/street-at-rainy-night.JPG">
+						<img src="img/thumbnails/street-at-rainy-night.JPG" alt="street-at-rainy-night">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/sunset.JPG">
+						<img src="img/thumbnails/sunset.JPG" alt="sunset">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/town-hall-square.JPG">
+						<img src="img/thumbnails/town-hall-square.JPG" alt="town-hall-square">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/road.JPG">
+						<img src="img/thumbnails/road.JPG" alt="road">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/room-tv.JPG">
+						<img src="img/thumbnails/room-tv.JPG" alt="room-tv">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/street-at-rainy-night.JPG">
+						<img src="img/thumbnails/street-at-rainy-night.JPG" alt="street-at-rainy-night">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/sunset-2.JPG">
+						<img src="img/thumbnails/sunset-2.JPG" alt="sunset-2">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/sunset-3.JPG">
+						<img src="img/thumbnails/sunset-3.JPG" alt="sunset-3">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/town-hall-square-at-night.JPG">
+						<img src="img/thumbnails/town-hall-square-at-night.JPG" alt="town-hall-square-at-night">
+					</a>
+				</div>
+				<div class="box-link margin">
+					<a target="_blank" href="img/photography/traffic.JPG">
+						<img src="img/thumbnails/traffic.JPG" alt="traffic">
+					</a>
+				</div>
+				<div class="box margin">
+					<video controls="">
+						<source src="img/thumbnails/worm-zoom.mp4" type="video/mp4">
+					</video>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="settings">
+			<h2>
+				<i class="fa fa-cog fa-fw"></i>
+				<span class="txtSettings">Ustawienia</span>
+			</h2>
+
+			<h3>
+				<i class="fa fa-list-ul fa-fw"></i>
+				<span class="txtMenuLocation">Położenie menu</span>
+			</h3>
+			<a class="button" href="javascript:void(0);" onclick="changeNavLocation('left')">
+				<i class="fa fa-arrow-left fa-fw"></i>
+				<span class="txtOnTheLeft">Po lewej</span>
+			</a>
+			<a class="button" href="javascript:void(0);" onclick="changeNavLocation('right')">
+				<i class="fa fa-arrow-right fa-fw"></i>
+				<span class="txtOnTheRight">Po prawej</span>
+			</a>
+			<div class="clear"></div>
+
+			<h3>
+				<i class="far fa-address-book fa-fw"></i>
+				<span class="txtForegroundTheme">Motyw pierwszoplanowy</span>
+			</h3>
+			<div class="left col-16 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);" title="White" onclick="changeForegroundTheme('white')">
+						<img src="img/backgrounds/white.png" alt="White">
+					</a>
+				</div>
+			</div>
+			<div class="left col-16 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);" title="Paper fibers" onclick="changeForegroundTheme('paper-fibers')">
+						<img src="img/backgrounds/paper-fibers.png" alt="Paper fibers">
+					</a>
+				</div>
+			</div>
+			<div class="left col-16 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);" title="Ricepaper" onclick="changeForegroundTheme('ricepaper')">
+						<img src="img/backgrounds/ricepaper.png" alt="Ricepaper">
+					</a>
+				</div>
+			</div>
+			<div class="left col-16 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);" title="Hip square" onclick="changeForegroundTheme('hip-square')">
+						<img src="img/backgrounds/hip-square.png" alt="Hip square">
+					</a>
+				</div>
+			</div>
+			<div class="left col-16 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);" title="Repeated square" onclick="changeForegroundTheme('repeated-square')">
+						<img src="img/backgrounds/repeated-square.png" alt="Repeated square">
+					</a>
+				</div>
+			</div>
+			<div class="left col-16 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);" title="Black paper" onclick="changeForegroundTheme('black-paper')">
+						<img src="img/backgrounds/black-paper.png" alt="Black paper">
+					</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+
+			<h3>
+				<i class="far fa-image fa-fw"></i>
+				<span class="txtBackgroundTheme">Motyw drugoplanowy</span>
+			</h3>
+			<div class="left col-16 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);" title="Default" onclick="changeBackgroundTheme('default')">
+						<img src="img/backgrounds/default.png" alt="Default">
+					</a>
+				</div>
+			</div>
+			<div class="left col-16 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);" title="Light veneer" onclick="changeBackgroundTheme('light-veneer')">
+						<img src="img/backgrounds/light-veneer.png" alt="Light veneer">
+					</a>
+				</div>
+			</div>
+			<div class="left col-16 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);" title="Purty wood" onclick="changeBackgroundTheme('purty-wood')">
+						<img src="img/backgrounds/purty-wood.png" alt="Purty wood">
+					</a>
+				</div>
+			</div>
+			<div class="left col-16 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);" title="Retina wood" onclick="changeBackgroundTheme('retina-wood')">
+						<img src="img/backgrounds/retina-wood.png" alt="Retina wood">
+					</a>
+				</div>
+			</div>
+			<div class="left col-16 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);" title="Wood pattern" onclick="changeBackgroundTheme('wood-pattern')">
+						<img src="img/backgrounds/wood-pattern.png" alt="Wood pattern">
+					</a>
+				</div>
+			</div>
+			<div class="left col-16 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);" title="Dark wood" onclick="changeBackgroundTheme('dark-wood')">
+						<img src="img/backgrounds/dark-wood.png" alt="Dark wood">
+					</a>
+				</div>
+			</div>
+			<div class="clear"></div>
+
+			<h3>
+				<i class="fa fa-paint-brush fa-fw"></i>
+				<span class="txtColors">Kolory</span>
+			</h3>
+			<p>
+				<input type="color" id="textColor" value="#000000" onchange="changeTextColor(this.value)">
+				<label class="txtText" for="textColor">Tekst</label>
+			</p>
+			<p>
+				<input type="color" id="iconColor" value="#113366" onchange="changeIconColor(this.value)">
+				<label class="txtIcons" for="iconColor">Ikony</label>
+			</p>
+			<p>
+				<input type="color" id="hyperlinkColor" value="#113366" onchange="changeHyperlinkColor(this.value)">
+				<label class="txtHyperlinks" for="hyperlinkColor">Odnośniki</label>
+			</p>
+
+			<h3>
+				<i class="fa fa-font fa-fw"></i>
+				<span class="txtFontFamily">Krój czcionki</span>
+			</h3>
+			<select id="font-family" onchange="changeFontFamily(this.value)">
+				<option value="Quicksand">Quicksand</option>
+				<option value="Finger Paint">Finger Paint</option>
+				<option value="Arial, sans-serif">Arial, sans-serif</option>
+				<option value="'Times New Roman', serif">Times New Roman, serif</option>
+				<option value="'Courier New', monospace">Courier New, monospace</option>
+			</select>
+
+			<h3>
+				<i class="fa fa-text-height fa-fw"></i>
+				<span class="txtFontSize">Wielkość czcionki</span>
+			</h3>
+			<input type="range" id="rangeFontSize" min="12" max="20" step="2" value="16" onchange="changeFontSize(this.value)">
+			<label id="labelFontSize" for="rangeFontSize">1em = 16px</label>
+
+			<h3>
+				<i class="fa fa-text-width fa-fw"></i>
+				<span class="txtFontWeight">Grubość czcionki</span>
+			</h3>
+			<input type="range" id="rangeFontWeight" min="100" max="900" step="100" value="400" onchange="changeFontWeight(this.value)">
+			<label id="labelFontWeight" for="rangeFontWeight">400</label>
+
+			<h3>
+				<i class="fa fa-italic fa-fw"></i>
+				<span class="txtFontStyle">Styl czcionki</span>
+			</h3>
+			<p>
+				<input type="radio" name="radioFontStyle" id="normalFontStyle" value="normal" onclick="changeFontStyle(this.value)" checked=""><label for="normalFontStyle" class="txtNormal">normalny</label>
+			</p>
+			<p>
+				<input type="radio" name="radioFontStyle" id="italicFontStyle" value="italic" onclick="changeFontStyle(this.value)"><label for="italicFontStyle" class="txtItalic">kursywa</label>
+			</p>
+
+			<h3>
+				<i class="far fa-caret-square-up fa-fw"></i>
+				<span class="txtFontVariant">Wariant czcionki</span>
+			</h3>
+			<p>
+				<input type="radio" name="radioFontVariant" id="normalFontVariant" value="normal" onclick="changeFontVariant(this.value)" checked=""><label for="normalFontVariant" class="txtNormal">normalny</label>
+			</p>
+			<p>
+				<input type="radio" name="radioFontVariant" id="smallCapsFontVariant" value="small-caps" onclick="changeFontVariant(this.value)"><label for="smallCapsFontVariant" class="txtSmallCaps">drukowane litery</label>
+			</p>
+
+			<h3>
+				<i class="fa fa-align-center fa-fw"></i>
+				<span class="txtFooterPosition">Footer position</span>
+			</h3>
+			<p>
+				<input type="radio" name="radioFooterPosition" id="fixedFooterPosition" value="sticky" onclick="changeFooterPosition(this.value)" checked=""><label for="fixedFooterPosition" class="txtFixed">fixed - one level below the main page</label>
+			</p>
+			<p>
+				<input type="radio" name="radioFooterPosition" id="staticFooterPosition" value="static" onclick="changeFooterPosition(this.value)"><label for="staticFooterPosition" class="txtStatic">static - the same level as the main page</label>
+			</p>
+
+			<h3>
+				<i class="fa fa-expand-alt fa-fw"></i>
+				<span class="txtFooterPosition">Transformations</span>
+			</h3>
+			<p>
+				<input type="number" id="inputRotate" step="0.1" min="-1" max="1" value="0" onchange="transform()" onkeyup="transform()">
+				<label for="inputRotate" class="txtRotate">rotate</label>
+			</p>
+			<p>
+				<input type="number" id="inputSkewX" step="0.1" min="-1" max="1" value="0" onchange="transform()" onkeyup="transform()">
+				<label for="inputSkewX" class="txtSkewX">skew X</label>
+			</p>
+			<p>
+				<input type="number" id="inputSkewY" step="1" min="-10" max="10" value="0" onchange="transform()" onkeyup="transform()">
+				<label for="inputSkewY" class="txtSkewY">skew Y</label>
+			</p>
+
+
+			<h3>
+				<i class="far fa-caret-square-up fa-fw"></i>
+				<span class="txtFontVariant">Hovering on image</span>
+			</h3>
+			<div class="left col-25 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);" onclick="changeImageHovering()">
+						<img src="img/thumbnails/attic.JPG" alt="attic">
+					</a>
+				</div>
+			</div>
+			<div class="left col-25 padding">
+				<div class="box-link scale-up">
+					<a href="javascript:void(0);">
+						<img src="img/thumbnails/forest-path.JPG" alt="forest-path">
+					</a>
+				</div>
+			</div>
+			<div class="left col-25 padding">
+				<div class="box-link scale-down">
+					<a href="javascript:void(0);">
+						<img src="img/thumbnails/garden.JPG" alt="garden">
+					</a>
+				</div>
+			</div>
+			<div class="left col-25 padding">
+				<div class="box-link">
+					<a href="javascript:void(0);">
+						<img src="img/thumbnails/town-hall.JPG" alt="town-hall">
+					</a>
+				</div>
+			</div>
+		<!-- 	<div class="left col-25 padding">
+				<div class="box-link">
+					<a target="_blank" href="img/photography/living-room.JPG">
+						<img src="img/thumbnails/living-room.JPG" alt="living-room"/>
+					</a>
+				</div>
+			</div>
+			<div class="left col-25 padding">
+				<div class="box-link">
+					<a target="_blank" href="img/photography/sun-behind-clouds-2.JPG">
+						<img src="img/thumbnails/sun-behind-clouds-2.JPG" alt="sun-behind-clouds-2"/>
+					</a>
+				</div>
+			</div>
+			<div class="left col-25 padding">
+				<div class="box-link">
+					<a target="_blank" href="img/photography/garden-2.JPG">
+						<img src="img/thumbnails/garden-2.JPG" alt="garden-2"/>
+					</a>
+				</div>
+			</div>
+			<div class="left col-25 padding">
+				<div class="box-link">
+					<a target="_blank" href="img/photography/grassland.JPG">
+						<img src="img/thumbnails/grassland.JPG" alt="grassland"/>
+					</a>
+				</div>
+			</div> -->
+			<div class="clear"></div>
+
+			<article>
+				<h3>
+					<i class="fa fa-cloud-download-alt fa-fw"></i>
+					<span class="txtSources">Źródła</span>
+				</h3>
+				<p>
+					<span class="txtIcons">Ikony</span> - <a target="_blank" href="https://fontawesome.com/">Font Awesome</a>
+				</p>
+				<p>
+					<span class="txtFonts">Czcionki</span> - <a target="_blank" href="https://fonts.google.com/">Google Fonts</a>
+				</p>
+				<p>
+					<span class="txtBackgrounds">Tła</span> - <a target="_blank" href="https://www.toptal.com/designers/subtlepatterns/">Subtle patterns</a>
+				</p>
+			</article>
+		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<!-- <section id="cookies">
+			<h2>
+				<i class="fa fa-cookie-bite"></i>
+				<span class="txtCookies">Cookies</span>
+			</h2>
+			<article id="cookiesPage">
+				<h3>What is <em>cookies</em>?</h3>
+				<blockquote cite="https://en.wikipedia.org/wiki/HTTP_cookie">
+					<p>
+						An HTTP cookie (also called web cookie, Internet cookie, browser cookie, or simply cookie) is a small piece of data sent from a website and stored on the user's computer by the user's web browser while the user is browsing. (...)
+					</p>
+					<div class="right">
+						<a target="_blank" href="https://en.wikipedia.org/wiki/HTTP_cookie">en.wikipedia.org/wiki/HTTP_cookie</a>
+					</div>
+					<div class="clear"></div>
+				</blockquote>
+				<h3>Why do we use cookies?</h3>
+				<p>To remember page settings.</p>
+				<h3>What information do we collect?</h3>
+				<p>
+					Nothing special. No private information about you. Cookies are used to remember several page settings, i.e. menu status and location.
+				</p>
+				<h3>List of cookies used on the site</h3>
+				<ul>
+					<li>navState: wide / narrow</li>
+					<li>navLocation: left / right</li>
+				</ul>
+			</article>
+		</section> -->
+
+
+
+
+
+
+
+
+
+	</div><!--PAPER-PAGE-->
+
+
+
+
+
+
+
+
+
+
+
+
+	<footer>
+		<h2>Copyright © 2018-2020 Karol Kiersnowski</h2>
+		<!-- <p>
+			<span class="txtCookiesFooterInfo">Cookies are on this page<br>More information </span>
+			<a class="txtHere" href="#cookies">here</a>
+		</p> -->
+		<p id="txtToCreateWebsiteThereWereUsed">Do stworzenia strony wykorzystano<br>czcionkę <a target="_blank" href="https://fonts.google.com/specimen/Quicksand">Quicksand</a> oraz<br>ikony <a target="_blank" href="https://fontawesome.com">Font Awesome</a></p>
+	</footer>
+</main>
+<div id="prv-billboard"></div>
+
+</body></html>
