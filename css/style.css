@@ -247,7 +247,7 @@ button:hover,
 .button:hover {
 	border: none;
 	background-color: rgba(238, 238, 238, 0.7);
-	box-shadow: 0px 0px 4px #777;
+	box-shadow: 0px 0px 5px #777;
 }
 
 
@@ -274,7 +274,8 @@ button:hover,
 }
 
 .link:hover {
-	background-color: rgba(128,128,128,0.1);
+	background-color: rgba(176,176,176,0.2);
+	box-shadow: 0px 0px 2px rgba(128,128,128,0.9);
 }
 
 	.box-offer h3 {

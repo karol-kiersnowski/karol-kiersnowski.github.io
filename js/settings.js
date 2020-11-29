@@ -33,6 +33,7 @@ function changeForegroundTheme(background) {
 	var smallCalendar = document.getElementById("small-calendar");
 	var paperPage = document.getElementById("paper-page");
 	var paperPageElements = document.querySelectorAll("#paper-page *");
+	var boxOffer = document.getElementsByClassName("link");
 	var buttons = document.getElementsByTagName("button");
 	var aButtons = document.getElementsByClassName("button");
 
@@ -80,6 +81,9 @@ function changeForegroundTheme(background) {
 		for (var i=0; i<aButtons.length; i++) 
 			aButtons[i].style.backgroundColor = "rgba(238, 238, 238, 0.1)";
 	}
+
+	for (var i=0; i<boxOffer.length; i++)
+		boxOffer[i].style.backgroundColor = "";
 }
 
 function changeBackgroundTheme(background) {
