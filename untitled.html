@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<title>Sort a HTML List Alphabetically</title>
+
+<body>
+
+<label for="sort">Sort by</label>
+<select name="sort" id="sort" onchange="sort()">
+	<option value="alphabetically" onclick="sortByAlphabetically()">alphabetically</option>
+	<option value="initiation" onclick="sortByInitiationDate()">initiation date</option>
+	<option value="last-modified" onclick="sortByLastModified()">last modified</option>
+	<option value="completion level" onclick="sortByCompletionLevel()">completion level</option>
+</select>
+
+<div id="project-container">
+	<div class="grid-card-container col-25">Oslo</div>
+	<div class="grid-card-container col-25">Stockholm</div>
+	<div class="grid-card-container col-25">Helsinki</div>
+	<div class="grid-card-container col-25">Berlin</div>
+	<div class="grid-card-container col-25">Rome</div>
+	<div class="grid-card-container col-25">Madrid</div>
+</div>
+
+<script>
+function sort() {
+
+}
+
+function sortByAlphabetically() {
+	var list, i, switching, b, shouldSwitch;
+	list = document.getElementById("project-container");
+	switching = true;
+	/* Make a loop that will continue until
+	no switching has been done: */
+	while (switching) {
+		// start by saying: no switching is done:
+		switching = false;
+		b = list.getElementsByClassName("grid-card-container");
+		// Loop through all list-items:
+		for (i = 0; i < (b.length - 1); i++) {
+			// start by saying there should be no switching:
+			shouldSwitch = false;
+			/* check if the next item should
+			switch place with the current item: */
+			if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+				/* if next item is alphabetically
+				lower than current item, mark as a switch
+				and break the loop: */
+				shouldSwitch = true;
+				break;
+			}
+		}
+		if (shouldSwitch) {
+			/* If a switch has been marked, make the switch
+			and mark the switch as done: */
+			b[i].parentNode.insertBefore(b[i + 1], b[i]);
+			switching = true;
+		}
+	}
+}
+</script>
+
+</body>
+</html>
