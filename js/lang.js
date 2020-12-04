@@ -1,3 +1,7 @@
+var daysOfWeek = new Array(7);
+var monthNames = new Array(12);
+var monthAbbreviation = new Array(12);
+
 function checkCurrentLanguage() {
 	return document.getElementsByTagName('html')[0].getAttribute('lang');
 }
@@ -68,6 +72,24 @@ function translateText(lang) {
 			txtSettings[i].innerHTML = 'Settings';
 		for (var i=0; i<txtCookies.length; i++)
 			txtCookies[i].innerHTML = 'Cookies';
+
+		// CALENDAR
+		///////////
+		daysOfWeek = [ "Mo","Tu","We","Th","Fr","Sa","Su" ];
+		monthNames[0] = "January";
+		monthNames[1] = "February";
+		monthNames[2] = "March";
+		monthNames[3] = "April";
+		monthNames[4] = "May";
+		monthNames[5] = "June";
+		monthNames[6] = "July";
+		monthNames[7] = "August";
+		monthNames[8] = "September";
+		monthNames[9] = "October";
+		monthNames[10] = "November";
+		monthNames[11] = "December";
+		for (var i=0; i<12; i++)
+			monthAbbreviation[i] = monthNames[i].substr(0,3);
 
 		// OFFER PAGE
 		/////////////
@@ -262,9 +284,6 @@ function translateText(lang) {
 
 	} else if (lang == "pl") {
 
-
-
-
 		// MENU AND HEADERS
 		///////////////////
 		btnEnglish.style.display = "block";
@@ -282,6 +301,24 @@ function translateText(lang) {
 			txtSettings[i].innerHTML = 'Ustawienia';
 		for (var i=0; i<txtCookies.length; i++)
 			txtCookies[i].innerHTML = 'Ciasteczka (HTTP Cookies)';
+
+		// CALENDAR
+		///////////
+		daysOfWeek = [ "Pn","Wt","Śr","Cz","Pt","So","Nd" ];
+		monthNames[0] = "Styczeń";
+		monthNames[1] = "Luty";
+		monthNames[2] = "Marzec";
+		monthNames[3] = "Kwiecień";
+		monthNames[4] = "Maj";
+		monthNames[5] = "Czerwiec";
+		monthNames[6] = "Lipiec";
+		monthNames[7] = "Sierpień";
+		monthNames[8] = "Wrzesień";
+		monthNames[9] = "Październik";
+		monthNames[10] = "Listopad";
+		monthNames[11] = "Grudzień";
+		for (var i=0; i<12; i++)
+			monthAbbreviation[i] = monthNames[i].substr(0,3);
 
 		// OFFER PAGE
 		/////////////

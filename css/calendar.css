@@ -13,10 +13,28 @@ div#big-calendar {
 	width: 220px;
 }
 
-	p#date {
-		margin: 15px 5px;
+	p#month-paragraph {
+		/*float: left;
+		clear: both;*/
+		margin: 5px 0;
 		font-size: 24px;
 	}
+
+		p#month-paragraph i {
+			margin-top: 6px;
+			font-size: 20px;
+		}
+
+	p#year-paragraph {
+		/*float: right;
+		clear: both;*/
+		margin: 0px 0;
+		font-size: 16px;
+	}
+
+		p#year-paragraph i {
+			font-size: 12px;
+		}
 
 	table.calendar th,
 	table.calendar td {
@@ -31,14 +49,14 @@ div#small-calendar {
 	width: 42px;
 }
 
-	p#year,
-	p#month,
+	p#small-year,
+	p#small-month,
 	p#day {
 		margin: 0px;
 	}
 
-	p#year { font-size: 10px; }
-	p#month { font-size: 14px; }
+	p#small-year { font-size: 10px; }
+	p#small-month { font-size: 14px; }
 	p#day { font-size: 24px; }
 
 @media only screen and (max-width: 1000px) {

@@ -15,8 +15,8 @@
 	<link rel="stylesheet" href="css/all.css"><!--Font Awesome v.5.12.0-->
 	<script defer src="js/nav.js"></script>
 	<script defer src="js/settings.js"></script>
-	<script defer src="js/calendar.js"></script>
 	<script defer src="js/lang.js"></script>
+	<script defer src="js/calendar.js"></script>
 	<script defer src="js/sections.js"></script>
 	<script defer src="js/init.js"></script>
 
@@ -62,25 +62,42 @@
 			<span class="txtSettings">Settings</span>
 		</a>
 		<hr>
-		<a id="btnPolish" href="index-pl.html" onclick="translateText('pl'); displayCalendar('#555','#000')">
+		<a id="btnPolish" href="index-pl.html" onclick="translateText('pl'); displayCalendar()">
 			<img src="img/polska.png" alt="Polska"/> Wersja polska
 		</a>
-		<a id="btnEnglish" href="index.html" onclick="translateText('en'); displayCalendar('#555','#000')" style="display: none;">
+		<a id="btnEnglish" href="index.html" onclick="translateText('en'); displayCalendar()" style="display: none;">
 			<img src="img/uk.png" alt="UK"/> English version
 		</a>
 		
 		<div id="calendar-container">
 			<div id="big-calendar">
-				<p id="date"></p>
+				<p id="month-paragraph">
+					<button class="link left clear" onclick="goToPreviousMonth()">
+						<i class="fa fa-chevron-left fa-fw"></i>
+					</button>
+					<span id="big-month"></span>
+					<button class="link right" onclick="goToNextMonth()">
+						<i class="fa fa-chevron-right fa-fw"></i>
+					</button>
+				</p>
+				<p id="year-paragraph">
+					<button class="link" onclick="goToPreviousYear()">
+						<i class="fa fa-chevron-left fa-fw"></i>
+					</button>
+					<span id="big-year"></span>
+					<button class="link" onclick="goToNextYear()">
+						<i class="fa fa-chevron-right fa-fw"></i>
+					</button>
+				</p>
 				<table class="calendar">
 					<tr>
-						<th id="Mon">Mo</th>
-						<th id="Tue">Tu</th>
-						<th id="Wed">We</th>
-						<th id="Thu">Th</th>
-						<th id="Fri">Fr</th>
-						<th id="Sat">Sa</th>
-						<th id="Sun">Su</th>
+						<th class="daysOfWeek">Mo</th>
+						<th class="daysOfWeek">Tu</th>
+						<th class="daysOfWeek">We</th>
+						<th class="daysOfWeek">Th</th>
+						<th class="daysOfWeek">Fr</th>
+						<th class="daysOfWeek">Sa</th>
+						<th class="daysOfWeek">Su</th>
 					</tr>
 					<tr>
 						<td id="0x0"></td>
@@ -139,9 +156,9 @@
 				</table>
 			</div>
 			<div id="small-calendar">
-				<p id="month"></p>
+				<p id="small-month"></p>
 				<p id="day"></p>
-				<p id="year"></p>
+				<p id="small-year"></p>
 			</div>
 		</div>
 

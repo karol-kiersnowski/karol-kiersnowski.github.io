@@ -227,7 +227,11 @@ i, a {
 }
 
 
-
+button.link {
+	padding: 0;
+	background-color: inherit;
+	box-shadow: none;
+}
 
 button,
 .button {

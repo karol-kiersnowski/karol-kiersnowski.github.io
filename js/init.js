@@ -91,6 +91,7 @@ function sendEmail() {
 checkUserLanguage();
 overwriteLinkAttributes();
 displayElementsForJSPageVersion();
-displayCalendar('#777','#000');
+displayCalendar();
+fillInSmallCalendar();
 showSection();
 setOffer();
