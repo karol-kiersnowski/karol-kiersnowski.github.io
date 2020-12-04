@@ -85,6 +85,18 @@ function sendEmail() {
 	location.href="mailto:karol.kiersnowski.prv.pl?subject=" + subject + "&body=" + content + "%0A%0AFrom: " + email;
 }
 
+function setGridView() {
+	var list = document.getElementById("project-list");
+	if (list != null)
+		document.getElementById("project-list").id = "project-grid";
+}
+
+function setListView() {
+	var grid = document.getElementById("project-grid");
+	if (grid != null)
+		document.getElementById("project-grid").id = "project-list";
+}
+
 function sortTable(n) {
 	var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
 	table = document.getElementById("project-table");
@@ -126,6 +138,76 @@ function sortTable(n) {
 			/*If a switch has been marked, make the switch
 			and mark that a switch has been done:*/
 			rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+			switching = true;
+			//Each time a switch is done, increase this count by 1:
+			switchcount ++;      
+		} else {
+			/*If no switching has been done AND the direction is "asc",
+			set the direction to "desc" and run the while loop again.*/
+			if (switchcount == 0 && dir == "asc") {
+				dir = "desc";
+				switching = true;
+			}
+		}
+	}
+}
+
+function sort(sortingBy) {
+	var elements, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+	switching = true;
+	//Set the sorting direction to ascending:
+	dir = "asc"; 
+	/*Make a loop that will continue until
+	no switching has been done:*/
+	while (switching) {
+		//start by saying: no switching is done:
+		switching = false;
+		elements = document.getElementsByClassName("item");
+		/*Loop through all table elements (except the
+		first, which contains table headers):*/
+		for (i = 0; i < (elements.length - 1); i++) {
+			//start by saying there should be no switching:
+			shouldSwitch = false;
+			/*Get the two elements you want to compare,
+			one from current row and one from the next:*/
+			//alert(elements[i].children[1].innerHTML);
+			if (sortingBy == "name") {
+				x = elements[i].children[1];
+				y = elements[i + 1].children[1];
+			} else if (sortingBy == "last-modified") {
+				x = elements[i].children[2].children[1];
+				y = elements[i + 1].children[2].children[1];
+			} else if (sortingBy == "initiate-date") {
+				x = elements[i].children[3].children[1];
+				y = elements[i + 1].children[3].children[1];
+			} else if (sortingBy == "progress") {
+				alert(elements[i].children[6].value);
+				x = elements[i].children[6].value;
+				y = elements[i + 1].children[5].value;
+			} else if (sortingBy == "language") {
+				x = elements[i].children[8].children[1];
+				y = elements[i + 1].children[8].children[1];
+			}
+			/*check if the two elements should switch place,
+			based on the direction, asc or desc:*/
+			if (dir == "asc") {
+				if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+					//if so, mark as a switch and break the loop:
+					shouldSwitch= true;
+					break;
+				}
+			} else if (dir == "desc") {
+				if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+					//if so, mark as a switch and break the loop:
+					shouldSwitch = true;
+					break;
+				}
+			}
+		}
+		if (shouldSwitch) {
+			/*If a switch has been marked, make the switch
+			and mark that a switch has been done:*/
+			elements[i].parentNode.insertBefore(elements[i + 1], elements[i]);
 			switching = true;
 			//Each time a switch is done, increase this count by 1:
 			switchcount ++;      

@@ -408,10 +408,207 @@
 				<span class="txtProjects">Projects</span>
 			</h2>
 
-			<i class="left fa fa-info" style="font-size: 30px; padding: 0 10px;"></i>
+			<i class="left fa fa-info" style="padding: 0 10px; font-size: 30px;"></i>
 			<p id="txtProjectsInfo">
 				Most projects are unfinished. Some of them may not work correctly. However, the source code can be useful.
 			</p>
+
+			<label for="select-sort" style="vertical-align: middle;">Sort by</label>
+			<select id="select-sort">
+				<option onclick="sort('name')">Name</option>
+				<option onclick="sort('initiate-date')">Initiate date</option>
+			</select>
+			<button class="txtName" onclick="sort('name')">Name</button>
+			<button class="" onclick="sort('last-modified')">Last modified</button>
+			<button class="" onclick="sort('initiate-date')">Initiate date</button>
+			<button class="" onclick="sort('progress')">Progress</button>
+			<button class="" onclick="sort('language')">Language</button>
+
+			<label style="vertical-align: middle;">View</label>
+			<button onclick="setListView()">
+				<i class="fa fa-th-list"></i>
+			</button>
+			<button onclick="setGridView()">
+				<i class="fa fa-th"></i>
+			</button>
+
+			<article id="project-list">
+				<a class="item" href="#cmd">
+					<img src="img/projects/cmd.png" alt="cmd"/>
+					<h3 class="title">cmd</h3>
+					<p class="last-modified" title="last modified">
+						<i class="fa fa-hourglass-end"></i>
+						<span>2020.12</span>
+					</p>
+					<p class="initiate" title="initiate date">
+						<i class="fa fa-hourglass-start"></i>
+						<span>2018.05</span>
+					</p>
+					<div class="clear"></div>
+					<p class="status">
+						<i class="fa fa-sync" title="developed"></i>
+					</p>
+					<progress max="100" value="50"></progress>
+					<div class="clear"></div>
+					<p class="language" title="language">
+						<i class="fa fa-language"></i>
+						<span>EN / PL</span>
+					</p>
+					<p class="type">
+						<i class="fa fa-globe" title="web site / app"></i>
+					</p>
+					<div class="clear"></div>
+				</a><a class="item" href="#win95">
+					<img src="img/projects/win95.png" alt="Windows 95 Simulator"/>
+					<h3 class="title">Win 95 Simulator</h3>
+					<p class="last-modified" title="last modified">
+						<i class="fa fa-hourglass-end"></i>
+						<span>2020.10</span>
+					</p>
+					<p class="initiate" title="initiate date">
+						<i class="fa fa-hourglass-start"></i>
+						<span>2020.10</span>
+					</p>
+					<div class="clear"></div>
+					<p class="status">
+						<i class="fa fa-sync" title="developed"></i>
+					</p>
+					<progress max="100" value="20"></progress>
+					<div class="clear"></div>
+					<p class="language" title="language">
+						<i class="fa fa-language"></i>
+						<span>EN</span>
+					</p>
+					<p class="type">
+						<i class="fa fa-globe" title="web site / app"></i>
+					</p>
+				</a><a class="item" href="#win31">
+					<img src="img/projects/win31.png" alt="Windows 3.1 Simulator"/>
+					<h3 class="title">Win 3.1 Simulator</h3>
+					<p class="last-modified" title="last modified">
+						<i class="fa fa-hourglass-end"></i>
+						<span>2020.11</span>
+					</p>
+					<p class="initiate" title="initiate date">
+						<i class="fa fa-hourglass-start"></i>
+						<span>2020.09</span>
+					</p>
+					<div class="clear"></div>
+					<p class="status">
+						<i class="fa fa-sync" title="developed"></i>
+					</p>
+					<progress max="100" value="20"></progress>
+					<div class="clear"></div>
+					<p class="language" title="language">
+						<i class="fa fa-language"></i>
+						<span>EN</span>
+					</p>
+					<p class="type">
+						<i class="fa fa-globe" title="web site / app"></i>
+					</p>
+				</a><a class="item" href="#football-manager-cli">
+					<img src="img/projects/football-manager-cli.png" alt="Football Manager CLI"/>
+					<h3 class="title">Football Manager CLI</h3>
+					<p class="last-modified" title="last modified">
+						<i class="fa fa-hourglass-end"></i>
+						<span>2019.05</span>
+					</p>
+					<p class="initiate" title="initiate date">
+						<i class="fa fa-hourglass-start"></i>
+						<span>2014.10</span>
+					</p>
+					<div class="clear"></div>
+					<p class="status">
+						<i class="fa fa-sync" title="developed"></i>
+					</p>
+					<progress max="100" value="40"></progress>
+					<div class="clear"></div>
+					<p class="language" title="language">
+						<i class="fa fa-language"></i>
+						<span>EN / PL</span>
+					</p>
+					<p class="type">
+						<i class="fa fa-terminal" title="console app"></i>
+						<i class="fa fa-desktop" title="desktop app"></i>
+					</p>
+				</a><a class="item" href="#portfolio-spa">
+					<img src="img/projects/portfolio.png" alt="Portfolio"/>
+					<h3 class="title">Portfolio - SPA</h3>
+					<p class="last-modified" title="last modified">
+						<i class="fa fa-hourglass-end"></i>
+						<span>2020.12</span>
+					</p>
+					<p class="initiate" title="initiate date">
+						<i class="fa fa-hourglass-start"></i>
+						<span>2019.12</span>
+					</p>
+					<div class="clear"></div>
+					<p class="status">
+						<i class="fa fa-sync" title="developed"></i>
+					</p>
+					<progress max="100" value="90"></progress>
+					<div class="clear"></div>
+					<p class="language" title="language">
+						<i class="fa fa-language"></i>
+						<span>EN / PL</span>
+					</p>
+					<p class="type">
+						<i class="fa fa-globe" title="web site / app"></i>
+					</p>
+					<div class="clear"></div>
+				</a><a class="item" href="#portfolio-mpa">
+					<img src="img/projects/portfolio.png" alt="Portfolio"/>
+					<h3 class="title">Portfolio - MPA</h3>
+					<p class="last-modified" title="last modified">
+						<i class="fa fa-hourglass-end"></i>
+						<span>2018.06</span>
+					</p>
+					<p class="initiate" title="initiate date">
+						<i class="fa fa-hourglass-start"></i>
+						<span>2018.05</span>
+					</p>
+					<div class="clear"></div>
+					<p class="status">
+						<i class="fa fa-times" title="abandoned"></i>
+					</p>
+					<progress max="100" value="90"></progress>
+					<div class="clear"></div>
+					<p class="language" title="language">
+						<i class="fa fa-language"></i>
+						<span>EN / PL</span>
+					</p>
+					<p class="type">
+						<i class="fa fa-globe" title="web site / app"></i>
+					</p>
+					<div class="clear"></div>
+				</a><a class="item" href="#warcaby">
+					<img src="img/projects/warcaby.png" alt="Warcaby (Checkers)"/>
+					<h3 class="title">Warcaby</h3>
+					<p class="last-modified" title="last modified">
+						<i class="fa fa-hourglass-end"></i>
+						<span>2020.04</span>
+					</p>
+					<p class="initiate" title="initiate date">
+						<i class="fa fa-hourglass-start"></i>
+						<span>2013.12</span>
+					</p>
+					<div class="clear"></div>
+					<p class="status">
+						<i class="fa fa-check" title="completed"></i>
+					</p>
+					<progress max="100" value="100"></progress>
+					<div class="clear"></div>
+					<p class="language" title="language">
+						<i class="fa fa-language"></i>
+						<span>PL</span>
+					</p>
+					<p class="type">
+						<i class="fab fa-java" title="java"></i>
+						<i class="fa fa-desktop" title="desktop app"></i>
+					</p>
+				</a>
+				<div class="clear"></div>
+			</article>
 
 			<table id="project-table" class="horizontal-line">
 				<tr>
@@ -419,7 +616,7 @@
 					<th class="link txtTechnologies" onclick="sortTable(1)">Technologies</th>
 				</tr>
 				<tr>
-					<td><a href="#cmd">cmd.sh</a></td>
+					<td><a href="#cmd">cmd</a></td>
 					<td>HTML5, CSS, JavaScript, PHP7</td>
 				</tr>
 				<tr>
@@ -471,7 +668,7 @@
 					<td>HTML, CSS, PHP, SQL - MySQL</td>
 				</tr>
 				<tr>
-					<td><a href="#warcaby">Warcaby</a></td>
+					<td><a href="#warcaby">Warcaby (Checkers)</a></td>
 					<td>Java - AWT, Swing</td>
 				</tr>
 				<tr>
@@ -495,7 +692,7 @@
 
 			<article id="cmd">
 				<hr>
-				<h3 class="text-center">cmd.sh</h3>
+				<h3 class="text-center">cmd</h3>
 				<hr>
 				<div class="right col-50 box-link">
 					<a target="_blank" href="img/projects/cmd.png">
@@ -582,8 +779,8 @@
 						<tr>
 							<td class="txtCompletedLevel">Completed level</td>
 							<td>
-								<progress max="100" value="10"></progress>
-								<label class="progress">10%</label>
+								<progress max="100" value="20"></progress>
+								<label class="progress">20%</label>
 							</td>
 						</tr>
 						<tr>
@@ -636,8 +833,8 @@
 						<tr>
 							<td class="txtCompletedLevel">Completed level</td>
 							<td>
-								<progress max="100" value="10"></progress>
-								<label class="progress">10%</label>
+								<progress max="100" value="20"></progress>
+								<label class="progress">20%</label>
 							</td>
 						</tr>
 						<tr>

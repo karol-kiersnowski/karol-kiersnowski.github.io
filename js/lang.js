@@ -357,7 +357,7 @@ function translateText(lang) {
 		for (var i=0; i<txtName.length; i++)
 			txtName[i].innerHTML = "Nazwa";
 			for (var i=0; i<txtTicTacToe.length; i++)
-				txtTicTacToe[i].innerHTML = "Kółko i krzyżyk";
+				txtTicTacToe[i].innerHTML = "Tic Tac Toe (Kółko i krzyżyk)";
 		for (var i=0; i<txtTechnologies.length; i++)
 			txtTechnologies[i].innerHTML = "Technologie";
 		for (var i=0; i<txtRequirements.length; i++)
