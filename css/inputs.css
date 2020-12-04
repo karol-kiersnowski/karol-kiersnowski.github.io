@@ -7,8 +7,7 @@ input[type="text"],
 input[type="email"],
 textarea {
 	padding: 5px;
-	border: 1px solid #bbb;
-	background-color: #fafafa;
+	border: 1px solid #aaa;
 	font-family: Quicksand, Arial, sans-serif;
 	font-size: 14px;
 }
@@ -20,7 +19,7 @@ textarea {
 
 input:focus,
 textarea:focus {
-	border: 1px solid #777;
+	border: 1px solid #555;
 	outline: none;
 }
 

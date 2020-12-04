@@ -215,6 +215,9 @@ h5 {
 
 
 
+i, a {
+	color: #247;
+}
 
 a,
 .link {
@@ -222,13 +225,10 @@ a,
 	transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
-i, a {
-	color: #247;
-}
-
-
 button.link {
-	padding: 0;
+	display: inline-block;
+	margin-top: 4px;
+	padding: 2px;
 	background-color: inherit;
 	box-shadow: none;
 }
