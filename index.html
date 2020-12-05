@@ -431,6 +431,9 @@
 			<button onclick="setGridView()">
 				<i class="fa fa-th"></i>
 			</button>
+			<button onclick="setTableView()">
+				<i class="fa fa-table"></i>
+			</button>
 
 			<article id="project-list">
 				<a class="item" href="#cmd">
@@ -612,8 +615,14 @@
 
 			<table id="project-table" class="horizontal-line">
 				<tr>
-					<th class="link txtName" onclick="sortTable(0)">Name</th>
-					<th class="link txtTechnologies" onclick="sortTable(1)">Technologies</th>
+					<th class="link" onclick="sortTable(0)">
+						<span class="txtName">Name</span>
+						<i class="fa fa-sort"></i>
+					</th>
+					<th class="link" onclick="sortTable(1)">
+						<span class="txtTechnologies">Technologies</span>
+						<i class="fa fa-sort"></i>
+					</th>
 				</tr>
 				<tr>
 					<td><a href="#cmd">cmd</a></td>
