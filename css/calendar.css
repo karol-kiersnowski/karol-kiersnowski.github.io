@@ -36,6 +36,7 @@ div#big-calendar {
 	table.calendar td {
 		padding: 5px;
 		font-size: 14px;
+		font-weight: normal;
 		text-align: center;
 	}
 
