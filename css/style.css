@@ -253,7 +253,9 @@ button:hover,
 	box-shadow: 0px 0px 4px #777;
 }
 
-
+progress {
+	padding: 5px;
+}
 
 
 
@@ -478,9 +480,8 @@ i#mobile-apps-arrow {
 	#project-grid .item progress {
 		float: right;
 		margin: 10px 5px;
-		padding: 5px;
 		width: 75%;
-		height: 16px;
+		height: 18px;
 	}
 
 	#project-list .item .status {
@@ -491,9 +492,8 @@ i#mobile-apps-arrow {
 	#project-list .item progress {
 		left: 430px;
 		bottom: 10px;
-		padding: 5px;
 		width: 70px;
-		height: 16px;
+		height: 18px;
 	}
 
 	#project-grid .item .language {
