@@ -14,24 +14,21 @@ div#big-calendar {
 }
 
 	p#month-paragraph {
-		/*float: left;
-		clear: both;*/
 		margin: 5px 0;
 		font-size: 24px;
 	}
 
-		p#month-paragraph i {
-			font-size: 20px;
+		p#month-paragraph button i {
+			margin: 6px 3px;
+			font-size: 16px;
 		}
 
 	p#year-paragraph {
-		/*float: right;
-		clear: both;*/
-		margin: 0px 0;
+		margin: 0;
 		font-size: 16px;
 	}
 
-		p#year-paragraph i {
+		p#year-paragraph button {
 			font-size: 12px;
 		}
 

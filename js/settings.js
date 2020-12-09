@@ -200,7 +200,7 @@ function changeFontWeight(rangeFontWeight) {
 	// for (var i=0; i<icons.length; i++)
 	// 	icons[i].style.fontWeight = "bold";
 	document.body.style.fontWeight = rangeFontWeight;
-	document.getElementById("outputFontWeigh").innerHTML = rangeFontWeight;
+	document.getElementById("outputFontWeight").innerHTML = rangeFontWeight;
 }
 
 function changeFontStyle(fontStyle) {

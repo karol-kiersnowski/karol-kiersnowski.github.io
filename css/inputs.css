@@ -8,26 +8,24 @@ input[type="email"],
 textarea {
 	padding: 5px;
 	border: 1px solid #aaa;
+	box-shadow: 0px 0px 5px #eee;
 	font-family: Quicksand, Arial, sans-serif;
 	font-size: 14px;
 }
 
 textarea {
-	resize: vertical;
 	height: 150px;
+	resize: vertical;
 }
 
 input:focus,
 textarea:focus {
-	border: 1px solid #555;
-	outline: none;
+	border: 1px solid #333;
 }
 
-label,
-output {
+label {
 	display: inline-block;
 	padding: 2px 5px;
-	vertical-align: top;
 }
 
 form label {
@@ -39,6 +37,15 @@ input[type="email"],
 textarea,
 button#buttonSendEmail {
 	width: calc(100% - 170px);
+}
+
+label,
+output,
+input[type="color"],
+input[type="range"],
+input[type="checkbox"],
+input[type="radio"] {
+	vertical-align: middle;
 }
 
 @media only screen and (max-width: 1000px) {

@@ -226,7 +226,6 @@ a,
 }
 
 button.link {
-	margin-top: 4px;
 	padding: 2px;
 	background-color: inherit;
 	box-shadow: none;
@@ -364,6 +363,8 @@ i#mobile-apps-arrow {
 	display: block;
 	width: 100%;
 }
+
+
 
 
 
