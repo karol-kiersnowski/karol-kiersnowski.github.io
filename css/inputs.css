@@ -42,10 +42,8 @@ button#buttonSendEmail {
 label,
 output,
 progress,
-input[type="color"],
-input[type="range"],
-input[type="checkbox"],
-input[type="radio"] {
+input,
+textarea {
 	vertical-align: middle;
 }
 
