@@ -413,205 +413,218 @@
 				Most projects are unfinished. Some of them may not work correctly. However, the source code can be useful.
 			</p>
 
-			<label for="select-sort" style="vertical-align: middle;">Sort by</label>
-			<select id="select-sort">
-				<option onclick="sort('name')">Name</option>
-				<option onclick="sort('initiate-date')">Initiate date</option>
-			</select>
-			<button class="txtName" onclick="sort('name')">Name</button>
-			<button class="" onclick="sort('last-modified')">Last modified</button>
-			<button class="" onclick="sort('initiate-date')">Initiate date</button>
-			<button class="" onclick="sort('progress')">Progress</button>
-			<button class="" onclick="sort('language')">Language</button>
+			<p style="text-align: right;">
+				<label style="vertical-align: middle;">View</label>
+				<button onclick="setTableView()"><i class="fa fa-table"></i> Table</button>
+				<button onclick="setListView()"><i class="fa fa-th-list"></i> List</button>
+				<button onclick="setGridView()"><i class="fa fa-th"></i> Grid</button>
+			</p>
 
-			<label style="vertical-align: middle;">View</label>
-			<button onclick="setListView()">
-				<i class="fa fa-th-list"></i>
-			</button>
-			<button onclick="setGridView()">
-				<i class="fa fa-th"></i>
-			</button>
-			<button onclick="setTableView()">
-				<i class="fa fa-table"></i>
-			</button>
+			<article id="project-grid-list">
+				<label for="select-sort" style="vertical-align: middle;">Sort by</label>
+				<select id="select-sort">
+					<option onclick="sort('name')">Name</option>
+					<option onclick="sort('initiate-date')">Initiate date</option>
+				</select>
+				<button class="txtName" onclick="sort('name')">Name</button>
+				<button class="" onclick="sort('last-modified')">Last modified</button>
+				<button class="" onclick="sort('initiate-date')">Initiate date</button>
+				<button class="" onclick="sort('progress')">Progress</button>
+				<button class="" onclick="sort('language')">Language</button>
 
-			<article id="project-list">
-				<a class="item" href="#cmd">
-					<img src="img/projects/cmd.png" alt="cmd"/>
-					<h3 class="title">cmd</h3>
-					<p class="last-modified" title="last modified">
-						<i class="fa fa-fw fa-hourglass-end"></i>
-						<span>2021.01</span>
-					</p>
-					<p class="initiate" title="initiate date">
-						<i class="fa fa-fw fa-hourglass-start"></i>
-						<span>2018.05</span>
-					</p>
+				<div id="project-list">
+					<a class="item" href="#cmd">
+						<img src="img/projects/cmd.png" alt="cmd"/>
+						<h3 class="title">cmd</h3>
+						<p class="last-modified" title="last modified">
+							<i class="fa fa-fw fa-hourglass-end"></i>
+							<span>2021.01</span>
+						</p>
+						<p class="initiate" title="initiate date">
+							<i class="fa fa-fw fa-hourglass-start"></i>
+							<span>2018.05</span>
+						</p>
+						<div class="clear"></div>
+						<p class="status">
+							<i class="fa fa-fw fa-sync" title="developed"></i>
+						</p>
+						<progress max="100" value="50"></progress>
+						<div class="clear"></div>
+						<p class="language" title="language">
+							<i class="fa fa-fw fa-language"></i>
+							<span>EN / PL</span>
+						</p>
+						<p class="type">
+							<i class="fa fa-fw fa-globe" title="web site / app"></i>
+						</p>
+						<div class="clear"></div>
+					</a><a class="item" href="#win95">
+						<img src="img/projects/win95.png" alt="Windows 95 Simulator"/>
+						<h3 class="title">Win 95 Simulator</h3>
+						<p class="last-modified" title="last modified">
+							<i class="fa fa-fw fa-hourglass-end"></i>
+							<span>2020.10</span>
+						</p>
+						<p class="initiate" title="initiate date">
+							<i class="fa fa-fw fa-hourglass-start"></i>
+							<span>2020.10</span>
+						</p>
+						<div class="clear"></div>
+						<p class="status">
+							<i class="fa fa-fw fa-sync" title="developed"></i>
+						</p>
+						<progress max="100" value="20"></progress>
+						<div class="clear"></div>
+						<p class="language" title="language">
+							<i class="fa fa-fw fa-language"></i>
+							<span>EN</span>
+						</p>
+						<p class="type">
+							<i class="fa fa-fw fa-globe" title="web site / app"></i>
+						</p>
+					</a><a class="item" href="#win31">
+						<img src="img/projects/win31.png" alt="Windows 3.1 Simulator"/>
+						<h3 class="title">Win 3.1 Simulator</h3>
+						<p class="last-modified" title="last modified">
+							<i class="fa fa-fw fa-hourglass-end"></i>
+							<span>2020.11</span>
+						</p>
+						<p class="initiate" title="initiate date">
+							<i class="fa fa-fw fa-hourglass-start"></i>
+							<span>2020.09</span>
+						</p>
+						<div class="clear"></div>
+						<p class="status">
+							<i class="fa fa-fw fa-sync" title="developed"></i>
+						</p>
+						<progress max="100" value="20"></progress>
+						<div class="clear"></div>
+						<p class="language" title="language">
+							<i class="fa fa-fw fa-language"></i>
+							<span>EN</span>
+						</p>
+						<p class="type">
+							<i class="fa fa-fw fa-globe" title="web site / app"></i>
+						</p>
+					</a><a class="item" href="#football-manager-cli">
+						<img src="img/projects/football-manager-cli.png" alt="Football Manager CLI"/>
+						<h3 class="title">Football Manager CLI</h3>
+						<p class="last-modified" title="last modified">
+							<i class="fa fa-fw fa-hourglass-end"></i>
+							<span>2019.05</span>
+						</p>
+						<p class="initiate" title="initiate date">
+							<i class="fa fa-fw fa-hourglass-start"></i>
+							<span>2014.10</span>
+						</p>
+						<div class="clear"></div>
+						<p class="status">
+							<i class="fa fa-fw fa-sync" title="developed"></i>
+						</p>
+						<progress max="100" value="40"></progress>
+						<div class="clear"></div>
+						<p class="language" title="language">
+							<i class="fa fa-fw fa-language"></i>
+							<span>EN / PL</span>
+						</p>
+						<p class="type">
+							<i class="fa fa-fw fa-terminal" title="console app"></i>
+							<i class="fa fa-fw fa-desktop" title="desktop app"></i>
+						</p>
+					</a><a class="item" href="#portfolio-spa">
+						<img src="img/projects/portfolio.png" alt="Portfolio"/>
+						<h3 class="title">Portfolio - SPA</h3>
+						<p class="last-modified" title="last modified">
+							<i class="fa fa-fw fa-hourglass-end"></i>
+							<span>2021.01</span>
+						</p>
+						<p class="initiate" title="initiate date">
+							<i class="fa fa-fw fa-hourglass-start"></i>
+							<span>2019.12</span>
+						</p>
+						<div class="clear"></div>
+						<p class="status">
+							<i class="fa fa-fw fa-sync" title="developed"></i>
+						</p>
+						<progress max="100" value="90"></progress>
+						<div class="clear"></div>
+						<p class="language" title="language">
+							<i class="fa fa-fw fa-language"></i>
+							<span>EN / PL</span>
+						</p>
+						<p class="type">
+							<i class="fa fa-fw fa-globe" title="web site / app"></i>
+						</p>
+						<div class="clear"></div>
+					</a><a class="item" href="#portfolio-mpa">
+						<img src="img/projects/portfolio.png" alt="Portfolio"/>
+						<h3 class="title">Portfolio - MPA</h3>
+						<p class="last-modified" title="last modified">
+							<i class="fa fa-fw fa-hourglass-end"></i>
+							<span>2018.06</span>
+						</p>
+						<p class="initiate" title="initiate date">
+							<i class="fa fa-fw fa-hourglass-start"></i>
+							<span>2018.05</span>
+						</p>
+						<div class="clear"></div>
+						<p class="status">
+							<i class="fa fa-fw fa-times" title="abandoned"></i>
+						</p>
+						<progress max="100" value="90"></progress>
+						<div class="clear"></div>
+						<p class="language" title="language">
+							<i class="fa fa-fw fa-language"></i>
+							<span>EN / PL</span>
+						</p>
+						<p class="type">
+							<i class="fa fa-fw fa-globe" title="web site / app"></i>
+						</p>
+						<div class="clear"></div>
+					</a><a class="item" href="#warcaby">
+						<img src="img/projects/warcaby.png" alt="Warcaby (Checkers)"/>
+						<h3 class="title">Warcaby</h3>
+						<p class="last-modified" title="last modified">
+							<i class="fa fa-fw fa-hourglass-end"></i>
+							<span>2020.04</span>
+						</p>
+						<p class="initiate" title="initiate date">
+							<i class="fa fa-fw fa-hourglass-start"></i>
+							<span>2013.12</span>
+						</p>
+						<div class="clear"></div>
+						<p class="status">
+							<i class="fa fa-fw fa-check" title="completed"></i>
+						</p>
+						<progress max="100" value="100"></progress>
+						<div class="clear"></div>
+						<p class="language" title="language">
+							<i class="fa fa-fw fa-language"></i>
+							<span>PL</span>
+						</p>
+						<p class="type">
+							<i class="fab fa-java" title="java"></i>
+							<i class="fa fa-fw fa-desktop" title="desktop app"></i>
+						</p>
+					</a>
 					<div class="clear"></div>
-					<p class="status">
-						<i class="fa fa-fw fa-sync" title="developed"></i>
-					</p>
-					<progress max="100" value="50"></progress>
-					<div class="clear"></div>
-					<p class="language" title="language">
-						<i class="fa fa-fw fa-language"></i>
-						<span>EN / PL</span>
-					</p>
-					<p class="type">
-						<i class="fa fa-fw fa-globe" title="web site / app"></i>
-					</p>
-					<div class="clear"></div>
-				</a><a class="item" href="#win95">
-					<img src="img/projects/win95.png" alt="Windows 95 Simulator"/>
-					<h3 class="title">Win 95 Simulator</h3>
-					<p class="last-modified" title="last modified">
-						<i class="fa fa-fw fa-hourglass-end"></i>
-						<span>2020.10</span>
-					</p>
-					<p class="initiate" title="initiate date">
-						<i class="fa fa-fw fa-hourglass-start"></i>
-						<span>2020.10</span>
-					</p>
-					<div class="clear"></div>
-					<p class="status">
-						<i class="fa fa-fw fa-sync" title="developed"></i>
-					</p>
-					<progress max="100" value="20"></progress>
-					<div class="clear"></div>
-					<p class="language" title="language">
-						<i class="fa fa-fw fa-language"></i>
-						<span>EN</span>
-					</p>
-					<p class="type">
-						<i class="fa fa-fw fa-globe" title="web site / app"></i>
-					</p>
-				</a><a class="item" href="#win31">
-					<img src="img/projects/win31.png" alt="Windows 3.1 Simulator"/>
-					<h3 class="title">Win 3.1 Simulator</h3>
-					<p class="last-modified" title="last modified">
-						<i class="fa fa-fw fa-hourglass-end"></i>
-						<span>2020.11</span>
-					</p>
-					<p class="initiate" title="initiate date">
-						<i class="fa fa-fw fa-hourglass-start"></i>
-						<span>2020.09</span>
-					</p>
-					<div class="clear"></div>
-					<p class="status">
-						<i class="fa fa-fw fa-sync" title="developed"></i>
-					</p>
-					<progress max="100" value="20"></progress>
-					<div class="clear"></div>
-					<p class="language" title="language">
-						<i class="fa fa-fw fa-language"></i>
-						<span>EN</span>
-					</p>
-					<p class="type">
-						<i class="fa fa-fw fa-globe" title="web site / app"></i>
-					</p>
-				</a><a class="item" href="#football-manager-cli">
-					<img src="img/projects/football-manager-cli.png" alt="Football Manager CLI"/>
-					<h3 class="title">Football Manager CLI</h3>
-					<p class="last-modified" title="last modified">
-						<i class="fa fa-fw fa-hourglass-end"></i>
-						<span>2019.05</span>
-					</p>
-					<p class="initiate" title="initiate date">
-						<i class="fa fa-fw fa-hourglass-start"></i>
-						<span>2014.10</span>
-					</p>
-					<div class="clear"></div>
-					<p class="status">
-						<i class="fa fa-fw fa-sync" title="developed"></i>
-					</p>
-					<progress max="100" value="40"></progress>
-					<div class="clear"></div>
-					<p class="language" title="language">
-						<i class="fa fa-fw fa-language"></i>
-						<span>EN / PL</span>
-					</p>
-					<p class="type">
-						<i class="fa fa-fw fa-terminal" title="console app"></i>
-						<i class="fa fa-fw fa-desktop" title="desktop app"></i>
-					</p>
-				</a><a class="item" href="#portfolio-spa">
-					<img src="img/projects/portfolio.png" alt="Portfolio"/>
-					<h3 class="title">Portfolio - SPA</h3>
-					<p class="last-modified" title="last modified">
-						<i class="fa fa-fw fa-hourglass-end"></i>
-						<span>2020.12</span>
-					</p>
-					<p class="initiate" title="initiate date">
-						<i class="fa fa-fw fa-hourglass-start"></i>
-						<span>2019.12</span>
-					</p>
-					<div class="clear"></div>
-					<p class="status">
-						<i class="fa fa-fw fa-sync" title="developed"></i>
-					</p>
-					<progress max="100" value="90"></progress>
-					<div class="clear"></div>
-					<p class="language" title="language">
-						<i class="fa fa-fw fa-language"></i>
-						<span>EN / PL</span>
-					</p>
-					<p class="type">
-						<i class="fa fa-fw fa-globe" title="web site / app"></i>
-					</p>
-					<div class="clear"></div>
-				</a><a class="item" href="#portfolio-mpa">
-					<img src="img/projects/portfolio.png" alt="Portfolio"/>
-					<h3 class="title">Portfolio - MPA</h3>
-					<p class="last-modified" title="last modified">
-						<i class="fa fa-fw fa-hourglass-end"></i>
-						<span>2018.06</span>
-					</p>
-					<p class="initiate" title="initiate date">
-						<i class="fa fa-fw fa-hourglass-start"></i>
-						<span>2018.05</span>
-					</p>
-					<div class="clear"></div>
-					<p class="status">
-						<i class="fa fa-fw fa-times" title="abandoned"></i>
-					</p>
-					<progress max="100" value="90"></progress>
-					<div class="clear"></div>
-					<p class="language" title="language">
-						<i class="fa fa-fw fa-language"></i>
-						<span>EN / PL</span>
-					</p>
-					<p class="type">
-						<i class="fa fa-fw fa-globe" title="web site / app"></i>
-					</p>
-					<div class="clear"></div>
-				</a><a class="item" href="#warcaby">
-					<img src="img/projects/warcaby.png" alt="Warcaby (Checkers)"/>
-					<h3 class="title">Warcaby</h3>
-					<p class="last-modified" title="last modified">
-						<i class="fa fa-fw fa-hourglass-end"></i>
-						<span>2020.04</span>
-					</p>
-					<p class="initiate" title="initiate date">
-						<i class="fa fa-fw fa-hourglass-start"></i>
-						<span>2013.12</span>
-					</p>
-					<div class="clear"></div>
-					<p class="status">
-						<i class="fa fa-fw fa-check" title="completed"></i>
-					</p>
-					<progress max="100" value="100"></progress>
-					<div class="clear"></div>
-					<p class="language" title="language">
-						<i class="fa fa-fw fa-language"></i>
-						<span>PL</span>
-					</p>
-					<p class="type">
-						<i class="fab fa-java" title="java"></i>
-						<i class="fa fa-fw fa-desktop" title="desktop app"></i>
-					</p>
-				</a>
-				<div class="clear"></div>
+				</div>
 			</article>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 			<table id="project-table" class="horizontal-line">
 				<tr>
@@ -653,8 +666,20 @@
 					</td>
 				</tr>
 				<tr>
-					<td><img src="img/icons/terminal.png" alt="windows 95"/></td>
-					<td><a href="#cmd">Windows 95 Simulator</a></td>
+					<td><img src="img/icons/terminal.png" alt="WebDOS"/></td>
+					<td><a href="#webdos">WebDOS</a></td>
+					<td>EN</td>
+					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
+					<td>2020.09</td>
+					<td>2020.11</td>
+					<td><progress max="100" value="20"></progress></td>
+					<td>
+						<i class="fa fa-fw fa-globe" title="web site / app"></i><i class="fab fa-fw fa-html5" title="HTML5"></i><i class="fab fa-fw fa-css3" title="CSS"></i><i class="fab fa-fw fa-js" title="JavaScript"></i>
+					</td>
+				</tr>
+				<tr>
+					<td><img src="img/icons/win.png" alt="Windows 95"/></td>
+					<td><a href="#win95">Windows 95 Simulator</a></td>
 					<td>EN</td>
 					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
 					<td>2020.10</td>
@@ -665,8 +690,8 @@
 					</td>
 				</tr>
 				<tr>
-					<td><img src="img/icons/terminal.png" alt="windows 3.1"/></td>
-					<td><a href="#cmd">Windows 3.1 Simulator</a></td>
+					<td><img src="img/icons/win.png" alt="Windows 3.1"/></td>
+					<td><a href="#win31">Windows 3.1 Simulator</a></td>
 					<td>EN</td>
 					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
 					<td>2020.09</td>
@@ -676,8 +701,58 @@
 						<i class="fa fa-fw fa-globe" title="web site / app"></i><i class="fab fa-fw fa-html5" title="HTML5"></i><i class="fab fa-fw fa-css3" title="CSS"></i><i class="fab fa-fw fa-js" title="JavaScript"></i>
 					</td>
 				</tr>
+				<tr>
+					<td><img src="img/icons/favicon.png" alt="Portfolio"/></td>
+					<td><a href="#portfolio-spa">Portfolio - SPA</a></td>
+					<td>EN / PL</td>
+					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
+					<td>2019.12</td>
+					<td>2021.01</td>
+					<td><progress max="100" value="90"></progress></td>
+					<td>
+						<i class="fa fa-fw fa-globe" title="web site / app"></i><i class="fab fa-fw fa-html5" title="HTML5"></i><i class="fab fa-fw fa-css3" title="CSS"></i><i class="fab fa-fw fa-js" title="JavaScript"></i>
+					</td>
+				</tr>
+				<tr>
+					<td><img src="img/icons/favicon.png" alt="Portfolio"/></td>
+					<td><a href="#portfolio-mpa">Portfolio - MPA</a></td>
+					<td>EN / PL</td>
+					<td><i class="fa fa-fw fa-times" title="abandoned"></i></td>
+					<td>2018.05</td>
+					<td>2018.06</td>
+					<td><progress max="100" value="90"></progress></td>
+					<td>
+						<i class="fa fa-fw fa-globe" title="web site / app"></i><i class="fab fa-fw fa-html5" title="HTML5"></i><i class="fab fa-fw fa-css3" title="CSS"></i><i class="fab fa-fw fa-js" title="JavaScript"></i><i class="fab fa-fw fa-php" title="PHP7"></i>
+					</td>
+				</tr>
+				<tr>
+					<td><img src="img/icons/elektromechanika.png" alt="Elektromechanika"/></td>
+					<td><a href="#portfolio-mpa">Elektromechanika</a></td>
+					<td>PL</td>
+					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
+					<td>2018.04</td>
+					<td>2020.11</td>
+					<td><progress max="100" value="90"></progress></td>
+					<td>
+						<i class="fa fa-fw fa-globe" title="web site / app"></i><i class="fab fa-fw fa-html5" title="HTML5"></i><i class="fab fa-fw fa-css3" title="CSS"></i><i class="fab fa-fw fa-js" title="JavaScript"></i>
+					</td>
+				</tr>
 			</table>
 			<br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 			<table class="horizontal-line">
 				<tr>
 					<th class="link" onclick="sortTable(0)">

@@ -24,8 +24,8 @@ table#project-table td {
 	padding: 5px;
 }
 
-table#project-table tr td:first-child {
-	vertical-align: bottom;
+table#project-table img {
+	vertical-align: middle;
 }
 
 /*table#project-table tr:hover {

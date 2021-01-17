@@ -86,15 +86,24 @@ function sendEmail() {
 }
 
 function setGridView() {
+	document.getElementById("project-table").style.display = "none";
+	document.getElementById("project-grid-list").style.display = "block";
 	var list = document.getElementById("project-list");
 	if (list != null)
 		document.getElementById("project-list").id = "project-grid";
 }
 
 function setListView() {
+	document.getElementById("project-table").style.display = "none";
+	document.getElementById("project-grid-list").style.display = "block";
 	var grid = document.getElementById("project-grid");
 	if (grid != null)
 		document.getElementById("project-grid").id = "project-list";
+}
+
+function setTableView() {
+	document.getElementById("project-grid-list").style.display = "none";
+	document.getElementById("project-table").style.display = "table";
 }
 
 function sortTable(n) {
