@@ -4,7 +4,7 @@ html { scroll-behavior: smooth; }
 
 body {
 	position: relative;
-	max-width: 1200px;
+	max-width: 1280px;
 	margin: 0 auto;
 	font-family: Quicksand, Arial, sans-serif;
 	font-size: 16px;
@@ -427,6 +427,9 @@ i#mobile-apps-arrow {
 	#project-grid .item h3 {
 		margin: 10px 0;
 		text-align: center;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 
 	#project-list .item h3 {
@@ -595,6 +598,9 @@ li { margin: 10px 0; }
 			margin-left: 50px;
 		}
 
+}
+
+@media only screen and (max-width: 700px) {
 	#project-grid .item {
 		width: calc(100% - 10px);
 	}
@@ -602,5 +608,4 @@ li { margin: 10px 0; }
 		#project-grid img {
 			height: 225px;
 		}
-
 }

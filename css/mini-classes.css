@@ -29,7 +29,7 @@ i.small {
 	font-size: 34px;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 700px) {
 
 	.col-50 { width: 100%; }
 	.col-33 { width: 100%; }

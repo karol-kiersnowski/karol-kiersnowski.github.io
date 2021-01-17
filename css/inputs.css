@@ -47,7 +47,7 @@ textarea {
 	vertical-align: middle;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 700px) {
 
 	input[type="text"],
 	input[type="email"],
