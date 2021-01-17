@@ -18,3 +18,22 @@ table.vertical-line td:first-child {
 	width: 80px;
 	border-right: 1px solid #000;
 }
+
+table#project-table th,
+table#project-table td {
+	padding: 5px;
+}
+
+table#project-table tr td:first-child {
+	vertical-align: bottom;
+}
+
+table#project-table tr:hover {
+	background-color: rgba(176,176,176,0.2);
+	box-shadow: 0px 0px 2px rgba(128,128,128,0.9);
+}
+
+table#project-table tr:first-child:hover {
+	background-color: initial;
+	box-shadow: none;
+}

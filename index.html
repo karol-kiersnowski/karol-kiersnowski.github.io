@@ -3,9 +3,9 @@
 <head>
 	<meta charset="utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png"/>
-	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png"/>
-	<link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png"/>
+	<link rel="icon" type="image/png" sizes="16x16" href="img/icons/favicon.png"/>
+	<link rel="icon" type="image/png" sizes="32x32" href="img/icons/favicon-32x32.png"/>
+	<link rel="icon" type="image/png" sizes="96x96" href="img/icons/favicon-96x96.png"/>
 	<link rel="stylesheet" href="css/style.css"/>
 	<link rel="stylesheet" href="css/webfonts.css"/>
 	<link rel="stylesheet" href="css/calendar.css"/>
@@ -63,10 +63,10 @@
 		</a>
 		<hr>
 		<a id="btnPolish" href="index-pl.html" onclick="translateText('pl'); displayCalendar()">
-			<img src="img/polska.png" alt="Polska"/> Wersja polska
+			<img src="img/icons/polska.png" alt="Polska"/> Wersja polska
 		</a>
 		<a id="btnEnglish" href="index.html" onclick="translateText('en'); displayCalendar()" style="display: none;">
-			<img src="img/uk.png" alt="UK"/> English version
+			<img src="img/icons/uk.png" alt="UK"/> English version
 		</a>
 		
 		<div id="calendar-container">
@@ -441,7 +441,7 @@
 					<h3 class="title">cmd</h3>
 					<p class="last-modified" title="last modified">
 						<i class="fa fa-fw fa-hourglass-end"></i>
-						<span>2020.12</span>
+						<span>2021.01</span>
 					</p>
 					<p class="initiate" title="initiate date">
 						<i class="fa fa-fw fa-hourglass-start"></i>
@@ -615,18 +615,78 @@
 
 			<table id="project-table" class="horizontal-line">
 				<tr>
+					<th>
+					</th>
+					<th class="link" onclick="sortTable(0)">
+						<span class="txtName">Name</span>
+						<i class="fa fa-sort"></i>
+					</th>
+					<th class="link" onclick="sortTable(0)">
+						<span class="txtLanguage">Language</span>
+					</th>
+					<th class="link" onclick="sortTable(0)">
+						<span class="txtStatus">Status</span>
+					</th>
+					<th class="link" onclick="sortTable(0)">
+						<span class="txtInitiateDate">Initiate date</span>
+					</th>
+					<th class="link" onclick="sortTable(0)">
+						<span class="txtLastModified">Last modified</span>
+					</th>
+					<th class="link" onclick="sortTable(0)">
+						<span class="txtProgress">Progress</span>
+					</th>
+					<th class="link" onclick="sortTable(1)">
+						<span class="txtTechnologies">Technologies</span>
+					</th>
+				</tr>
+				<tr>
+					<td><img src="img/icons/terminal.png" alt="cmd"/></td>
+					<td><a href="#cmd">cmd</a></td>
+					<td>EN / PL</td>
+					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
+					<td>2018.05</td>
+					<td>2021.01</td>
+					<td><progress max="100" value="50" style="width: 70px;"></progress></td>
+					<td>
+						<i class="fa fa-fw fa-globe" title="web site / app"></i><i class="fab fa-fw fa-html5" title="HTML5"></i><i class="fab fa-fw fa-css3" title="CSS"></i><i class="fab fa-fw fa-js" title="JavaScript"></i><i class="fab fa-fw fa-php" title="PHP7"></i>
+					</td>
+				</tr>
+				<tr>
+					<td><img src="img/icons/terminal.png" alt="windows 95"/></td>
+					<td><a href="#cmd">Windows 95 Simulator</a></td>
+					<td>EN</td>
+					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
+					<td>2020.10</td>
+					<td>2020.10</td>
+					<td><progress max="100" value="20" style="width: 70px;"></progress></td>
+					<td>
+						<i class="fa fa-fw fa-globe" title="web site / app"></i><i class="fab fa-fw fa-html5" title="HTML5"></i><i class="fab fa-fw fa-css3" title="CSS"></i><i class="fab fa-fw fa-js" title="JavaScript"></i>
+					</td>
+				</tr>
+				<tr>
+					<td><img src="img/icons/terminal.png" alt="windows 3.1"/></td>
+					<td><a href="#cmd">Windows 3.1 Simulator</a></td>
+					<td>EN</td>
+					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
+					<td>2020.09</td>
+					<td>2020.11</td>
+					<td><progress max="100" value="20" style="width: 70px;"></progress></td>
+					<td>
+						<i class="fa fa-fw fa-globe" title="web site / app"></i><i class="fab fa-fw fa-html5" title="HTML5"></i><i class="fab fa-fw fa-css3" title="CSS"></i><i class="fab fa-fw fa-js" title="JavaScript"></i>
+					</td>
+				</tr>
+			</table>
+			<br><br>
+			<table class="horizontal-line">
+				<tr>
 					<th class="link" onclick="sortTable(0)">
 						<span class="txtName">Name</span>
 						<i class="fa fa-sort"></i>
 					</th>
 					<th class="link" onclick="sortTable(1)">
 						<span class="txtTechnologies">Technologies</span>
-						<i class="fa fa-sort"></i>
 					</th>
-				</tr>
-				<tr>
-					<td><a href="#cmd">cmd</a></td>
-					<td>HTML5, CSS, JavaScript, PHP7</td>
 				</tr>
 				<tr>
 					<td><a href="#win95">Windows 95 Simulator</a></td>
@@ -665,7 +725,7 @@
 					<td>C# - WPF; SQL - MS Access</td>
 				</tr>
 				<tr>
-					<td><a href="#praca-licencjacka" class="txtBachelorWork">Menedżer piłkarski - gra strategiczna z elementami sztucznej inteligencji</a>
+					<td><a href="#praca-licencjacka">Menedżer piłkarski</a>
 					<td>LaTeX -> PDF</td>
 				</tr>
 				<tr>
@@ -693,6 +753,25 @@
 					<td>C++ - Allegro Library</td>
 				</tr>
 			</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -727,14 +806,14 @@
 							<td>2018.05 - 2020.10</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress value="50" max="100"></progress>
 								<label class="progress">50%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtDeveloped">developed</td>
 						</tr>
 					</table>
@@ -786,14 +865,14 @@
 							<td>2020.10.11</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress max="100" value="20"></progress>
 								<label class="progress">20%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtDeveloped">developed</td>
 						</tr>
 					</table>
@@ -840,14 +919,14 @@
 							<td>2020.09.23</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress max="100" value="20"></progress>
 								<label class="progress">20%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtDeveloped">developed</td>
 						</tr>
 					</table>
@@ -890,14 +969,14 @@
 							<td>2020.09.17</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress max="100" value="10"></progress>
 								<label class="progress">10%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtDeveloped">developed</td>
 						</tr>
 					</table>
@@ -944,14 +1023,14 @@
 							<td>2019 / 05</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress value="40" max="100"></progress>
 								<label class="progress">40%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtDeveloped">developed</td>
 						</tr>
 					</table>
@@ -1000,14 +1079,14 @@
 							<td>2019.12 - 2020.02</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress max="100" value="90"></progress>
 								<label class="progress">90%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtDeveloped">developed</td>
 						</tr>
 					</table>
@@ -1058,14 +1137,14 @@
 							<td>2018.05 - 2018.06</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress max="100" value="90"></progress>
 								<label class="progress">90%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtAbandoned">abandoned</td>
 						</tr>
 					</table>
@@ -1112,14 +1191,14 @@
 							<td>2018.04 - 2018.05</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress value="90" max="100"></progress>
 								<label class="progress">90%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtDeveloped">developed</td>
 						</tr>
 					</table>
@@ -1165,14 +1244,14 @@
 							<td>2018 / 06</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress value="90" max="100"></progress>
 								<label class="progress">90%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtDeveloped">developed</td>
 						</tr>
 					</table>
@@ -1229,14 +1308,14 @@
 							<td>2017.05</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress value="90" max="100"></progress>
 								<label class="progress">90%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtAbandoned">abandoned</td>
 						</tr>
 					</table>
@@ -1294,14 +1373,14 @@
 							<td>2014 - 2015</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress value="100" max="100"></progress>
 								<label class="progress">100%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtFinished">finished</td>
 						</tr>
 					</table>
@@ -1345,14 +1424,14 @@
 							<td>2015</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress value="100" max="100"></progress>
 								<label class="progress">100%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtFinished">finished</td>
 						</tr>
 					</table>
@@ -1401,14 +1480,14 @@
 							<td>2015</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress value="90" max="100"></progress>
 								<label class="progress">90%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtAbandoned">abandoned</td>
 						</tr>
 					</table>
@@ -1449,14 +1528,14 @@
 							<td>2013.12 - 2014.01</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress value="100" max="100"></progress>
 								<label class="progress">100%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtFinished">finished</td>
 						</tr>
 					</table>
@@ -1500,14 +1579,14 @@
 							<td>2013.02</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress value="90" max="100"></progress>
 								<label class="progress">90%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtAbandoned">abandoned</td>
 						</tr>
 					</table>
@@ -1548,14 +1627,14 @@
 							<td>2012 - 2013</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress value="10" max="100"></progress>
 								<label class="progress">10%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtAbandoned">abandoned</td>
 						</tr>
 					</table>
@@ -1599,14 +1678,14 @@
 							<td>2012 - 2013, 2020</td>
 						</tr>
 						<tr>
-							<td class="txtCompletedLevel">Completed level</td>
+							<td class="txtProgress">Progress</td>
 							<td>
 								<progress value="10" max="100"></progress>
 								<label class="progress">10%</label>
 							</td>
 						</tr>
 						<tr>
-							<td class="txtState">State</td>
+							<td class="txtStatus">Status</td>
 							<td class="txtAbandoned">abandoned</td>
 						</tr>
 					</table>
@@ -2512,7 +2591,7 @@
 				</p>
 				<h3>List of cookies used on the site</h3>
 				<ul>
-					<li>navState: wide / narrow</li>
+					<li>navStatus: wide / narrow</li>
 					<li>navLocation: left / right</li>
 				</ul>
 			</article>
@@ -2540,15 +2619,15 @@
 
 
 	<footer>
-		<h2>Copyright &copy; 2018-2020 Karol Kiersnowski</h2>
+		<h2>Copyright &copy; 2018-2021 Karol Kiersnowski</h2>
 		<!-- <p>
 			<span class="txtCookiesFooterInfo">Cookies are on this page<br>More information </span>
 			<a class="txtHere" href="#cookies">here</a>
 		</p> -->
 		<p id="txtToCreateWebsiteThereWereUsed">
 			To create website there were used<br>
-			<a target="_blank" href="https://fonts.google.com/specimen/Quicksand">Quicksand</a> font and<br>
-			<a target="_blank" href="https://fontawesome.com">Fonts Awesome</a> icons
+			<a target="_blank" href="https://fontawesome.com">Fonts Awesome</a> icons and<br>
+			<a target="_blank" href="https://fonts.google.com/specimen/Quicksand">Quicksand</a> font
 		</p>
 		<!-- <div style="margin-top: 40px;">
 			<h2 id="txtAlternatives" style="font-size: 16px;">Go to the bright side of the force</h2>

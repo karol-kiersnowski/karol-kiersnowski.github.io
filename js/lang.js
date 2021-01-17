@@ -39,8 +39,10 @@ function translateText(lang) {
 		var txtPolish = document.getElementsByClassName("txtPolish");
 		var txtEnglishPolish = document.getElementsByClassName("txtEnglishPolish");
 	var txtCreationPeriod = document.getElementsByClassName("txtCreationPeriod");
-	var txtCompletedLevel = document.getElementsByClassName("txtCompletedLevel");
-	var txtState = document.getElementsByClassName("txtState");
+	var txtInitiateDate = document.getElementsByClassName("txtInitiateDate");
+	var txtLastModified = document.getElementsByClassName("txtLastModified");
+	var txtProgress = document.getElementsByClassName("txtProgress");
+	var txtStatus = document.getElementsByClassName("txtStatus");
 		var txtFinished = document.getElementsByClassName("txtFinished");
 		var txtDeveloped = document.getElementsByClassName("txtDeveloped");
 		var txtAbandoned = document.getElementsByClassName("txtAbandoned");
@@ -147,10 +149,14 @@ function translateText(lang) {
 				txtEnglishPolish[i].innerHTML = "English / Polish";
 		for (var i=0; i<txtCreationPeriod.length; i++)
 			txtCreationPeriod[i].innerHTML = "Creation period";
-		for (var i=0; i<txtCompletedLevel.length; i++)
-			txtCompletedLevel[i].innerHTML = "Completed level";
-		for (var i=0; i<txtState.length; i++)
-			txtState[i].innerHTML = "Project state";
+		for (var i=0; i<txtInitiateDate.length; i++)
+			txtInitiateDate[i].innerHTML = "Initiate";
+		for (var i=0; i<txtLastModified.length; i++)
+			txtLastModified[i].innerHTML = "Last modified";
+		for (var i=0; i<txtProgress.length; i++)
+			txtProgress[i].innerHTML = "Progress";
+		for (var i=0; i<txtStatus.length; i++)
+			txtStatus[i].innerHTML = "Status";
 			for (var i=0; i<txtFinished.length; i++)
 				txtFinished[i].innerHTML = "finished";
 			for (var i=0; i<txtDeveloped.length; i++)
@@ -190,7 +196,7 @@ function translateText(lang) {
 			document.getElementsByClassName("txtE12")[0].innerHTML = 'Assembly and operation of personal computers and external devices';
 			document.getElementsByClassName("txtBachelorWork")[0].innerHTML = 'The football manager - a strategy game with elements of artificial intelligence';
 			document.getElementsByClassName("txtBachelorWork")[1].innerHTML = 'The football manager - a strategy game with elements of artificial intelligence';
-			document.getElementsByClassName("txtBachelorWork")[2].innerHTML = 'The football manager - a strategy game with elements of artificial intelligence';
+			//document.getElementsByClassName("txtBachelorWork")[2].innerHTML = 'The football manager - a strategy game with elements of artificial intelligence';
 			document.getElementsByClassName("txtDrivingLicense")[0].innerHTML = 'Driving license';
 			document.getElementsByClassName("txtBCategory")[0].innerHTML = 'B category';
 			document.getElementsByClassName("txtBasicLevel")[0].innerHTML = 'basic level';
@@ -277,7 +283,7 @@ function translateText(lang) {
 		/////////
 		//document.getElementsByClassName("txtCookiesFooterInfo")[0].innerHTML = "Cookies are on this page<br>More information ";
 		//document.getElementsByClassName("txtHere")[0].innerHTML = "here";
-		document.getElementById("txtToCreateWebsiteThereWereUsed").innerHTML = 'To create website there were used<br><a target="_blank" href="https://fonts.google.com/specimen/Quicksand">Quicksand</a> font and<br><a target="_blank" href="https://fontawesome.com">Fonts Awesome</a> icons';
+		document.getElementById("txtToCreateWebsiteThereWereUsed").innerHTML = 'To create website there were used<br><a target="_blank" href="https://fontawesome.com">Fonts Awesome</a> icons and<br><a target="_blank" href="https://fonts.google.com/specimen/Quicksand">Quicksand</a> font';
 		//document.getElementById("txtAlternatives").innerHTML = 'Go to the bright side of the force';
 
 
@@ -376,10 +382,14 @@ function translateText(lang) {
 				txtEnglishPolish[i].innerHTML = "angielski / polski";
 		for (var i=0; i<txtCreationPeriod.length; i++)
 			txtCreationPeriod[i].innerHTML = "Okres tworzenia";
-		for (var i=0; i<txtCompletedLevel.length; i++)
-			txtCompletedLevel[i].innerHTML = "Poziom ukończenia";
-		for (var i=0; i<txtState.length; i++)
-			txtState[i].innerHTML = "Stan projektu";
+		for (var i=0; i<txtInitiateDate.length; i++)
+			txtInitiateDate[i].innerHTML = "Początek";
+		for (var i=0; i<txtLastModified.length; i++)
+			txtLastModified[i].innerHTML = "Ostatnia modyfikacja";
+		for (var i=0; i<txtProgress.length; i++)
+			txtProgress[i].innerHTML = "Postęp";
+		for (var i=0; i<txtStatus.length; i++)
+			txtStatus[i].innerHTML = "Stan";
 			for (var i=0; i<txtFinished.length; i++)
 				txtFinished[i].innerHTML = "ukończony";
 			for (var i=0; i<txtDeveloped.length; i++)
@@ -425,7 +435,7 @@ function translateText(lang) {
 			document.getElementsByClassName("txtE12")[0].innerHTML = 'Montaż i eksploatacja komputerów osobistych oraz urządzeń peryferyjnych';
 			document.getElementsByClassName("txtBachelorWork")[0].innerHTML = 'Menedżer piłkarski - gra strategiczna z elementami sztucznej inteligencji';
 			document.getElementsByClassName("txtBachelorWork")[1].innerHTML = 'Menedżer piłkarski - gra strategiczna z elementami sztucznej inteligencji';
-			document.getElementsByClassName("txtBachelorWork")[2].innerHTML = 'Menedżer piłkarski - gra strategiczna z elementami sztucznej inteligencji';
+			//document.getElementsByClassName("txtBachelorWork")[2].innerHTML = 'Menedżer piłkarski - gra strategiczna z elementami sztucznej inteligencji';
 			document.getElementsByClassName("txtDrivingLicense")[0].innerHTML = 'Prawo jazdy';
 			document.getElementsByClassName("txtBCategory")[0].innerHTML = 'kategoria B';
 			document.getElementsByClassName("txtBasicLevel")[0].innerHTML = 'poziom podstawowy';
@@ -511,7 +521,7 @@ function translateText(lang) {
 		/////////
 		//document.getElementsByClassName("txtCookiesFooterInfo")[0].innerHTML = "Na tej stronie grasują ciasteczka (cookies)<br>Więcej informacji ";
 		//document.getElementsByClassName("txtHere")[0].innerHTML = "tutaj";
-		document.getElementById("txtToCreateWebsiteThereWereUsed").innerHTML = 'Do stworzenia strony wykorzystano<br>czcionkę <a target="_blank" href="https://fonts.google.com/specimen/Quicksand">Quicksand</a> oraz<br>ikony <a target="_blank" href="https://fontawesome.com">Font Awesome</a>';
+		document.getElementById("txtToCreateWebsiteThereWereUsed").innerHTML = 'Do stworzenia strony wykorzystano<br>ikony <a target="_blank" href="https://fontawesome.com">Font Awesome</a> oraz<br>czcionkę <a target="_blank" href="https://fonts.google.com/specimen/Quicksand">Quicksand</a>';
 		//document.getElementById("txtAlternatives").innerHTML = 'Przejdź na jasną stronę mocy.';
 	}
 }
