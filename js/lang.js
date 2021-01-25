@@ -39,8 +39,8 @@ function translateText(lang) {
 		var txtPolish = document.getElementsByClassName("txtPolish");
 		var txtEnglishPolish = document.getElementsByClassName("txtEnglishPolish");
 	var txtCreationPeriod = document.getElementsByClassName("txtCreationPeriod");
-	var txtInitiateDate = document.getElementsByClassName("txtInitiateDate");
-	var txtLastModified = document.getElementsByClassName("txtLastModified");
+	var txtInitiate = document.getElementsByClassName("txtInitiate");
+	var txtUpdate = document.getElementsByClassName("txtUpdate");
 	var txtProgress = document.getElementsByClassName("txtProgress");
 	var txtStatus = document.getElementsByClassName("txtStatus");
 		var txtFinished = document.getElementsByClassName("txtFinished");
@@ -150,9 +150,9 @@ function translateText(lang) {
 		for (var i=0; i<txtCreationPeriod.length; i++)
 			txtCreationPeriod[i].innerHTML = "Creation period";
 		for (var i=0; i<txtInitiateDate.length; i++)
-			txtInitiateDate[i].innerHTML = "Initiate";
+			txtInitiate[i].innerHTML = "Initiate";
 		for (var i=0; i<txtLastModified.length; i++)
-			txtLastModified[i].innerHTML = "Last modified";
+			txtUpdate[i].innerHTML = "Update";
 		for (var i=0; i<txtProgress.length; i++)
 			txtProgress[i].innerHTML = "Progress";
 		for (var i=0; i<txtStatus.length; i++)
@@ -382,10 +382,10 @@ function translateText(lang) {
 				txtEnglishPolish[i].innerHTML = "angielski / polski";
 		for (var i=0; i<txtCreationPeriod.length; i++)
 			txtCreationPeriod[i].innerHTML = "Okres tworzenia";
-		for (var i=0; i<txtInitiateDate.length; i++)
-			txtInitiateDate[i].innerHTML = "Początek";
-		for (var i=0; i<txtLastModified.length; i++)
-			txtLastModified[i].innerHTML = "Ostatnia modyfikacja";
+		for (var i=0; i<txtInitiate.length; i++)
+			txtInitiate[i].innerHTML = "Początek";
+		for (var i=0; i<txtUpdate.length; i++)
+			txtUpdate[i].innerHTML = "Aktualizacja";
 		for (var i=0; i<txtProgress.length; i++)
 			txtProgress[i].innerHTML = "Postęp";
 		for (var i=0; i<txtStatus.length; i++)
