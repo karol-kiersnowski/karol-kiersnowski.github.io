@@ -35,10 +35,16 @@ table#project-table td:nth-child(7) {
 	text-align: center;
 }
 
-/*table#project-table th:nth-child(8),
+table#project-table th:nth-child(8),
 table#project-table td:nth-child(8) {
-	text-align: right;
-}*/
+	/*text-align: right;*/
+}
+
+table#project-table td:nth-child(8) span {
+	color: #247;
+	font-size: 16px;
+	font-weight: bold;
+}
 
 /*table#project-table tr:hover {
 	background-color: rgba(176,176,176,0.2);
@@ -56,4 +62,22 @@ table#project-table img {
 
 table#project-table progress {
 	width: 60px;
+}
+
+@media only screen and (max-width: 700px) {
+
+	table#project-table th:nth-child(1),
+	table#project-table td:nth-child(1),
+	table#project-table th:nth-child(3),
+	table#project-table td:nth-child(3),
+	table#project-table th:nth-child(4),
+	table#project-table td:nth-child(4),
+	table#project-table th:nth-child(5),
+	table#project-table td:nth-child(5),
+	table#project-table th:nth-child(6),
+	table#project-table td:nth-child(6),
+	table#project-table th:nth-child(7),
+	table#project-table td:nth-child(7) {
+		display: none;
+	}
 }

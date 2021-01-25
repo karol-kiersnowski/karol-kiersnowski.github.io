@@ -10,21 +10,12 @@ function showSection() {
 		document.getElementById("offer").style.display = "block";
 		document.title = "Karol Kiersnowski | Portfolio";
 	}
-	else if (hash == "offer" ||
-			hash == "projects" ||
-			hash == "cv" ||
-			hash == "contact" ||
-			hash == "photography" ||
-			hash == "settings" ||
-			hash == "cookies") {
+	else {
 		document.getElementById(hash).style.display = "block";
 		var hashUpperCase = hash.charAt(0).toUpperCase() + hash.substr(1);
 		translatedSection = document.getElementsByClassName("txt" + hashUpperCase)[0].innerHTML;
 	}
-	else {
-		document.getElementById("projects").style.display = "block";
-		translatedSection = document.getElementsByClassName("txtProjects")[0].innerHTML;
-	}
+
 
 
 	if (hash != "") {
