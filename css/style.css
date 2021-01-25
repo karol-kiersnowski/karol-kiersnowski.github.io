@@ -117,6 +117,10 @@ main {
 			padding: 20px 0;
 		}
 
+			section img {
+				max-width: 100%;
+			}
+
 			article {
 				/*overflow-x: hidden;*/
 				/*overflow-y: auto;*/

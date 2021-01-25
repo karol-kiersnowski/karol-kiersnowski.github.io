@@ -126,7 +126,7 @@ function translateText(lang) {
 
 		// PROJECTS PAGE
 		////////////////
-		document.getElementById("txtProjectsInfo").innerHTML = "Most projects are unfinished. Some of them may not work correctly. However, the source code can be useful.";
+		document.getElementById("txtProjectsInfo").innerHTML = 'Most of the projects are unfinished. Some of them may not work properly. However, some applications / websites may be interesting. My projects can be found on <a target="_blank" href="https://github.com/karol-kiersnowski">GitHub</a>.';
 		for (var i=0; i<txtName.length; i++)
 			txtName[i].innerHTML = "Name";
 			for (var i=0; i<txtTicTacToe.length; i++)
@@ -359,7 +359,7 @@ function translateText(lang) {
 
 		// PROJECTS PAGE
 		////////////////s
-		document.getElementById("txtProjectsInfo").innerHTML = "Większość projektów jest nieukończonych. Niektóre z nich mogą działać niepoprawnie. Mimo to, kod źródłowy może być przydatny.";
+		document.getElementById("txtProjectsInfo").innerHTML = 'Większość projektów jest nieukończonych. Niektóre z nich mogą działać niepoprawnie. Mimo to, niektóre aplikacje / strony internetowe mogą być interesujące. Moje projekty można znaleźć w serwisie <a target="_blank" href="https://github.com/karol-kiersnowski">GitHub</a>.';
 		for (var i=0; i<txtName.length; i++)
 			txtName[i].innerHTML = "Nazwa";
 			for (var i=0; i<txtTicTacToe.length; i++)

@@ -4,14 +4,14 @@ function showSection() {
 		sections[i].style.display = "none";
 
 	var hash = window.location.hash.substr(1);
+	var currentPage = document.getElementById(hash);
 	var translatedSection;
 
 	if (hash == "") {
 		document.getElementById("offer").style.display = "block";
 		document.title = "Karol Kiersnowski | Portfolio";
-	}
-	else {
-		document.getElementById(hash).style.display = "block";
+	} else {
+		currentPage.style.display = "block";
 		var hashUpperCase = hash.charAt(0).toUpperCase() + hash.substr(1);
 		translatedSection = document.getElementsByClassName("txt" + hashUpperCase)[0].innerHTML;
 	}
