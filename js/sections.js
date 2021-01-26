@@ -4,21 +4,20 @@ function showSection() {
 		sections[i].style.display = "none";
 
 	var hash = window.location.hash.substr(1);
-	var currentPage = document.getElementById(hash);
 	var translatedSection;
 
 	if (hash == "") {
 		document.getElementById("offer").style.display = "block";
 		document.title = "Karol Kiersnowski | Portfolio";
 	} else {
-		currentPage.style.display = "block";
+		document.getElementById(hash).style.display = "block";
 		var hashUpperCase = hash.charAt(0).toUpperCase() + hash.substr(1);
-		translatedSection = document.getElementsByClassName("txt" + hashUpperCase)[0].innerHTML;
-	}
 
+		if (document.getElementsByClassName("txt" + hashUpperCase)[0] != undefined)
+			translatedSection = document.getElementsByClassName("txt" + hashUpperCase)[0].innerHTML;
+		else
+			translatedSection = document.getElementsByClassName("txtProjects")[0].innerHTML;
 
-
-	if (hash != "") {
 		document.title = "Karol Kiersnowski | Portfolio - " + translatedSection;
 		window.location.hash = "#" + hash;
 	}

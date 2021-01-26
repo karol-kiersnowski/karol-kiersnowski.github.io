@@ -413,14 +413,28 @@
 				Most of the projects are unfinished. Some of them may not work properly. However, some applications / websites may be interesting. My projects can be found on <a target="_blank" href="https://github.com/karol-kiersnowski">GitHub</a>.
 			</p>
 
-			<p style="text-align: right;">
-				<label style="vertical-align: middle;">View</label>
-				<button onclick="setTableView()"><i class="fa fa-table"></i> Table</button>
-				<button onclick="setListView()"><i class="fa fa-th-list"></i> List</button>
-				<button onclick="setGridView()"><i class="fa fa-th"></i> Grid</button>
-			</p>
 
-			<fieldset>
+
+			<div id="project-inputs">
+				<div id="project-select">
+					<label class="txtSortBy" for="select-sort">Sort by</label>
+					<select id="select-sort">
+						<option class="txtName" onclick="sort('name')">Name</option>
+						<option class="txtUpdate" onclick="sort('update')">Update</option>
+						<option class="txtInitiate" onclick="sort('initiate')">Initiate</option>
+						<option class="txtProgress" onclick="sort('progress')">Progress</option>
+						<option class="txtLanguage" onclick="sort('language')">Language</option>
+					</select>
+				</div>
+				<div id="project-view">
+				<label class="txtView" style="vertical-align: middle;">View</label>
+				<button onclick="setTableView()"><i class="fa fa-table"></i> <span class="txtTable">Table</span></button> 
+				<button onclick="setListView()"><i class="fa fa-th-list"></i> <span class="txtList">List</span></button>
+				<button onclick="setGridView()"><i class="fa fa-th"></i> <span class="txtGrid">Grid</span></button>
+			</div>
+			</div>
+
+			<!-- <fieldset>
 				<legend>Show</legend>
 				<p>
 					<input type="checkbox" id="checkbox-icon"checked onclick="toggleTableColumn(this, 1)"><label for="checkbox-icon" class="txtIcon">Icon</label>
@@ -439,19 +453,15 @@
 
 					<input type="checkbox" id="checkbox-technologies" checked onclick="toggleTableColumn(this, 8)"><label for="checkbox-technologies" class="txtTechnologies">Technologies</label>
 				</p>
-			</fieldset>
+			</fieldset> -->
 
 			<article id="project-grid-list">
-				<label for="select-sort" style="vertical-align: middle;">Sort by</label>
-				<select id="select-sort">
-					<option onclick="sort('name')">Name</option>
-					<option onclick="sort('initiate-date')">Initiate date</option>
-				</select>
-				<button class="txtName" onclick="sort('name')">Name</button>
-				<button class="" onclick="sort('last-modified')">Last modified</button>
-				<button class="" onclick="sort('initiate-date')">Initiate date</button>
+				
+				<!-- <button class="txtName" onclick="sort('name')">Name</button>
+				<button class="" onclick="sort('update')">Update</button>
+				<button class="" onclick="sort('initiate')">Initiate</button>
 				<button class="" onclick="sort('progress')">Progress</button>
-				<button class="" onclick="sort('language')">Language</button>
+				<button class="" onclick="sort('language')">Language</button> -->
 
 				<div id="project-list">
 					<a class="item" href="#cmd">
@@ -649,7 +659,7 @@
 
 			<table id="project-table" class="horizontal-line">
 				<tr>
-					<th>
+					<th class="link" onclick="sortTable(0)">
 					</th>
 					<th class="link" onclick="sortTable(1)">
 						<span class="txtName">Name</span>
@@ -699,7 +709,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td><img src="img/icons/terminal.png" alt="WebDOS"/></td>
+					<td><img src="img/icons/terminal-16x16.png" alt="WebDOS"/></td>
 					<td><a href="#webdos">WebDOS</a></td>
 					<td>EN</td>
 					<td>2020.09</td>
@@ -735,7 +745,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td><img src="img/icons/terminal.png" alt="cmd"/></td>
+					<td><img src="img/icons/terminal-16x16.png" alt="cmd"/></td>
 					<td><a href="#cmd">cmd</a></td>
 					<td>EN / PL</td>
 					<td>2018.05</td>
@@ -898,7 +908,10 @@
 
 
 		<section class="markdown" id="cmd">
-<h2 id="-icon-https-karol-kiersnowski-github-io-img-icons-terminal-png-cmd-line-com"><img src="https://karol-kiersnowski.github.io/img/icons/terminal.png" alt="icon"> cmd-line.com</h2>
+<h2 id="-icon-https-karol-kiersnowski-github-io-img-icons-terminal-png-cmd-line-com">
+	<img src="img/icons/terminal-32x32.png" alt="icon">
+	<span>cmd-line.com</span>
+</h2>
 <p>cmd-line.com is a website for learning the Command-Line Interface</p>
 <h3 id="project-sites">Project sites</h3>
 <ol>

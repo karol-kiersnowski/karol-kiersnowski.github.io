@@ -128,6 +128,11 @@ function translateText(lang) {
 		// PROJECTS PAGE
 		////////////////
 		document.getElementById("txtProjectsInfo").innerHTML = 'Most of the projects are unfinished. Some of them may not work properly. However, some applications / websites may be interesting. My projects can be found on <a target="_blank" href="https://github.com/karol-kiersnowski">GitHub</a>.';
+		document.getElementsByClassName("txtView")[0].innerHTML = "View";
+			document.getElementsByClassName("txtTable")[0].innerHTML = "Table";
+			document.getElementsByClassName("txtList")[0].innerHTML = "List";
+			document.getElementsByClassName("txtGrid")[0].innerHTML = "Grid";
+		document.getElementsByClassName("txtSortBy")[0].innerHTML = "Sort by";
 		for (var i=0; i<txtIcon.length; i++)
 			txtIcon[i].innerHTML = "Icon";
 		for (var i=0; i<txtName.length; i++)
@@ -363,6 +368,11 @@ function translateText(lang) {
 		// PROJECTS PAGE
 		////////////////s
 		document.getElementById("txtProjectsInfo").innerHTML = 'Większość projektów jest nieukończonych. Niektóre z nich mogą działać niepoprawnie. Mimo to, niektóre aplikacje / strony internetowe mogą być interesujące. Moje projekty można znaleźć w serwisie <a target="_blank" href="https://github.com/karol-kiersnowski">GitHub</a>.';
+		document.getElementsByClassName("txtView")[0].innerHTML = "Widok";
+			document.getElementsByClassName("txtTable")[0].innerHTML = "Tabela";
+			document.getElementsByClassName("txtList")[0].innerHTML = "Lista";
+			document.getElementsByClassName("txtGrid")[0].innerHTML = "Siatka";
+		document.getElementsByClassName("txtSortBy")[0].innerHTML = "Sortuj wg";
 		for (var i=0; i<txtIcon.length; i++)
 			txtIcon[i].innerHTML = "Ikona";
 		for (var i=0; i<txtName.length; i++)

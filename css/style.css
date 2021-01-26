@@ -117,7 +117,12 @@ main {
 			padding: 20px 0;
 		}
 
-			section img {
+			section.markdown h2 img,
+			section.markdown h2 span {
+				vertical-align: middle;
+			}
+
+			section.markdown img {
 				max-width: 100%;
 			}
 
@@ -235,13 +240,18 @@ button.link {
 	box-shadow: none;
 }
 
+#projects button {
+	margin: 1px;
+	padding: 7px;
+}
+
 button,
 .button {
 	display: inline-block;
 	padding: 10px;
 	border: none;
 	background-color: rgb(238, 238, 238); /* #eee */
-	box-shadow: 0px 0px 2px #777;
+	box-shadow: 0px 0px 2px #aaa;
 	transition: background-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 	cursor: pointer;
 }
@@ -254,7 +264,7 @@ button:hover,
 .button:hover {
 	border: none;
 	background-color: rgba(238, 238, 238, 0.7);
-	box-shadow: 0px 0px 4px #777;
+	box-shadow: 0px 0px 4px #aaa;
 }
 
 progress {
@@ -370,8 +380,22 @@ i#mobile-apps-arrow {
 	width: 100%;
 }
 
+/*fieldset {
+	text-align: center;
+}*/
 
+#project-inputs {
+	margin: 10px 0;
+	text-align: right;
+}
 
+#project-view {
+	display: inline-block;
+	margin: 10px 0;
+	text-align: right;
+}
+
+#project-select,
 #project-grid-list {
 	display: none;
 }

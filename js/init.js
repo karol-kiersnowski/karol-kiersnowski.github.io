@@ -85,8 +85,15 @@ function sendEmail() {
 	location.href="mailto:karol.kiersnowski.prv.pl?subject=" + subject + "&body=" + content + "%0A%0AFrom: " + email;
 }
 
+function setTableView() {
+	document.getElementById("project-select").style.display = "none";
+	document.getElementById("project-grid-list").style.display = "none";
+	document.getElementById("project-table").style.display = "table";
+}
+
 function setGridView() {
 	document.getElementById("project-table").style.display = "none";
+	document.getElementById("project-select").style.display = "inline-block";
 	document.getElementById("project-grid-list").style.display = "block";
 	var list = document.getElementById("project-list");
 	if (list != null)
@@ -95,15 +102,11 @@ function setGridView() {
 
 function setListView() {
 	document.getElementById("project-table").style.display = "none";
+	document.getElementById("project-select").style.display = "inline-block";
 	document.getElementById("project-grid-list").style.display = "block";
 	var grid = document.getElementById("project-grid");
 	if (grid != null)
 		document.getElementById("project-grid").id = "project-list";
-}
-
-function setTableView() {
-	document.getElementById("project-grid-list").style.display = "none";
-	document.getElementById("project-table").style.display = "table";
 }
 
 function toggleTableColumn(checkbox, column) {
@@ -195,18 +198,19 @@ function sort(sortingBy) {
 			one from current row and one from the next:*/
 			//alert(elements[i].children[1].innerHTML);
 			if (sortingBy == "name") {
+				console.log(elements[i].children[1]);
 				x = elements[i].children[1];
 				y = elements[i + 1].children[1];
-			} else if (sortingBy == "last-modified") {
+			} else if (sortingBy == "update") {
 				x = elements[i].children[2].children[1];
 				y = elements[i + 1].children[2].children[1];
-			} else if (sortingBy == "initiate-date") {
+			} else if (sortingBy == "initiate") {
 				x = elements[i].children[3].children[1];
 				y = elements[i + 1].children[3].children[1];
 			} else if (sortingBy == "progress") {
-				alert(elements[i].children[6].value);
-				x = elements[i].children[6].value;
-				y = elements[i + 1].children[5].value;
+				console.log(elements[i].children[6]);
+				x = elements[i].children[6];
+				y = elements[i + 1].children[6];
 			} else if (sortingBy == "language") {
 				x = elements[i].children[8].children[1];
 				y = elements[i + 1].children[8].children[1];
