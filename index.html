@@ -420,6 +420,27 @@
 				<button onclick="setGridView()"><i class="fa fa-th"></i> Grid</button>
 			</p>
 
+			<fieldset>
+				<legend>Show</legend>
+				<p>
+					<input type="checkbox" id="checkbox-icon"checked onclick="toggleTableColumn(this, 1)"><label for="checkbox-icon" class="txtIcon">Icon</label>
+
+					<input type="checkbox" id="checkbox-name"checked onclick="toggleTableColumn(this, 2)"><label for="checkbox-name" class="txtName">Name</label>
+
+					<input type="checkbox" id="checkbox-language" checked onclick="toggleTableColumn(this, 3)"><label for="checkbox-language" class="txtLanguage">Language</label>
+
+					<input type="checkbox" id="checkbox-initiate" checked onclick="toggleTableColumn(this, 4)"><label for="checkbox-initiate" class="txtInitiate">Initiate</label>
+
+					<input type="checkbox" id="checkbox-update" checked onclick="toggleTableColumn(this, 5)"><label for="checkbox-update" class="txtUpdate">Update</label>
+
+					<input type="checkbox" id="checkbox-status" checked onclick="toggleTableColumn(this, 6)"><label for="checkbox-status" class="txtStatus">Status</label>
+
+					<input type="checkbox" id="checkbox-progress" checked onclick="toggleTableColumn(this, 7)"><label for="checkbox-progress" class="txtProgress">Progress</label>
+
+					<input type="checkbox" id="checkbox-technologies" checked onclick="toggleTableColumn(this, 8)"><label for="checkbox-technologies" class="txtTechnologies">Technologies</label>
+				</p>
+			</fieldset>
+
 			<article id="project-grid-list">
 				<label for="select-sort" style="vertical-align: middle;">Sort by</label>
 				<select id="select-sort">
@@ -876,7 +897,7 @@
 
 
 
-		<section id="cmd">
+		<section class="markdown" id="cmd">
 <h2 id="-icon-https-karol-kiersnowski-github-io-img-icons-terminal-png-cmd-line-com"><img src="https://karol-kiersnowski.github.io/img/icons/terminal.png" alt="icon"> cmd-line.com</h2>
 <p>cmd-line.com is a website for learning the Command-Line Interface</p>
 <h3 id="project-sites">Project sites</h3>

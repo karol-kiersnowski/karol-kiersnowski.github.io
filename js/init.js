@@ -106,6 +106,20 @@ function setTableView() {
 	document.getElementById("project-table").style.display = "table";
 }
 
+function toggleTableColumn(checkbox, column) {
+	var th = document.querySelector("table#project-table th:nth-child(" + column + ")");
+	var td = document.querySelectorAll("table#project-table td:nth-child(" + column + ")");
+	if (checkbox.checked) {
+		th.style.display = "table-cell";
+		for (var i=0; i<td.length; i++)
+			td[i].style.display = "table-cell";
+	} else {
+		th.style.display = "none";
+		for (var i=0; i<td.length; i++)
+			td[i].style.display = "none";
+	}
+}
+
 function sortTable(n) {
 	var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
 	table = document.getElementById("project-table");

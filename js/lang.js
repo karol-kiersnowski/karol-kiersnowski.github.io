@@ -28,6 +28,7 @@ function translateText(lang) {
 
 	// PROJECTS PAGE
 	////////////////
+	var txtIcon = document.getElementsByClassName("txtIcon");
 	var txtName = document.getElementsByClassName("txtName");
 		var txtTicTacToe = document.getElementsByClassName("txtTicTacToe");
 	var txtTechnologies = document.getElementsByClassName("txtTechnologies");
@@ -127,6 +128,8 @@ function translateText(lang) {
 		// PROJECTS PAGE
 		////////////////
 		document.getElementById("txtProjectsInfo").innerHTML = 'Most of the projects are unfinished. Some of them may not work properly. However, some applications / websites may be interesting. My projects can be found on <a target="_blank" href="https://github.com/karol-kiersnowski">GitHub</a>.';
+		for (var i=0; i<txtIcon.length; i++)
+			txtIcon[i].innerHTML = "Icon";
 		for (var i=0; i<txtName.length; i++)
 			txtName[i].innerHTML = "Name";
 			for (var i=0; i<txtTicTacToe.length; i++)
@@ -149,9 +152,9 @@ function translateText(lang) {
 				txtEnglishPolish[i].innerHTML = "English / Polish";
 		for (var i=0; i<txtCreationPeriod.length; i++)
 			txtCreationPeriod[i].innerHTML = "Creation period";
-		for (var i=0; i<txtInitiateDate.length; i++)
+		for (var i=0; i<txtInitiate.length; i++)
 			txtInitiate[i].innerHTML = "Initiate";
-		for (var i=0; i<txtLastModified.length; i++)
+		for (var i=0; i<txtUpdate.length; i++)
 			txtUpdate[i].innerHTML = "Update";
 		for (var i=0; i<txtProgress.length; i++)
 			txtProgress[i].innerHTML = "Progress";
@@ -360,6 +363,8 @@ function translateText(lang) {
 		// PROJECTS PAGE
 		////////////////s
 		document.getElementById("txtProjectsInfo").innerHTML = 'Większość projektów jest nieukończonych. Niektóre z nich mogą działać niepoprawnie. Mimo to, niektóre aplikacje / strony internetowe mogą być interesujące. Moje projekty można znaleźć w serwisie <a target="_blank" href="https://github.com/karol-kiersnowski">GitHub</a>.';
+		for (var i=0; i<txtIcon.length; i++)
+			txtIcon[i].innerHTML = "Ikona";
 		for (var i=0; i<txtName.length; i++)
 			txtName[i].innerHTML = "Nazwa";
 			for (var i=0; i<txtTicTacToe.length; i++)
