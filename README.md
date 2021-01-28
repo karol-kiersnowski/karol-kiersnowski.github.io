@@ -8,7 +8,7 @@ It's the personal website. There are some info about me, my experience, IT proje
 
 ### Documentation & source code
 1. [https://github.com/karol-kiersnowski/karol-kiersnowski.github.io](https://github.com/karol-kiersnowski/karol-kiersnowski.github.io)
-2. [http://karol-kiersnowski.github.io](http://karol-kiersnowski.github.io)
+2. [https://karol-kiersnowski.github.io](http://karol-kiersnowski.github.io)
 3. [http://karol-kiersnowski.prv.pl](http://karol-kiersnowski.prv.pl)
 
 ### Technologies
@@ -29,15 +29,6 @@ Immediate transition between subpages without refreshing (JavaScript)
 * Polish
 
 #### Themes & other display settings (client-side - JavaScript)
-* modern (light)
-* DOS (blue - gray)
-* DOS (gray - blue)
-* terminal (dark)
-
-* SPA (Single Page Application) - immediate transition between subpages without refreshing
-* multilingual interface (client-side - JavaScript)
-* themes and other display settings (client-side - JavaScript)
-* CSS Webfonts: Font Awesome icons, Quicksand font
 
 ### Language
 * User interface: English / Polish
