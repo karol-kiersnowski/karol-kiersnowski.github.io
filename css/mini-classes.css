@@ -6,7 +6,6 @@
 .col-16 { width: 16.66% }
 .col-12 { width: 12.5% }
 
-
 .inline-block { display: inline-block; }
 .left { float: left; }
 .right { float: right; }
@@ -36,5 +35,7 @@ i.small {
 	.col-25 { width: 50%; }
 	.col-20 { width: 40%; }
 	.col-16 { width: 33.33% }
+
+	.mobile-invisible { display: none; }
 
 }
