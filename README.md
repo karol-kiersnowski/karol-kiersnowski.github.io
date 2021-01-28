@@ -22,7 +22,7 @@ Immediate transition between subpages without refreshing (JavaScript)
 
 #### CSS webfonts
 * [Font Awesome](https://fontawesome.com) icons
-* [Quicksand](https://fonts.google.com/specimen/Ubuntu+Mono) font
+* [Quicksand](https://fonts.google.com/specimen/Quicksand) font
 
 #### Multilingual user interface (client-side - JavaScript)
 * English
