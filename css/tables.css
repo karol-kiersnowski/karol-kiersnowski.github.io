@@ -19,6 +19,10 @@ table.vertical-line td:first-child {
 	border-right: 1px solid #000;
 }
 
+table#project-table th {
+	user-select: none;
+}
+
 table#project-table th,
 table#project-table td {
 	padding: 5px;

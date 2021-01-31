@@ -471,30 +471,14 @@
 
 			<table id="project-table" class="horizontal-line">
 				<tr>
-					<th class="link" onclick="sortTable(0)">
-					</th>
-					<th class="link" onclick="sortTable(1)">
-						<span class="txtName">Name</span>
-					</th>
-					<th class="link" onclick="sortTable(2)">
-						<span class="txtLanguage">Language</span>
-					</th>
-					<th class="link" onclick="sortTable(3)">
-						<span class="txtInitiate">Initiate</span>
-						<i class="fa fa-sort"></i>
-					</th>
-					<th class="link" onclick="sortTable(4)">
-						<span class="txtUpdate">Update</span>
-					</th>
-					<th class="link" onclick="sortTable(5)">
-						<span class="txtStatus">Status</span>
-					</th>
-					<th class="link" onclick="sortTable(6)">
-						<span class="txtProgress">Progress</span>
-					</th>
-					<th class="link" onclick="sortTable(7)">
-						<span class="txtTechnologies">Technologies</span>
-					</th>
+					<th></th>
+					<th class="link txtName" onclick="sortTable(1, this)">Name</th>
+					<th class="link txtLanguage" onclick="sortTable(2, this)">Language</th>
+					<th class="link txtInitiate" onclick="sortTable(3, this)">Initiate <i class="fa fa-sort-up"></i></th>
+					<th class="link txtUpdate" onclick="sortTable(4, this)">Update</th>
+					<th class="link txtStatus" onclick="sortTable(5, this)">Status</th>
+					<th class="link txtProgress" onclick="sortTable(6, this)">Progress</th>
+					<th class="link txtTechnologies" onclick="sortTable(7, this)">Technologies</th>
 				</tr>
 				<tr>
 					<td><img src="img/icons/win.png" alt="Windows 95"/></td>

@@ -123,7 +123,7 @@ function toggleTableColumn(checkbox, column) {
 	}
 }
 
-function sortTable(n) {
+function sortTable(n, thisElement) {
 	var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
 	table = document.getElementById("project-table");
 	switching = true;
@@ -176,6 +176,11 @@ function sortTable(n) {
 			}
 		}
 	}
+
+	translateText(checkCurrentLanguage());
+	if (dir == "asc") thisElement.innerHTML += ' <i class="fa fa-sort-down"></i>';
+	else if (dir == "desc") thisElement.innerHTML += ' <i class="fa fa-sort-up"></i>';
+	console.log(thisElement);
 }
 
 function sort(sortingBy) {
@@ -249,6 +254,16 @@ function sort(sortingBy) {
 	}
 }
 
+function displaySignInTableHeader(parentElement) {
+	translateText(checkCurrentLanguage());
+	var thisElement = parentElement.children[0];
+	thisElement.innerHTML += ' <i class="fa fa-sort"></i>';
+	console.log(thisElement);
+}
+
+function displaySignInTableHeaderOnInit() {
+	document.getElementsByClassName("txtInitiate")[1].innerHTML += ' <i class="fa fa-sort-up"></i>';
+}
 
 //setCookies();
 checkUserLanguage();
@@ -258,3 +273,4 @@ displayCalendar();
 fillInSmallCalendar();
 showSection();
 setOffer();
+displaySignInTableHeaderOnInit();
