@@ -18,6 +18,7 @@ It's the personal website. There are some info about me, my experience, IT proje
 
 ### Features
 * SPA (Single Page Application)
+
   Immediate transition between subpages without refreshing (JavaScript)
 
 * CSS webfonts
