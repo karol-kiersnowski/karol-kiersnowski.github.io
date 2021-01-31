@@ -18,15 +18,15 @@ It's the personal website. There are some info about me, my experience, IT proje
 
 ### Features
 * SPA (Single Page Application)
-Immediate transition between subpages without refreshing (JavaScript)
+  Immediate transition between subpages without refreshing (JavaScript)
 
 * CSS webfonts
-* [Font Awesome](https://fontawesome.com) icons
-* [Quicksand](https://fonts.google.com/specimen/Quicksand) font
+  * [Font Awesome](https://fontawesome.com) icons
+  * [Quicksand](https://fonts.google.com/specimen/Quicksand) font
 
 * Multilingual user interface (client-side - JavaScript)
-* English
-* Polish
+  * English
+  * Polish
 
 * Themes & other display settings (client-side - JavaScript)
 
