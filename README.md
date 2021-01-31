@@ -17,18 +17,18 @@ It's the personal website. There are some info about me, my experience, IT proje
 * JavaScript
 
 ### Features
-#### SPA (Single Page Application)
+- SPA (Single Page Application)
 Immediate transition between subpages without refreshing (JavaScript)
 
-#### CSS webfonts
+- CSS webfonts
 * [Font Awesome](https://fontawesome.com) icons
 * [Quicksand](https://fonts.google.com/specimen/Quicksand) font
 
-#### Multilingual user interface (client-side - JavaScript)
+- Multilingual user interface (client-side - JavaScript)
 * English
 * Polish
 
-#### Themes & other display settings (client-side - JavaScript)
+- Themes & other display settings (client-side - JavaScript)
 
 ### Language
 * User interface: English / Polish
