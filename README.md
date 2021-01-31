@@ -17,9 +17,7 @@ It's the personal website. There are some info about me, my experience, IT proje
 * JavaScript
 
 ### Features
-* SPA (Single Page Application)
-
-  Immediate transition between subpages without refreshing (JavaScript)
+* SPA (Single Page Application) - Immediate transition between subpages without refreshing (JavaScript)
 
 * CSS webfonts
   * [Font Awesome](https://fontawesome.com) icons
