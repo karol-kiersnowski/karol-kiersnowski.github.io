@@ -124,11 +124,10 @@ function toggleTableColumn(checkbox, column) {
 }
 
 function sortTable(n, thisElement) {
-	var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+	var table, rows, switching, i, x, y, shouldSwitch, direction, switchcount = 0;
 	table = document.getElementById("project-table");
 	switching = true;
-	//Set the sorting direction to ascending:
-	dir = "asc"; 
+	direction = "asc"; 
 	/*Make a loop that will continue until
 	no switching has been done:*/
 	while (switching) {
@@ -142,17 +141,17 @@ function sortTable(n, thisElement) {
 			shouldSwitch = false;
 			/*Get the two elements you want to compare,
 			one from current row and one from the next:*/
-			x = rows[i].getElementsByTagName("TD")[n];
-			y = rows[i + 1].getElementsByTagName("TD")[n];
+			x = rows[i].getElementsByTagName("td")[n];
+			y = rows[i + 1].getElementsByTagName("td")[n];
 			/*check if the two rows should switch place,
 			based on the direction, asc or desc:*/
-			if (dir == "asc") {
+			if (direction == "asc") {
 				if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
 					//if so, mark as a switch and break the loop:
 					shouldSwitch= true;
 					break;
 				}
-			} else if (dir == "desc") {
+			} else if (direction == "desc") {
 				if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
 					//if so, mark as a switch and break the loop:
 					shouldSwitch = true;
@@ -170,24 +169,23 @@ function sortTable(n, thisElement) {
 		} else {
 			/*If no switching has been done AND the direction is "asc",
 			set the direction to "desc" and run the while loop again.*/
-			if (switchcount == 0 && dir == "asc") {
-				dir = "desc";
+			if (switchcount == 0 && direction == "asc") {
+				direction = "desc";
 				switching = true;
 			}
 		}
 	}
 
 	translateText(checkCurrentLanguage());
-	if (dir == "asc") thisElement.innerHTML += ' <i class="fa fa-sort-down"></i>';
-	else if (dir == "desc") thisElement.innerHTML += ' <i class="fa fa-sort-up"></i>';
-	console.log(thisElement);
+	if (direction == "asc") thisElement.innerHTML += ' <i class="fa fa-sort-down"></i>';
+	else if (direction == "desc") thisElement.innerHTML += ' <i class="fa fa-sort-up"></i>';
 }
 
 function sort(sortingBy) {
-	var elements, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+	var elements, switching, i, x, y, shouldSwitch, direction, switchcount = 0;
 	switching = true;
 	//Set the sorting direction to ascending:
-	dir = "asc"; 
+	direction = "asc"; 
 	/*Make a loop that will continue until
 	no switching has been done:*/
 	while (switching) {
@@ -222,13 +220,13 @@ function sort(sortingBy) {
 			}
 			/*check if the two elements should switch place,
 			based on the direction, asc or desc:*/
-			if (dir == "asc") {
+			if (direction == "asc") {
 				if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
 					//if so, mark as a switch and break the loop:
 					shouldSwitch= true;
 					break;
 				}
-			} else if (dir == "desc") {
+			} else if (direction == "desc") {
 				if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
 					//if so, mark as a switch and break the loop:
 					shouldSwitch = true;
@@ -246,23 +244,17 @@ function sort(sortingBy) {
 		} else {
 			/*If no switching has been done AND the direction is "asc",
 			set the direction to "desc" and run the while loop again.*/
-			if (switchcount == 0 && dir == "asc") {
-				dir = "desc";
+			if (switchcount == 0 && direction == "asc") {
+				direction = "desc";
 				switching = true;
 			}
 		}
 	}
 }
 
-function displaySignInTableHeader(parentElement) {
-	translateText(checkCurrentLanguage());
-	var thisElement = parentElement.children[0];
-	thisElement.innerHTML += ' <i class="fa fa-sort"></i>';
-	console.log(thisElement);
-}
-
-function displaySignInTableHeaderOnInit() {
-	document.getElementsByClassName("txtInitiate")[1].innerHTML += ' <i class="fa fa-sort-up"></i>';
+function sortTableByUpdate() {
+	sortTable(4, document.querySelector("th.txtUpdate"));
+	sortTable(4, document.querySelector("th.txtUpdate"));
 }
 
 //setCookies();
@@ -273,4 +265,4 @@ displayCalendar();
 fillInSmallCalendar();
 showSection();
 setOffer();
-displaySignInTableHeaderOnInit();
+sortTableByUpdate();
