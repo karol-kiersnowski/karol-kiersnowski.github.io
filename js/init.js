@@ -25,9 +25,9 @@ function checkUserLanguage() {
 	translateText(lang);
 }
 
-function overwriteLinkAttributes() {
-	document.getElementById("btnPolish").setAttribute("href","javascript:void(0)");
-	document.getElementById("btnEnglish").setAttribute("href","javascript:void(0)");
+function removeHrefAttributes() {
+	document.getElementById("polish").removeAttribute("href");
+	document.getElementById("english").removeAttribute("href");
 }
 
 function displayElementsForJSPageVersion() {
@@ -259,7 +259,7 @@ function sortTableByUpdate() {
 
 //setCookies();
 checkUserLanguage();
-overwriteLinkAttributes();
+removeHrefAttributes();
 displayElementsForJSPageVersion();
 displayCalendar();
 fillInSmallCalendar();

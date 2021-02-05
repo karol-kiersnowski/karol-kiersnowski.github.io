@@ -15,8 +15,8 @@ function translateText(lang) {
 
 	// MENU AND HEADERS
 	///////////////////
-	var btnEnglish = document.getElementById("btnEnglish");
-	var btnPolish = document.getElementById("btnPolish");
+	var english = document.getElementById("english");
+	var polish = document.getElementById("polish");
 	var txtOffer = document.getElementsByClassName("txtOffer");
 		var txtExamples = document.getElementsByClassName("txtExamples");
 	var txtProjects = document.getElementsByClassName("txtProjects");
@@ -60,8 +60,8 @@ function translateText(lang) {
 
 		// MENU AND HEADERS
 		///////////////////
-		btnEnglish.style.display = "none";
-		btnPolish.style.display = "block";
+		english.style.display = "none";
+		polish.style.display = "block";
 		for (var i=0; i<txtOffer.length; i++)
 			txtOffer[i].innerHTML = 'Offer';
 		for (var i=0; i<txtProjects.length; i++)
@@ -300,8 +300,8 @@ function translateText(lang) {
 
 		// MENU AND HEADERS
 		///////////////////
-		btnEnglish.style.display = "block";
-		btnPolish.style.display = "none";
+		english.style.display = "block";
+		polish.style.display = "none";
 		for (var i=0; i<txtOffer.length; i++)
 			txtOffer[i].innerHTML = 'Oferta';
 		for (var i=0; i<txtProjects.length; i++)

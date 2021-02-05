@@ -37,6 +37,7 @@ nav {
 	nav a {
 		display: block;
 		padding: 6px 10px;
+		cursor: pointer;
 	}
 
 	nav a:hover {
