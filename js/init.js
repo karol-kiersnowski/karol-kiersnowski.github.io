@@ -55,7 +55,7 @@ function sendEmail() {
 	var subject = encodeURI(document.getElementById("messageSubject").value);
 	var content = encodeURI(document.getElementById("messageContent").value);
 	var email = document.getElementById("yourEmail").value;
-	location.href="mailto:karol.kiersnowski.prv.pl?subject=" + subject + "&body=" + content + "%0A%0AFrom: " + email;
+	location.href="mailto:karol.kiersnowski@outlook.com?subject=" + subject + "&body=" + content + "%0A%0AFrom: " + email;
 }
 
 

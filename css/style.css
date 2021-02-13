@@ -235,6 +235,10 @@ a,
 	transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
 
+button {
+	outline: none;
+}
+
 button.link {
 	padding: 2px;
 	background-color: inherit;
