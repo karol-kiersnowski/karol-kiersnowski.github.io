@@ -18,6 +18,7 @@
 	<script defer src="js/lang.js"></script>
 	<script defer src="js/calendar.js"></script>
 	<script defer src="js/sections.js"></script>
+	<script defer src="js/projects.js"></script>
 	<script defer src="js/init.js"></script>
 
 	<title>Karol Kiersnowski | Portfolio</title>
@@ -62,11 +63,13 @@
 			<span class="txtSettings">Settings</span>
 		</a>
 		<hr>
-		<a id="polish" href="index-pl.html" onclick="translateText('pl'); displayCalendar()">
-			<img src="img/icons/polska.png" alt="Polska"/> Wersja polska
+		<a id="polish" href="index-pl.html" onclick="changeLanguage('pl')">
+			<img src="img/icons/polska.png" alt="Polska"/>
+			<span>Wersja polska</span>
 		</a>
-		<a id="english" href="index.html" onclick="translateText('en'); displayCalendar()" style="display: none;">
-			<img src="img/icons/uk.png" alt="UK"/> English version
+		<a id="english" href="index.html" onclick="changeLanguage('en')" style="display: none;">
+			<img src="img/icons/uk.png" alt="UK"/>
+			<span>English version</span>
 		</a>
 		
 		<div id="calendar-container">

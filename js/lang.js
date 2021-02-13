@@ -2,17 +2,23 @@ var daysOfWeek = new Array(7);
 var monthNames = new Array(12);
 var monthAbbreviation = new Array(12);
 
-function checkCurrentLanguage() {
-	return document.getElementsByTagName('html')[0].getAttribute('lang');
+function getUserLanguage() {
+	lang = navigator.language.substr(0,2);
+
+	if (lang != "en" && lang != "pl")
+		lang = "en";
+
+	document.documentElement.lang = lang;
+	translateText(lang);
 }
 
-function setLanguage(lang) {
-	document.getElementsByTagName("html")[0].setAttribute('lang', lang);
+function changeLanguage(lang) {
+	document.documentElement.lang = lang;
+	translateText(lang);
+	refreshCalendar();
 }
 
 function translateText(lang) {
-	setLanguage(lang);
-
 	// MENU AND HEADERS
 	///////////////////
 	var english = document.getElementById("english");
