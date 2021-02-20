@@ -8,7 +8,7 @@ It's the personal website. There are some info about me, my experience, IT proje
 
 ### Documentation & source code
 1. [https://github.com/karol-kiersnowski/karol-kiersnowski.github.io](https://github.com/karol-kiersnowski/karol-kiersnowski.github.io)
-2. [https://karol-kiersnowski.github.io](http://karol-kiersnowski.github.io)
+2. [https://karol-kiersnowski.github.io](https://karol-kiersnowski.github.io)
 3. [http://karol-kiersnowski.prv.pl](http://karol-kiersnowski.prv.pl)
 
 ### Technologies
