@@ -422,17 +422,20 @@
 				<div id="project-select">
 					<label class="txtSortBy" for="select-sort">Sort by</label>
 					<select id="select-sort">
-						<option class="txtName" onclick="sort('name')">Name</option>
-						<option class="txtUpdate" onclick="sort('update')">Update</option>
-						<option class="txtInitiate" onclick="sort('initiate')">Initiate</option>
-						<option class="txtProgress" onclick="sort('progress')">Progress</option>
-						<option class="txtLanguage" onclick="sort('language')">Language</option>
+						<option class="txtName" onclick="sortTable(1)">Name</option>
+						<option class="txtLanguage" onclick="sortTable(2)">Language</option>
+						<option class="txtInitiate" onclick="sortTable(3)">Initiate</option>
+						<option class="txtUpdate" onclick="sortTable(4)">Update</option>
+						<option class="txtStatus" onclick="sortTable(5)">Status</option>
+						<option class="txtProgress" onclick="sortTable(6)">Progress</option>
+						<option class="txtTechnologies" onclick="sortTable(7)">Technologies</option>
 					</select>
 				</div>
 				<div id="project-view">
 				<label class="txtView" style="vertical-align: middle;">View</label>
 				<button onclick="setTableView()"><i class="fa fa-table"></i> <span class="txtTable">Table</span></button> 
-				<button class="mobile-invisible" onclick="setListView()"><i class="fa fa-th-list"></i> <span class="txtList">List</span></button>
+				<!-- <button class="mobile-invisible" onclick="setListView()"><i class="fa fa-th-list"></i> <span class="txtList">List</span></button> -->
+				<button onclick="setListView()"><i class="fa fa-th-list"></i> <span class="txtList">List</span></button>
 				<button onclick="setGridView()"><i class="fa fa-th"></i> <span class="txtGrid">Grid</span></button>
 			</div>
 			</div>
@@ -472,7 +475,7 @@
 
 
 
-			<table id="project-table" class="horizontal-line">
+			<table class="project-container" id="project-grid">
 				<tr>
 					<th></th>
 					<th class="link txtName" onclick="sortTable(1, this)">Name</th>
@@ -484,23 +487,32 @@
 					<th class="link txtTechnologies" onclick="sortTable(7, this)">Technologies</th>
 				</tr>
 				<tr>
-					<td><img src="img/icons/win.png" alt="Windows 95"/></td>
+					<td>
+						<img class="list-invisible" src="img/icons/win.png" alt="Windows 95"/>
+						<img class="table-invisible" src="img/projects/win95.png" alt="Windows 95 Simulator"/>
+					</td>
 					<td><a href="#win95">Windows 95 Simulator</a></td>
-					<td>EN</td>
-					<td>2020.10</td>
-					<td>2020.10</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> EN</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2020.10</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2020.10</td>
 					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
 					<td><progress max="100" value="20"></progress></td>
 					<td>
-						<i class="fa fa-fw fa-globe" title="web site / app"></i><i class="fab fa-fw fa-html5" title="HTML5"></i><i class="fab fa-fw fa-css3" title="CSS"></i><i class="fab fa-fw fa-js" title="JavaScript"></i>
+						<i class="fa fa-fw fa-globe" title="web site / app">
+						</i><i class="fab fa-fw fa-html5" title="HTML5">
+						</i><i class="fab fa-fw fa-css3" title="CSS">
+						</i><i class="fab fa-fw fa-js" title="JavaScript"></i>
 					</td>
 				</tr>
 				<tr>
-					<td><img src="img/icons/win.png" alt="Windows 3.1"/></td>
+					<td>
+						<img class="list-invisible" src="img/icons/win.png" alt="Windows 3.1"/>
+						<img class="table-invisible" src="img/projects/win31.png" alt="Windows 3.1 Simulator"/>
+					</td>
 					<td><a href="#win31">Windows 3.1 Simulator</a></td>
-					<td>EN</td>
-					<td>2020.09</td>
-					<td>2021.02</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> EN</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2020.09</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2021.02</td>
 					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
 					<td><progress max="100" value="20"></progress></td>
 					<td>
@@ -508,11 +520,14 @@
 					</td>
 				</tr>
 				<tr>
-					<td><img src="img/icons/terminal-16x16.png" alt="WebDOS"/></td>
+					<td>
+						<img class="list-invisible" src="img/icons/terminal-16x16.png" alt="WebDOS"/>
+						<img class="table-invisible" src="img/projects/webdos.png" alt="WebDOS"/>
+					</td>
 					<td><a href="#webdos">WebDOS</a></td>
-					<td>EN</td>
-					<td>2020.09</td>
-					<td>2021.02</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> EN</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2020.09</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2021.02</td>
 					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
 					<td><progress max="100" value="20"></progress></td>
 					<td>
@@ -520,11 +535,14 @@
 					</td>
 				</tr>
 				<tr>
-					<td><img src="img/icons/favicon.png" alt="Portfolio"/></td>
+					<td>
+						<img class="list-invisible" src="img/icons/favicon.png" alt="Portfolio"/>
+						<img class="table-invisible" src="img/projects/portfolio.png" alt="Portfolio"/>
+					</td>
 					<td><a href="#portfolio-spa">Portfolio - SPA</a></td>
-					<td>EN / PL</td>
-					<td>2019.12</td>
-					<td>2021.02</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> EN / PL</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2019.12</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2021.02</td>
 					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
 					<td><progress max="100" value="90"></progress></td>
 					<td>
@@ -532,11 +550,14 @@
 					</td>
 				</tr>
 				<tr>
-					<td><img src="img/icons/tic-tac-toe.png" alt="tic-tac-toe"/></td>
+					<td>
+						<img class="list-invisible" src="img/icons/tic-tac-toe.png" alt="tic-tac-toe"/>
+						<img class="table-invisible" src="img/projects/tic-tac-toe.png" alt="Tic-Tac-Toe"/>
+					</td>
 					<td><a href="#tic-tac-toe">Tic-Tac-Toe</a></td>
-					<td>EN / PL</td>
-					<td>2018.06</td>
-					<td>2020.11</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> EN / PL</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2018.06</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2020.11</td>
 					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
 					<td><progress max="100" value="90"></progress></td>
 					<td>
@@ -544,11 +565,14 @@
 					</td>
 				</tr>
 				<tr>
-					<td><img src="img/icons/terminal-16x16.png" alt="cmd"/></td>
+					<td>
+						<img class="list-invisible" src="img/icons/terminal-16x16.png" alt="cmd"/>
+						<img class="table-invisible" src="img/projects/cmd.png" alt="cmd"/>
+					</td>
 					<td><a href="#cmd">cmd</a></td>
-					<td>EN / PL</td>
-					<td>2018.05</td>
-					<td>2021.02</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> EN / PL</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2018.05</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2021.02</td>
 					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
 					<td><progress max="100" value="50"></progress></td>
 					<td>
@@ -556,11 +580,14 @@
 					</td>
 				</tr>
 				<tr>
-					<td><img src="img/icons/favicon.png" alt="Portfolio"/></td>
+					<td>
+						<img class="list-invisible" src="img/icons/favicon.png" alt="Portfolio"/>
+						<img class="table-invisible" src="img/projects/portfolio.png" alt="Portfolio"/>
+					</td>
 					<td><a href="#portfolio-mpa">Portfolio - MPA</a></td>
-					<td>EN / PL</td>
-					<td>2018.05</td>
-					<td>2018.06</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> EN / PL</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2018.05</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2018.06</td>
 					<td><i class="fa fa-fw fa-times" title="abandoned"></i></td>
 					<td><progress max="100" value="90"></progress></td>
 					<td>
@@ -568,11 +595,14 @@
 					</td>
 				</tr>
 				<tr>
-					<td><img src="img/icons/elektromechanika.png" alt="Elektromechanika"/></td>
+					<td>
+						<img class="list-invisible" src="img/icons/elektromechanika.png" alt="Elektromechanika"/>
+						<img class="table-invisible" src="img/projects/elektromechanika.png" alt="Elektromechanika"/>
+					</td>
 					<td><a href="#elektromechanika">Elektromechanika</a></td>
-					<td>PL</td>
-					<td>2018.04</td>
-					<td>2021.01</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> PL</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2018.04</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2021.02</td>
 					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
 					<td><progress max="100" value="90"></progress></td>
 					<td>
@@ -580,11 +610,13 @@
 					</td>
 				</tr>
 				<tr>
-					<td></td>
+					<td>
+						<img class="table-invisible" src="img/projects/mailbox.png" alt="Mailbox"/>
+					</td>
 					<td><a href="#guciomail">GucioMail</a></td>
-					<td>PL</td>
-					<td>2017.05</td>
-					<td>2017.06</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> PL</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2017.05</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2017.06</td>
 					<td><i class="fa fa-fw fa-times" title="abandoned"></i></td>
 					<td><progress max="100" value="90"></progress></td>
 					<td>
@@ -592,11 +624,13 @@
 					</td>
 				</tr>
 				<tr>
-					<td></i></td>
+					<td>
+						<img class="table-invisible" src="img/projects/menedzer-pilkarski-pdf.png" alt="Menedżer piłkarski"/>
+					</td>
 					<td><a href="#menedzer-pilkarski-latex">Menedżer piłkarski</a></td>
-					<td>PL</td>
-					<td>2015</td>
-					<td>2015.09</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> PL</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2015</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2015.09</td>
 					<td><i class="fa fa-fw fa-check" title="completed"></i></td>
 					<td><progress max="100" value="99"></progress></td>
 					<td>
@@ -604,23 +638,29 @@
 					</td>
 				</tr>
 				<tr>
-					<td></td>
+					<td>
+						<img class="table-invisible" src="img/projects/menedzer-wpf-sklad.png" alt="Menedżer piłkarski - Skład"/>
+					</td>
 					<td><a href="#menedzer-pilkarski-wpf">Menedżer piłkarski</a></td>
-					<td>PL</td>
-					<td>2015</td>
-					<td>2015.08</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> PL</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2015</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2015.08</td>
 					<td><i class="fa fa-fw fa-check" title="completed"></i></td>
 					<td><progress max="100" value="99"></progress></td>
 					<td>
-						<i class="fa fa-fw fa-desktop" title="desktop app"></i> <span title="C# - Windows Presentation Foundation">C#</span> </i><i class="fa fa-fw fa-database" title="SQL database"></i>
+						<i class="fa fa-fw fa-desktop" title="desktop app"></i>
+						<span title="C# - Windows Presentation Foundation">C#</span>
+						<i class="fa fa-fw fa-database" title="SQL database"></i>
 					</td>
 				</tr>
 				<tr>
-					<td></td>
+					<td>
+						<img class="table-invisible" src="img/projects/football-database-php5.png" alt="Football Database"/>
+					</td>
 					<td><a href="#football-database">Football Database</a></td>
-					<td>EN / PL</td>
-					<td>2015.05</td>
-					<td>2015.06</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> EN / PL</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2015.05</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2015.06</td>
 					<td><i class="fa fa-fw fa-times" title="abandoned"></i></td>
 					<td><progress max="100" value="90"></progress></td>
 					<td>
@@ -628,11 +668,13 @@
 					</td>
 				</tr>
 				<tr>
-					<td></td>
+					<td>
+						<img class="table-invisible" src="img/projects/football-manager-cli.png" alt="Football Manager CLI"/>
+					</td>
 					<td><a href="#football-manager-cli">Football Manager CLI</a></td>
-					<td>EN / PL</td>
-					<td>2014.10</td>
-					<td>2019.05</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> EN / PL</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2014.10</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2019.05</td>
 					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
 					<td><progress max="100" value="40"></progress></td>
 					<td>
@@ -640,11 +682,13 @@
 					</td>
 				</tr>
 				<tr>
-					<td></td>
+					<td>
+						<img class="table-invisible" src="img/projects/warcaby.png" alt="Warcaby"/>
+					</td>
 					<td><a href="#warcaby">Warcaby</a></td>
-					<td>PL</td>
-					<td>2013.12</td>
-					<td>2020.04</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> PL</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2013.12</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2020.04</td>
 					<td><i class="fa fa-fw fa-check" title="completed"></i></td>
 					<td><progress max="100" value="99"></progress></td>
 					<td>
@@ -652,11 +696,13 @@
 					</td>
 				</tr>
 				<tr>
-					<td></td>
+					<td>
+						<img class="table-invisible" src="img/projects/theblackcoder.png" alt="the_black_coder"/>
+					</td>
 					<td><a href="#theblackcoder">the_black_coder</a></td>
-					<td>EN / PL</td>
-					<td>2013.02</td>
-					<td>2013.08</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> EN / PL</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2013.02</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2013.08</td>
 					<td><i class="fa fa-fw fa-times" title="abandoned"></i></td>
 					<td><progress max="100" value="90"></progress></td>
 					<td>
@@ -664,11 +710,14 @@
 					</td>
 				</tr>
 				<tr>
-					<td><img src="img/icons/gta2-32x32.png" height="24" alt="GTA2"/></td>
+					<td>
+						<img class="list-invisible" src="img/icons/gta2-32x32.png" height="24" alt="GTA2"/>
+						<img class="table-invisible" src="img/projects/gta2.png" alt="GTA2 Clone"/>
+					</td>
 					<td><a href="#gta2-clone">GTA2 Clone</a></td>
-					<td>EN</td>
-					<td>2012</td>
-					<td>2020.03</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> EN</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2012</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2020.03</td>
 					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
 					<td><progress max="100" value="10"></progress></td>
 					<td>
@@ -676,11 +725,13 @@
 					</td>
 				</tr>
 				<tr>
-					<td></td>
+					<td>
+						<img class="table-invisible" src="img/projects/brutal-homicide.png" alt="Brutal Homicide Clone"/>
+					</td>
 					<td><a href="#brutal-homicide-clone">Brutal Homicide Clone</a></td>
-					<td>EN</td>
-					<td>2012</td>
-					<td>2020.04</td>
+					<td><i class="table-invisible fa fa-fw fa-language"></i> EN</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2012</td>
+					<td><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2020.04</td>
 					<td><i class="fa fa-fw fa-sync" title="developed"></i></td>
 					<td><progress max="100" value="10"></progress></td>
 					<td>
@@ -688,217 +739,6 @@
 					</td>
 				</tr>
 			</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			<article id="project-grid-list">
-				
-				<!-- <button class="txtName" onclick="sort('name')">Name</button>
-				<button class="" onclick="sort('update')">Update</button>
-				<button class="" onclick="sort('initiate')">Initiate</button>
-				<button class="" onclick="sort('progress')">Progress</button>
-				<button class="" onclick="sort('language')">Language</button> -->
-
-				<div id="project-list">
-					<a class="item" href="#cmd">
-						<img src="img/projects/cmd.png" alt="cmd"/>
-						<h3 class="title">cmd</h3>
-						<p class="last-modified" title="last modified">
-							<i class="fa fa-fw fa-hourglass-end"></i>
-							<span>2021.01</span>
-						</p>
-						<p class="initiate" title="initiate date">
-							<i class="fa fa-fw fa-hourglass-start"></i>
-							<span>2018.05</span>
-						</p>
-						<div class="clear"></div>
-						<p class="status">
-							<i class="fa fa-fw fa-sync" title="developed"></i>
-						</p>
-						<progress max="100" value="50"></progress>
-						<div class="clear"></div>
-						<p class="language" title="language">
-							<i class="fa fa-fw fa-language"></i>
-							<span>EN / PL</span>
-						</p>
-						<p class="type">
-							<i class="fa fa-fw fa-globe" title="web site / app"></i>
-						</p>
-						<div class="clear"></div>
-					</a><a class="item" href="#win95">
-						<img src="img/projects/win95.png" alt="Windows 95 Simulator"/>
-						<h3 class="title">Win 95 Simulator</h3>
-						<p class="last-modified" title="last modified">
-							<i class="fa fa-fw fa-hourglass-end"></i>
-							<span>2020.10</span>
-						</p>
-						<p class="initiate" title="initiate date">
-							<i class="fa fa-fw fa-hourglass-start"></i>
-							<span>2020.10</span>
-						</p>
-						<div class="clear"></div>
-						<p class="status">
-							<i class="fa fa-fw fa-sync" title="developed"></i>
-						</p>
-						<progress max="100" value="20"></progress>
-						<div class="clear"></div>
-						<p class="language" title="language">
-							<i class="fa fa-fw fa-language"></i>
-							<span>EN</span>
-						</p>
-						<p class="type">
-							<i class="fa fa-fw fa-globe" title="web site / app"></i>
-						</p>
-					</a><a class="item" href="#win31">
-						<img src="img/projects/win31.png" alt="Windows 3.1 Simulator"/>
-						<h3 class="title">Win 3.1 Simulator</h3>
-						<p class="last-modified" title="last modified">
-							<i class="fa fa-fw fa-hourglass-end"></i>
-							<span>2020.11</span>
-						</p>
-						<p class="initiate" title="initiate date">
-							<i class="fa fa-fw fa-hourglass-start"></i>
-							<span>2020.09</span>
-						</p>
-						<div class="clear"></div>
-						<p class="status">
-							<i class="fa fa-fw fa-sync" title="developed"></i>
-						</p>
-						<progress max="100" value="20"></progress>
-						<div class="clear"></div>
-						<p class="language" title="language">
-							<i class="fa fa-fw fa-language"></i>
-							<span>EN</span>
-						</p>
-						<p class="type">
-							<i class="fa fa-fw fa-globe" title="web site / app"></i>
-						</p>
-					</a><a class="item" href="#football-manager-cli">
-						<img src="img/projects/football-manager-cli.png" alt="Football Manager CLI"/>
-						<h3 class="title">Football Manager CLI</h3>
-						<p class="last-modified" title="last modified">
-							<i class="fa fa-fw fa-hourglass-end"></i>
-							<span>2019.05</span>
-						</p>
-						<p class="initiate" title="initiate date">
-							<i class="fa fa-fw fa-hourglass-start"></i>
-							<span>2014.10</span>
-						</p>
-						<div class="clear"></div>
-						<p class="status">
-							<i class="fa fa-fw fa-sync" title="developed"></i>
-						</p>
-						<progress max="100" value="40"></progress>
-						<div class="clear"></div>
-						<p class="language" title="language">
-							<i class="fa fa-fw fa-language"></i>
-							<span>EN / PL</span>
-						</p>
-						<p class="type">
-							<i class="fa fa-fw fa-terminal" title="console app"></i>
-							<i class="fa fa-fw fa-desktop" title="desktop app"></i>
-						</p>
-					</a><a class="item" href="#portfolio-spa">
-						<img src="img/projects/portfolio.png" alt="Portfolio"/>
-						<h3 class="title">Portfolio - SPA</h3>
-						<p class="last-modified" title="last modified">
-							<i class="fa fa-fw fa-hourglass-end"></i>
-							<span>2021.01</span>
-						</p>
-						<p class="initiate" title="initiate date">
-							<i class="fa fa-fw fa-hourglass-start"></i>
-							<span>2019.12</span>
-						</p>
-						<div class="clear"></div>
-						<p class="status">
-							<i class="fa fa-fw fa-sync" title="developed"></i>
-						</p>
-						<progress max="100" value="90"></progress>
-						<div class="clear"></div>
-						<p class="language" title="language">
-							<i class="fa fa-fw fa-language"></i>
-							<span>EN / PL</span>
-						</p>
-						<p class="type">
-							<i class="fa fa-fw fa-globe" title="web site / app"></i>
-						</p>
-						<div class="clear"></div>
-					</a><a class="item" href="#portfolio-mpa">
-						<img src="img/projects/portfolio.png" alt="Portfolio"/>
-						<h3 class="title">Portfolio - MPA</h3>
-						<p class="last-modified" title="last modified">
-							<i class="fa fa-fw fa-hourglass-end"></i>
-							<span>2018.06</span>
-						</p>
-						<p class="initiate" title="initiate date">
-							<i class="fa fa-fw fa-hourglass-start"></i>
-							<span>2018.05</span>
-						</p>
-						<div class="clear"></div>
-						<p class="status">
-							<i class="fa fa-fw fa-times" title="abandoned"></i>
-						</p>
-						<progress max="100" value="90"></progress>
-						<div class="clear"></div>
-						<p class="language" title="language">
-							<i class="fa fa-fw fa-language"></i>
-							<span>EN / PL</span>
-						</p>
-						<p class="type">
-							<i class="fa fa-fw fa-globe" title="web site / app"></i>
-						</p>
-						<div class="clear"></div>
-					</a><a class="item" href="#warcaby">
-						<img src="img/projects/warcaby.png" alt="Warcaby (Checkers)"/>
-						<h3 class="title">Warcaby</h3>
-						<p class="last-modified" title="last modified">
-							<i class="fa fa-fw fa-hourglass-end"></i>
-							<span>2020.04</span>
-						</p>
-						<p class="initiate" title="initiate date">
-							<i class="fa fa-fw fa-hourglass-start"></i>
-							<span>2013.12</span>
-						</p>
-						<div class="clear"></div>
-						<p class="status">
-							<i class="fa fa-fw fa-check" title="completed"></i>
-						</p>
-						<progress max="100" value="100"></progress>
-						<div class="clear"></div>
-						<p class="language" title="language">
-							<i class="fa fa-fw fa-language"></i>
-							<span>PL</span>
-						</p>
-						<p class="type">
-							<i class="fab fa-java" title="java"></i>
-							<i class="fa fa-fw fa-desktop" title="desktop app"></i>
-						</p>
-					</a>
-					<div class="clear"></div>
-				</div>
-			</article>
-
-
-
-
-
-
-
 
 
 
@@ -928,9 +768,10 @@
 
 
 		<section class="markdown" id="cmd">
+
 <h2 id="-icon-https-karol-kiersnowski-github-io-img-icons-terminal-png-cmd-line-com">
-	<img src="img/icons/terminal-32x32.png" alt="icon">
-	<span>cmd-line.com</span>
+<img src="img/icons/terminal-32x32.png" alt="icon">
+<span>cmd-line.com</span>
 </h2>
 <p>cmd-line.com is a website for learning the Command-Line Interface</p>
 <h3 id="project-sites">Project sites</h3>
@@ -993,6 +834,48 @@
 <p><a href="https://karol-kiersnowski.github.io">Karol Kiersnowski</a></p>
 <h3 id="license">License</h3>
 <p><a href="https://github.com/karol-kiersnowski/cmd/blob/master/LICENSE">GNU General Public License v3.0</a></p>
+
+		</section>
+
+		<section class="markdown" id="elektromechanika">
+
+<h2 id="elektromechanika">Elektromechanika</h2>
+<p>Elektromechanika - company website | one-page website</p>
+<p>Project site - <a href="http://elektromechanika.net.pl">http://elektromechanika.net.pl</a></p>
+<h3 id="technologies">Technologies</h3>
+<ul>
+<li>HTML 5</li>
+<li>CSS</li>
+<li>JavaScript</li>
+</ul>
+<h3 id="features">Features</h3>
+<ul>
+<li><p>One-page website</p>
+</li>
+<li><p>CSS webfonts</p>
+<ul>
+<li><a href="https://fontawesome.com">Font Awesome</a> icons</li>
+<li><a href="https://fonts.google.com/specimen/Quicksand">Quicksand</a> font</li>
+</ul>
+</li>
+<li><p><a href="https://www.openstreetmap.org">OpenStreetMap</a></p>
+</li>
+</ul>
+<h3 id="language">Language</h3>
+<ul>
+<li>User interface: Polish</li>
+<li>Source code: English / Polish</li>
+</ul>
+<h3 id="requirements">Requirements</h3>
+<ul>
+<li>Web browser</li>
+</ul>
+<h3 id="screenshots">Screenshots</h3>
+<p><img src="https://karol-kiersnowski.github.io/img/projects/elektromechanika.png" alt="cmd"></p>
+<h3 id="author">Author</h3>
+<p><a href="https://karol-kiersnowski.github.io">Karol Kiersnowski</a></p>
+<h3 id="license">License</h3>
+<p>Copyright 2021 Karol Kiersnowski All rights reserved</p>
 
 		</section>
 

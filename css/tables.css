@@ -9,48 +9,237 @@ td {
 	padding: 10px;
 }
 
-table.horizontal-line th {
-	border-bottom: 1px solid black;
-	text-align: left;
-}
-
 table.vertical-line td:first-child {
 	width: 80px;
 	border-right: 1px solid #000;
 }
 
-table#project-table th {
-	user-select: none;
+
+
+
+
+
+
+
+table#project-table .table-invisible {
+	display: none;
 }
 
-table#project-table th,
-table#project-table td {
-	padding: 5px;
+table#project-list .list-invisible,
+table#project-grid .list-invisible {
+	display: none;
 }
 
-table#project-table th:nth-child(1),
-table#project-table td:nth-child(1),
-table#project-table th:nth-child(4),
-table#project-table td:nth-child(4),
-table#project-table th:nth-child(5),
-table#project-table td:nth-child(5),
-table#project-table th:nth-child(6),
-table#project-table td:nth-child(6),
-table#project-table th:nth-child(7),
-table#project-table td:nth-child(7) {
-	text-align: center;
+
+
+table#project-list tr,
+table#project-grid tr {
+	display: block;
+	position: relative;
+	border: none;
+	background-color: #eee;
+	box-shadow: 0 0 2px #444;
 }
 
-table#project-table th:nth-child(8),
-table#project-table td:nth-child(8) {
-	/*text-align: right;*/
+table#project-list tr {
+	margin: 10px 0;
+	min-height: 80px;
 }
 
-table#project-table td:nth-child(8) span {
-	color: #247;
-	font-size: 16px;
-	font-weight: bold;
+table#project-grid tr {
+	display: inline-block;
+	margin: 5px;
+	width: calc(33% - 10px);
 }
+
+table#project-list tr:first-child,
+table#project-grid tr:first-child {
+	display: none;
+}
+
+table#project-list tr:hover,
+table#project-grid tr:hover {
+	border: none;
+	box-shadow: 0 0 5px #444;
+}
+
+	table#project-table th {
+		border-bottom: 1px solid black;
+		text-align: left;
+	}
+
+	table#project-table th,
+	table#project-table td {
+		padding: 5px;
+	}
+
+	table#project-list td,
+	table#project-grid td {
+		padding: 0;
+	}
+
+	table#project-table th:nth-child(1),
+	table#project-table td:nth-child(1),
+	table#project-table th:nth-child(4),
+	table#project-table td:nth-child(4),
+	table#project-table th:nth-child(5),
+	table#project-table td:nth-child(5),
+	table#project-table th:nth-child(6),
+	table#project-table td:nth-child(6),
+	table#project-table th:nth-child(7),
+	table#project-table td:nth-child(7) {
+		text-align: center;
+	}
+
+	table#project-table th:nth-child(8),
+	table#project-table td:nth-child(8) {
+		/*text-align: right;*/
+	}
+
+	table#project-list td:nth-child(2), /* TITLE */
+	table#project-list td:nth-child(3), /* LANGUAGE */
+	table#project-list td:nth-child(4), /* INITIATE*/
+	table#project-list td:nth-child(5), /* UPDATE */
+	table#project-list td:nth-child(6), /* STATUS */
+	table#project-list td:nth-child(7), /* PROGRESS */
+	table#project-list td:nth-child(8) { /* TECHNOLOGIES */
+		display: block;
+		position: absolute;
+	}
+
+	table#project-grid td:nth-child(2), /* TITLE */
+	table#project-grid td:nth-child(3), /* LANGUAGE */
+	table#project-grid td:nth-child(4), /* INITIATE*/
+	table#project-grid td:nth-child(5), /* UPDATE */
+	table#project-grid td:nth-child(6), /* STATUS */
+	table#project-grid td:nth-child(7), /* PROGRESS */
+	table#project-grid td:nth-child(8) { /* TECHNOLOGIES */
+		display: block;
+		position: static;
+		margin: 0px;
+		font-size: 20px;
+	}
+
+	table#project-list td:nth-child(2) {
+		left: 210px;
+		top: 10px;
+		margin: 0;
+		font-size: 24px;
+	}
+
+	table#project-list td:nth-child(3) {
+		top: 10px;
+		right: 10px;
+	}
+
+	table#project-list td:nth-child(4) {
+		left: 210px;
+		bottom: 10px;
+	}
+
+	table#project-list td:nth-child(5) {
+		left: 300px;
+		bottom: 10px;
+	}
+
+	table#project-list td:nth-child(6) {
+		left: 390px;
+		bottom: 10px;
+	}
+
+	table#project-list td:nth-child(7) {
+		left: 430px;
+		bottom: 10px;
+	}
+
+	table#project-list td:nth-child(8) {
+		bottom: 10px;
+		right: 10px;
+	}
+
+	table#project-grid td:nth-child(1) {
+		display: block;
+		width: 100%;
+		height: 175px;
+		border-bottom: 1px solid #aaa;
+		object-fit: cover;
+	}
+
+	table#project-grid td:nth-child(2) {
+		margin: 10px 0;
+		text-align: center;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	table#project-grid td:nth-child(3) {
+		float: left;
+		margin: 5px;
+	}
+
+	table#project-grid td:nth-child(4) {
+		float: left;
+		margin: 5px;
+	}
+
+	table#project-grid td:nth-child(5) {
+		float: right;
+		margin: 5px;
+	}
+
+	/*table#project-grid td:nth-child(5)::after {
+		content: '';
+    display: block;
+    clear: both;
+	}*/
+
+	table#project-grid td:nth-child(6) {
+		float: left;
+		margin: 5px;
+	}
+
+	table#project-grid td:nth-child(7) {
+		float: right;
+		margin: 10px 5px;
+		width: 75%;
+		height: 18px;
+	}
+
+	table#project-grid td:nth-child(8) {
+		float: right;
+		margin: 5px;
+	}
+
+		table#project-table td:nth-child(8) span,
+		table#project-list td:nth-child(8) span,
+		table#project-grid td:nth-child(8) span {
+			color: #247;
+			font-weight: bold;
+		}
+
+		table#project-table img {
+			vertical-align: middle;
+		}
+
+		table#project-list img {
+			display: block;
+			width: 200px;
+			/*border-right: 1px solid #ddd;*/
+		}
+
+		table#project-grid img {
+			
+		}
+
+		table progress {
+			width: 60px;
+			height: 20px;
+		}
+
+		/*table i {
+			font-size: 20px;
+		} */
 
 /*table#project-table tr:hover {
 	background-color: rgba(176,176,176,0.2);
@@ -61,14 +250,6 @@ table#project-table tr:first-child:hover {
 	background-color: initial;
 	box-shadow: none;
 }*/
-
-table#project-table img {
-	vertical-align: middle;
-}
-
-table#project-table progress {
-	width: 60px;
-}
 
 @media only screen and (max-width: 700px) {
 
@@ -83,7 +264,17 @@ table#project-table progress {
 	table#project-table th:nth-child(6),
 	table#project-table td:nth-child(6),
 	table#project-table th:nth-child(7),
-	table#project-table td:nth-child(7) {
+	table#project-table td:nth-child(7),
+	table#project-list th:nth-child(3),
+	table#project-list td:nth-child(3),
+	table#project-list th:nth-child(4),
+	table#project-list td:nth-child(4),
+	table#project-list th:nth-child(5),
+	table#project-list td:nth-child(5),
+	table#project-list th:nth-child(6),
+	table#project-list td:nth-child(6),
+	table#project-list th:nth-child(7),
+	table#project-list td:nth-child(7) {
 		display: none;
 	}
 }
