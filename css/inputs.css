@@ -7,20 +7,22 @@ input[type="text"],
 input[type="email"],
 textarea {
 	padding: 5px;
-	border: 1px solid #aaa;
-	box-shadow: 0px 0px 5px #eee;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	outline: none;
 	font-family: Quicksand, Arial, sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 }
 
 textarea {
+	border: 1px solid #ccc;
 	height: 150px;
 	resize: vertical;
 }
 
 input:focus,
 textarea:focus {
-	border: 1px solid #333;
+	border-color: #000;
 }
 
 label {

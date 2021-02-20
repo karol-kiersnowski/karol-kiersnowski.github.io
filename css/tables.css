@@ -98,26 +98,32 @@ table#project-grid tr:hover {
 	}
 
 	table#project-list td:nth-child(2), /* TITLE */
-	table#project-list td:nth-child(3), /* LANGUAGE */
-	table#project-list td:nth-child(4), /* INITIATE*/
-	table#project-list td:nth-child(5), /* UPDATE */
-	table#project-list td:nth-child(6), /* STATUS */
-	table#project-list td:nth-child(7), /* PROGRESS */
+	table#project-list td:nth-child(3), /* INITIATE*/
+	table#project-list td:nth-child(4), /* UPDATE */
+	table#project-list td:nth-child(5), /* STATUS */
+	table#project-list td:nth-child(6), /* PROGRESS */
+	table#project-list td:nth-child(7), /* LANGUAGE */
 	table#project-list td:nth-child(8) { /* TECHNOLOGIES */
 		display: block;
 		position: absolute;
 	}
 
 	table#project-grid td:nth-child(2), /* TITLE */
-	table#project-grid td:nth-child(3), /* LANGUAGE */
-	table#project-grid td:nth-child(4), /* INITIATE*/
-	table#project-grid td:nth-child(5), /* UPDATE */
-	table#project-grid td:nth-child(6), /* STATUS */
-	table#project-grid td:nth-child(7), /* PROGRESS */
+	table#project-grid td:nth-child(3), /* INITIATE*/
+	table#project-grid td:nth-child(4), /* UPDATE */
+	table#project-grid td:nth-child(5), /* STATUS */
+	table#project-grid td:nth-child(6), /* PROGRESS */
+	table#project-grid td:nth-child(7), /* LANGUAGE */
 	table#project-grid td:nth-child(8) { /* TECHNOLOGIES */
 		display: block;
 		position: static;
 		margin: 0px;
+	}
+
+	table#project-list td:nth-child(1) {
+		display: block;
+		width: 200px;
+		border-bottom: 1px solid #aaa;
 	}
 
 	table#project-list td:nth-child(2) {
@@ -128,28 +134,28 @@ table#project-grid tr:hover {
 	}
 
 	table#project-list td:nth-child(3) {
-		top: 10px;
-		right: 10px;
-	}
-
-	table#project-list td:nth-child(4) {
 		left: 210px;
 		bottom: 10px;
 	}
 
-	table#project-list td:nth-child(5) {
+	table#project-list td:nth-child(4) {
 		left: 300px;
 		bottom: 10px;
 	}
 
-	table#project-list td:nth-child(6) {
+	table#project-list td:nth-child(5) {
 		left: 390px;
 		bottom: 10px;
 	}
 
-	table#project-list td:nth-child(7) {
+	table#project-list td:nth-child(6) {
 		left: 430px;
 		bottom: 10px;
+	}
+
+	table#project-list td:nth-child(7) {
+		top: 10px;
+		right: 10px;
 	}
 
 	table#project-list td:nth-child(8) {
@@ -222,7 +228,6 @@ table#project-grid tr:hover {
 		table#project-list img {
 			display: block;
 			width: 200px;
-			/*border-right: 1px solid #ddd;*/
 		}
 
 		table#project-grid img {
@@ -287,6 +292,5 @@ table#project-table tr:first-child:hover {
 		display: inline-block;
 		margin: 5px;
 		width: calc(100% - 10px);
-		height: 400px;
 	}
 }
