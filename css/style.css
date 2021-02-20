@@ -400,159 +400,17 @@ i#mobile-apps-arrow {
 	text-align: right;
 }
 
-#project-select,
-#project-grid-list {
+#project-select {
 	display: none;
 }
 
-	#project-grid .item,
-	#project-list .item {
-		display: block;
-		position: relative;
-		border: none;
-		background-color: #eee;
-		box-shadow: 0 0 2px #444;
-	}
 
-	#project-grid .item {
-		display: inline-block;
-		margin: 5px;
-		width: calc(33% - 10px);
-	}
 
-	#project-list .item {
-		margin: 10px 0;
-		min-height: 80px;
-	}
+		
 
-	#project-grid .item:hover,
-	#project-list .item:hover {
-		border: none;
-		box-shadow: 0 0 5px #444;
-	}
+		
 
-		#project-grid img {
-			display: block;
-			width: 100%;
-			height: 175px;
-			border-bottom: 1px solid #aaa;
-			object-fit: cover;
-		}
 
-		#project-list img {
-			display: block;
-			width: 200px;
-			border-right: 1px solid #ddd;
-		}
-
-		#project-grid .item h3,
-		#project-grid .item p,
-		#project-grid .item progress {
-			display: block;
-			position: static;
-		}
-
-		#project-list .item h3,
-		#project-list .item p,
-		#project-list .item progress {
-			display: block;
-			position: absolute;
-		}
-
-		#project-grid .item h3 {
-			margin: 10px 0;
-			text-align: center;
-			white-space: nowrap;
-			overflow: hidden;
-			text-overflow: ellipsis;
-		}
-
-		#project-list .item h3 {
-			left: 210px;
-			top: 10px;
-			margin: 0;
-			font-size: 24px;
-		}
-
-		#project-grid .item p,
-		#project-list .item p {
-			margin: 0px;
-			font-size: 20px;
-		}
-
-			#project-grid .item i,
-			#project-list .item i {
-				vertical-align: middle;
-			}
-
-			#project-grid .item span,
-			#project-list .item span {
-				font-size: 16px;
-			}
-
-		#project-grid .item .last-modified {
-			float: left;
-			margin: 5px;
-		}
-
-		#project-grid .item .initiate {
-			float: right;
-			margin: 5px;
-		}
-
-		#project-list .item .last-modified {
-			left: 210px;
-			bottom: 10px;
-		}
-
-		#project-list .item .initiate {
-			left: 300px;
-			bottom: 10px;
-		}
-
-		#project-grid .item .status {
-			float: left;
-			margin: 5px;
-		}
-
-		#project-grid .item progress {
-			float: right;
-			margin: 10px 5px;
-			width: 75%;
-			height: 18px;
-		}
-
-		#project-list .item .status {
-			left: 390px;
-			bottom: 10px;
-		}
-
-		#project-list .item progress {
-			left: 430px;
-			bottom: 10px;
-			width: 70px;
-			height: 18px;
-		}
-
-		#project-grid .item .language {
-			float: left;
-			margin: 5px;
-		}
-
-		#project-grid .item .type {
-			float: right;
-			margin: 5px;
-		}
-
-		#project-list .item .language {
-			top: 10px;
-			right: 10px;
-		}
-
-		#project-list .item .type {
-			bottom: 10px;
-			right: 10px;
-		}
 
 /*.card-container a {
 	padding: 5px;
@@ -631,18 +489,6 @@ li { margin: 10px 0; }
 			z-index: 0;
 			margin: 0;
 			margin-left: 50px;
-		}
-
-}
-
-@media only screen and (max-width: 700px) {
-
-	#project-grid .item {
-		width: calc(100% - 10px);
-	}
-
-		#project-grid img {
-			height: 225px;
 		}
 
 }

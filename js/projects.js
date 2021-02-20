@@ -91,6 +91,6 @@ function sortTable(n, thisElement) {
 }
 
 function sortTableByUpdate() {
-	sortTable(4, document.querySelector("th.txtUpdate"));
-	sortTable(4, document.querySelector("th.txtUpdate"));
+	sortTable(3, document.querySelector("th.txtUpdate"));
+	sortTable(3, document.querySelector("th.txtUpdate"));
 }
