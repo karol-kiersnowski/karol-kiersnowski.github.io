@@ -256,7 +256,7 @@ button,
 	padding: 10px;
 	border: none;
 	background-color: rgb(238, 238, 238); /* #eee */
-	box-shadow: 0px 0px 2px #aaa;
+	box-shadow: 0px 0px 2px #777;
 	transition: background-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 	cursor: pointer;
 }
@@ -269,7 +269,7 @@ button:hover,
 .button:hover {
 	border: none;
 	background-color: rgba(238, 238, 238, 0.7);
-	box-shadow: 0px 0px 4px #aaa;
+	box-shadow: 0px 0px 4px #777;
 }
 
 progress {
@@ -379,7 +379,6 @@ i#mobile-apps-arrow {
 
 
 .box-link img,
-.box-link img,
 .box video {
 	display: block;
 	width: 100%;
@@ -450,12 +449,14 @@ li { margin: 10px 0; }
 
 
 
+/*#audio-container {
+	padding: 3px;
+}
 
-
-/*audio {
+audio {
 	width: 100%;
 	border: none;
-	border-radius: 10px;
+	border-radius: 50px;
 	box-shadow: 0 0 4px #444;
 }*/
 

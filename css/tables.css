@@ -120,12 +120,6 @@ table#project-grid tr:hover {
 		margin: 0px;
 	}
 
-	table#project-list td:nth-child(1) {
-		display: block;
-		width: 200px;
-		border-bottom: 1px solid #aaa;
-	}
-
 	table#project-list td:nth-child(2) {
 		left: 210px;
 		top: 10px;
@@ -228,6 +222,9 @@ table#project-grid tr:hover {
 		table#project-list img {
 			display: block;
 			width: 200px;
+			height: 150px;
+			object-fit: cover;
+			/*border-right: 1px solid #aaa;*/
 		}
 
 		table#project-grid img {
@@ -263,34 +260,59 @@ table#project-table tr:first-child:hover {
 
 @media only screen and (max-width: 700px) {
 
-	table#project-table th:nth-child(1),
-	table#project-table td:nth-child(1),
-	table#project-table th:nth-child(3),
-	table#project-table td:nth-child(3),
-	table#project-table th:nth-child(4),
-	table#project-table td:nth-child(4),
-	table#project-table th:nth-child(5),
-	table#project-table td:nth-child(5),
-	table#project-table th:nth-child(6),
-	table#project-table td:nth-child(6),
-	table#project-table th:nth-child(7),
-	table#project-table td:nth-child(7),
-	table#project-list th:nth-child(3),
-	table#project-list td:nth-child(3),
-	table#project-list th:nth-child(4),
-	table#project-list td:nth-child(4),
-	table#project-list th:nth-child(5),
-	table#project-list td:nth-child(5),
-	table#project-list th:nth-child(6),
-	table#project-list td:nth-child(6),
-	table#project-list th:nth-child(7),
-	table#project-list td:nth-child(7) {
-		display: none;
-	}
-
 	table#project-grid tr {
 		display: inline-block;
 		margin: 5px;
 		width: calc(100% - 10px);
 	}
+
+		table#project-table th:nth-child(1),
+		table#project-table td:nth-child(1),
+		table#project-table th:nth-child(3),
+		table#project-table td:nth-child(3),
+		table#project-table th:nth-child(4),
+		table#project-table td:nth-child(4),
+		table#project-table th:nth-child(5),
+		table#project-table td:nth-child(5),
+		table#project-table th:nth-child(6),
+		table#project-table td:nth-child(6),
+		table#project-table th:nth-child(7),
+		table#project-table td:nth-child(7),
+		table#project-list th:nth-child(3),
+		table#project-list td:nth-child(3),
+		table#project-list th:nth-child(4),
+		table#project-list td:nth-child(4),
+		table#project-list th:nth-child(5),
+		table#project-list td:nth-child(5),
+		table#project-list th:nth-child(6),
+		table#project-list td:nth-child(6),
+		table#project-list th:nth-child(7),
+		table#project-list td:nth-child(7) {
+			display: none;
+		}
+
+		table#project-list img {
+			width: 150px;
+			height: 112px;
+		}
+
+		table#project-list td:nth-child(2) {
+			left: 160px;
+		}
+
+		table#project-list td:nth-child(3) {
+			left: 160px;
+		}
+
+		table#project-list td:nth-child(4) {
+			left: 250px;
+		}
+
+		table#project-list td:nth-child(5) {
+			left: 340px;
+		}
+
+		table#project-list td:nth-child(6) {
+			left: 390px;
+		}
 }

@@ -8,21 +8,20 @@ input[type="email"],
 textarea {
 	padding: 5px;
 	border: none;
-	border-bottom: 1px solid #ccc;
+	border: 1px solid #ddd;
 	outline: none;
 	font-family: Quicksand, Arial, sans-serif;
 	font-size: 16px;
 }
 
 textarea {
-	border: 1px solid #ccc;
 	height: 150px;
 	resize: vertical;
 }
 
 input:focus,
 textarea:focus {
-	border-color: #000;
+	border-color: #777;
 }
 
 label {
