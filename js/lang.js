@@ -69,7 +69,7 @@ function translateText(lang) {
 		english.style.display = "none";
 		polish.style.display = "block";
 		for (var i=0; i<txtOffer.length; i++)
-			txtOffer[i].innerHTML = 'Offer';
+			txtOffer[i].innerHTML = 'Home';
 		for (var i=0; i<txtProjects.length; i++)
 			txtProjects[i].innerHTML = 'Projects';
 		txtCv[0].innerHTML = "CV";
@@ -309,7 +309,7 @@ function translateText(lang) {
 		english.style.display = "block";
 		polish.style.display = "none";
 		for (var i=0; i<txtOffer.length; i++)
-			txtOffer[i].innerHTML = 'Oferta';
+			txtOffer[i].innerHTML = 'Strona główna';
 		for (var i=0; i<txtProjects.length; i++)
 			txtProjects[i].innerHTML = 'Projekty';
 		txtCv[0].innerHTML = "CV";
