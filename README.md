@@ -1,9 +1,9 @@
-![Portfolio icon](img/icons/favicon-32x32.png)Karol Kiersnowski | Portfolio
----------------------------------------------------------------------------
+![Portfolio icon](https://karol-kiersnowski.github.io/img/icons/favicon-32x32.png) Karol Kiersnowski | Portfolio
+----------------------------------------------------------------------------------------------------------------
 
 It's the personal website. There are some info about me, my experience, IT projects, interests...
 
-### Project websites
+### Project website
 
 1.  [https://karol-kiersnowski.github.io](https://karol-kiersnowski.github.io)
 2.  [http://karol-kiersnowski.prv.pl](http://karol-kiersnowski.prv.pl)
@@ -16,7 +16,7 @@ It's the personal website. There are some info about me, my experience, IT proje
 
 ### Technologies
 
-*   HTML5
+*   HTML 5
 *   CSS
 *   JavaScript
 
@@ -46,7 +46,7 @@ Web browser
 
 ### Screenshots
 
-![Karol Kiersnowski | Portfolio](http://karol-kiersnowski.github.io/img/projects/portfolio.png)
+![Karol Kiersnowski | Portfolio](https://karol-kiersnowski.github.io/img/projects/portfolio.png)
 
 ### Author
 
