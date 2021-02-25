@@ -46,7 +46,7 @@ Web browser
 
 ### Screenshots
 
-![Karol Kiersnowski | Portfolio](https://karol-kiersnowski.github.io/img/projects/portfolio.png)
+![Karol Kiersnowski | Portfolio](https://karol-kiersnowski.github.io/img/projects/portfolio-spa.png)
 
 ### Author
 
