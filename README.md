@@ -1,9 +1,9 @@
-Karol Kiersnowski | Portfolio
------------------------------
+![Portfolio icon](img/icons/favicon-32x32.png)Karol Kiersnowski | Portfolio
+---------------------------------------------------------------------------
 
 It's the personal website. There are some info about me, my experience, IT projects, interests...
 
-### Project sites
+### Project websites
 
 1.  [https://karol-kiersnowski.github.io](https://karol-kiersnowski.github.io)
 2.  [http://karol-kiersnowski.prv.pl](http://karol-kiersnowski.prv.pl)
@@ -11,8 +11,8 @@ It's the personal website. There are some info about me, my experience, IT proje
 ### Documentation & source code
 
 1.  [https://github.com/karol-kiersnowski/karol-kiersnowski.github.io](https://github.com/karol-kiersnowski/karol-kiersnowski.github.io)
-2.  [https://karol-kiersnowski.github.io](https://karol-kiersnowski.github.io)
-3.  [http://karol-kiersnowski.prv.pl](http://karol-kiersnowski.prv.pl)
+2.  [https://karol-kiersnowski.github.io/#portfolio-spa](https://karol-kiersnowski.github.io/#portfolio-spa)
+3.  [http://karol-kiersnowski.prv.pl/#portfolio-spa](http://karol-kiersnowski.prv.pl/#portfolio-spa)
 
 ### Technologies
 
@@ -28,7 +28,7 @@ It's the personal website. There are some info about me, my experience, IT proje
     
     *   [Font Awesome](https://fontawesome.com) icons
     *   [Quicksand](https://fonts.google.com/specimen/Quicksand) font
-*   Multilingual user interface (client-side - JavaScript)
+*   Multilingual user interface (JavaScript)
     
     *   English
     *   Polish
@@ -46,7 +46,7 @@ Web browser
 
 ### Screenshots
 
-![Portfolio - website](http://karol-kiersnowski.github.io/img/projects/portfolio.png)
+![Karol Kiersnowski | Portfolio](http://karol-kiersnowski.github.io/img/projects/portfolio.png)
 
 ### Author
 
