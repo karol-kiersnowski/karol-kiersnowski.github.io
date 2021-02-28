@@ -38,6 +38,8 @@ function translateText(lang) {
 	var txtName = document.getElementsByClassName("txtName");
 		var txtTicTacToe = document.getElementsByClassName("txtTicTacToe");
 	var txtTechnologies = document.getElementsByClassName("txtTechnologies");
+	var txtProjectWebsite = document.getElementsByClassName("txtProjectWebsite");
+	var txtDocumentationSourceCode = document.getElementsByClassName("txtDocumentationSourceCode");
 	var txtRequirements = document.getElementsByClassName("txtRequirements");
 		var txtWebBrowser = document.getElementsByClassName("txtWebBrowser");
 		var txtPdfReader = document.getElementsByClassName("txtPdfReader");
@@ -61,6 +63,12 @@ function translateText(lang) {
 		var txtCookiesSupport = document.getElementsByClassName("txtCookiesSupport");
 		var txtSessionSupport = document.getElementsByClassName("txtSessionSupport");
 		var txtMultilingualInterface = document.getElementsByClassName("txtMultilingualInterface");
+	var txtUserInterface = document.getElementsByClassName("txtUserInterface");
+	var txtSourceCode = document.getElementsByClassName("txtSourceCode");
+	var txtScreenshots = document.getElementsByClassName("txtScreenshots");
+	var txtAuthor = document.getElementsByClassName("txtAuthor");
+	var txtLicense = document.getElementsByClassName("txtLicense");
+	var txtAllRightsReserved = document.getElementsByClassName("txtAllRightsReserved");
 
 	if (lang == "en") {
 
@@ -147,6 +155,10 @@ function translateText(lang) {
 				txtTicTacToe[i].innerHTML = "Tic Tac Toe";
 		for (var i=0; i<txtTechnologies.length; i++)
 			txtTechnologies[i].innerHTML = "Technologies";
+		for (var i=0; i<txtProjectWebsite.length; i++)
+			txtProjectWebsite[i].innerHTML = "Project website";
+		for (var i=0; i<txtDocumentationSourceCode.length; i++)
+			txtDocumentationSourceCode[i].innerHTML = "Documentation & source code";
 		for (var i=0; i<txtRequirements.length; i++)
 			txtRequirements[i].innerHTML = "Requirements";
 			for (var i=0; i<txtWebBrowser.length; i++)
@@ -191,7 +203,19 @@ function translateText(lang) {
 			for (var i=0; i<txtCookiesSupport.length; i++)
 				txtCookiesSupport[i].innerHTML = "cookies support";
 			for (var i=0; i<txtMultilingualInterface.length; i++)
-				txtMultilingualInterface[i].innerHTML = "multilingual interface";
+				txtMultilingualInterface[i].innerHTML = "multilingual user interface";
+		for (var i=0; i<txtUserInterface.length; i++)
+			txtUserInterface[i].innerHTML = "User interface";
+		for (var i=0; i<txtSourceCode.length; i++)
+			txtSourceCode[i].innerHTML = "Source code";
+		for (var i=0; i<txtScreenshots.length; i++)
+			txtScreenshots[i].innerHTML = "Screenshots";
+		for (var i=0; i<txtAuthor.length; i++)
+			txtAuthor[i].innerHTML = "Author";
+		for (var i=0; i<txtLicense.length; i++)
+			txtLicense[i].innerHTML = "License";
+		for (var i=0; i<txtAllRightsReserved.length; i++)
+			txtAllRightsReserved[i].innerHTML = "All rights reserved";
 
 		// CV PAGE
 		//////////
@@ -387,6 +411,10 @@ function translateText(lang) {
 				txtTicTacToe[i].innerHTML = "Tic Tac Toe (Kółko i krzyżyk)";
 		for (var i=0; i<txtTechnologies.length; i++)
 			txtTechnologies[i].innerHTML = "Technologie";
+		for (var i=0; i<txtProjectWebsite.length; i++)
+			txtProjectWebsite[i].innerHTML = "Strona internetowa projektu";
+		for (var i=0; i<txtDocumentationSourceCode.length; i++)
+			txtDocumentationSourceCode[i].innerHTML = "Dokumentacja & kod źródłowy";
 		for (var i=0; i<txtRequirements.length; i++)
 			txtRequirements[i].innerHTML = "Wymagania";
 			for (var i=0; i<txtWebBrowser.length; i++)
@@ -426,7 +454,7 @@ function translateText(lang) {
 		for (var i=0; i<iconDownload.length; i++)
 			iconDownload[i].innerHTML = '<i class="fa fa-download"></i> Pobierz';
 		for (var i=0; i<txtFeatures.length; i++)
-			txtFeatures[i].innerHTML = "Cechy";
+			txtFeatures[i].innerHTML = "Cechy & właściwości";
 			for (var i=0; i<txtConnectionToTheDatabase.length; i++)
 				txtConnectionToTheDatabase[i].innerHTML = "łączenie się z bazą danych";
 			txtCSV[0].innerHTML = "dane przechowywane są w plikach CSV";
@@ -437,7 +465,19 @@ function translateText(lang) {
 			for (var i=0; i<txtSessionSupport.length; i++)
 				txtSessionSupport[i].innerHTML = "obsługa sesji";
 			for (var i=0; i<txtMultilingualInterface.length; i++)
-				txtMultilingualInterface[i].innerHTML = "wielojęzyczny interfejs";
+				txtMultilingualInterface[i].innerHTML = "wielojęzyczny interfejs użytkownika";
+		for (var i=0; i<txtUserInterface.length; i++)
+			txtUserInterface[i].innerHTML = "Interfejs użytkownika";
+		for (var i=0; i<txtSourceCode.length; i++)
+			txtSourceCode[i].innerHTML = "Kod żródłowy";
+		for (var i=0; i<txtScreenshots.length; i++)
+			txtScreenshots[i].innerHTML = "Screenshot'y";
+		for (var i=0; i<txtAuthor.length; i++)
+			txtAuthor[i].innerHTML = "Autor";
+		for (var i=0; i<txtLicense.length; i++)
+			txtLicense[i].innerHTML = "Licencja";
+		for (var i=0; i<txtAllRightsReserved.length; i++)
+			txtAllRightsReserved[i].innerHTML = "Wszystkie prawa zastrzeżone";
 
 		// CV PAGE
 		//////////
