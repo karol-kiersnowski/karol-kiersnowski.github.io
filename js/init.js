@@ -14,9 +14,9 @@ function displayElementsForJSPageVersion() {
 	document.getElementById("calendar-container").style.display = "block";
 }
 
-function playMusic() {
-	document.getElementsByTagName("audio")[0].play();
-}
+// function playMusic() {
+// 	document.getElementsByTagName("audio")[0].play();
+// }
 
 function switchOfferSubpages(subpage) {
 	var webAppsLink = document.getElementById("web-apps-link");
