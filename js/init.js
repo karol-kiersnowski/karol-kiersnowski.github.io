@@ -67,4 +67,4 @@ displayCalendar();
 fillInSmallCalendar();
 showSection();
 selectOffer();
-sortTableByUpdate();
+sortByUpdate();

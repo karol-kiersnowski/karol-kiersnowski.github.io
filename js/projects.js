@@ -17,8 +17,8 @@ function setGridView() {
 }
 
 function toggleTableColumn(checkbox, column) {
-	var th = document.querySelector("table#project-table th:nth-child(" + column + ")");
-	var td = document.querySelectorAll("table#project-table td:nth-child(" + column + ")");
+	var th = document.querySelector("#project-table th:nth-child(" + column + ")");
+	var td = document.querySelectorAll("#project-table td:nth-child(" + column + ")");
 	if (checkbox.checked) {
 		th.style.display = "table-cell";
 		for (var i=0; i<td.length; i++)
@@ -30,7 +30,7 @@ function toggleTableColumn(checkbox, column) {
 	}
 }
 
-function sortTable(n, thisElement) {
+function sort(n, thisElement) {
 	var table, rows, switching, i, x, y, shouldSwitch, direction, switchcount = 0;
 	table = document.getElementsByClassName("project-container")[0];
 	switching = true;
@@ -40,7 +40,8 @@ function sortTable(n, thisElement) {
 	while (switching) {
 		//start by saying: no switching is done:
 		switching = false;
-		rows = table.rows;
+		rows = document.getElementsByClassName("tr");
+		//alert(rows[0].innerHTML);
 		/*Loop through all table rows (except the
 		first, which contains table headers):*/
 		for (i = 1; i < (rows.length - 1); i++) {
@@ -48,8 +49,9 @@ function sortTable(n, thisElement) {
 			shouldSwitch = false;
 			/*Get the two elements you want to compare,
 			one from current row and one from the next:*/
-			x = rows[i].getElementsByTagName("td")[n];
-			y = rows[i + 1].getElementsByTagName("td")[n];
+			//alert(rows[i].getElementsByTagName("div")[1].innerHTML);
+			x = rows[i].getElementsByTagName("div")[n];
+			y = rows[i + 1].getElementsByTagName("div")[n];
 			/*check if the two rows should switch place,
 			based on the direction, asc or desc:*/
 			if (direction == "asc") {
@@ -90,7 +92,7 @@ function sortTable(n, thisElement) {
 	}
 }
 
-function sortTableByUpdate() {
-	sortTable(3, document.querySelector("th.txtUpdate"));
-	sortTable(3, document.querySelector("th.txtUpdate"));
+function sortByUpdate() {
+	sort(3, document.querySelector("div.txtUpdate"));
+	sort(3, document.querySelector("div.txtUpdate"));
 }
