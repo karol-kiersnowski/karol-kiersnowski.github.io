@@ -449,16 +449,25 @@ li { margin: 10px 0; }
 
 
 
-/*#audio-container {
+#audio-container {
 	padding: 3px;
 }
 
-audio {
-	width: 100%;
-	border: none;
-	border-radius: 50px;
-	box-shadow: 0 0 4px #444;
-}*/
+	audio {
+		display: inline-block;
+		width: calc(100% - 170px);
+		border: none;
+		border-radius: 50px;
+		box-shadow: 0 0 4px #444;
+		vertical-align: middle;
+	}
+
+	#audio-container label {
+		display: inline-block;
+		margin: 10px 0;
+		width: 160px;
+		vertical-align: middle;
+	}
 
 
 
@@ -491,5 +500,13 @@ audio {
 			margin: 0;
 			margin-left: 50px;
 		}
+
+	audio {
+		width: 100% ;
+	}
+
+	#audio-container label {
+		float: right;
+	}
 
 }
