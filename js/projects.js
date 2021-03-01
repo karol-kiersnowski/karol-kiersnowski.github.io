@@ -31,17 +31,22 @@ function toggleTableColumn(checkbox, column) {
 }
 
 function sort(n, thisElement) {
-	var table, rows, switching, i, x, y, shouldSwitch, direction, switchcount = 0;
-	table = document.getElementsByClassName("project-container")[0];
-	switching = true;
-	direction = "asc"; 
+	var projectContainer = document.getElementsByClassName("project-container")[0];
+	var rows = document.getElementsByClassName("tr");
+	var switching = true;
+	var i;
+	var x;
+	var y;
+	var shouldSwitch;
+	var direction = "asc"; 
+	var switchCount = 0; 
+	
 	/*Make a loop that will continue until
 	no switching has been done:*/
 	while (switching) {
 		//start by saying: no switching is done:
 		switching = false;
-		rows = document.getElementsByClassName("tr");
-		//alert(rows[0].innerHTML);
+		
 		/*Loop through all table rows (except the
 		first, which contains table headers):*/
 		for (i = 1; i < (rows.length - 1); i++) {
@@ -74,11 +79,11 @@ function sort(n, thisElement) {
 			rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
 			switching = true;
 			//Each time a switch is done, increase this count by 1:
-			switchcount ++;      
+			switchCount++;      
 		} else {
 			/*If no switching has been done AND the direction is "asc",
 			set the direction to "desc" and run the while loop again.*/
-			if (switchcount == 0 && direction == "asc") {
+			if (switchCount == 0 && direction == "asc") {
 				direction = "desc";
 				switching = true;
 			}
