@@ -130,6 +130,12 @@ main {
 				max-width: 100%;
 			}
 
+			section.markdown a.no-border {
+				border-width: 0;
+				opacity: 
+			}
+
+
 			article {
 				/*overflow-x: hidden;*/
 				/*overflow-y: auto;*/
@@ -396,15 +402,15 @@ i#mobile-apps-arrow {
 	text-align: right;
 }
 
-#project-view {
-	display: inline-block;
-	margin: 10px 0;
-	text-align: right;
-}
+	#project-select {
+		display: none;
+	}
 
-#project-select {
-	display: none;
-}
+	#project-view {
+		display: inline-block;
+		margin: 10px 0;
+		text-align: right;
+	}
 
 
 
