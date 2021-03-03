@@ -16,20 +16,6 @@ function setGridView() {
 	projectContainer.id = "project-grid";
 }
 
-function toggleTableColumn(checkbox, column) {
-	var th = document.querySelector("#project-table th:nth-child(" + column + ")");
-	var td = document.querySelectorAll("#project-table td:nth-child(" + column + ")");
-	if (checkbox.checked) {
-		th.style.display = "table-cell";
-		for (var i=0; i<td.length; i++)
-			td[i].style.display = "table-cell";
-	} else {
-		th.style.display = "none";
-		for (var i=0; i<td.length; i++)
-			td[i].style.display = "none";
-	}
-}
-
 function sort(n, thisElement) {
 	var projectContainer = document.getElementsByClassName("project-container")[0];
 	var rows = document.getElementsByClassName("tr");
