@@ -197,7 +197,7 @@ function translateText(lang) {
 				txtConnectionToTheDatabase[i].innerHTML = "connection to the database";
 			txtCSV[0].innerHTML = "data is stored in CSV files";
 			for (var i=0; i<txtRWDViewportUnit.length; i++)
-				txtRWDViewportUnit[i].innerHTML = "RWD: relative length - viewport unit";
+				txtRWDViewportUnit[i].innerHTML = "Responsive Web Design: relative length - viewport unit";
 			for (var i=0; i<txtSessionSupport.length; i++)
 				txtSessionSupport[i].innerHTML = "session support";
 			for (var i=0; i<txtCookiesSupport.length; i++)
@@ -408,7 +408,7 @@ function translateText(lang) {
 		for (var i=0; i<txtName.length; i++)
 			txtName[i].innerHTML = "Nazwa";
 			for (var i=0; i<txtTicTacToe.length; i++)
-				txtTicTacToe[i].innerHTML = "Tic Tac Toe (Kółko i krzyżyk)";
+				txtTicTacToe[i].innerHTML = "Kółko i krzyżyk";
 		for (var i=0; i<txtTechnologies.length; i++)
 			txtTechnologies[i].innerHTML = "Technologie";
 		for (var i=0; i<txtProjectWebsite.length; i++)
@@ -459,7 +459,7 @@ function translateText(lang) {
 				txtConnectionToTheDatabase[i].innerHTML = "łączenie się z bazą danych";
 			txtCSV[0].innerHTML = "dane przechowywane są w plikach CSV";
 			for (var i=0; i<txtRWDViewportUnit.length; i++)
-				txtRWDViewportUnit[i].innerHTML = "responsywna strona: względna długość - jednostka zależna od rozmiarów okna przeglądarki";
+				txtRWDViewportUnit[i].innerHTML = "Responsywny układ strony: względna długość - jednostka zależna od rozmiarów okna przeglądarki";
 			for (var i=0; i<txtCookiesSupport.length; i++)
 				txtCookiesSupport[i].innerHTML = "obsługa ciasteczek (cookies)";
 			for (var i=0; i<txtSessionSupport.length; i++)

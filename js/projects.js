@@ -16,6 +16,23 @@ function setGridView() {
 	projectContainer.id = "project-grid";
 }
 
+function changeSort(select) {
+	if (select.value == "name")
+		sort(1);
+	else if (select.value == "initiate")
+		sort(2);
+	else if (select.value == "update")
+		sort(3);
+	else if (select.value == "status")
+		sort(4);
+	else if (select.value == "progress")
+		sort(5);
+	else if (select.value == "language")
+		sort(6);
+	else if (select.value == "technologies")
+		sort(7);
+}
+
 function sort(n, thisElement) {
 	var projectContainer = document.getElementsByClassName("project-container")[0];
 	var rows = document.getElementsByClassName("tr");

@@ -421,14 +421,14 @@
 			<div id="project-inputs">
 				<div id="project-select">
 					<label class="txtSortBy" for="select-sort">Sort by</label>
-					<select id="select-sort">
-						<option class="txtName" onclick="sort(1)">Name</option>
-						<option class="txtInitiate" onclick="sort(2)">Initiate</option>
-						<option class="txtUpdate" onclick="sort(3)">Update</option>
-						<option class="txtStatus" onclick="sort(4)">Status</option>
-						<option class="txtProgress" onclick="sort(5)">Progress</option>
-						<option class="txtLanguage" onclick="sort(6)">Language</option>
-						<option class="txtTechnologies" onclick="sort(7)">Technologies</option>
+					<select id="select-sort" onchange="changeSort(this)">
+						<option class="txtName" value="name" onclick="sort(1)">Name</option>
+						<option class="txtInitiate" value="initiate" onclick="sort(2)">Initiate</option>
+						<option class="txtUpdate" value="update" onclick="sort(3)">Update</option>
+						<option class="txtStatus" value="status" onclick="sort(4)">Status</option>
+						<option class="txtProgress" value="progress" onclick="sort(5)">Progress</option>
+						<option class="txtLanguage" value="language" onclick="sort(6)">Language</option>
+						<option class="txtTechnologies" value="technologies" onclick="sort(7)">Technologies</option>
 					</select>
 				</div>
 				<div id="project-view">
@@ -532,7 +532,7 @@
 						<img class="list-visible" src="img/icons/tic-tac-toe-128x128.png" alt="tic-tac-toe"/>
 						<img class="grid-visible" src="img/projects/tic-tac-toe.png" alt="Tic-Tac-Toe"/>
 					</div>
-					<div>Tic-Tac-Toe</div>
+					<div class="txtTicTacToe">Tic-Tac-Toe</div>
 					<div><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2018.06</div>
 					<div><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2020.11</div>
 					<div><i class="fa fa-fw fa-sync" title="developed"></i></div>
@@ -1003,10 +1003,9 @@
 				<i class="fa fa-code fa-fw"></i>
 				<span class="txtDocumentationSourceCode">Documentation & source code</span>
 			</h3>
-			<ol>
-				<li><a target="_blank" href="https://github.com/karol-kiersnowski/webdos">https://github.com/karol-kiersnowski/webdos</a></li>
-				<li><a target="_blank" href="https://karol-kiersnowski.github.io/#webdos">https://karol-kiersnowski.github.io/#webdos</a></li>
-			</ol>
+			<p>
+				<a target="_blank" href="https://github.com/karol-kiersnowski/webdos">https://github.com/karol-kiersnowski/webdos</a>
+			</p>
 
 			<h3>
 				<i class="fa fa-tools fa-fw"></i>
@@ -1049,14 +1048,20 @@
 				<i class="far fa-user fa-fw"></i>
 				<span class="txtAuthor">Author</span>
 			</h3>
-			<p><a target="_blank" href="https://karol-kiersnowski.github.io">Karol Kiersnowski</a></p>
+			<p>
+				<a target="_blank" href="https://karol-kiersnowski.github.io">Karol Kiersnowski</a>
+			</p>
 
 			<h3>
 				<i class="far fa-copyright fa-fw"></i>
 				<span class="txtLicense">License</span>
 			</h3>
-			<p><a target="_blank" href="https://github.com/karol-kiersnowski/webdos/blob/master/LICENSE">GNU General Public License v3.0</a></p>
+			<p>
+				<a target="_blank" href="https://github.com/karol-kiersnowski/webdos/blob/master/LICENSE">GNU General Public License v3.0</a>
+			</p>
 		</section>
+
+
 
 		<section id="football-manager-cli">
 			<hr>
@@ -1113,6 +1118,8 @@
 				</a>
 			</div>
 		</section>
+
+
 
 		<section class="markdown" id="portfolio-spa">
 			<h2>
@@ -1282,6 +1289,7 @@
 			</h2>
 			<p id="txtPortfolioDescription">
 				Elektromechanika - strona firmowa | strona typu one-page</p>
+
 			<h3>
 				<i class="fa fa-globe fa-fw"></i>
 				<span class="txtProjectWebsite">Strona internetowa projektu</span>
@@ -1359,60 +1367,109 @@
 
 
 
-		<section id="tic-tac-toe">
-			<hr>
-			<h3 class="text-center txtTicTacToe">Tic Tac Toe</h3>
-			<hr>
-			<!-- <iframe class="right col-50 box" style="height: 400px" src="https://karol-kiersnowski.github.io/tic-tac-toe"></iframe> -->
-			<div class="left col-50">
-				<table class="vertical-line">
-					<tr>
-						<td class="txtTechnologies">Technologies</td>
-						<td>HTML5, CSS, JavaScript</td>
-					</tr>
-					<tr>
-						<td class="txtRequirements">Requirements</td>
-						<td class="txtWebBrowser">Web browser</td>
-					</tr>
-					<tr>
-						<td class="txtLanguage">Language</td>
-						<td class="txtEnglishPolish">English / Polish</td>
-					</tr>
-					<tr>
-						<td class="txtCreationPeriod">Creation period</td>
-						<td>2018 / 06</td>
-					</tr>
-					<tr>
-						<td class="txtProgress">Progress</td>
-						<td>
-							<progress value="90" max="100"></progress>
-							<label class="progress">90%</label>
-						</td>
-					</tr>
-					<tr>
-						<td class="txtStatus">Status</td>
-						<td class="txtDeveloped">developed</td>
-					</tr>
-				</table>
-				<h4 class="txtFeatures">Features</h4>
-				<ul>
-					<li>CSS Webfonts: <a target="_blank" href="https://fontawesome.com">Font Awesome</a>, <a target="_blank" href="https://fonts.google.com/specimen/Finger+Paint">Finger Paint</a></li>
-					<li class="txtRWDViewportUnit">RWD: relative length - viewport unit</li>
-				</ul>
-			</div>
-			<div class="clear"></div>
-			<div class="text-center">
-				<a class="button" target="_blank" href="projects/tic-tac-toe/index.html">
-					<i class="fa fa-globe"></i> Online
-				</a>
-				<a class="button" target="_blank" href="https://karol-kiersnowski.github.io/tic-tac-toe">
-					<i class="fa fa-globe"></i> github.io
-				</a>
-				<a class="button" target="_blank" href="https://github.com/karol-kiersnowski/tic-tac-toe">
-					<i class="fab fa-github"></i> GitHub
-				</a>
-			</div>
+		<section class="markdown" id="tic-tac-toe">
+			<h2>
+				<img src="https://karol-kiersnowski.github.io/img/icons/tic-tac-toe-32x32.png" alt="Tic-Tac-Toe"/>
+				<span class="txtTicTacToe">Tic-Tac-Toe</span>
+			</h2>
+			<p id="txtTicTacToeDescription">
+				Tic-Tac-Toe is a simple game written in HTML5, CSS and JavaScript.</p>
+
+			<h3>
+				<i class="fa fa-globe fa-fw"></i>
+				<span class="txtProjectWebsite">Project website</span>
+			</h3>
+			<p>
+				<a target="_blank" href="https://karol-kiersnowski.github.io/tic-tac-toe">https://karol-kiersnowski.github.io/tic-tac-toe</a>
+			</p>
+
+			<h3>
+				<i class="fa fa-code fa-fw"></i>
+				<span class="txtDocumentationSourceCode">Documentation & source code</span>
+			</h3>
+			<p>
+				<a target="_blank" href="https://github.com/karol-kiersnowski/tic-tac-toe">https://github.com/karol-kiersnowski/tic-tac-toe</a>
+			</p>
+
+			<h3>
+				<i class="fa fa-tools fa-fw"></i>
+				<span class="txtTechnologies">Technologies</span>
+			</h3>
+			<ul>
+				<li>HTML 5</li>
+				<li>CSS</li>
+				<li>JavaScript</li>
+			</ul>
+
+			<h3>
+				<i class="fa fa-plus fa-fw"></i>
+				<span class="txtFeatures">Features</span>
+			</h3>
+			<ul>
+				<li class="txtRWDViewportUnit">Responsive Web Design: relative length - viewport unit</li>
+				<li>
+					<span class="txtCSSWebfonts">CSS webfonts</span>
+					<ul>
+						<li><a href="https://fontawesome.com">Font Awesome</a></li>
+						<li><a href="https://fonts.google.com/specimen/Finger+Paint">Finger Paint</a></li>
+					</ul>
+				</li>
+				<li>
+					<p><span class="txtMultilingualInterface">Multilingual user interface</span> (JavaScript)</p>
+					<ul>
+						<li class="txtEnglish">English</li>
+						<li class="txtPolish">Polish</li>
+					</ul>
+				</li>
+			</ul>
+
+			<h3>
+				<i class="fa fa-language fa-fw"></i>
+				<span class="txtLanguage">Language</span>
+			</h3>
+			<ul>
+				<li>
+					<span class="txtUserInterface">User interface</span>:
+					<span class="txtEnglishPolish">English / Polish</span>
+				</li>
+				<li>
+					<span class="txtSourceCode">Source code</span>:
+					<span class="txtEnglish">English</span>
+				</li>
+			</ul>
+
+			<h3>
+				<i class="fa fa-laptop fa-fw"></i>
+				<span class="txtRequirements">Requirements</span>
+			</h3>
+			<p class="txtWebBrowser">Web browser</p>
+
+			<h3>
+				<i class="far fa-images fa-fw"></i>
+				<span class="txtScreenshots">Screenshots</span>
+			</h3>
+			<p><img src="https://karol-kiersnowski.github.io/img/projects/tic-tac-toe.png" alt="Tic-Tac-Toe"></p>
+
+			<h3>
+				<i class="far fa-user fa-fw"></i>
+				<span class="txtAuthor">Author</span>
+			</h3>
+			<p>
+				<a target="_blank" href="https://karol-kiersnowski.github.io">Karol Kiersnowski</a>
+			</p>
+
+			<h3>
+				<i class="far fa-copyright fa-fw"></i>
+				<span class="txtLicense">License</span>
+			</h3>
+			<p>
+				<a target="_blank" href="https://github.com/karol-kiersnowski/tic-tac-toe/blob/master/LICENSE">MIT License</a>
+			</p>
+
+
 		</section>
+
+
 
 		<section id="guciomail">
 			<hr>
