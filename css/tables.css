@@ -71,6 +71,7 @@ table.vertical-line td:first-child {
 		display: inline-block;
 		margin: 5px;
 		width: calc(33% - 10px);
+		vertical-align: middle;
 	}
 
 	#project-list .tr:first-child,
@@ -272,7 +273,7 @@ table.vertical-line td:first-child {
 
 			#project-grid img {
 				width: 100%;
-				height: 175px;
+				//height: 175px;
 				object-fit: cover;
 			}
 
