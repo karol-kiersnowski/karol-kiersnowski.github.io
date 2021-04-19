@@ -289,6 +289,7 @@ function translateText(lang) {
 			document.getElementsByClassName("txtOnTheRight")[0].innerHTML = 'On the right';
 		document.getElementsByClassName("txtForegroundTheme")[0].innerHTML = 'Foreground theme';
 		document.getElementsByClassName("txtBackgroundTheme")[0].innerHTML = 'Background theme';
+		document.getElementsByClassName("txtBorderShadows")[0].innerHTML = 'Border shadows';
 		document.getElementsByClassName("txtColors")[0].innerHTML = 'Colors';
 			document.getElementsByClassName("txtText")[0].innerHTML = 'Text';
 			document.getElementsByClassName("txtIcons")[0].innerHTML = 'Icons';
@@ -550,6 +551,7 @@ function translateText(lang) {
 			document.getElementsByClassName("txtOnTheRight")[0].innerHTML = 'Po prawej';
 		document.getElementsByClassName("txtForegroundTheme")[0].innerHTML = 'Motyw pierwszoplanowy';
 		document.getElementsByClassName("txtBackgroundTheme")[0].innerHTML = 'Motyw drugoplanowy';
+		document.getElementsByClassName("txtBorderShadows")[0].innerHTML = 'Cienie obramowania';
 		document.getElementsByClassName("txtColors")[0].innerHTML = 'Kolory';
 			document.getElementsByClassName("txtText")[0].innerHTML = 'Tekst';
 			document.getElementsByClassName("txtIcons")[0].innerHTML = 'Ikony';

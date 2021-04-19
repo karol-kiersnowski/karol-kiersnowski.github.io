@@ -85,7 +85,7 @@ main {
 		z-index: 1;
 		padding: 20px;
 		background-color: #fff;
-		box-shadow: 0 0 5px #444;
+		box-shadow: 0 0 5px #888;
 	}
 
 		header {
@@ -170,7 +170,8 @@ main {
 
 hr {
 	margin: 5px 0;
-	border-width: 1px;
+	border-top-width: 0;
+	border-bottom-width: 1px;
 	border-style: solid;
 	color: #aaa;
 }
@@ -363,8 +364,8 @@ i#mobile-apps-arrow {
 .box,
 .box-link {
 	border: none;
-	box-shadow: 0 0 3px #444;
-	transition: all .2s ease-in-out;
+	box-shadow: 0 0 3px #888;
+	transition: opacity .2s ease-in-out;
 	cursor: pointer;
 }
 

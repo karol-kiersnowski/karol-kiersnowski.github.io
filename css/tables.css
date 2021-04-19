@@ -88,7 +88,7 @@ table.vertical-line td:first-child {
 
 	#project-table .tr:hover {
 		background-color: rgba(176,176,176,0.1);
-		box-shadow: 0px 0px 2px rgba(128,128,128,0.9);
+		box-shadow: 0px 0px 1px rgba(128,128,128,0.9);
 	}
 
 	#project-table .tr:first-child:hover {
@@ -103,7 +103,7 @@ table.vertical-line td:first-child {
 
 		#project-table .tr .th:hover {
 			background-color: rgba(176,176,176,0.1);
-			box-shadow: 0px 0px 2px rgba(128,128,128,0.9);
+			box-shadow: 0px 0px 1px rgba(128,128,128,0.9);
 		}
 
 		#project-table .tr div {

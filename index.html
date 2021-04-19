@@ -515,7 +515,7 @@
 					</div>
 					<div>Portfolio - SPA</div>
 					<div><i class="table-invisible fa fa-fw fa-hourglass-start"></i>2019.12</div>
-					<div><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2021.03</div>
+					<div><i class="table-invisible fa fa-fw fa-hourglass-end"></i>2021.04</div>
 					<div><i class="fa fa-fw fa-sync" title="developed"></i></div>
 					<div><progress max="100" value="90"></progress></div>
 					<div><i class="table-invisible fa fa-fw fa-language"></i> EN / PL</div>
@@ -2636,6 +2636,17 @@
 
 
 			<h3>
+				<i class="fa fa-border-style fa-fw"></i>
+				<span class="txtBorderShadows">Border shadows</span>
+			</h3>
+			<p>
+				<input type="range" id="rangeBoxShadow" min="1" max="10" step="1" value="5" oninput="changeBoxShadow(this.value)"/>
+				<output id="outputBoxShadow" for="rangeBoxShadow">5</output>
+			</p>
+
+
+
+			<h3>
 				<i class="fa fa-paint-brush fa-fw"></i>
 				<span class="txtColors">Colors</span>
 			</h3>
@@ -2660,7 +2671,6 @@
 			</h3>
 			<select id="font-family" onchange="changeFontFamily(this.value)">
 				<option value="Quicksand">Quicksand</option>
-				<option value="Finger Paint">Finger Paint</option>
 				<option value="Arial, sans-serif">Arial, sans-serif</option>
 				<option value="'Times New Roman', serif">Times New Roman, serif</option>
 				<option value="'Courier New', monospace">Courier New, monospace</option>

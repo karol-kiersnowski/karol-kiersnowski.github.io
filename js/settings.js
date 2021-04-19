@@ -149,6 +149,59 @@ function changeBackgroundTheme(background) {
 	}
 }
 
+// function setBorder(radioButton) {
+// 	var paperPage = document.getElementById("paper-page");
+
+// 		paperPage.style.boxShadow = "none";
+// 		paperPage.style.border = "1px solid #aaa";
+	
+
+// }
+
+// function setBoxShadow(radioButton) {
+// 	var paperPage = document.getElementById("paper-page");
+
+// 		paperPage.style.border = "none";
+// 		paperPage.style.boxShadow = "0 0 1px #444";
+	
+// }
+
+function changeBoxShadow(rangeBoxShadow) {
+	var boxLink = document.getElementsByClassName("box-link");
+
+	document.getElementById("paper-page").style.boxShadow = "0 0 " + rangeBoxShadow + "px #888";
+	document.getElementById("big-calendar").style.boxShadow = "0 0 " + rangeBoxShadow + "px #888";
+	document.getElementById("small-calendar").style.boxShadow = "0 0 " + rangeBoxShadow + "px #888";
+	for (var i=0; i<boxLink.length; i++)
+		boxLink[i].style.boxShadow = "0 0 " + rangeBoxShadow + "px #888";
+
+	document.getElementById("outputBoxShadow").innerHTML = rangeBoxShadow;
+	// //var all = document.querySelectorAll("*");
+	// //var icons = document.getElementsByTagName("i");
+	// //var all = document.getElementsByTagName("a");
+	// var h1 = document.getElementsByTagName("h1");
+	// var h2 = document.getElementsByTagName("h2");
+	// var h3 = document.getElementsByTagName("h3");
+	// var h4 = document.getElementsByTagName("h4");
+	// var h5 = document.getElementsByTagName("h5");
+	// for (var i=0; i<h1.length; i++)
+	//  	h1[i].style.fontWeight = rangeFontWeight;
+	// for (var i=0; i<h2.length; i++)
+	//  	h2[i].style.fontWeight = rangeFontWeight;
+	// for (var i=0; i<h3.length; i++)
+	//  	h3[i].style.fontWeight = rangeFontWeight;
+	// for (var i=0; i<h4.length; i++)
+	//  	h4[i].style.fontWeight = rangeFontWeight;
+	// for (var i=0; i<h5.length; i++)
+	//  	h5[i].style.fontWeight = rangeFontWeight;
+	// // for (var i=0; i<all.length; i++)
+	// // 	all[i].style.fontWeight = rangeFontWeight;
+	// // for (var i=0; i<icons.length; i++)
+	// // 	icons[i].style.fontWeight = "bold";
+	// document.body.style.fontWeight = rangeFontWeight;
+	// document.getElementById("outputFontWeight").innerHTML = rangeFontWeight;
+}
+
 function changeTextColor(color) {
 	var elements = document.querySelectorAll("*");
 	for (var i=0; i<elements.length; i++)

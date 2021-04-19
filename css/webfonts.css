@@ -21,13 +21,3 @@
 	font-weight: 700;
 	src: url(../webfonts/Quicksand-Bold.ttf);
 }
-
-@font-face {
-	font-family: "Finger Paint";
-	src: url(../webfonts/FingerPaint-Regular.ttf);
-}
-
-@font-face {
-	font-family: "Ubuntu Mono";
-	src: url(../webfonts/UbuntuMono-Regular.ttf);
-}
