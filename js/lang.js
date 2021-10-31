@@ -261,6 +261,8 @@ function translateText(lang) {
 		document.getElementsByClassName("iconInterests")[0].innerHTML = '<i class="far fa-star"></i> Interests';
 			document.getElementsByClassName("txtFootball")[0].innerHTML = 'Football';
 			document.getElementsByClassName("txtBasketball")[0].innerHTML = 'Basketball';
+			document.getElementsByClassName("txtBike")[0].innerHTML = 'Bike';
+			document.getElementsByClassName("txtBoxing")[0].innerHTML = 'Boxing';
 			document.getElementsByClassName("txtOperatingSystems")[0].innerHTML = 'Operating systems';
 			document.getElementsByClassName("txtCLI")[0].innerHTML = 'Command-line interface';
 			document.getElementsByClassName("txtProgramming")[0].innerHTML = 'Programming';
@@ -523,6 +525,8 @@ function translateText(lang) {
 		document.getElementsByClassName("iconInterests")[0].innerHTML = '<i class="far fa-star"></i> Zainteresowania';
 			document.getElementsByClassName("txtFootball")[0].innerHTML = 'Piłka nożna';
 			document.getElementsByClassName("txtBasketball")[0].innerHTML = 'Koszykówka';
+			document.getElementsByClassName("txtBike")[0].innerHTML = 'Rower';
+			document.getElementsByClassName("txtBoxing")[0].innerHTML = 'Boks';
 			document.getElementsByClassName("txtOperatingSystems")[0].innerHTML = 'Systemy operacyjne';
 			document.getElementsByClassName("txtCLI")[0].innerHTML = 'Wiersz poleceń';
 			document.getElementsByClassName("txtProgramming")[0].innerHTML = 'Programowanie';
@@ -567,7 +571,7 @@ function translateText(lang) {
 			document.getElementsByClassName("txtStaticFooter")[0].innerHTML = 'statyczny - ten sam poziom co strona główna';
 		document.getElementsByClassName("txtTransformations")[0].innerHTML = 'Przekształcenia';
 			document.getElementsByClassName("txtRotate")[0].innerHTML = 'obrócony';
-			document.getElementsByClassName("txtSkewX")[0].innerHTML = 'ukosny względem osi X';
+			document.getElementsByClassName("txtSkewX")[0].innerHTML = 'ukośny względem osi X';
 			document.getElementsByClassName("txtSkewY")[0].innerHTML = 'ukośny względem osi Y';
 		document.getElementsByClassName("txtHoveringOverImage")[0].innerHTML = 'Najechanie kursorem na obraz';
 		document.getElementsByClassName("txtSources")[0].innerHTML = 'Źródła';
