@@ -100,7 +100,7 @@ function sort(n, thisElement) {
 	}
 }
 
-function sortByUpdate() {
+function sortProjectsByUpdate() {
 	sort(3, document.querySelector("div.txtUpdate"));
 	sort(3, document.querySelector("div.txtUpdate"));
 }
