@@ -14,11 +14,6 @@ body {
 	background-color: #eee;
 }
 
-div#calendar-container,
-section#send-message {
-	display: none;
-}
-
 nav#wrapper
 {
 	position: absolute;
@@ -56,6 +51,10 @@ nav#wrapper
 			width: 25px;
 			margin-left: 4px;
 			margin-right: 8px;
+		}
+
+		div#calendar-container {
+			display: none;
 		}
 
 nav,
@@ -119,6 +118,18 @@ main {
 
 		section {
 			padding: 20px 0;
+			margin-top: -100px;
+			padding-top: 120px;
+		}
+
+		section,
+		section:target ~ section#home {
+			display: none;
+		}
+
+		section#home,
+		section:target {
+			display: block;
 		}
 
 			section.markdown h2 img,
@@ -134,7 +145,6 @@ main {
 				border-width: 0;
 				opacity: 
 			}
-
 
 			article {
 				/*overflow-x: hidden;*/
@@ -477,12 +487,6 @@ li { margin: 10px 0; }
 		width: 160px;
 		vertical-align: middle;
 	}*/
-
-
-
-
-
-
 
 
 

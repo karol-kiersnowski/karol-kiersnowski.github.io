@@ -17,7 +17,6 @@
 	<script defer src="js/settings.js"></script>
 	<script defer src="js/lang.js"></script>
 	<script defer src="js/calendar.js"></script>
-	<script defer src="js/sections.js"></script>
 	<script defer src="js/projects.js"></script>
 	<script defer src="js/init.js"></script>
 
@@ -31,43 +30,45 @@
 	front-end, back-end, html5, html, css, javascript, js, php7, php, sql, mysql, mariadb, c, c++, c/c++, c#, java"/>
 	<meta name="author" content="Karol Kiersnowski"/>
 </head>
-<body onhashchange="showSection()">
+<body onhashchange="updateTitle()">
 <nav id="wrapper">
 	<nav>
 		<a onclick="changeMenu()">
 			<i class="fa fa-list-ul fa-fw"></i> Menu
 		</a>
 		<hr>
-		<a href="#offer" onclick="narrowMenuByClickOutsideIt()">
-			<i class="fa fa-home fa-fw"></i>
-			<span class="txtOffer">Home</span>
-		</a>
-		<a href="#projects" onclick="narrowMenuByClickOutsideIt()">
-			<i class="far fa-save fa-fw"></i>
-			<span class="txtProjects">Projects</span>
-		</a>
-		<a href="#cv" onclick="narrowMenuByClickOutsideIt()">
-			<i class="far fa-file fa-fw"></i>
-			<span class="txtCv">CV</span>
-		</a>
-		<a href="#contact" onclick="narrowMenuByClickOutsideIt()">
-			<i class="far fa-envelope fa-fw"></i>
-			<span class="txtContact">Contact</span>
-		</a>
-		<a href="#photography" onclick="narrowMenuByClickOutsideIt()">
-			<i class="fa fa-camera-retro fa-fw"></i>
-			<span class="txtPhotography">Photography</span>
-		</a>
-		<a href="#settings" onclick="narrowMenuByClickOutsideIt()">
-			<i class="fa fa-cog fa-fw"></i>
-			<span class="txtSettings">Settings</span>
-		</a>
+		<div onclick="narrowMenuByClickOutsideIt()">
+			<a href="#home">
+				<i class="fa fa-home fa-fw"></i>
+				<span class="txtHome">Home page</span>
+			</a>
+			<a href="#projects">
+				<i class="far fa-save fa-fw"></i>
+				<span class="txtProjects">Projects</span>
+			</a>
+			<a href="#cv">
+				<i class="far fa-file fa-fw"></i>
+				<span class="txtCv">CV</span>
+			</a>
+			<a href="#contact">
+				<i class="far fa-envelope fa-fw"></i>
+				<span class="txtContact">Contact</span>
+			</a>
+			<a href="#photography">
+				<i class="fa fa-camera-retro fa-fw"></i>
+				<span class="txtPhotography">Photography</span>
+			</a>
+			<a href="#settings">
+				<i class="fa fa-cog fa-fw"></i>
+				<span class="txtSettings">Settings</span>
+			</a>
+		</div>
 		<hr>
-		<a id="polish" href="index-pl.html" onclick="changeLanguage('pl')">
+		<a id="polish" href="index-pl.html" onclick="setLanguage('pl')">
 			<img src="img/icons/polska.png" alt="Polska"/>
 			<span>Wersja polska</span>
 		</a>
-		<a id="english" href="index.html" onclick="changeLanguage('en')" style="display: none;">
+		<a id="english" href="index.html" onclick="setLanguage('en')" style="display: none;">
 			<img src="img/icons/uk.png" alt="UK"/>
 			<span>English version</span>
 		</a>
@@ -164,16 +165,6 @@
 				<p id="small-year"></p>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
-
 	</nav>
 </nav>
 <main onclick="narrowMenuByClickOutsideIt()">
@@ -204,206 +195,7 @@
 
 
 
-
-
-		<section id="offer">
-			<h2>
-				<i class="fa fa-home fa-fw"></i>
-				<span class="txtOffer">Home</span>
-			</h2>
-			<div class="box-offer link col-33 left text-center" id="web-apps-link" onclick="switchOfferSubpages('web-apps')">
-				<i class="big fa fa-globe"></i>
-				<h3 class="hWebSitesApps">web sites / apps</h3>
-				<p class="pWebSitesApps">cross-platform<br>on web browsers</p>
-				<i class="small fa fa-chevron-up" id="web-apps-arrow"></i>
-			</div>
-			<div class="box-offer link col-33 left text-center" id="desktop-apps-link" onclick="switchOfferSubpages('desktop-apps')">
-				<i class="big fa fa-desktop"></i>
-				<h3 class="hDesktopApps">desktop apps</h3>
-				<p class="pDesktopApps">on Windows and GNU Linux</p>
-				<i class="small fa fa-chevron-up" id="desktop-apps-arrow"></i>
-			</div>
-			<div class="box-offer col-33 left text-center" style="opacity: 0.3;">
-				<i class="big fa fa-mobile-alt"></i>
-				<h3 class="hMobileApps">mobile apps</h3>
-				<p class="pMobileApps">on Android</p>
-				<i class="small fa fa-chevron-up" id="mobile-apps-arrow"></i>
-			</div>
-			<div class="clear"></div>
-
-
-			<article id="web-apps-content">
-				<div class="">
-						<i class="left medium fa fa-expand-alt fa-fw"></i>
-						<h4 class="hRWD">responsive web design</h4>
-						<p class="pRWD">looks good on a smartphone and a computer</p>
-						<div class="clear"></div>
-				</div>
-				<hr style="color: #ccc">
-				<div class="">
-						<i class="left medium far fa-address-card fa-fw"></i>
-						<h4 class="hOnePage">one-page websites</h4>
-						<p class="pOnePage">simple websites - bussiness cards</p>
-						<div class="clear"></div>
-				</div>
-				<hr style="color: #ccc">
-				<div class="">
-						<i class="left medium far fa-window-maximize fa-fw"></i>
-						<h4 class="hSPA">single-page applications</h4>
-						<p class="pSPA">immediate transition between subpages without refreshing all page</p>
-						<div class="clear"></div>
-				</div>
-				<hr style="color: #ccc">
-				<div class="">
-						<i class="left medium fab fa-js fa-fw"></i>
-						<h4 class="hPWA">progressive web applications</h4>
-						<p class="pPWA">... in progress</p>
-						<div class="clear"></div>
-				</div>
-				<hr style="color: #ccc">
-				<div class="">
-						<i class="left medium fab fa-php fa-fw"></i>
-						<h4 class="hWebServices">expanded web applications</h4>
-						<p class="pWebServices">using PHP 7 and MySQL / MariaDB</p>
-						<div class="clear"></div>
-				</div>
-			</article>
-
-
-			<article id="desktop-apps-content">
-				<div class="">
-						<i class="left medium fa fa-terminal fa-fw"></i>
-						<h4 class="hCLI">console apps</h4>
-						<p class="pCLI">running in the Command-Line Interface</p>
-						<!-- <p><span class="txtExamples">examples</span>: <a href="#football-manager-cli" onclick="showSection('projects')">Football Manager CLI</a></p>
-						<div class="clear"></div> -->
-				</div>
-				<hr style="color: #ccc">
-				<div class="">
-					<i class="left medium far fa-window-maximize fa-fw"></i>
-					<h4 class="hGUI">window apps</h4>
-					<p class="pGUI">running in the Graphical User Interface</p>
-					<div class="clear"></div>
-				</div>
-				<hr style="color: #ccc">
-				<div class="">
-					<i class="left medium fab fa-java fa-fw"></i>
-					<h4 class="">Java - AWT, Swing</h4>
-					<p><span class="txtExamples">examples</span>: <a href="#warcaby" onclick="showSection('projects')">Warcaby</a></p>
-					<div class="clear"></div>
-				</div>
-				<hr style="color: #ccc">
-				<div class="">
-					<i class="left medium fab fa-windows fa-fw"></i>
-					<h4 class="">C# - Windows Forms</h4>
-					<div class="clear"></div>
-				</div>
-				<hr style="color: #ccc">
-				<div class="">
-					<i class="left medium fab fa-windows fa-fw"></i>
-					<h4 class="">C# - Windows Presentation Foundation</h4>
-					<p><span class="txtExamples">examples</span>: <a href="#football-manager-wpf" onclick="showSection('projects')">Menedżer piłkarski</a></p>
-					<div class="clear"></div>
-				</div>
-				<hr style="color: #ccc">
-				<div class="">
-					<i class="left medium fa fa-database fa-fw"></i>
-					<h4 class="hDB">database apps</h4>
-					<p class="pDB">using the SQL database (SQlite, MS Access)</p>
-					<div class="clear"></div>
-				</div>
-				<hr style="color: #ccc">
-				<div class="">
-					<i class="left medium fa fa-database fa-fw"></i>
-					<h4 class="">SQLite</h4>
-					<p><span class="txtExamples">examples</span>: <a href="#football-manager-cli" onclick="showSection('projects')">Football Manager CLI</a></p>
-					<div class="clear"></div>
-				</div>
-				<hr style="color: #ccc">
-				<div class="">
-					<i class="left medium fa fa-database fa-fw"></i>
-					<h4 class="">MS Access</h4>
-					<p><span class="txtExamples">examples</span>: <a href="#football-manager-wpf" onclick="showSection('projects')">Menedżer piłkarski</a></p>
-					<div class="clear"></div>
-				</div>
-				<hr style="color: #ccc">
-				<div class="">
-					<i class="left medium fa fa-file-csv fa-fw"></i>
-					<h4 class="">CSV</h4>
-					<p class="txtOnePage"></p>
-					<div class="clear"></div>
-				</div>
-			</article>
-
-
-
-
-
-			
-			<!-- <h3 class="iconWebdev"><i class="fa fa-code fa-fw"></i> Web development</h3>
-			<div class="col-50 left box-webdev text-center">
-				<h3 class="iconRWD">
-					<i class="big fa fa-mobile-alt"></i><i class="big fa fa-desktop"></i>
-					<br>responsive web design
-				</h3>
-				<p class="txtRWD">look good on a smartphone and a computer</p>
-			</div>
-			<div class="col-50 left box-webdev text-center">
-				<h3 class="iconOnePage"><i class="big far fa-address-card"></i><br>one-page websites</h3>
-				<p class="txtOnePage">simple websites - bussiness cards</p>
-			</div>
-			<div class="col-50 left box-webdev text-center">
-				<h3 class="iconSPA"><i class="big far fa-window-maximize"></i><br>single-page applications</h3>
-				<p class="txtSPA">immediate transition between subpages without refreshing all page</p>
-			</div>
-			<div class="col-50 left box-webdev text-center">
-				<h3 class="iconWebApps"><i class="big fab fa-js"></i><br>web applications</h3>
-				<p class="txtWebApps">using JavaScript (ECMAScript 6)</p>
-			</div>
-			<div class="col-50 left box-webdev text-center">
-				<h3 class="iconPWA"><i class="big fab fa-js"></i><br>progressive web applications</h3>
-				<p class="txtPWA">in progress...</p>
-			</div>
-			<div class="col-50 left box-webdev text-center">
-				<h3 class="iconWebServices"><i class="big fab fa-php"></i><br>expanded web applications</h3>
-				<p class="txtWebServices">using PHP 7 and MySQL / MariaDB</p>
-			</div>
-			<div class="clear"></div> -->
-
-		</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		<!-- The HOME PAGE is the last section. This makes it easy for the :TARGET pseudoclass to work to display the current page. This works without JavaScript -->
 
 		<section id="projects">
 			<h2>
@@ -2821,6 +2613,180 @@
 		</section>
 
 
+
+
+
+
+
+
+
+
+
+		<section id="home">
+			<h2>
+				<i class="fa fa-home fa-fw"></i>
+				<span class="txtHome">Home page</span>
+			</h2>
+			<div class="box-offer link col-33 left text-center" id="web-apps-link" onclick="switchOfferSubpages('web-apps')">
+				<i class="big fa fa-globe"></i>
+				<h3 class="hWebSitesApps">web sites / apps</h3>
+				<p class="pWebSitesApps">cross-platform<br>on web browsers</p>
+				<i class="small fa fa-chevron-up" id="web-apps-arrow"></i>
+			</div>
+			<div class="box-offer link col-33 left text-center" id="desktop-apps-link" onclick="switchOfferSubpages('desktop-apps')">
+				<i class="big fa fa-desktop"></i>
+				<h3 class="hDesktopApps">desktop apps</h3>
+				<p class="pDesktopApps">on Windows and GNU Linux</p>
+				<i class="small fa fa-chevron-up" id="desktop-apps-arrow"></i>
+			</div>
+			<div class="box-offer col-33 left text-center" style="opacity: 0.3;">
+				<i class="big fa fa-mobile-alt"></i>
+				<h3 class="hMobileApps">mobile apps</h3>
+				<p class="pMobileApps">on Android</p>
+				<i class="small fa fa-chevron-up" id="mobile-apps-arrow"></i>
+			</div>
+			<div class="clear"></div>
+
+
+			<article id="web-apps-content">
+				<div class="">
+						<i class="left medium fa fa-expand-alt fa-fw"></i>
+						<h4 class="hRWD">responsive web design</h4>
+						<p class="pRWD">looks good on a smartphone and a computer</p>
+						<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+						<i class="left medium far fa-address-card fa-fw"></i>
+						<h4 class="hOnePage">one-page websites</h4>
+						<p class="pOnePage">simple websites - bussiness cards</p>
+						<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+						<i class="left medium far fa-window-maximize fa-fw"></i>
+						<h4 class="hSPA">single-page applications</h4>
+						<p class="pSPA">immediate transition between subpages without refreshing all page</p>
+						<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+						<i class="left medium fab fa-js fa-fw"></i>
+						<h4 class="hPWA">progressive web applications</h4>
+						<p class="pPWA">... in progress</p>
+						<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+						<i class="left medium fab fa-php fa-fw"></i>
+						<h4 class="hWebServices">expanded web applications</h4>
+						<p class="pWebServices">using PHP 7 and MySQL / MariaDB</p>
+						<div class="clear"></div>
+				</div>
+			</article>
+
+
+			<article id="desktop-apps-content">
+				<div class="">
+						<i class="left medium fa fa-terminal fa-fw"></i>
+						<h4 class="hCLI">console apps</h4>
+						<p class="pCLI">running in the Command-Line Interface</p>
+						<!-- <p><span class="txtExamples">examples</span>: <a href="#football-manager-cli">Football Manager CLI</a></p>
+						<div class="clear"></div> -->
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium far fa-window-maximize fa-fw"></i>
+					<h4 class="hGUI">window apps</h4>
+					<p class="pGUI">running in the Graphical User Interface</p>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fab fa-java fa-fw"></i>
+					<h4 class="">Java - AWT, Swing</h4>
+					<p><span class="txtExamples">examples</span>: <a href="#warcaby">Warcaby</a></p>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fab fa-windows fa-fw"></i>
+					<h4 class="">C# - Windows Forms</h4>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fab fa-windows fa-fw"></i>
+					<h4 class="">C# - Windows Presentation Foundation</h4>
+					<p><span class="txtExamples">examples</span>: <a href="#football-manager-wpf">Menedżer piłkarski</a></p>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fa fa-database fa-fw"></i>
+					<h4 class="hDB">database apps</h4>
+					<p class="pDB">using the SQL database (SQlite, MS Access)</p>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fa fa-database fa-fw"></i>
+					<h4 class="">SQLite</h4>
+					<p><span class="txtExamples">examples</span>: <a href="#football-manager-cli">Football Manager CLI</a></p>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fa fa-database fa-fw"></i>
+					<h4 class="">MS Access</h4>
+					<p><span class="txtExamples">examples</span>: <a href="#football-manager-wpf">Menedżer piłkarski</a></p>
+					<div class="clear"></div>
+				</div>
+				<hr style="color: #ccc">
+				<div class="">
+					<i class="left medium fa fa-file-csv fa-fw"></i>
+					<h4 class="">CSV</h4>
+					<p class="txtOnePage"></p>
+					<div class="clear"></div>
+				</div>
+			</article>
+
+
+
+
+
+			
+			<!-- <h3 class="iconWebdev"><i class="fa fa-code fa-fw"></i> Web development</h3>
+			<div class="col-50 left box-webdev text-center">
+				<h3 class="iconRWD">
+					<i class="big fa fa-mobile-alt"></i><i class="big fa fa-desktop"></i>
+					<br>responsive web design
+				</h3>
+				<p class="txtRWD">look good on a smartphone and a computer</p>
+			</div>
+			<div class="col-50 left box-webdev text-center">
+				<h3 class="iconOnePage"><i class="big far fa-address-card"></i><br>one-page websites</h3>
+				<p class="txtOnePage">simple websites - bussiness cards</p>
+			</div>
+			<div class="col-50 left box-webdev text-center">
+				<h3 class="iconSPA"><i class="big far fa-window-maximize"></i><br>single-page applications</h3>
+				<p class="txtSPA">immediate transition between subpages without refreshing all page</p>
+			</div>
+			<div class="col-50 left box-webdev text-center">
+				<h3 class="iconWebApps"><i class="big fab fa-js"></i><br>web applications</h3>
+				<p class="txtWebApps">using JavaScript (ECMAScript 6)</p>
+			</div>
+			<div class="col-50 left box-webdev text-center">
+				<h3 class="iconPWA"><i class="big fab fa-js"></i><br>progressive web applications</h3>
+				<p class="txtPWA">in progress...</p>
+			</div>
+			<div class="col-50 left box-webdev text-center">
+				<h3 class="iconWebServices"><i class="big fab fa-php"></i><br>expanded web applications</h3>
+				<p class="txtWebServices">using PHP 7 and MySQL / MariaDB</p>
+			</div>
+			<div class="clear"></div> -->
+
+		</section>
 
 
 

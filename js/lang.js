@@ -12,7 +12,7 @@ function getUserLanguage() {
 	translateText(lang);
 }
 
-function changeLanguage(lang) {
+function setLanguage(lang) {
 	document.documentElement.lang = lang;
 	translateText(lang);
 	refreshCalendar();
@@ -23,7 +23,7 @@ function translateText(lang) {
 	///////////////////
 	var english = document.getElementById("english");
 	var polish = document.getElementById("polish");
-	var txtOffer = document.getElementsByClassName("txtOffer");
+	var txtHome = document.getElementsByClassName("txtHome");
 		var txtExamples = document.getElementsByClassName("txtExamples");
 	var txtProjects = document.getElementsByClassName("txtProjects");
 	var txtCv = document.getElementsByClassName("txtCv");
@@ -76,8 +76,8 @@ function translateText(lang) {
 		///////////////////
 		english.style.display = "none";
 		polish.style.display = "block";
-		for (var i=0; i<txtOffer.length; i++)
-			txtOffer[i].innerHTML = 'Home';
+		for (var i=0; i<txtHome.length; i++)
+			txtHome[i].innerHTML = 'Home page';
 		for (var i=0; i<txtProjects.length; i++)
 			txtProjects[i].innerHTML = 'Projects';
 		txtCv[0].innerHTML = "CV";
@@ -108,7 +108,7 @@ function translateText(lang) {
 		for (var i=0; i<12; i++)
 			monthAbbreviation[i] = monthNames[i].substr(0,3);
 
-		// OFFER PAGE
+		// HOME PAGE
 		/////////////
 
 		for (var i=0; i<txtExamples.length; i++)
@@ -335,8 +335,8 @@ function translateText(lang) {
 		///////////////////
 		english.style.display = "block";
 		polish.style.display = "none";
-		for (var i=0; i<txtOffer.length; i++)
-			txtOffer[i].innerHTML = 'Strona główna';
+		for (var i=0; i<txtHome.length; i++)
+			txtHome[i].innerHTML = 'Strona główna';
 		for (var i=0; i<txtProjects.length; i++)
 			txtProjects[i].innerHTML = 'Projekty';
 		txtCv[0].innerHTML = "CV";
@@ -367,7 +367,7 @@ function translateText(lang) {
 		for (var i=0; i<12; i++)
 			monthAbbreviation[i] = monthNames[i].substr(0,3);
 
-		// OFFER PAGE
+		// HOME PAGE
 		/////////////
 
 		for (var i=0; i<txtExamples.length; i++)

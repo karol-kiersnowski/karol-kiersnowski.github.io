@@ -4,14 +4,33 @@ function removeHrefAttributes() {
 }
 
 function displayElementsForJSPageVersion() {
-	var section = document.getElementsByTagName("section");
-	for (var i=0; i<section.length; i++) {
-		section[i].style.marginTop = "-100px";
-		section[i].style.paddingTop = "120px";
-	}
+	// var section = document.getElementsByTagName("section");
+	// for (var i=0; i<section.length; i++) {
+	// 	section[i].style.marginTop = "-100px";
+	// 	section[i].style.paddingTop = "120px";
+	// }
 	document.getElementsByClassName("email")[0].innerHTML = "<a href='mailto:karol.kiersnowski&#64;outlook.com'>karol.kiersnowski&#64;outlook.com</a>";
 	document.getElementsByClassName("email")[1].innerHTML = "<a href='mailto:karol.kiersnowski&#64;outlook.com'>karol.kiersnowski&#64;outlook.com</a>";
 	document.getElementById("calendar-container").style.display = "block";
+}
+
+function updateTitle() {
+	var hash = window.location.hash.substr(1);
+	var translatedSection;
+
+	if (hash == "")
+		document.title = "Karol Kiersnowski | Portfolio";
+	else {
+		var hashToUpperCase = hash.charAt(0).toUpperCase() + hash.substr(1);
+
+		if (document.getElementsByClassName("txt" + hashToUpperCase)[0] != undefined)
+			translatedSection = document.getElementsByClassName("txt" + hashToUpperCase)[0].innerHTML;
+		else
+			translatedSection = document.getElementsByClassName("txtProjects")[0].innerHTML;
+
+		document.title = "Karol Kiersnowski | Portfolio - " + translatedSection;
+		window.location.hash = "#" + hash;
+	}
 }
 
 // function playMusic() {
@@ -65,6 +84,6 @@ removeHrefAttributes();
 displayElementsForJSPageVersion();
 displayCalendar();
 fillInSmallCalendar();
-showSection();
+updateTitle();
 selectOffer();
 sortByUpdate();
