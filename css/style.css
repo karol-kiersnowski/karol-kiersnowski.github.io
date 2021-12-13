@@ -305,70 +305,95 @@ progress {
 
 
 
-.box-offer {
-	position: relative;
-	margin-bottom: 40px;
-	height: 320px;
-}
-
-.link {
+article.offer {
+	float: left;
+	width: 33.3%;
 	color: #247;
-	cursor: pointer;
 }
 
-.link:hover {
-	background-color: rgba(176,176,176,0.1);
-	box-shadow: 0px 0px 2px rgba(128,128,128,0.9);
+	/*.offer hr {
+		//color: #ccc;
+		width: 95%;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+	}*/
+
+article#mobile-apps {
+	opacity: 0.3;
+	cursor: auto;
 }
 
-	.box-offer h3 {
-		margin: 0;
+	div.offer-box {
+		height: 280px;
+		text-align: center;
 	}
 
-/*.box-offer hr {
-	color: #ccc;
-	width: 100%;
-	position: absolute;
-	bottom: 0;
-}*/
+	article.offer:focus div.offer-box {
+		position: relative;
+		z-index: 2;
+		margin-bottom: -2px;
+		border: 1px solid #ccc;
+		border-bottom: none;
+		background-color: #f5f5f5;
+	}
 
-div#web-apps-link {
-	//background-color: rgba(128,128,128,0.1);
-}
+	article.offer:focus div#web-apps-content,
+	article.offer:focus div#desktop-apps-content {
+		border: 1px solid #ccc;
+		background-color: #f5f5f5;
+	}
 
-article#web-apps-content {
-	height: auto;
-}
+		div.offer-box h3 {
+			margin: 0;
+		}
 
-article#desktop-apps-content {
-	height: 0;
-}
+	div#web-apps-box,
+	div#desktop-apps-box {
+		cursor: pointer;
+	}
 
-article#web-apps-content,
-article#desktop-apps-content {
-	//background-color: rgba(128,128,128,0.1);
-	transition: height 0.2s ease-in-out;
-	overflow-y: hidden;
-}
+	div#web-apps-box:hover,
+	div#desktop-apps-box:hover {
+		background-color: #f5f5f5;
+	}
 
-article#web-apps-content div,
-article#desktop-apps-content div {
-	margin: 5px 0;
-}
 
-i#web-apps-arrow,
-i#desktop-apps-arrow,
-i#mobile-apps-arrow {
-	position: absolute;
-	bottom: 0;
-	margin-left: -15px;
-	transition: transform 0.2s ease-in-out;
-}
 
-.box-webdev {
+	div.offer-content {
+		display: none;
+		padding: 10px;
+		width: 300%;
+		background-color: #f5f5f5;
+	}
+
+	div#desktop-apps-content {
+		margin-left: -100%;
+	}
+
+	article.offer:focus div#web-apps-content,
+	article.offer:focus div#desktop-apps-content {
+		display: block;
+	}
+
+		div.offer-content div,
+		div.offer-content div {
+			margin: 5px 0;
+		}
+
+
+
+
+
+
+/*.box-webdev {
 	padding: 20px 10px;
 	height: 300px;
-}
+}*/
+
+
+
+
 
 .box,
 .box-link {
@@ -522,4 +547,18 @@ li { margin: 10px 0; }
 		float: right;
 	}*/
 
+}
+
+@media only screen and (max-width: 700px) {
+	article.offer {
+		width: 100%;
+	}
+
+		div.offer-content {
+			width: 100%;
+		}
+
+		div#desktop-apps-content {
+			margin-left: auto;
+		}
 }

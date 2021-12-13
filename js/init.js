@@ -37,39 +37,6 @@ function updateTitle() {
 // 	document.getElementsByTagName("audio")[0].play();
 // }
 
-function switchOfferSubpages(subpage) {
-	var webAppsLink = document.getElementById("web-apps-link");
-	var desktopAppsLink = document.getElementById("desktop-apps-link");
-	var webAppsContent = document.getElementById("web-apps-content");
-	var desktopAppsContent = document.getElementById("desktop-apps-content");
-	var webAppsArrow = document.getElementById("web-apps-arrow");
-	var desktopAppsArrow = document.getElementById("desktop-apps-arrow");
-
-	webAppsArrow.style.transform = "rotate(180deg)";
-
-	if (subpage == "web-apps") {
-		desktopAppsContent.style.height = "0";
-		webAppsContent.style.height = webAppsContent.scrollHeight + "px";
-		webAppsArrow.style.transform = "rotate(180deg)";
-		desktopAppsArrow.style.transform = "";
-	}
-	else if (subpage == "desktop-apps") {
-		webAppsContent.style.height = "0";
-		desktopAppsContent.style.height = desktopAppsContent.scrollHeight + "px";
-		webAppsArrow.style.transform = "";
-		desktopAppsArrow.style.transform = "rotate(180deg)";
-	}
-}
-
-function selectOffer() {
-	var webAppsContent = document.getElementById("web-apps-content");
-	var desktopAppsContent = document.getElementById("desktop-apps-content");
-	var webAppsArrow = document.getElementById("web-apps-arrow");
-	//webAppsContent.style.height = "0";
-	desktopAppsContent.style.height = "0";
-	webAppsArrow.style.transform = "rotate(180deg)";
-}
-
 function sendEmail() {
 	var subject = encodeURI(document.getElementById("messageSubject").value);
 	var content = encodeURI(document.getElementById("messageContent").value);
