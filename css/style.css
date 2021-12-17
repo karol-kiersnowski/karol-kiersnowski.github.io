@@ -245,7 +245,9 @@ h5 {
 
 
 
-i, a {
+i,
+a,
+button {
 	color: #247;
 }
 
@@ -270,18 +272,15 @@ button.link {
 }
 
 button,
-.button {
+.button,
+select {
 	display: inline-block;
-	padding: 10px;
+	padding: 7px;
 	border: none;
 	background-color: rgb(238, 238, 238); /* #eee */
 	box-shadow: 0px 0px 2px #777;
 	transition: background-color 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 	cursor: pointer;
-}
-
-.button {
-	margin: 10px;
 }
 
 button:hover,
@@ -484,9 +483,67 @@ li { margin: 10px 0; }
 
 
 
+section#settings ul {
+	margin: 0;
+	padding-left: 0;
+	list-style-type: none;
+}
 
+	section#settings ul ul {
+		padding-left: 25px;
+	}
 
+label#txtSansSerif {
+	font-family: sans-serif;
+}
 
+	#Quicksand {
+		font-family: Quicksand;
+	}
+
+label#txtSerif {
+	font-family: serif;
+}
+
+	#PlayfairDisplay {
+		font-family: PlayfairDisplay;
+	}
+
+	#CormorantGaramond {
+		font-family: CormorantGaramond;
+	}
+
+label#txtMonospace {
+	font-family: monospace;
+}
+
+	#SyneMono {
+		font-family: SyneMono;
+	}
+
+	#SpecialElite {
+		font-family: SpecialElite;
+	}
+
+	#DOSEGA {
+		font-family: DOSEGA;
+	}
+
+label#txtCursive {
+	font-family: cursive;
+}
+
+label.txtBold {
+	font-weight: bold;
+}
+
+label.txtItalic {
+	font-style: italic;
+}
+
+label.txtSmallCaps {
+	font-variant: small-caps;
+}
 
 
 

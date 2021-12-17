@@ -21,3 +21,28 @@
 	font-weight: 700;
 	src: url(../webfonts/Quicksand-Bold.ttf);
 }
+
+@font-face {
+	font-family: PlayfairDisplay;
+	src: url(../webfonts/PlayfairDisplay-Regular.ttf);
+}
+
+@font-face {
+	font-family: CormorantGaramond;
+	src: url(../webfonts/CormorantGaramond-Regular.ttf);
+}
+
+@font-face {
+	font-family: SpecialElite;
+	src: url(../webfonts/SpecialElite-Regular.ttf);
+}
+
+@font-face {
+	font-family: SyneMono;
+	src: url(../webfonts/SyneMono-Regular.ttf);
+}
+
+@font-face {
+	font-family: DOSEGA;
+	src: url(../webfonts/DOSEGA.ttf);
+}

@@ -176,30 +176,6 @@ function changeBoxShadow(rangeBoxShadow) {
 		boxLink[i].style.boxShadow = "0 0 " + rangeBoxShadow + "px #888";
 
 	document.getElementById("outputBoxShadow").innerHTML = rangeBoxShadow;
-	// //var all = document.querySelectorAll("*");
-	// //var icons = document.getElementsByTagName("i");
-	// //var all = document.getElementsByTagName("a");
-	// var h1 = document.getElementsByTagName("h1");
-	// var h2 = document.getElementsByTagName("h2");
-	// var h3 = document.getElementsByTagName("h3");
-	// var h4 = document.getElementsByTagName("h4");
-	// var h5 = document.getElementsByTagName("h5");
-	// for (var i=0; i<h1.length; i++)
-	//  	h1[i].style.fontWeight = rangeFontWeight;
-	// for (var i=0; i<h2.length; i++)
-	//  	h2[i].style.fontWeight = rangeFontWeight;
-	// for (var i=0; i<h3.length; i++)
-	//  	h3[i].style.fontWeight = rangeFontWeight;
-	// for (var i=0; i<h4.length; i++)
-	//  	h4[i].style.fontWeight = rangeFontWeight;
-	// for (var i=0; i<h5.length; i++)
-	//  	h5[i].style.fontWeight = rangeFontWeight;
-	// // for (var i=0; i<all.length; i++)
-	// // 	all[i].style.fontWeight = rangeFontWeight;
-	// // for (var i=0; i<icons.length; i++)
-	// // 	icons[i].style.fontWeight = "bold";
-	// document.body.style.fontWeight = rangeFontWeight;
-	// document.getElementById("outputFontWeight").innerHTML = rangeFontWeight;
 }
 
 function changeTextColor(color) {
@@ -220,7 +196,7 @@ function changeHyperlinkColor(color) {
 		elements[i].style.color = color;
 }
 
-function changeFontFamily(fontFamily) {
+function setFontFamily(fontFamily) {
 	document.body.style.fontFamily = fontFamily;
 }
 
@@ -229,7 +205,7 @@ function changeFontSize(rangeFontSize) {
 	document.getElementById("outputFontSize").innerHTML = "1em = " + rangeFontSize + "px";
 }
 
-function changeFontWeight(rangeFontWeight) {
+function changeFontWeightByRange(fontWeight) {
 	//var all = document.querySelectorAll("*");
 	//var icons = document.getElementsByTagName("i");
 	//var all = document.getElementsByTagName("a");
@@ -239,32 +215,53 @@ function changeFontWeight(rangeFontWeight) {
 	var h4 = document.getElementsByTagName("h4");
 	var h5 = document.getElementsByTagName("h5");
 	for (var i=0; i<h1.length; i++)
-	 	h1[i].style.fontWeight = rangeFontWeight;
+	 	h1[i].style.fontWeight = fontWeight;
 	for (var i=0; i<h2.length; i++)
-	 	h2[i].style.fontWeight = rangeFontWeight;
+	 	h2[i].style.fontWeight = fontWeight;
 	for (var i=0; i<h3.length; i++)
-	 	h3[i].style.fontWeight = rangeFontWeight;
+	 	h3[i].style.fontWeight = fontWeight;
 	for (var i=0; i<h4.length; i++)
-	 	h4[i].style.fontWeight = rangeFontWeight;
+	 	h4[i].style.fontWeight = fontWeight;
 	for (var i=0; i<h5.length; i++)
-	 	h5[i].style.fontWeight = rangeFontWeight;
+	 	h5[i].style.fontWeight = fontWeight;
 	// for (var i=0; i<all.length; i++)
-	// 	all[i].style.fontWeight = rangeFontWeight;
+	// 	all[i].style.fontWeight = fontWeight;
 	// for (var i=0; i<icons.length; i++)
 	// 	icons[i].style.fontWeight = "bold";
-	document.body.style.fontWeight = rangeFontWeight;
-	document.getElementById("outputFontWeight").innerHTML = rangeFontWeight;
+	document.body.style.fontWeight = fontWeight;
+	document.getElementById("outputFontWeight").innerHTML = fontWeight;
+
+	if (fontWeight <= 400)
+		document.getElementById("checkboxFontBold").checked = null;
+	if (fontWeight >= 700)
+		document.getElementById("checkboxFontBold").checked = "true";
+	// 	fontWeight.
+	// if (fontWeight >= 700)
+	// 	fontWeight.parentElement = checked;
 }
 
-function changeFontStyle(fontStyle) {
-	if (fontStyle.checked)
+function changeFontWeightByCheckbox(bold) {
+	if (bold.checked) {
+		document.body.style.fontWeight = "bold";
+		document.getElementById("rangeFontWeight").value = 700;
+		document.getElementById("outputFontWeight").innerHTML = 700;
+	}
+	else {
+		document.body.style.fontWeight = "normal";
+		document.getElementById("rangeFontWeight").value = 400;
+		document.getElementById("outputFontWeight").innerHTML = 400;
+	}
+}
+
+function changeFontStyle(italic) {
+	if (italic.checked)
 		document.body.style.fontStyle = "italic";
 	else
 		document.body.style.fontStyle = "normal";
 }
 
-function changeFontVariant(fontVariant) {
-	if (fontVariant.checked)
+function changeFontVariant(smallCaps) {
+	if (smallCaps.checked)
 		document.body.style.fontVariant = "small-caps";
 	else
 		document.body.style.fontVariant = "normal";

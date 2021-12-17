@@ -57,6 +57,7 @@ function translateText(lang) {
 		var txtAbandoned = document.getElementsByClassName("txtAbandoned");
 	var iconDownload = document.getElementsByClassName("iconDownload");
 	var txtFeatures = document.getElementsByClassName("txtFeatures");
+		var txtCSSWebfonts = document.getElementsByClassName("txtCSSWebfonts");
 		var txtConnectionToTheDatabase = document.getElementsByClassName("txtConnectionToTheDatabase");
 		var txtCSV = document.getElementsByClassName("txtCSV");
 		var txtRWDViewportUnit = document.getElementsByClassName("txtRWDViewportUnit");
@@ -193,6 +194,8 @@ function translateText(lang) {
 			iconDownload[i].innerHTML = '<i class="fa fa-download"></i> Download';
 		for (var i=0; i<txtFeatures.length; i++)
 			txtFeatures[i].innerHTML = "Features";
+			for (var i=0; i<txtCSSWebfonts.length; i++)
+				txtCSSWebfonts[i].innerHTML = "CSS webfonts";
 			for (var i=0; i<txtConnectionToTheDatabase.length; i++)
 				txtConnectionToTheDatabase[i].innerHTML = "connection to the database";
 			txtCSV[0].innerHTML = "data is stored in CSV files";
@@ -297,9 +300,15 @@ function translateText(lang) {
 			document.getElementsByClassName("txtIcons")[0].innerHTML = 'Icons';
 			document.getElementsByClassName("txtHyperlinks")[0].innerHTML = 'Hyperlinks';
 		document.getElementsByClassName("txtFontFamily")[0].innerHTML = 'Font family';
+			document.getElementsByClassName("txtGenericFontFamilies")[0].innerHTML = 'Generic font families';
+				document.getElementById("txtSansSerif").innerHTML = 'sans-serif';
+				document.getElementById("txtSerif").innerHTML = 'serif';
+				document.getElementById("txtMonospace").innerHTML = 'monospace';
+				document.getElementById("txtCursive").innerHTML = 'cursive / handwriting';
 		document.getElementsByClassName("txtFontSize")[0].innerHTML = 'Font size';
 		document.getElementsByClassName("txtFontWeight")[0].innerHTML = 'Font weight';
 		document.getElementsByClassName("txtFontProperties")[0].innerHTML = 'Font properties';
+			document.getElementsByClassName("txtBold")[0].innerHTML = 'bold';
 			document.getElementsByClassName("txtItalic")[0].innerHTML = 'italic';
 			document.getElementsByClassName("txtSmallCaps")[0].innerHTML = 'small caps';
 		document.getElementsByClassName("txtFooterPosition")[0].innerHTML = 'Footer position';
@@ -458,6 +467,8 @@ function translateText(lang) {
 			iconDownload[i].innerHTML = '<i class="fa fa-download"></i> Pobierz';
 		for (var i=0; i<txtFeatures.length; i++)
 			txtFeatures[i].innerHTML = "Cechy & właściwości";
+			for (var i=0; i<txtCSSWebfonts.length; i++)
+				txtCSSWebfonts[i].innerHTML = "Czcionki internetowe CSS";
 			for (var i=0; i<txtConnectionToTheDatabase.length; i++)
 				txtConnectionToTheDatabase[i].innerHTML = "łączenie się z bazą danych";
 			txtCSV[0].innerHTML = "dane przechowywane są w plikach CSV";
@@ -561,9 +572,15 @@ function translateText(lang) {
 			document.getElementsByClassName("txtIcons")[0].innerHTML = 'Ikony';
 			document.getElementsByClassName("txtHyperlinks")[0].innerHTML = 'Odnośniki';
 		document.getElementsByClassName("txtFontFamily")[0].innerHTML = 'Krój czcionki';
+			document.getElementsByClassName("txtGenericFontFamilies")[0].innerHTML = 'Czcionki generyczne';
+				document.getElementById("txtSansSerif").innerHTML = 'bezszeryfowe';
+				document.getElementById("txtSerif").innerHTML = 'szeryfowe';
+				document.getElementById("txtMonospace").innerHTML = 'o stałej szerokości znaku (maszynowe)';
+				document.getElementById("txtCursive").innerHTML = 'odręczne';
 		document.getElementsByClassName("txtFontSize")[0].innerHTML = 'Wielkość czcionki';
 		document.getElementsByClassName("txtFontWeight")[0].innerHTML = 'Grubość czcionki';
 		document.getElementsByClassName("txtFontProperties")[0].innerHTML = 'Właściwości czcionki';
+			document.getElementsByClassName("txtBold")[0].innerHTML = 'pogrubienie';
 			document.getElementsByClassName("txtItalic")[0].innerHTML = 'kursywa';
 			document.getElementsByClassName("txtSmallCaps")[0].innerHTML = 'drukowane litery';
 		document.getElementsByClassName("txtFooterPosition")[0].innerHTML = 'Położenie stopki';

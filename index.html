@@ -225,7 +225,7 @@
 					</select>
 				</div>
 				<div id="project-view">
-					<label class="txtView" style="vertical-align: middle;">View</label>
+					<label class="txtView">View</label>
 					<button onclick="setTableView()"><i class="fa fa-table"></i> <span class="txtTable">Table</span></button> 
 					<button onclick="setListView()"><i class="fa fa-th-list"></i> <span class="txtList">List</span></button>
 					<button onclick="setGridView()"><i class="fa fa-th"></i> <span class="txtGrid">Grid</span></button>
@@ -2350,11 +2350,11 @@
 				<i class="fa fa-list-ul fa-fw"></i>
 				<span class="txtMenuLocation">Menu location</span>
 			</h3>
-			<a class="button" href="javascript:void(0);" onclick="changeNavLocation('left')">
+			<button onclick="changeNavLocation('left')">
 				<i class="fa fa-arrow-left fa-fw"></i>
 				<span class="txtOnTheLeft">On the left</span>
-			</a>
-			<a class="button" href="javascript:void(0);" onclick="changeNavLocation('right')">
+			</button>
+			<a class="button" onclick="changeNavLocation('right')">
 				<i class="fa fa-arrow-right fa-fw"></i>
 				<span class="txtOnTheRight">On the right</span>
 			</a>
@@ -2468,12 +2468,66 @@
 				<i class="fa fa-font fa-fw"></i>
 				<span class="txtFontFamily">Font family</span>
 			</h3>
-			<select id="font-family" onchange="changeFontFamily(this.value)">
-				<option value="Quicksand">Quicksand</option>
-				<option value="Arial, sans-serif">Arial, sans-serif</option>
-				<option value="'Times New Roman', serif">Times New Roman, serif</option>
-				<option value="'Courier New', monospace">Courier New, monospace</option>
-			</select>
+			<!-- <h4 class="txtCSSWebfonts">CSS webfonts</h4> -->
+			<ul>
+				<li>
+					<input type="radio" name="radioFontFamily" id="sans-serif" value="sans-serif" onclick="setFontFamily(this.value)"
+					><label id="txtSansSerif" for="sans-serif">sans-serif</label>
+				</li>
+				<ul>
+					<li id="Quicksand">
+						<input type="radio" name="radioFontFamily" value="Quicksand" onclick="setFontFamily(this.value)" checked
+						><label>
+							<a target="_blank" href="https://github.com/andrew-paglinawan/QuicksandFamily">Quicksand</a>
+						</label>
+					</li>
+				</ul>
+				<li>
+					<input type="radio" name="radioFontFamily" id="serif" value="serif" onclick="setFontFamily(this.value)"><label id="txtSerif" for="serif">serif</label>
+				</li>
+				<ul>
+					<li id="PlayfairDisplay">
+						<input type="radio" name="radioFontFamily" value="PlayfairDisplay" onclick="setFontFamily(this.value)"
+						><label>
+							<a target="_blank" href="https://github.com/clauseggers/Playfair-Display">PlayfairDisplay</a>
+						</label>
+					</li>
+					<li id="CormorantGaramond">
+						<input type="radio" name="radioFontFamily" value="CormorantGaramond" onclick="setFontFamily(this.value)"
+						><label>
+							<a target="_blank" href="https://github.com/CatharsisFonts/Cormorant">CormorantGaramond</a>
+						</label>
+					</li>
+				</ul>
+				<li>
+					<input type="radio" name="radioFontFamily" id="monospace" value="monospace" onclick="setFontFamily(this.value)"><label id="txtMonospace" for="monospace">monospace</label>
+				</li>
+				<ul>
+					<li id="SyneMono">
+						<input type="radio" name="radioFontFamily" value="SyneMono" onclick="setFontFamily(this.value)"
+						><label>
+							<a target="_blank" href="https://gitlab.com/bonjour-monde/fonderie/syne-typeface">SyneMono</a>
+						</label>
+					</li>
+					<li id="SpecialElite">
+						<input type="radio" name="radioFontFamily" value="SpecialElite" onclick="setFontFamily(this.value)"
+						><label>
+							<a target="_blank" href="https://fonts.google.com/specimen/Special+Elite?query=special+elite#standard-styles">SpecialElite</a>
+						</label>
+					</li>
+					<li id="DOSEGA">
+						<input type="radio" name="radioFontFamily" value="DOSEGA" onclick="setFontFamily(this.value)"
+						><label>
+							<a target="_blank" href="https://sourceforge.net/projects/dosega">DOSEGA</a>
+						</label>
+					</li>
+				</ul>
+				<li>
+					<input type="radio" name="radioFontFamily" id="cursive" value="cursive" onclick="setFontFamily(this.value)"
+					><label id="txtCursive" for="cursive">cursive</label>
+				</li>
+			</ul>
+			<h4 class="txtGenericFontFamilies">Generic font families</h4>
 
 
 
@@ -2481,7 +2535,7 @@
 				<i class="fa fa-text-height fa-fw"></i>
 				<span class="txtFontSize">Font size</span>
 			</h3>
-			<input type="range" id="rangeFontSize" min="12" max="20" step="2" value="16" oninput="changeFontSize(this.value)"/>
+			<input type="range" id="rangeFontSize" min="12" max="20" step="1" value="16" oninput="changeFontSize(this.value)"/>
 			<output id="outputFontSize" for="rangeFontSize">1em = 16px</output>
 
 
@@ -2490,7 +2544,7 @@
 				<i class="fa fa-text-width fa-fw"></i>
 				<span class="txtFontWeight">Font weight</span>
 			</h3>
-			<input type="range" id="rangeFontWeight" min="100" max="900" step="100" value="400" oninput="changeFontWeight(this.value)"/>
+			<input type="range" id="rangeFontWeight" min="100" max="900" step="100" value="400" oninput="changeFontWeightByRange(this.value)"/>
 			<output id="outputFontWeight" for="rangeFontWeight">400</output>
 
 
@@ -2500,7 +2554,10 @@
 				<span class="txtFontProperties">Font properties</span>
 			</h3>
 			<p>
-				<input type="checkbox" name="checkboxFontItalic" id="checkboxFontItalic" value="italic" onclick="changeFontStyle(this)"><label for="checkboxFontItalic" class="txtItalic">normal</label>
+				<input type="checkbox" name="checkboxFontBold" id="checkboxFontBold" value="bold" onclick="changeFontWeightByCheckbox(this)"><label for="checkboxFontBold" class="txtBold">bold</label>
+			</p>
+			<p>
+				<input type="checkbox" name="checkboxFontItalic" id="checkboxFontItalic" value="italic" onclick="changeFontStyle(this)"><label for="checkboxFontItalic" class="txtItalic">italic</label>
 			</p>
 			<p>
 				<input type="checkbox" name="checkboxFontSmallCaps" id="checkboxFontSmallCaps" value="small-caps" onclick="changeFontVariant(this)"><label for="checkboxFontSmallCaps" class="txtSmallCaps">small caps</label>
