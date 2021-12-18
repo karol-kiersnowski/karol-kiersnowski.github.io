@@ -275,6 +275,7 @@ button,
 .button,
 select {
 	display: inline-block;
+	margin: 5px;
 	padding: 7px;
 	border: none;
 	background-color: rgb(238, 238, 238); /* #eee */

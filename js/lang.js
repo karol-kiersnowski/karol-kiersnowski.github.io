@@ -318,7 +318,6 @@ function translateText(lang) {
 			document.getElementsByClassName("txtRotate")[0].innerHTML = 'rotate';
 			document.getElementsByClassName("txtSkewX")[0].innerHTML = 'skew to the X axis';
 			document.getElementsByClassName("txtSkewY")[0].innerHTML = 'skew to the Y axis';
-		document.getElementsByClassName("txtHoveringOverImage")[0].innerHTML = 'Hovering over the image';
 		document.getElementsByClassName("txtSources")[0].innerHTML = 'Sources';
 			document.getElementsByClassName("txtIcons")[1].innerHTML = 'Icons';
 			document.getElementsByClassName("txtFonts")[0].innerHTML = 'Fonts';
@@ -590,7 +589,6 @@ function translateText(lang) {
 			document.getElementsByClassName("txtRotate")[0].innerHTML = 'obrócony';
 			document.getElementsByClassName("txtSkewX")[0].innerHTML = 'ukośny względem osi X';
 			document.getElementsByClassName("txtSkewY")[0].innerHTML = 'ukośny względem osi Y';
-		document.getElementsByClassName("txtHoveringOverImage")[0].innerHTML = 'Najechanie kursorem na obraz';
 		document.getElementsByClassName("txtSources")[0].innerHTML = 'Źródła';
 			document.getElementsByClassName("txtIcons")[1].innerHTML = 'Ikony';
 			document.getElementsByClassName("txtFonts")[0].innerHTML = 'Czcionki';

@@ -149,23 +149,6 @@ function changeBackgroundTheme(background) {
 	}
 }
 
-// function setBorder(radioButton) {
-// 	var paperPage = document.getElementById("paper-page");
-
-// 		paperPage.style.boxShadow = "none";
-// 		paperPage.style.border = "1px solid #aaa";
-	
-
-// }
-
-// function setBoxShadow(radioButton) {
-// 	var paperPage = document.getElementById("paper-page");
-
-// 		paperPage.style.border = "none";
-// 		paperPage.style.boxShadow = "0 0 1px #444";
-	
-// }
-
 function changeBoxShadow(rangeBoxShadow) {
 	var boxLink = document.getElementsByClassName("box-link");
 
@@ -198,6 +181,16 @@ function changeHyperlinkColor(color) {
 
 function setFontFamily(fontFamily) {
 	document.body.style.fontFamily = fontFamily;
+
+	var buttons = document.getElementsByTagName("button");
+	var inputs = document.getElementsByTagName("input");
+	document.getElementsByTagName("textarea")[0].style.fontFamily = fontFamily;
+
+	for (var i=0; i<buttons.length; i++)
+		buttons[i].style.fontFamily = fontFamily;
+
+	for (var i=0; i<inputs.length; i++)
+		inputs[i].style.fontFamily = fontFamily;
 }
 
 function changeFontSize(rangeFontSize) {
