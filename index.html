@@ -31,14 +31,14 @@
 	front-end, back-end, html5, html, css, javascript, js, php7, php, sql, mysql, mariadb, c, c++, c/c++, c#, java"/>
 	<meta name="author" content="Karol Kiersnowski"/>
 </head>
-<body onhashchange="updateDocumentTitle()">
+<body onhashchange="updateDocumentTitle(); markCurrentPageLink()">
 <nav id="wrapper">
 	<nav>
 		<a onclick="changeMenu()">
 			<i class="fa fa-list-ul fa-fw"></i> Menu
 		</a>
 		<hr>
-		<div onclick="narrowMenuByClickOutsideIt()">
+		<div id="nav-link-container" onclick="narrowMenuByClickOutsideIt()">
 			<a href="#home">
 				<i class="fa fa-home fa-fw"></i>
 				<span class="txtHome">Home page</span>

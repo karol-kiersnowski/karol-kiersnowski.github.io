@@ -17,6 +17,24 @@ function updateDocumentTitle() {
 	}
 }
 
+function markCurrentPageLink() {
+	var hash = window.location.hash.substr(1);
+	var navLinkContainer = document.getElementById("nav-link-container");
+	var links = new Array(6);
+	var href;
+
+	for (var i=0; i<navLinkContainer.children.length; i++) {
+		links[i] = navLinkContainer.children[i];
+		href = links[i].href.split(/[# ]+/).pop();
+		links[i].style.backgroundColor = "";
+		links[i].style.boxShadow = "";
+		if (href == hash) {
+			links[i].style.backgroundColor = "rgba(128,128,128,0.1)";
+			links[i].style.boxShadow = "0px 0px 2px #777";
+		}
+	}
+}
+
 function removeHrefAttributesFromLanguageButtons() {
 	document.getElementById("polish").removeAttribute("href");
 	document.getElementById("english").removeAttribute("href");
