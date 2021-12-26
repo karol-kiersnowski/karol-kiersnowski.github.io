@@ -1,94 +1,96 @@
-var daysOfWeek = new Array(7);
-var monthNames = new Array(12);
-var monthAbbreviation = new Array(12);
-
-function getUserLanguage() {
-	lang = navigator.language.substr(0,2);
-
-	if (lang != "en" && lang != "pl")
-		lang = "en";
-
-	document.documentElement.lang = lang;
-	translateText(lang);
+function getLanguageFromBrowser() {
+	let language = navigator.language.substr(0,2);
+	if (language != "en" && language != "pl")
+		return "en";
 }
 
-function setLanguage(lang) {
-	document.documentElement.lang = lang;
-	translateText(lang);
+function setLanguageFromWebBrowser() {
+	let language = navigator.language.substr(0,2);
+	if (language != "en" && language != "pl")
+		language = "en";
+
+	document.documentElement.lang = language;
+	translateText(language);
+}
+
+function setLanguage(Language) {
+	language = Language;
+	document.documentElement.lang = language;
+	translateText(language);
 	refreshCalendar();
 }
 
-function translateText(lang) {
+function translateText(language) {
 	// MENU AND HEADERS
 	///////////////////
-	var english = document.getElementById("english");
-	var polish = document.getElementById("polish");
-	var txtHome = document.getElementsByClassName("txtHome");
-		var txtExamples = document.getElementsByClassName("txtExamples");
-	var txtProjects = document.getElementsByClassName("txtProjects");
-	var txtCv = document.getElementsByClassName("txtCv");
-	var txtContact = document.getElementsByClassName("txtContact");
-	var txtPhotography = document.getElementsByClassName("txtPhotography");
-	var txtSettings = document.getElementsByClassName("txtSettings");
-	var txtCookies = document.getElementsByClassName("txtCookies");
+	let english = document.getElementById("english");
+	let polish = document.getElementById("polish");
+	let txtHome = document.getElementsByClassName("txtHome");
+		let txtExamples = document.getElementsByClassName("txtExamples");
+	let txtProjects = document.getElementsByClassName("txtProjects");
+	let txtCv = document.getElementsByClassName("txtCv");
+	let txtContact = document.getElementsByClassName("txtContact");
+	let txtPhotography = document.getElementsByClassName("txtPhotography");
+	let txtSettings = document.getElementsByClassName("txtSettings");
+	let txtCookies = document.getElementsByClassName("txtCookies");
 
 	// PROJECTS PAGE
 	////////////////
-	var txtIcon = document.getElementsByClassName("txtIcon");
-	var txtName = document.getElementsByClassName("txtName");
-		var txtTicTacToe = document.getElementsByClassName("txtTicTacToe");
-	var txtTechnologies = document.getElementsByClassName("txtTechnologies");
-	var txtProjectWebsite = document.getElementsByClassName("txtProjectWebsite");
-	var txtDocumentationSourceCode = document.getElementsByClassName("txtDocumentationSourceCode");
-	var txtRequirements = document.getElementsByClassName("txtRequirements");
-		var txtWebBrowser = document.getElementsByClassName("txtWebBrowser");
-		var txtPdfReader = document.getElementsByClassName("txtPdfReader");
-	var txtLanguage = document.getElementsByClassName("txtLanguage");
-		var txtEnglish = document.getElementsByClassName("txtEnglish");
-		var txtPolish = document.getElementsByClassName("txtPolish");
-		var txtEnglishPolish = document.getElementsByClassName("txtEnglishPolish");
-	var txtCreationPeriod = document.getElementsByClassName("txtCreationPeriod");
-	var txtInitiate = document.getElementsByClassName("txtInitiate");
-	var txtUpdate = document.getElementsByClassName("txtUpdate");
-	var txtProgress = document.getElementsByClassName("txtProgress");
-	var txtStatus = document.getElementsByClassName("txtStatus");
-		var txtFinished = document.getElementsByClassName("txtFinished");
-		var txtDeveloped = document.getElementsByClassName("txtDeveloped");
-		var txtAbandoned = document.getElementsByClassName("txtAbandoned");
-	var iconDownload = document.getElementsByClassName("iconDownload");
-	var txtFeatures = document.getElementsByClassName("txtFeatures");
-		var txtCSSWebfonts = document.getElementsByClassName("txtCSSWebfonts");
-		var txtConnectionToTheDatabase = document.getElementsByClassName("txtConnectionToTheDatabase");
-		var txtCSV = document.getElementsByClassName("txtCSV");
-		var txtRWDViewportUnit = document.getElementsByClassName("txtRWDViewportUnit");
-		var txtCookiesSupport = document.getElementsByClassName("txtCookiesSupport");
-		var txtSessionSupport = document.getElementsByClassName("txtSessionSupport");
-		var txtMultilingualInterface = document.getElementsByClassName("txtMultilingualInterface");
-	var txtUserInterface = document.getElementsByClassName("txtUserInterface");
-	var txtSourceCode = document.getElementsByClassName("txtSourceCode");
-	var txtScreenshots = document.getElementsByClassName("txtScreenshots");
-	var txtAuthor = document.getElementsByClassName("txtAuthor");
-	var txtLicense = document.getElementsByClassName("txtLicense");
-	var txtAllRightsReserved = document.getElementsByClassName("txtAllRightsReserved");
+	let txtIcon = document.getElementsByClassName("txtIcon");
+	let txtName = document.getElementsByClassName("txtName");
+		let txtTicTacToe = document.getElementsByClassName("txtTicTacToe");
+	let txtTechnologies = document.getElementsByClassName("txtTechnologies");
+	let txtProjectWebsite = document.getElementsByClassName("txtProjectWebsite");
+	let txtDocumentationSourceCode = document.getElementsByClassName("txtDocumentationSourceCode");
+	let txtRequirements = document.getElementsByClassName("txtRequirements");
+		let txtWebBrowser = document.getElementsByClassName("txtWebBrowser");
+		let txtPdfReader = document.getElementsByClassName("txtPdfReader");
+	let txtLanguage = document.getElementsByClassName("txtLanguage");
+		let txtEnglish = document.getElementsByClassName("txtEnglish");
+		let txtPolish = document.getElementsByClassName("txtPolish");
+		let txtEnglishPolish = document.getElementsByClassName("txtEnglishPolish");
+	let txtCreationPeriod = document.getElementsByClassName("txtCreationPeriod");
+	let txtInitiate = document.getElementsByClassName("txtInitiate");
+	let txtUpdate = document.getElementsByClassName("txtUpdate");
+	let txtProgress = document.getElementsByClassName("txtProgress");
+	let txtStatus = document.getElementsByClassName("txtStatus");
+		let txtFinished = document.getElementsByClassName("txtFinished");
+		let txtDeveloped = document.getElementsByClassName("txtDeveloped");
+		let txtAbandoned = document.getElementsByClassName("txtAbandoned");
+	let iconDownload = document.getElementsByClassName("iconDownload");
+	let txtFeatures = document.getElementsByClassName("txtFeatures");
+		let txtCSSWebfonts = document.getElementsByClassName("txtCSSWebfonts");
+		let txtConnectionToTheDatabase = document.getElementsByClassName("txtConnectionToTheDatabase");
+		let txtCSV = document.getElementsByClassName("txtCSV");
+		let txtRWDViewportUnit = document.getElementsByClassName("txtRWDViewportUnit");
+		let txtCookiesSupport = document.getElementsByClassName("txtCookiesSupport");
+		let txtSessionSupport = document.getElementsByClassName("txtSessionSupport");
+		let txtMultilingualInterface = document.getElementsByClassName("txtMultilingualInterface");
+	let txtUserInterface = document.getElementsByClassName("txtUserInterface");
+	let txtSourceCode = document.getElementsByClassName("txtSourceCode");
+	let txtScreenshots = document.getElementsByClassName("txtScreenshots");
+	let txtAuthor = document.getElementsByClassName("txtAuthor");
+	let txtLicense = document.getElementsByClassName("txtLicense");
+	let txtAllRightsReserved = document.getElementsByClassName("txtAllRightsReserved");
 
-	if (lang == "en") {
+	if (language == "en") {
 
 		// MENU AND HEADERS
 		///////////////////
 		english.style.display = "none";
 		polish.style.display = "block";
-		for (var i=0; i<txtHome.length; i++)
+		for (let i=0; i<txtHome.length; i++)
 			txtHome[i].innerHTML = 'Home page';
-		for (var i=0; i<txtProjects.length; i++)
+		for (let i=0; i<txtProjects.length; i++)
 			txtProjects[i].innerHTML = 'Projects';
 		txtCv[0].innerHTML = "CV";
-		for (var i=0; i<txtContact.length; i++)
+		for (let i=0; i<txtContact.length; i++)
 			txtContact[i].innerHTML = 'Contact';
-		for (var i=0; i<txtPhotography.length; i++)
+		for (let i=0; i<txtPhotography.length; i++)
 			txtPhotography[i].innerHTML = 'Photography';
-		for (var i=0; i<txtSettings.length; i++)
+		for (let i=0; i<txtSettings.length; i++)
 			txtSettings[i].innerHTML = 'Settings';
-		for (var i=0; i<txtCookies.length; i++)
+		for (let i=0; i<txtCookies.length; i++)
 			txtCookies[i].innerHTML = 'Cookies';
 
 		// CALENDAR
@@ -106,13 +108,13 @@ function translateText(lang) {
 		monthNames[9] = "October";
 		monthNames[10] = "November";
 		monthNames[11] = "December";
-		for (var i=0; i<12; i++)
+		for (let i=0; i<12; i++)
 			monthAbbreviation[i] = monthNames[i].substr(0,3);
 
 		// HOME PAGE
 		/////////////
 
-		for (var i=0; i<txtExamples.length; i++)
+		for (let i=0; i<txtExamples.length; i++)
 			txtExamples[i].innerHTML = 'examples';
 
 		document.getElementsByClassName("hWebSitesApps")[0].innerHTML = 'web sites / apps';
@@ -148,76 +150,76 @@ function translateText(lang) {
 			document.getElementsByClassName("txtList")[0].innerHTML = "List";
 			document.getElementsByClassName("txtGrid")[0].innerHTML = "Grid";
 		document.getElementsByClassName("txtSortBy")[0].innerHTML = "Sort by";
-		for (var i=0; i<txtIcon.length; i++)
+		for (let i=0; i<txtIcon.length; i++)
 			txtIcon[i].innerHTML = "Icon";
-		for (var i=0; i<txtName.length; i++)
+		for (let i=0; i<txtName.length; i++)
 			txtName[i].innerHTML = "Name";
-			for (var i=0; i<txtTicTacToe.length; i++)
+			for (let i=0; i<txtTicTacToe.length; i++)
 				txtTicTacToe[i].innerHTML = "Tic Tac Toe";
-		for (var i=0; i<txtTechnologies.length; i++)
+		for (let i=0; i<txtTechnologies.length; i++)
 			txtTechnologies[i].innerHTML = "Technologies";
-		for (var i=0; i<txtProjectWebsite.length; i++)
+		for (let i=0; i<txtProjectWebsite.length; i++)
 			txtProjectWebsite[i].innerHTML = "Project website";
-		for (var i=0; i<txtDocumentationSourceCode.length; i++)
+		for (let i=0; i<txtDocumentationSourceCode.length; i++)
 			txtDocumentationSourceCode[i].innerHTML = "Documentation & source code";
-		for (var i=0; i<txtRequirements.length; i++)
+		for (let i=0; i<txtRequirements.length; i++)
 			txtRequirements[i].innerHTML = "Requirements";
-			for (var i=0; i<txtWebBrowser.length; i++)
+			for (let i=0; i<txtWebBrowser.length; i++)
 				txtWebBrowser[i].innerHTML = "Web browser";
-			for (var i=0; i<txtPdfReader.length; i++)
+			for (let i=0; i<txtPdfReader.length; i++)
 				txtPdfReader[i].innerHTML = "PDF reader";
-		for (var i=0; i<txtLanguage.length; i++)
+		for (let i=0; i<txtLanguage.length; i++)
 			txtLanguage[i].innerHTML = "Language";
-			for (var i=0; i<txtEnglish.length; i++)
+			for (let i=0; i<txtEnglish.length; i++)
 				txtEnglish[i].innerHTML = "English";
-			for (var i=0; i<txtPolish.length; i++)
+			for (let i=0; i<txtPolish.length; i++)
 				txtPolish[i].innerHTML = "Polish";
-			for (var i=0; i<txtEnglishPolish.length; i++)
+			for (let i=0; i<txtEnglishPolish.length; i++)
 				txtEnglishPolish[i].innerHTML = "English / Polish";
-		for (var i=0; i<txtCreationPeriod.length; i++)
+		for (let i=0; i<txtCreationPeriod.length; i++)
 			txtCreationPeriod[i].innerHTML = "Creation period";
-		for (var i=0; i<txtInitiate.length; i++)
+		for (let i=0; i<txtInitiate.length; i++)
 			txtInitiate[i].innerHTML = "Initiate";
-		for (var i=0; i<txtUpdate.length; i++)
+		for (let i=0; i<txtUpdate.length; i++)
 			txtUpdate[i].innerHTML = "Update";
-		for (var i=0; i<txtProgress.length; i++)
+		for (let i=0; i<txtProgress.length; i++)
 			txtProgress[i].innerHTML = "Progress";
-		for (var i=0; i<txtStatus.length; i++)
+		for (let i=0; i<txtStatus.length; i++)
 			txtStatus[i].innerHTML = "Status";
-			for (var i=0; i<txtFinished.length; i++)
+			for (let i=0; i<txtFinished.length; i++)
 				txtFinished[i].innerHTML = "finished";
-			for (var i=0; i<txtDeveloped.length; i++)
+			for (let i=0; i<txtDeveloped.length; i++)
 				txtDeveloped[i].innerHTML = "developed";
-			for (var i=0; i<txtAbandoned.length; i++)
+			for (let i=0; i<txtAbandoned.length; i++)
 				txtAbandoned[i].innerHTML = "abandoned";
-		for (var i=0; i<iconDownload.length; i++)
+		for (let i=0; i<iconDownload.length; i++)
 			iconDownload[i].innerHTML = '<i class="fa fa-download"></i> Download';
-		for (var i=0; i<txtFeatures.length; i++)
+		for (let i=0; i<txtFeatures.length; i++)
 			txtFeatures[i].innerHTML = "Features";
-			for (var i=0; i<txtCSSWebfonts.length; i++)
+			for (let i=0; i<txtCSSWebfonts.length; i++)
 				txtCSSWebfonts[i].innerHTML = "CSS webfonts";
-			for (var i=0; i<txtConnectionToTheDatabase.length; i++)
+			for (let i=0; i<txtConnectionToTheDatabase.length; i++)
 				txtConnectionToTheDatabase[i].innerHTML = "connection to the database";
 			txtCSV[0].innerHTML = "data is stored in CSV files";
-			for (var i=0; i<txtRWDViewportUnit.length; i++)
+			for (let i=0; i<txtRWDViewportUnit.length; i++)
 				txtRWDViewportUnit[i].innerHTML = "Responsive Web Design: relative length - viewport unit";
-			for (var i=0; i<txtSessionSupport.length; i++)
+			for (let i=0; i<txtSessionSupport.length; i++)
 				txtSessionSupport[i].innerHTML = "session support";
-			for (var i=0; i<txtCookiesSupport.length; i++)
+			for (let i=0; i<txtCookiesSupport.length; i++)
 				txtCookiesSupport[i].innerHTML = "cookies support";
-			for (var i=0; i<txtMultilingualInterface.length; i++)
+			for (let i=0; i<txtMultilingualInterface.length; i++)
 				txtMultilingualInterface[i].innerHTML = "multilingual user interface";
-		for (var i=0; i<txtUserInterface.length; i++)
+		for (let i=0; i<txtUserInterface.length; i++)
 			txtUserInterface[i].innerHTML = "User interface";
-		for (var i=0; i<txtSourceCode.length; i++)
+		for (let i=0; i<txtSourceCode.length; i++)
 			txtSourceCode[i].innerHTML = "Source code";
-		for (var i=0; i<txtScreenshots.length; i++)
+		for (let i=0; i<txtScreenshots.length; i++)
 			txtScreenshots[i].innerHTML = "Screenshots";
-		for (var i=0; i<txtAuthor.length; i++)
+		for (let i=0; i<txtAuthor.length; i++)
 			txtAuthor[i].innerHTML = "Author";
-		for (var i=0; i<txtLicense.length; i++)
+		for (let i=0; i<txtLicense.length; i++)
 			txtLicense[i].innerHTML = "License";
-		for (var i=0; i<txtAllRightsReserved.length; i++)
+		for (let i=0; i<txtAllRightsReserved.length; i++)
 			txtAllRightsReserved[i].innerHTML = "All rights reserved";
 
 		// CV PAGE
@@ -324,37 +326,47 @@ function translateText(lang) {
 
 		// COOKIES PAGE
 		///////////////
-		//document.getElementById("cookiesPage").innerHTML =
-		//'<h3>What is <em> cookies </em>? </h3>		<blockquote>		<p>			An HTTP cookie (also called web cookie, Internet cookie, browser cookie, or simply cookie) is a small piece of data sent from a website and stored on the user`s computer by the user`s web browser while the user is browsing. (...)		</p>		<footer class="right">			<a target="_blank" href="https://en.wikipedia.org/wiki/HTTP_cookie">en.wikipedia.org/wiki/HTTP_cookie</a>		</footer>		<div class="clear"></div>		</blockquote>		<h3>Why do we use cookies?</h3>		<p>To remember page settings.</p>		<h3>What information do we collect?</h3>		<p>			Nothing special. No private information about you. Cookies are used to remember several page settings, i.e. menu status and location.</p><h3>List of cookies used on the site</h3><ul><li>navState: wide / narrow</li><li>navLocation: left / right</li></ul>';
+		document.getElementById("txtWhatAreCookies").innerHTML = "What are <em>cookies (HTTP cookies)</em>?";
+		document.getElementById("txtWikipediaCookie").innerHTML = "An HTTP cookie (also called web cookie, Internet cookie, browser cookie, or simply cookie) is a small piece of data sent from a website and stored on the user's computer by the user's web browser while the user is browsing. (...)";
+		document.getElementById("linkWikipediaCookie").innerHTML = "en.wikipedia.org/wiki/HTTP_cookie";
+		document.getElementById("linkWikipediaCookie").href = "https://en.wikipedia.org/wiki/HTTP_cookie";
+		document.getElementById("hWhyDoWeUseCookies").innerHTML = "Why do we use cookies?";
+		document.getElementById("pWhyDoWeUseCookies").innerHTML = "To remember your settings for this website.";
+		document.getElementById("hWhatInformationDoWeCollect").innerHTML = "What information do we collect?";
+		document.getElementById("pWhatInformationDoWeCollect").innerHTML = "Nothing special. No private information about you. Cookies are used to remember website settings, i.e. language and page layout.";
+		document.getElementById("hWhenAreCookiesSaved").innerHTML = "When are cookies saved?";
+		document.getElementById("pWhenAreCookiesSaved").innerHTML = 'Cookies on this website are saved when you press the "Save settings" button. You can delete all cookies from this website at any time with the "Delete all cookies" or in your browser settings.';
+		document.getElementById("txtCookiesUsedOnThisWebsite").innerHTML = "Cookies used on this website";
+		document.getElementById("txtSavedCookies").innerHTML = "Saved cookies";
 
 		// FOOTER
 		/////////
-		//document.getElementsByClassName("txtCookiesFooterInfo")[0].innerHTML = "Cookies are on this page<br>More information ";
-		//document.getElementsByClassName("txtHere")[0].innerHTML = "here";
+		document.getElementsByClassName("txtCookiesFooterInfo")[0].innerHTML = "Cookies are on this page<br>More information ";
+		document.getElementsByClassName("txtHere")[0].innerHTML = "here";
 		document.getElementById("txtToCreateWebsiteThereWereUsed").innerHTML = 'To create website there were used<br><a target="_blank" href="https://fontawesome.com">Fonts Awesome</a> icons and<br><a target="_blank" href="https://fonts.google.com/specimen/Quicksand">Quicksand</a> font';
 		//document.getElementById("txtAlternatives").innerHTML = 'Go to the bright side of the force';
 
 
 
-	} else if (lang == "pl") {
+	} else if (language == "pl") {
 
 		// MENU AND HEADERS
 		///////////////////
 		english.style.display = "block";
 		polish.style.display = "none";
-		for (var i=0; i<txtHome.length; i++)
+		for (let i=0; i<txtHome.length; i++)
 			txtHome[i].innerHTML = 'Strona główna';
-		for (var i=0; i<txtProjects.length; i++)
+		for (let i=0; i<txtProjects.length; i++)
 			txtProjects[i].innerHTML = 'Projekty';
 		txtCv[0].innerHTML = "CV";
-		for (var i=0; i<txtContact.length; i++)
+		for (let i=0; i<txtContact.length; i++)
 			txtContact[i].innerHTML = 'Kontakt';
-		for (var i=0; i<txtPhotography.length; i++)
+		for (let i=0; i<txtPhotography.length; i++)
 			txtPhotography[i].innerHTML = 'Fotografia';
-		for (var i=0; i<txtSettings.length; i++)
+		for (let i=0; i<txtSettings.length; i++)
 			txtSettings[i].innerHTML = 'Ustawienia';
-		for (var i=0; i<txtCookies.length; i++)
-			txtCookies[i].innerHTML = 'Ciasteczka (HTTP Cookies)';
+		for (let i=0; i<txtCookies.length; i++)
+			txtCookies[i].innerHTML = 'Ciasteczka';
 
 		// CALENDAR
 		///////////
@@ -371,13 +383,13 @@ function translateText(lang) {
 		monthNames[9] = "Październik";
 		monthNames[10] = "Listopad";
 		monthNames[11] = "Grudzień";
-		for (var i=0; i<12; i++)
+		for (let i=0; i<12; i++)
 			monthAbbreviation[i] = monthNames[i].substr(0,3);
 
 		// HOME PAGE
 		/////////////
 
-		for (var i=0; i<txtExamples.length; i++)
+		for (let i=0; i<txtExamples.length; i++)
 			txtExamples[i].innerHTML = 'przykłady';
 
 		document.getElementsByClassName("hWebSitesApps")[0].innerHTML = 'strony / aplikacje internetowe';
@@ -413,82 +425,82 @@ function translateText(lang) {
 			document.getElementsByClassName("txtList")[0].innerHTML = "Lista";
 			document.getElementsByClassName("txtGrid")[0].innerHTML = "Siatka";
 		document.getElementsByClassName("txtSortBy")[0].innerHTML = "Sortuj wg";
-		for (var i=0; i<txtIcon.length; i++)
+		for (let i=0; i<txtIcon.length; i++)
 			txtIcon[i].innerHTML = "Ikona";
-		for (var i=0; i<txtName.length; i++)
+		for (let i=0; i<txtName.length; i++)
 			txtName[i].innerHTML = "Nazwa";
-			for (var i=0; i<txtTicTacToe.length; i++)
+			for (let i=0; i<txtTicTacToe.length; i++)
 				txtTicTacToe[i].innerHTML = "Kółko i krzyżyk";
-		for (var i=0; i<txtTechnologies.length; i++)
+		for (let i=0; i<txtTechnologies.length; i++)
 			txtTechnologies[i].innerHTML = "Technologie";
-		for (var i=0; i<txtProjectWebsite.length; i++)
+		for (let i=0; i<txtProjectWebsite.length; i++)
 			txtProjectWebsite[i].innerHTML = "Strona internetowa projektu";
-		for (var i=0; i<txtDocumentationSourceCode.length; i++)
+		for (let i=0; i<txtDocumentationSourceCode.length; i++)
 			txtDocumentationSourceCode[i].innerHTML = "Dokumentacja & kod źródłowy";
-		for (var i=0; i<txtRequirements.length; i++)
+		for (let i=0; i<txtRequirements.length; i++)
 			txtRequirements[i].innerHTML = "Wymagania";
-			for (var i=0; i<txtWebBrowser.length; i++)
+			for (let i=0; i<txtWebBrowser.length; i++)
 				txtWebBrowser[i].innerHTML = "Przeglądarka internetowa";
-			for (var i=0; i<txtPdfReader.length; i++)
+			for (let i=0; i<txtPdfReader.length; i++)
 				txtPdfReader[i].innerHTML = "czytnik PDF";
-		for (var i=0; i<txtLanguage.length; i++)
+		for (let i=0; i<txtLanguage.length; i++)
 			txtLanguage[i].innerHTML = "Język";
-			for (var i=0; i<txtEnglish.length; i++)
+			for (let i=0; i<txtEnglish.length; i++)
 				txtEnglish[i].innerHTML = "angielski";
-			for (var i=0; i<txtPolish.length; i++)
+			for (let i=0; i<txtPolish.length; i++)
 				txtPolish[i].innerHTML = "polski";
-			for (var i=0; i<txtEnglishPolish.length; i++)
+			for (let i=0; i<txtEnglishPolish.length; i++)
 				txtEnglishPolish[i].innerHTML = "angielski / polski";
-		for (var i=0; i<txtCreationPeriod.length; i++)
+		for (let i=0; i<txtCreationPeriod.length; i++)
 			txtCreationPeriod[i].innerHTML = "Okres tworzenia";
-		for (var i=0; i<txtInitiate.length; i++)
+		for (let i=0; i<txtInitiate.length; i++)
 			txtInitiate[i].innerHTML = "Początek";
-		for (var i=0; i<txtUpdate.length; i++)
+		for (let i=0; i<txtUpdate.length; i++)
 			txtUpdate[i].innerHTML = "Aktualizacja";
-		for (var i=0; i<txtProgress.length; i++)
+		for (let i=0; i<txtProgress.length; i++)
 			txtProgress[i].innerHTML = "Postęp";
-		for (var i=0; i<txtStatus.length; i++)
+		for (let i=0; i<txtStatus.length; i++)
 			txtStatus[i].innerHTML = "Stan";
-			for (var i=0; i<txtFinished.length; i++)
+			for (let i=0; i<txtFinished.length; i++)
 				txtFinished[i].innerHTML = "ukończony";
-			for (var i=0; i<txtDeveloped.length; i++)
+			for (let i=0; i<txtDeveloped.length; i++)
 				txtDeveloped[i].innerHTML = "rozwijany";
-			for (var i=0; i<txtAbandoned.length; i++)
+			for (let i=0; i<txtAbandoned.length; i++)
 				txtAbandoned[i].innerHTML = "porzucony";
-			// for (var i=0; i<txtFinished.length; i++)
+			// for (let i=0; i<txtFinished.length; i++)
 			// 	txtFinished[i].innerHTML = '<i class="fa fa-check fa-fw"></i> ukończony';
-			// for (var i=0; i<txtDeveloped.length; i++)
+			// for (let i=0; i<txtDeveloped.length; i++)
 			// 	txtDeveloped[i].innerHTML = '<i class="fa fa-code fa-fw"></i> rozwijany';
-			// for (var i=0; i<txtAbandoned.length; i++)
+			// for (let i=0; i<txtAbandoned.length; i++)
 			// 	txtAbandoned[i].innerHTML = '<i class="fa fa-times fa-fw"></i> porzucony';
-		for (var i=0; i<iconDownload.length; i++)
+		for (let i=0; i<iconDownload.length; i++)
 			iconDownload[i].innerHTML = '<i class="fa fa-download"></i> Pobierz';
-		for (var i=0; i<txtFeatures.length; i++)
+		for (let i=0; i<txtFeatures.length; i++)
 			txtFeatures[i].innerHTML = "Cechy & właściwości";
-			for (var i=0; i<txtCSSWebfonts.length; i++)
+			for (let i=0; i<txtCSSWebfonts.length; i++)
 				txtCSSWebfonts[i].innerHTML = "Czcionki internetowe CSS";
-			for (var i=0; i<txtConnectionToTheDatabase.length; i++)
+			for (let i=0; i<txtConnectionToTheDatabase.length; i++)
 				txtConnectionToTheDatabase[i].innerHTML = "łączenie się z bazą danych";
 			txtCSV[0].innerHTML = "dane przechowywane są w plikach CSV";
-			for (var i=0; i<txtRWDViewportUnit.length; i++)
+			for (let i=0; i<txtRWDViewportUnit.length; i++)
 				txtRWDViewportUnit[i].innerHTML = "Responsywny układ strony: względna długość - jednostka zależna od rozmiarów okna przeglądarki";
-			for (var i=0; i<txtCookiesSupport.length; i++)
+			for (let i=0; i<txtCookiesSupport.length; i++)
 				txtCookiesSupport[i].innerHTML = "obsługa ciasteczek (cookies)";
-			for (var i=0; i<txtSessionSupport.length; i++)
+			for (let i=0; i<txtSessionSupport.length; i++)
 				txtSessionSupport[i].innerHTML = "obsługa sesji";
-			for (var i=0; i<txtMultilingualInterface.length; i++)
+			for (let i=0; i<txtMultilingualInterface.length; i++)
 				txtMultilingualInterface[i].innerHTML = "wielojęzyczny interfejs użytkownika";
-		for (var i=0; i<txtUserInterface.length; i++)
+		for (let i=0; i<txtUserInterface.length; i++)
 			txtUserInterface[i].innerHTML = "Interfejs użytkownika";
-		for (var i=0; i<txtSourceCode.length; i++)
+		for (let i=0; i<txtSourceCode.length; i++)
 			txtSourceCode[i].innerHTML = "Kod żródłowy";
-		for (var i=0; i<txtScreenshots.length; i++)
+		for (let i=0; i<txtScreenshots.length; i++)
 			txtScreenshots[i].innerHTML = "Screenshot'y";
-		for (var i=0; i<txtAuthor.length; i++)
+		for (let i=0; i<txtAuthor.length; i++)
 			txtAuthor[i].innerHTML = "Autor";
-		for (var i=0; i<txtLicense.length; i++)
+		for (let i=0; i<txtLicense.length; i++)
 			txtLicense[i].innerHTML = "Licencja";
-		for (var i=0; i<txtAllRightsReserved.length; i++)
+		for (let i=0; i<txtAllRightsReserved.length; i++)
 			txtAllRightsReserved[i].innerHTML = "Wszystkie prawa zastrzeżone";
 
 		// CV PAGE
@@ -579,7 +591,7 @@ function translateText(lang) {
 		document.getElementsByClassName("txtFontProperties")[0].innerHTML = 'Właściwości czcionki';
 			document.getElementsByClassName("txtBold")[0].innerHTML = 'pogrubienie';
 			document.getElementsByClassName("txtItalic")[0].innerHTML = 'kursywa';
-			document.getElementsByClassName("txtSmallCaps")[0].innerHTML = 'drukowane litery';
+			document.getElementsByClassName("txtSmallCaps")[0].innerHTML = 'kapitaliki';
 		document.getElementsByClassName("txtFooterPosition")[0].innerHTML = 'Położenie stopki';
 			document.getElementsByClassName("txtFixedFooter")[0].innerHTML = 'nieruchomy - jeden poziom poniżej strony głównej';
 			document.getElementsByClassName("txtStaticFooter")[0].innerHTML = 'statyczny - ten sam poziom co strona główna';
@@ -594,13 +606,23 @@ function translateText(lang) {
 
 		// COOKIES PAGE
 		///////////////
-		//document.getElementById("cookiesPage").innerHTML =
-		//'<h3>Czym jest <em>cookies</em>?</h3><blockquote><p>HTTP Cookie (tłumaczone czasem jako plik cookie, w skrócie cookie, również ciasteczko) – mały fragment tekstu, który serwis internetowy wysyła do przeglądarki i który przeglądarka wysyła z powrotem przy następnych wejściach na witrynę. (...)</p><footer class="right"><a target="_blank" href="https://pl.wikipedia.org/wiki/HTTP_cookie">pl.wikipedia.org/wiki/HTTP_cookie</a>			</footer><div class="clear"></div></blockquote><h3>Dlaczego wykorzystujemy ciasteczka?</h3><p>Aby zapamiętać ustawienia strony.</p><h3>Jakie informacje zbieramy?</h3><p>Nic szczególnego. Żadnych prywatnych informacji o Tobie. Ciasteczka służą do zapamiętania kilku ustawień strony, tj. stan i położenie menu.</p><h3>Spis ciasteczek używanych na stronie</h3><ul><li>navState: wide / narrow</li><li>navLocation: left / right</li></ul>';
+		document.getElementById("txtWhatAreCookies").innerHTML = "Czym są <em>ciasteczka (HTTP cookies)</em>?";
+		document.getElementById("txtWikipediaCookie").innerHTML = "HTTP Cookie (tłumaczone czasem jako plik cookie, w skrócie cookie, również ciasteczko) – mały fragment tekstu, który serwis internetowy wysyła do przeglądarki i który przeglądarka wysyła z powrotem przy następnych wejściach na witrynę. (...)";
+		document.getElementById("linkWikipediaCookie").innerHTML = "pl.wikipedia.org/wiki/HTTP_cookie";
+		document.getElementById("linkWikipediaCookie").href = "https://pl.wikipedia.org/wiki/HTTP_cookie";
+		document.getElementById("hWhyDoWeUseCookies").innerHTML = "Dlaczego korzystamy z ciasteczek?";
+		document.getElementById("pWhyDoWeUseCookies").innerHTML = "Aby zapamiętać ustawienia tej strony internetowej.";
+		document.getElementById("hWhatInformationDoWeCollect").innerHTML = "Jakie informacje zbieramy?";
+		document.getElementById("pWhatInformationDoWeCollect").innerHTML = "Nic szczególnego. Żadnych prywatnych informacji o Tobie. Ciasteczka służą do zapamiętania ustawień strony, tj. język oraz wygląd strony.";
+		document.getElementById("hWhenAreCookiesSaved").innerHTML = "Kiedy zapisywane są pliki cookie?";
+		document.getElementById("pWhenAreCookiesSaved").innerHTML = 'Pliki cookie są zapisywane po naciśnięciu przycisku „Zapisz ustawienia”. Możesz usunąć wszystkie pliki cookie w dowolnym momencie za pomocą „Usuń ciasteczka” lub w ustawieniach przeglądarki.';
+		document.getElementById("txtCookiesUsedOnThisWebsite").innerHTML = "Ciasteczka używane na tej stronie";
+		document.getElementById("txtSavedCookies").innerHTML = "Zapisane ciasteczka";
 
 		// FOOTER
 		/////////
-		//document.getElementsByClassName("txtCookiesFooterInfo")[0].innerHTML = "Na tej stronie grasują ciasteczka (cookies)<br>Więcej informacji ";
-		//document.getElementsByClassName("txtHere")[0].innerHTML = "tutaj";
+		document.getElementsByClassName("txtCookiesFooterInfo")[0].innerHTML = "Na tej stronie grasują ciasteczka (cookies)<br>Więcej informacji ";
+		document.getElementsByClassName("txtHere")[0].innerHTML = "tutaj";
 		document.getElementById("txtToCreateWebsiteThereWereUsed").innerHTML = 'Do stworzenia strony wykorzystano<br>ikony <a target="_blank" href="https://fontawesome.com">Font Awesome</a> oraz<br>czcionkę <a target="_blank" href="https://fonts.google.com/specimen/Quicksand">Quicksand</a>';
 		//document.getElementById("txtAlternatives").innerHTML = 'Przejdź na jasną stronę mocy.';
 	}

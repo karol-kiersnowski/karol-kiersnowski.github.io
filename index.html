@@ -13,9 +13,11 @@
 	<link rel="stylesheet" href="css/controls.css"/>
 	<link rel="stylesheet" href="css/mini-classes.css"/>
 	<link rel="stylesheet" href="css/all.css"><!--Font Awesome v.5.12.0-->
-	<script defer src="js/nav.js"></script>
+	<script defer src="js/global-variables.js"></script>
+	<script defer src="js/cookies.js"></script>
+	<script defer src="js/menu.js"></script>
 	<script defer src="js/settings.js"></script>
-	<script defer src="js/lang.js"></script>
+	<script defer src="js/language.js"></script>
 	<script defer src="js/calendar.js"></script>
 	<script defer src="js/projects.js"></script>
 	<script defer src="js/other.js"></script>
@@ -34,7 +36,7 @@
 <body onhashchange="updateDocumentTitle(); markCurrentPageLink()">
 <nav id="wrapper">
 	<nav>
-		<a onclick="changeMenu()">
+		<a onclick="changeMenuWidth()">
 			<i class="fa fa-list-ul fa-fw"></i> Menu
 		</a>
 		<hr>
@@ -463,7 +465,6 @@
 				</a>
 				<a class="tr" href="#football-manager-cli">
 					<div>
-						<!-- <i class="fas fa-futbol" style="color: #000; font-size: 16px;"></i> -->
 						<img class="table-visible" src="img/icons/football-16x16.png" alt="football"/>
 						<img class="list-visible grid-visible" src="img/projects/football-manager-cli.png" alt="Football Manager CLI"/>
 					</div>
@@ -2355,15 +2356,16 @@
 				<span class="txtSettings">Settings</span>
 			</h2>
 
+			<form>
 			<h3>
 				<i class="fa fa-list-ul fa-fw"></i>
 				<span class="txtMenuLocation">Menu location</span>
 			</h3>
-			<button onclick="changeNavLocation('left')">
+			<button type="button" onclick="setMenuLocation('left')">
 				<i class="fa fa-arrow-left fa-fw"></i>
 				<span class="txtOnTheLeft">On the left</span>
 			</button>
-			<button onclick="changeNavLocation('right')">
+			<button type="button" onclick="setMenuLocation('right')">
 				<i class="fa fa-arrow-right fa-fw"></i>
 				<span class="txtOnTheRight">On the right</span>
 			</button>
@@ -2374,32 +2376,32 @@
 				<span class="txtForegroundTheme">Foreground theme</span>
 			</h3>
 			<div class="left col-16 padding">
-				<div class="box-link" title="White" onclick="changeForegroundTheme('white')">
+				<div class="box-link" title="White" onclick="setForegroundTheme('white')">
 					<img src="img/backgrounds/white.png" alt="White"/>
 				</div>
 			</div>
 			<div class="left col-16 padding">
-				<div class="box-link" title="Paper fibers" onclick="changeForegroundTheme('paper-fibers')">
+				<div class="box-link" title="Paper fibers" onclick="setForegroundTheme('paper-fibers')">
 					<img src="img/backgrounds/paper-fibers.png" alt="Paper fibers"/>
 				</div>
 			</div>
 			<div class="left col-16 padding">
-				<div class="box-link" title="Ricepaper" onclick="changeForegroundTheme('ricepaper')">
+				<div class="box-link" title="Ricepaper" onclick="setForegroundTheme('ricepaper')">
 					<img src="img/backgrounds/ricepaper.png" alt="Ricepaper"/>
 				</div>
 			</div>
 			<div class="left col-16 padding">
-				<div class="box-link" title="Hip square" onclick="changeForegroundTheme('hip-square')">
+				<div class="box-link" title="Hip square" onclick="setForegroundTheme('hip-square')">
 					<img src="img/backgrounds/hip-square.png" alt="Hip square"/>
 				</div>
 			</div>
 			<div class="left col-16 padding">
-				<div class="box-link" title="Repeated square" onclick="changeForegroundTheme('repeated-square')">
+				<div class="box-link" title="Repeated square" onclick="setForegroundTheme('repeated-square')">
 					<img src="img/backgrounds/repeated-square.png" alt="Repeated square"/>
 				</div>
 			</div>
 			<div class="left col-16 padding">
-				<div class="box-link" title="Black paper" onclick="changeForegroundTheme('black-paper')">
+				<div class="box-link" title="Black paper" onclick="setForegroundTheme('black-paper')">
 					<img src="img/backgrounds/black-paper.png" alt="Black paper"/>
 				</div>
 			</div>
@@ -2410,32 +2412,32 @@
 				<span class="txtBackgroundTheme">Background theme</span>
 			</h3>
 			<div class="left col-16 padding">
-				<div class="box-link" title="Default" onclick="changeBackgroundTheme('default')">
+				<div class="box-link" title="Default" onclick="setBackgroundTheme('default')">
 					<img src="img/backgrounds/default.png" alt="Default"/>
 				</div>
 			</div>
 			<div class="left col-16 padding">
-				<div class="box-link" title="Light veneer" onclick="changeBackgroundTheme('light-veneer')">
+				<div class="box-link" title="Light veneer" onclick="setBackgroundTheme('light-veneer')">
 					<img src="img/backgrounds/light-veneer.png" alt="Light veneer"/>
 				</div>
 			</div>
 			<div class="left col-16 padding">
-				<div class="box-link" title="Purty wood" onclick="changeBackgroundTheme('purty-wood')">
+				<div class="box-link" title="Purty wood" onclick="setBackgroundTheme('purty-wood')">
 					<img src="img/backgrounds/purty-wood.png" alt="Purty wood"/>
 				</div>
 			</div>
 			<div class="left col-16 padding">
-				<div class="box-link" title="Retina wood" onclick="changeBackgroundTheme('retina-wood')">
+				<div class="box-link" title="Retina wood" onclick="setBackgroundTheme('retina-wood')">
 					<img src="img/backgrounds/retina-wood.png" alt="Retina wood"/>
 				</div>
 			</div>
 			<div class="left col-16 padding">
-				<div class="box-link" title="Wood pattern" onclick="changeBackgroundTheme('wood-pattern')">
+				<div class="box-link" title="Wood pattern" onclick="setBackgroundTheme('wood-pattern')">
 					<img src="img/backgrounds/wood-pattern.png" alt="Wood pattern"/>
 				</div>
 			</div>
 			<div class="left col-16 padding">
-				<div class="box-link" title="Dark wood" onclick="changeBackgroundTheme('dark-wood')">
+				<div class="box-link" title="Dark wood" onclick="setBackgroundTheme('dark-wood')">
 					<img src="img/backgrounds/dark-wood.png" alt="Dark wood"/>
 				</div>
 			</div>
@@ -2448,8 +2450,8 @@
 				<span class="txtBorderShadows">Border shadows</span>
 			</h3>
 			<p>
-				<input type="range" id="rangeBoxShadow" min="1" max="10" step="1" value="5" oninput="changeBoxShadow(this.value)"/>
-				<output id="outputBoxShadow" for="rangeBoxShadow">5</output>
+				<input type="range" id="rangeBoxShadow" min="0" max="10" step="1" value="5" oninput="setBoxShadow(this.value)"/>
+				<output id="outputBoxShadow" for="rangeBoxShadow">5px</output>
 			</p>
 
 
@@ -2459,15 +2461,15 @@
 				<span class="txtColors">Colors</span>
 			</h3>
 			<p>
-				<input type="color" id="textColor" value="#000000" onchange="changeTextColor(this.value)"/>
+				<input type="color" id="textColor" value="#000000" onchange="setTextColor(this.value)"/>
 				<label class="txtText" for="textColor">Text</label>
 			</p>
 			<p>
-				<input type="color" id="iconColor" value="#113366" onchange="changeIconColor(this.value)"/>
+				<input type="color" id="iconColor" value="#113366" onchange="setIconColor(this.value)"/>
 				<label class="txtIcons" for="iconColor">Icons</label>
 			</p>
 			<p>
-				<input type="color" id="hyperlinkColor" value="#113366" onchange="changeHyperlinkColor(this.value)"/>
+				<input type="color" id="hyperlinkColor" value="#113366" onchange="setHyperlinkColor(this.value)"/>
 				<label class="txtHyperlinks" for="hyperlinkColor">Hyperlinks</label>
 			</p>
 
@@ -2477,7 +2479,6 @@
 				<i class="fa fa-font fa-fw"></i>
 				<span class="txtFontFamily">Font family</span>
 			</h3>
-			<!-- <h4 class="txtCSSWebfonts">CSS webfonts</h4> -->
 			<ul>
 				<li>
 					<input type="radio" name="radioFontFamily" id="sans-serif" value="sans-serif" onclick="setFontFamily(this.value)"
@@ -2543,7 +2544,7 @@
 				<i class="fa fa-text-height fa-fw"></i>
 				<span class="txtFontSize">Font size</span>
 			</h3>
-			<input type="range" id="rangeFontSize" min="12" max="20" step="1" value="16" oninput="changeFontSize(this.value)"/>
+			<input type="range" id="rangeFontSize" min="12" max="20" step="1" value="16" oninput="setFontSize(this.value)"/>
 			<output id="outputFontSize" for="rangeFontSize">1em = 16px</output>
 
 
@@ -2552,7 +2553,7 @@
 				<i class="fa fa-text-width fa-fw"></i>
 				<span class="txtFontWeight">Font weight</span>
 			</h3>
-			<input type="range" id="rangeFontWeight" min="100" max="900" step="100" value="400" oninput="changeFontWeightByRange(this.value)"/>
+			<input type="range" id="rangeFontWeight" min="100" max="900" step="100" value="400" oninput="setFontWeight(this.value)"/>
 			<output id="outputFontWeight" for="rangeFontWeight">400</output>
 
 
@@ -2562,13 +2563,13 @@
 				<span class="txtFontProperties">Font properties</span>
 			</h3>
 			<p>
-				<input type="checkbox" name="checkboxFontBold" id="checkboxFontBold" value="bold" onclick="changeFontWeightByCheckbox(this)"><label for="checkboxFontBold" class="txtBold">bold</label>
+				<input type="checkbox" name="checkboxFontBold" id="checkboxFontBold" value="bold" onclick="setFontWeightByCheckbox(this)"><label for="checkboxFontBold" class="txtBold">bold</label>
 			</p>
 			<p>
-				<input type="checkbox" name="checkboxFontItalic" id="checkboxFontItalic" value="italic" onclick="changeFontStyle(this)"><label for="checkboxFontItalic" class="txtItalic">italic</label>
+				<input type="checkbox" name="checkboxFontItalic" id="checkboxFontItalic" value="italic" onclick="setFontStyle(this)"><label for="checkboxFontItalic" class="txtItalic">italic</label>
 			</p>
 			<p>
-				<input type="checkbox" name="checkboxFontSmallCaps" id="checkboxFontSmallCaps" value="small-caps" onclick="changeFontVariant(this)"><label for="checkboxFontSmallCaps" class="txtSmallCaps">small caps</label>
+				<input type="checkbox" name="checkboxFontSmallCaps" id="checkboxFontSmallCaps" value="small-caps" onclick="setFontVariant(this)"><label for="checkboxFontSmallCaps" class="txtSmallCaps">small caps</label>
 			</p>
 
 
@@ -2578,10 +2579,10 @@
 				<span class="txtFooterPosition">Footer position</span>
 			</h3>
 			<p>
-				<input type="radio" name="radioFooterPosition" id="fixedFooterPosition" value="sticky" onclick="changeFooterPosition(this.value)" checked><label for="fixedFooterPosition" class="txtFixedFooter">fixed - one level below the main page</label>
+				<input type="radio" name="radioFooterPosition" id="fixedFooterPosition" value="sticky" onclick="setFooterPosition(this.value)" checked><label for="fixedFooterPosition" class="txtFixedFooter">fixed - one level below the main page</label>
 			</p>
 			<p>
-				<input type="radio" name="radioFooterPosition" id="staticFooterPosition" value="static" onclick="changeFooterPosition(this.value)"><label for="staticFooterPosition" class="txtStaticFooter">static - the same level as the main page</label>
+				<input type="radio" name="radioFooterPosition" id="staticFooterPosition" value="static" onclick="setFooterPosition(this.value)"><label for="staticFooterPosition" class="txtStaticFooter">static - the same level as the main page</label>
 			</p>
 
 
@@ -2603,9 +2604,40 @@
 				<label for="inputSkewY" class="txtSkewY">skew Y</label>
 			</p>
 
+			
 
+			<h3>
+				<i class="fa fa-undo-alt fa-fw"></i>
+				<span>Save & restore settings</span>
+			</h3>
+			<p>
+				The settings of this website are stored in <a href="#cookies">cookies</a>.
+			</p>
+			<p>
+				You can save your settings. This will create cookies in your web browser.
+			</p>
+			<p>
+				You can also delete all cookies and restore the default settings.
+			</p>
+			<p>
+				<button type="button" onclick="saveSettings(); displayCookies()">
+					<i class="fa fa-save fa-fw"></i>
+					<span>Save settings</span>
+				</button>
+				<button type="reset" onclick="restoreDefaultSettings(); displayCookies();">
+					<i class="fa fa-undo-alt fa-fw"></i>
+					<span>Restore default settings</span>
+				</button>
+			</p>
 
+			<h3>
+				<i class="fa fa-cookie fa-fw"></i>
+				<span id="txtSavedCookies">Saved cookies</span>
+			</h3>
+			<ul id="saved-cookies">
+			</ul>
 
+		</form>
 
 			<article>
 				<h3>
@@ -2623,6 +2655,207 @@
 				</p>
 			</article>
 		</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		<section id="cookies">
+			<h2>
+				<i class="fa fa-cookie-bite"></i>
+				<span class="txtCookies">Cookies</span>
+			</h2>
+			<h3 id="txtWhatAreCookies">
+				What is <em>HTTP cookie</em>?
+			</h3>
+			<blockquote cite="https://en.wikipedia.org/wiki/HTTP_cookie">
+				<p id="txtWikipediaCookie">
+					An HTTP cookie (also called web cookie, Internet cookie, browser cookie, or simply cookie) is a small piece of data sent from a website and stored on the user's computer by the user's web browser while the user is browsing. (...)
+				</p>
+				<div class="right">
+					<a id="linkWikipediaCookie" target="_blank" href="https://en.wikipedia.org/wiki/HTTP_cookie">en.wikipedia.org/wiki/HTTP_cookie</a>
+				</div>
+				<div class="clear"></div>
+			</blockquote>
+			<h3 id="hWhyDoWeUseCookies">
+				Why do we use cookies?
+			</h3>
+			<p id="pWhyDoWeUseCookies">
+				To remember your settings for this website.
+			</p>
+			<h3 id="hWhatInformationDoWeCollect">
+				What information do we collect?
+			</h3>
+			<p id="pWhatInformationDoWeCollect">
+				Nothing special. No private information about you. Cookies are used to remember website settings, i.e. language and page layout.
+			</p>
+			<h3 id="hWhenAreCookiesSaved">
+				When are cookies saved?
+			</h3>
+			<p id="pWhenAreCookiesSaved">
+				Cookies on this website are saved when you press the "Save settings" button. You can delete all cookies from this website at any time with the "Delete cookies" or in your browser settings.
+			</p>
+
+			<h3 id="txtCookiesUsedOnThisWebsite">
+				Cookies used on this website
+			</h3>
+			<table class="cookie-table">
+				<tr>
+					<th class="txtName">Name</th>
+					<th class="txtSavedValues">Saved value</th>
+					<th class="txtSavedValues">Default value</th>
+					<th class="txtAllowedValues">Allowed values</th>
+				</tr>
+				<tr>
+					<td>language</td>
+					<td class="tdLanguage"></td>
+					<td>depend on browser language</td>
+					<td>en, pl</td>
+				</tr>
+				<tr>
+					<td>menuWidth</td>
+					<td class="tdMenuWidth"></td>
+					<td>depend on screen size</td>
+					<td>wide, narrow</td>
+				</tr>
+				<tr>
+					<td>menuLocation</td>
+					<td class="tdMenuLocation"></td>
+					<td>left</td>
+					<td>left, right</td>
+				</tr>
+				<tr>
+					<td>foreground</td>
+					<td class="tdForegroundTheme"></td>
+					<td>white</td>
+					<td>white, paper-fibers, ricepaper, hip-square, repeated-square, black-paper</td>
+				</tr>
+				<tr>
+					<td>background</td>
+					<td class="tdBackgroundTheme"></td>
+					<td>default</td>
+					<td>default, dark-wood, light-veneer, purty-wood, retina-wood, wood-pattern</td>
+				</tr>
+				<tr>
+					<td>boxShadow</td>
+					<td class="tdBoxShadow"></td>
+					<td>5px</td>
+					<td>0 - 10 (px)</td>
+				</tr>
+				<tr>
+					<td>textColor</td>
+					<td class="tdTextColor"></td>
+					<td>#000000</td>
+					<td class="txtColorPalette">color palette</td>
+				</tr>
+				<tr>
+					<td>iconColor</td>
+					<td class="tdIconColor"></td>
+					<td>#113366</td>
+					<td class="txtColorPalette">color palette</td>
+				</tr>
+				<tr>
+					<td>hyperlinkColor</td>
+					<td class="tdHyperlinkColor"></td>
+					<td>#113366</td>
+					<td class="txtColorPalette">color palette</td>
+				</tr>
+				<tr>
+					<td>fontFamily</td>
+					<td class="tdFontFamily"></td>
+					<td>Quicksand</td>
+					<td>sans-serif, serif, monospace, cursive, Quicksand, PlayfairDisplay, CormorantGaramond, SyneMono, SpecialElite, DOSEGA</td>
+				</tr>
+				<tr>
+					<td>fontSize</td>
+					<td class="tdFontSize"></td>
+					<td>16px</td>
+					<td>12 : 20 (px)</td>
+				</tr>
+				<tr>
+					<td>fontWeight</td>
+					<td class="tdFontWeight"></td>
+					<td>400</td>
+					<td>100 : 900</td>
+				</tr>
+				<tr>
+					<td>fontStyle</td>
+					<td class="tdFontStyle"></td>
+					<td>normal</td>
+					<td>normal, italic</td>
+				</tr>
+				<tr>
+					<td>fontVariant</td>
+					<td class="tdFontVariant"></td>
+					<td>normal</td>
+					<td>normal, small-caps</td>
+				</tr>
+				<tr>
+					<td>footerPosition</td>
+					<td class="tdFooterPosition"></td>
+					<td>sticky</td>
+					<td>sticky, static</td>
+				</tr>
+				<tr>
+					<td>rotate</td>
+					<td class="tdRotate"></td>
+					<td>0</td>
+					<td>-1 : 1</td>
+				</tr>
+				<tr>
+					<td>skewX</td>
+					<td class="skewX"></td>
+					<td>0</td>
+					<td>-1 : 1</td>
+				</tr>
+				<tr>
+					<td>skewY</td>
+					<td class="skewY"></td>
+					<td>0</td>
+					<td>-10 : 10</td>
+				</tr>
+			</table>
+
+			<p>
+				<button onclick="deleteCookies(); displayCookies()">
+					<i class="fa fa-trash-alt fa-fw"></i>
+					<span>Delete all cookies</span>
+				</button>
+				<button onclick="window.location.reload(true)">
+					<i class="fa fa-redo-alt fa-fw"></i>
+					<span>Refresh the page</span>
+				</button>
+			</p>
+
+		</section>
+
+
+
+
 
 
 
@@ -2795,35 +3028,7 @@
 
 
 
-		<!-- <section id="cookies">
-			<h2>
-				<i class="fa fa-cookie-bite"></i>
-				<span class="txtCookies">Cookies</span>
-			</h2>
-			<article id="cookiesPage">
-				<h3>What is <em>cookies</em>?</h3>
-				<blockquote cite="https://en.wikipedia.org/wiki/HTTP_cookie">
-					<p>
-						An HTTP cookie (also called web cookie, Internet cookie, browser cookie, or simply cookie) is a small piece of data sent from a website and stored on the user's computer by the user's web browser while the user is browsing. (...)
-					</p>
-					<div class="right">
-						<a target="_blank" href="https://en.wikipedia.org/wiki/HTTP_cookie">en.wikipedia.org/wiki/HTTP_cookie</a>
-					</div>
-					<div class="clear"></div>
-				</blockquote>
-				<h3>Why do we use cookies?</h3>
-				<p>To remember page settings.</p>
-				<h3>What information do we collect?</h3>
-				<p>
-					Nothing special. No private information about you. Cookies are used to remember several page settings, i.e. menu status and location.
-				</p>
-				<h3>List of cookies used on the site</h3>
-				<ul>
-					<li>navStatus: wide / narrow</li>
-					<li>navLocation: left / right</li>
-				</ul>
-			</article>
-		</section> -->
+		
 
 
 
@@ -2848,10 +3053,10 @@
 
 	<footer>
 		<h2>Copyright &copy; 2018-2021 Karol Kiersnowski</h2>
-		<!-- <p>
+		<p>
 			<span class="txtCookiesFooterInfo">Cookies are on this page<br>More information </span>
 			<a class="txtHere" href="#cookies">here</a>
-		</p> -->
+		</p>
 		<p id="txtToCreateWebsiteThereWereUsed">
 			To create website there were used<br>
 			<a target="_blank" href="https://fontawesome.com">Fonts Awesome</a> icons and<br>

@@ -18,6 +18,25 @@ table.vertical-line td:first-child {
 
 
 
+table.cookie-table {
+	border-collapse: collapse;
+	text-align: left;
+}
+
+	table.cookie-table tr:first-child {
+		border-bottom: 1px solid #ccc;
+	}
+
+		table.cookie-table th,
+		table.cookie-table td {
+			border-left: 1px solid #ccc;
+		}
+
+		table.cookie-table th:first-child,
+		table.cookie-table td:first-child {
+			border-left: none;
+		}
+
 
 
 
@@ -307,5 +326,12 @@ table.vertical-line td:first-child {
 		#project-list .tr div:nth-child(7) {
 			display: none;
 		}
+
+	table.cookie-table th:nth-child(3),
+	table.cookie-table th:nth-child(4),
+	table.cookie-table td:nth-child(3),
+	table.cookie-table td:nth-child(4) {
+		display: none;
+	}
 
 }

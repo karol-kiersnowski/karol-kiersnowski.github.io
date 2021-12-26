@@ -1,6 +1,9 @@
-getUserLanguage();
+setLanguageFromWebBrowser();
+loadSettings();
 updateDocumentTitle();
+markCurrentPageLink();
 removeHrefAttributesFromLanguageButtons();
 displayElementsForJSPageVersion();
 displayCalendar();
 sortProjectsByUpdate();
+displayCookies();

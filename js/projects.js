@@ -1,6 +1,3 @@
-var projectSelect = document.getElementById("project-select");
-var projectContainer = document.getElementsByClassName("project-container")[0];
-
 function setTableView() {
 	projectSelect.style.display = "none";
 	projectContainer.id = "project-table";
@@ -34,15 +31,15 @@ function changeSort(select) {
 }
 
 function sort(n, thisElement) {
-	var projectContainer = document.getElementsByClassName("project-container")[0];
-	var rows = document.getElementsByClassName("tr");
-	var switching = true;
-	var i;
-	var x;
-	var y;
-	var shouldSwitch;
-	var direction = "asc"; 
-	var switchCount = 0; 
+	let projectContainer = document.getElementsByClassName("project-container")[0];
+	let rows = document.getElementsByClassName("tr");
+	let switching = true;
+	let i;
+	let x;
+	let y;
+	let shouldSwitch;
+	let direction = "asc"; 
+	let switchCount = 0; 
 	
 	/*Make a loop that will continue until
 	no switching has been done:*/

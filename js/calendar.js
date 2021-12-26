@@ -1,6 +1,3 @@
-var year = new Date().getFullYear();
-var month = new Date().getMonth();
-
 function goToPreviousMonth() {
 	month--;
 	if (month < 0)
@@ -37,8 +34,8 @@ function refreshCalendar() {
 }
 
 function clearCalendar() {
-	for (var y=0; y<6; y++) {
-		for (var x=0; x<7; x++) {
+	for (let y=0; y<6; y++) {
+		for (let x=0; x<7; x++) {
 			document.getElementById(y+"x"+x).innerHTML = "";
 			document.getElementById(y+"x"+x).style.color = "";
 			document.getElementById(y+"x"+x).style.backgroundColor = "";
@@ -49,25 +46,25 @@ function clearCalendar() {
 }
 
 function fillInSmallCalendar() {
-	var date = new Date();
+	let date = new Date();
 	document.getElementById("small-month").innerHTML = monthAbbreviation[date.getMonth()];
 	document.getElementById("small-year").innerHTML = date.getFullYear();
 	document.getElementById("day").innerHTML = date.getDate();
 }
 
 function fillInBigCalendar() {
-	var date = new Date();
-	var dayOfMonth = date.getDate();
-	var dayOfWeek = date.getDay();
+	let date = new Date();
+	let dayOfMonth = date.getDate();
+	let dayOfWeek = date.getDay();
 
-	var firstDayOfMonth = new Date(year, month, 1).getDay();
+	let firstDayOfMonth = new Date(year, month, 1).getDay();
 
 	if (dayOfWeek == 0)
 		dayOfWeek = 7;
 	if (firstDayOfMonth == 0)
 		firstDayOfMonth = 7;
 
-	var daysInMonth = new Array(12);
+	let daysInMonth = new Array(12);
 	daysInMonth[0] = 31;
 	daysInMonth[1] = checkLeapYear(year)?29:28;
 	daysInMonth[2] = 31;
@@ -81,12 +78,12 @@ function fillInBigCalendar() {
 	daysInMonth[10] = 30;
 	daysInMonth[11] = 31;
 
-	var j = daysInMonth[month] + firstDayOfMonth;
+	let j = daysInMonth[month] + firstDayOfMonth;
 
-	var row = 0;
-	var col = 0;
+	let row = 0;
+	let col = 0;
 
-	for (var i = 0; i < j - 1; i++, col++) {
+	for (let i = 0; i < j - 1; i++, col++) {
 		if (i < firstDayOfMonth - 1)
 			continue;
 
@@ -107,7 +104,7 @@ function fillInBigCalendar() {
 
 	}
 
-	for (var i=0; i<7; i++)
+	for (let i=0; i<7; i++)
 		document.getElementsByClassName("daysOfWeek")[i].innerHTML = daysOfWeek[i];
 
 	document.getElementById("big-month").innerHTML = monthNames[month];

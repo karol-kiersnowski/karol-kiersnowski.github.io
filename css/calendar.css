@@ -40,6 +40,10 @@ div#big-calendar {
 		text-align: center;
 	}
 
+	/*table.calendar td {
+		color: #777;
+	}*/
+
 div#small-calendar {
 	display: none;
 	padding: 3px;

@@ -1,11 +1,18 @@
+function setMenuWidthByScreenWidth() {
+	if (document.body.clientWidth <= "1000")
+		menuWidth = "narrow";
+	else
+		menuWidth = "wide";
+}
+
 function updateDocumentTitle() {
-	var hash = window.location.hash.substr(1);
-	var translatedSection;
+	let hash = window.location.hash.substr(1);
+	let translatedSection;
 
 	if (hash == "")
 		document.title = "Karol Kiersnowski | Portfolio";
 	else {
-		var hashToUpperCase = hash.charAt(0).toUpperCase() + hash.substr(1);
+		let hashToUpperCase = hash.charAt(0).toUpperCase() + hash.substr(1);
 
 		if (document.getElementsByClassName("txt" + hashToUpperCase)[0] != undefined)
 			translatedSection = document.getElementsByClassName("txt" + hashToUpperCase)[0].innerHTML;
@@ -18,16 +25,16 @@ function updateDocumentTitle() {
 }
 
 function markCurrentPageLink() {
-	var hash = window.location.hash.substr(1);
-	var navLinkContainer = document.getElementById("nav-link-container");
-	var links = new Array(6);
-	var href;
+	let hash = window.location.hash.substr(1);
+	let navLinkContainer = document.getElementById("nav-link-container");
+	let links = new Array(6);
+	let href;
 
-	for (var i=0; i<navLinkContainer.children.length; i++) {
+	for (let i=0; i<navLinkContainer.children.length; i++) {
 		links[i] = navLinkContainer.children[i];
-		href = links[i].href.split(/[# ]+/).pop();
 		links[i].style.backgroundColor = "";
 		links[i].style.boxShadow = "";
+		href = links[i].href.split(/[# ]+/).pop();
 		if (href == hash) {
 			links[i].style.backgroundColor = "rgba(128,128,128,0.1)";
 			links[i].style.boxShadow = "0px 0px 2px #777";
@@ -51,8 +58,8 @@ function displayElementsForJSPageVersion() {
 // }
 
 function sendEmail() {
-	var subject = encodeURI(document.getElementById("messageSubject").value);
-	var content = encodeURI(document.getElementById("messageContent").value);
-	var email = document.getElementById("yourEmail").value;
+	let subject = encodeURI(document.getElementById("messageSubject").value);
+	let content = encodeURI(document.getElementById("messageContent").value);
+	let email = document.getElementById("yourEmail").value;
 	location.href="mailto:karol.kiersnowski@outlook.com?subject=" + subject + "&body=" + content + "%0A%0AFrom: " + email;
 }
