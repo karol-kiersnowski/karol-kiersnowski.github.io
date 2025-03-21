@@ -178,7 +178,8 @@
 			</div>
 			<div class="right" id="h1">
 				<h1>Karol Kiersnowski</h1>
-				<h1 class="email" id="sub">Portfolio | CV | Résumé</h1>
+				<!--<h1 class="email" id="sub">Portfolio | CV | Résumé</h1>-->
+				<h1 id="sub">Portfolio | CV | Résumé</h1>
 			</div>
 			<div class="clear"></div>
 		</header>
@@ -1998,33 +1999,40 @@
 				<i class="far fa-envelope fa-fw"></i>
 				<span class="txtContact">Contact</span>
 			</h2>
-			<p id="txtContactMe">
-				If you want to contact me, you can send an e-mail or fill out the form.
-			</p>
-			<p style="font-size: 20px;">
-				E-mail -
-				<a class="email">karol.kiersnowski//at\\outlook.com</a>
-			</p>
-			<h3 class="txtForm">Form</h3>
-			<form><!--action="send-email.php" method="post">-->
-				<p>
-					<label id="labelMessageSubject" for="messageSubject">Message subject</label>
-					<input type="text" id="messageSubject" name="messageSubject" required />
-				</p>
-				<p>
-					<label id="labelMessageContent" for="messageContent" style="vertical-align: top;">Message content</label>
-					<textarea id="messageContent" name="messageContent" required></textarea>
-				</p>
-				<p>
-					<label id="labelYourEmail" for="yourEmail">Your e-mail</label>
-					<input type="email" id="yourEmail" name="yourEmail" required />
-				</p>
-				<p>
-					<label></label>
-					<button id="buttonSendEmail" onclick="sendEmail()">Send</button>
-				</p>
-			</form>
-			
+			<div style="position: relative;">
+				<div style="opacity: 0.75; filter: blur(1px);">
+					<p id="txtContactMe" style="text-decoration: line-through;">
+						If you want to contact me, you can send an e-mail or fill out the form.
+					</p>
+					<!--<p style="font-size: 20px;">
+						E-mail -
+						<a class="email">karol.kiersnowski//at\\outlook.com</a>
+					</p>-->
+					<h3 class="txtForm">Form</h3>
+					<form><!--action="send-email.php" method="post">-->
+						<p>
+							<label id="labelMessageSubject" for="messageSubject">Message subject</label>
+							<input disabled type="text" id="messageSubject" name="messageSubject" required />
+						</p>
+						<p>
+							<label id="labelMessageContent" for="messageContent" style="vertical-align: top;">Message content</label>
+							<textarea disabled id="messageContent" name="messageContent" required></textarea>
+						</p>
+						<p>
+							<label id="labelYourEmail" for="yourEmail">Your e-mail</label>
+							<input disabled type="email" id="yourEmail" name="yourEmail" required />
+						</p>
+						<p>
+							<label></label>
+							<!--<button id="buttonSendEmail" onclick="sendEmail();">Send</button>-->
+							<button id="buttonSendEmail">Send</button>
+						</p>
+					</form>
+				</div>
+				<div style="position: absolute; top: 0px; text-align: center;">
+					<img src="img/website-under-construction.png" width="100%" />
+				</div>
+			</div>
 		</section>
 
 
